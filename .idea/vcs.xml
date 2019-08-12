@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nonOriginal/Alfred1984" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nonOriginal/Alfred1984/interesting-python" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nonOriginal/deepNude/DeepNude-an-Image-to-Image-technology" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nonOriginal/weibo/weiboSpider" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/nonOriginal/weibo/weiboSpider2/weibo_terminater" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/weibo/weiboSpider" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/weibo/weiboSpider2/weibo_terminater" vcs="Git" />
+  </component>
+</project>
