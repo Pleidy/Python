@@ -1,0 +1,50 @@
+
+XformCompare
+对比两个变换矩阵。
+语法
+rhinoscriptsyntax.XformCompare (xform1, xform2)
+rhinoscript.transformation.XformCompare (xform1, xform2)
+参数
+
+
+
+
+xform1
+必须参数。列表或 Rhino.Geometry.Transform 对象。第一个要比较的 4x4 变换矩阵。
+
+
+xform2
+必须参数。列表或 Rhino.Geometry.Transform 对象。第二个要比较的 4x4 变换矩阵。
+
+
+返回值
+
+
+
+
+-1
+xform1 小于 xform2。
+
+
+0
+xform1 等于 xform2。
+
+
+1
+xform1 大于 xform2。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+xform0 = rs.XformZero()
+xform1 = rs.XformIdentity()
+print rs.XformCompare(xform0, xform1)
+同见
+IsXformIdentity
+IsXformSimilarity
+IsXformZero
+ 

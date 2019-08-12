@@ -1,0 +1,26 @@
+
+DocumentDataCount
+返回当前文档中用户数据字符串的数量。
+语法
+rhinoscriptsyntax.DocumentDataCount()
+rhinoscript.userdata.DocumentDataCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+文档中用户数据字符串的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.DocumentDataCount()
+print "RhinoScript document user data count:", count
+同见
+DeleteDocumentData
+GetDocumentData
+IsDocumentData
+SetDocumentData

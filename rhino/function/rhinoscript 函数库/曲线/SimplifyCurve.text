@@ -1,0 +1,80 @@
+
+SimplifyCurve
+使用简化的曲线替代几何上等价的多重曲线。多重曲线包含以下属性：
+
+ 所有的多重曲线段类型有直线、多重直线、圆弧或 NURBS 曲线。
+ NURBS 曲线段不具有完全多重内部节点。
+ 有理 NURBS 曲线没有连续权重值。
+ 对于 IsCurveLinear 或 IsArc 函数为 True 的部分，是直线、多重直线段或圆弧。
+ 相邻的共线或共圆线段将会被合并。
+ G1 连续的线段会在连接处对 G1 连续进行调整以便满足制造公差。
+如果多重曲线为多重直线，将会创建为多重直线。
+
+语法
+rhinoscriptsyntax.SimplifyCurve (curve_id, flags=0)
+rhinoscript.curve.SimplifyCurve (curve_id, flags=0)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。曲线物件的 ID 。
+
+
+flags
+可选参数。数字。要使用的简化方式。默认情况下，所有的方式都会被使用（flags = 0）。可用的选项如下：
+
+
+
+
+值
+描述
+
+
+0
+使用所有方法。
+
+
+1
+不要在完全多重节点处分割 NURBS 曲线。
+
+
+2
+不要用直线替换满足 IsCurveLinear = True 的线段。
+
+
+4
+不要用圆弧替换满足 IsArc = True 的线段。
+
+
+8
+不要用等价的非有理 NURBS 曲线替换连续的有理 NURBS 曲线。
+
+
+16
+不要在 G1 连接点处调节曲线。
+
+
+32
+不要混合相邻的共线直线或共面圆弧或把连续的直线段组合成多重直线。
+
+
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve to simplify", rs.filter.curve)
+if curve: rs.SimplifyCurve(curve)
+同见
+IsArc
+IsCurveLinear

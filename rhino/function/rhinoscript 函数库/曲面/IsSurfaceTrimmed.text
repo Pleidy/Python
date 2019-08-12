@@ -1,0 +1,41 @@
+
+IsSurfaceTrimmed
+判断一个曲面物件是否被剪切。
+语法
+rhinoscriptsyntax.IsSurfaceTrimmed (surface_id)
+rhinoscript.surface.IsSurfaceTrimmed (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurfaceTrimmed(obj):
+    print "The surface is trimmed."
+else:
+    print "The surface is not trimmed."
+同见
+IsSurface
+IsSurfaceClosed
+IsSurfacePeroidic
+IsSurfacePlanar
+IsSurfaceSingular

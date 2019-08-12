@@ -1,0 +1,51 @@
+
+DimStyleAnglePrecision
+返回或修改一个尺寸标注型式的角度显示精度。
+语法
+rhinoscriptsyntax.DimStyleAnglePrecision (dimstyle, precision=None)
+rhinoscript.dimension.DimStyleAnglePrecision (dimstyle, precision=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+precision
+可选参数。数字。新的角度精度值。如果省略，返回当前的角度精度。
+
+
+返回值
+
+
+
+
+数字
+如果精度没有指定，返回当前的角度精度。
+
+
+数字
+如果指定了精度，返回先前的角度精度。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+precision = rs.DimStyleAnglePrecision(dimstyle)
+if precision>2:
+    rs.DimStyleAnglePrecision( dimstyle, 2 )
+同见
+DimStyleArrowSize
+DimStyleExtension
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleOffset
+DimStyleTextAlignment
+DimStyleTextHeight

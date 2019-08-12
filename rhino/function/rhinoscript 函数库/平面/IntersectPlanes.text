@@ -1,0 +1,47 @@
+
+IntersectPlanes
+计算三个平面的相交。
+语法
+rhinoscriptsyntax.IntersectPlanes (plane1, plane2, plane3)
+rhinoscript.plane.IntersectPlanes (plane1, plane2, plane3)
+参数
+
+
+
+
+plane1
+必须参数。要求交的第一个平面。
+
+
+plane2
+必须参数。要求交的第二个平面。
+
+
+plane3
+必须参数。要求交的第三个平面。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果执行成功，返回相交得到的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane1 = rs.WorldXYPlane()
+plane2 = rs.WorldYZPlane()
+plane3 = rs.WorldZXPlane()
+point = rs.IntersectPlanes(plane1, plane2, plane3)
+if point: rs.AddPoint(point)
+同见
+LineLineIntersection
+LinePlaneIntersection
+PlanePlaneIntersection

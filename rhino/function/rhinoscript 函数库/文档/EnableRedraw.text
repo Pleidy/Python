@@ -1,0 +1,29 @@
+
+EnableRedraw
+启用或禁用屏幕重绘。
+语法
+rhinoscriptsyntax.EnableRedraw (enable=True)
+rhinoscript.document.EnableRedraw (enable=True)
+参数
+
+
+
+
+enable
+可选参数。布尔值。屏幕重绘状态。如果省略，启用平面重绘（True）。
+
+
+返回值
+
+
+
+
+布尔值
+先前的屏幕重绘状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+redraw = rs.EnableRedraw(True)
+同见
+Redraw

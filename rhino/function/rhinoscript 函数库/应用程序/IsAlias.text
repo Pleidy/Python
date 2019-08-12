@@ -1,0 +1,33 @@
+
+IsAlias
+判断一个指令别名是否存在。
+语法
+rhinoscriptsyntax.IsAlias(alias)
+rhinoscript.application.IsAlias(alias)
+参数
+
+
+
+
+alias
+必须参数。字符串。现有指令别名的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+print rs.IsAlias("Hello")
+同见
+AddAlias
+AliasCount
+AliasMacro
+AliasNames
+DeleteAlias

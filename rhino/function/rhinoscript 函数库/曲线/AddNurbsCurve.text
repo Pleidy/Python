@@ -1,0 +1,54 @@
+
+AddNurbsCurve
+在文档中添加一个 NURBS 曲线。
+语法
+rhinoscriptsyntax.AddNurbsCurve (points, knots, degree, weights=None )
+rhinoscript.curve.AddNurbsCurve (points, knots, degree, weights=None )
+参数
+
+
+
+
+points
+必须参数。由 3-D 控制点组成的列表。
+
+
+knots
+必须参数。List.曲线的节点值。knots 参数的个数必须等于 points 参数的个数加 degree 减一 (1)。
+
+
+degree
+必须参数。数字。曲线的阶数。阶数必须大于等于 1 。
+
+
+weights
+可选参数。List.曲线的权重值。 weights 参数的个数等于 points参数的个数。权重值必须大于 0 。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve_id = rs.GetObject("Pick a curve", rs.filter.curve)
+if curve_id:
+    points = rs.CurvePoints(curve_id)
+    knots = rs.CurveKnots(curve_id)
+    degree = rs.CurveDegree(curve_id)
+    newcurve = rs.AddNurbsCurve( points, knots, degree)
+    if newcurve: rs.SelectObject(newcurve)
+同见
+CurveDegree
+CurveKnots
+CurvePoints
+CuveWeights

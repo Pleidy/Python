@@ -1,0 +1,47 @@
+
+ViewRadius
+返回或设置一个平行视图的视锥半径。当你需要一个平行投影视图的绝对缩放因子时可以用这个函数。
+语法
+rhinoscriptsyntax.ViewRadius (view=None, radius=None)
+rhinoscript.view.ViewRadius (view=None, radius=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+radius
+可选参数。数字。视图半径。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 radius 参数，返回指定视图当前的视锥半径。
+
+
+数字
+如果指定了 radius 参数，返回指定视图先前的视锥半径。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rhParallelView = 1
+views = rs.ViewNames()
+if views:
+    for view in views:
+        if rs.ViewProjection(view)==rhParallelView:
+            rs.ViewRadius(view, 10.0)
+同见
+IsViewPerspective
+ViewProjection

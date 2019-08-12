@@ -1,0 +1,45 @@
+
+TrimCurve
+通过移除指定区间以外的曲线来剪切一个曲线。
+语法
+rhinoscriptsyntax.TrimCurve ( curve_id, interval, delete_input=True )
+rhinoscript.curve.TrimCurve ( curve_id, interval, delete_input=True )
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+interval
+必须参数。表示要保留区间的元组或两个数。domain[0] 之前以及 domain[1] 之后的曲线将被移除。如果输入曲线是开发的，区间必须是由小到大的递增区间。如果输入曲线是闭合的，而且区间为递减的， 返回值会跨越曲线起点和终点。
+
+
+delete_input
+可选参数。布尔值。删除输入曲线。默认情况下会删除输入曲线（Ture）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新生成曲线物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve to trim", rs.filter.curve)
+if rs.IsCurve(curve):
+    domain = rs.CurveDomain(curve)
+    domain[1] /= 2.0
+    rs.TrimCurve( curve, domain )
+同见
+SplitCurve

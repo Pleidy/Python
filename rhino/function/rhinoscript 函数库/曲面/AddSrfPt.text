@@ -1,0 +1,40 @@
+
+AddSrfPt
+通过 3 个或 4 个角点创建一个新曲面。
+语法
+rhinoscriptsyntax.AddSrfPt (points)
+rhinoscript.surface.AddSrfPt (points)
+参数
+
+
+
+
+points
+必须参数。列表。3 个或 4 个角点构成的列表。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+ 
+ 
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True, message1="Pick 3 or 4 corner points")
+if points: rs.AddSrfPt(points)
+同见
+AddEdgeSrf
+AddSrfControlPtGrid
+AddSrfPtGrid

@@ -1,0 +1,36 @@
+
+LastCreatedObjects
+返回最后创建或修改物件的 ID，同样适用于使用 Command 函数创建或修改的物件。在调用 Command 函数创建或修改物件以后，马上使用这个函数获取物件的 ID 是非常重要的。
+语法
+rhinoscriptsyntax.LastCreatedObjects (select=False)
+rhinoscript.selection.LastCreatedObjects (select=False)
+参数
+
+
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+返回值
+
+
+
+
+列表
+返回最后创建或修改物件的 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.Command( "_-Circle 0,0,0 10" )
+rs.Command( "_-Circle 10,0,0 10" )
+rs.Command( "_-Circle 20,0,0 10" )
+objs = rs.LastCreatedObjects()
+if objs:
+    # Only the last circle will be selected
+    rs.SelectObjects( objs )
+同见
+Command
+PrevSelectedObjects

@@ -1,0 +1,25 @@
+
+DimStyleCount
+返回当前文档尺寸标注型式的数量。
+语法
+rhinoscriptsyntax.DimStyleCount()
+rhinoscript.dimension.DimStyleCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+当前文档尺寸标注型式的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.DimStyleCount()
+print "There are", count, "dimension styles."
+同见
+DimStyleNames
+IsDimStyle
+ 

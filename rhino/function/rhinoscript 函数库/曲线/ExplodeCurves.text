@@ -1,0 +1,42 @@
+
+ExplodeCurves
+炸开或取消组合一个或多个曲线物件。多重曲线将会被炸开成曲线段。多重直线将会被炸开成直线段。ExplodeCurves 将以拓扑序返回曲线。
+语法
+rhinoscriptsyntax.ExplodeCurves (curve_ids, delete_imput=False)
+rhinoscript.curve.ExplodeCurves (curve_ids, delete_imput=False)
+参数
+
+
+
+
+curve_ids
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。要炸开的曲线物件的 ID 。
+
+
+delete_input
+可选参数。布尔值。炸开以后删除输入物件。默认情况下不删除物件（False）。
+
+
+返回值
+
+
+
+
+列表
+返回由新生成曲线物件 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+crv = rs.GetObject("Select curve to explode", rs.filter.curve)
+if rs.IsCurve(crv): rs.ExplodeCurves(crv)
+同见
+IsCurve
+IsPolyCurve
+IsPolyline
+JoinCurves
+ 

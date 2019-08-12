@@ -1,0 +1,40 @@
+
+ViewCameraUp
+返回或设置指定视图的摄影机向上的方向向量。
+语法
+rhinoscriptsyntax.ViewCameraUp ( view=None, up_vector=None )
+rhinoscript.view.ViewCameraUp ( view=None, up_vector=None )
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+up_vector
+可选参数。数组或 Vector3d 点对象。作为摄影机向上方向的 3-D 向量。
+
+
+返回值
+
+
+
+
+Vector3d向量
+如果没有指定 up_vector 参数，返回摄影机当前的向上 3-D 向量。
+
+
+Vector3d向量
+如果指定了 up_vector 参数，返回摄影机先前的向上 3-D 向量。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+upVector = rs.ViewCameraUp(view)
+print up_vector
+同见
+ViewCamera
+ViewTarget

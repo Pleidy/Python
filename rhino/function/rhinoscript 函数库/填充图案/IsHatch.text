@@ -1,0 +1,38 @@
+
+IsHatch
+判断一个物件是否为填充图案物件。
+语法
+rhinoscriptsyntax.IsHatch (object_id)
+rhinoscript.hatch.IsHatch (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if rs.IsHatch(obj): print "Object is a hatch"
+else: print "Object is not a hatch"
+同见
+HatchPattern
+HatchRotation
+HatchScale
+ 

@@ -1,0 +1,32 @@
+
+IsWallpaper
+判断指定的视图是否有底色图案。
+语法
+rhinoscriptsyntax.IsWallpaper (view)
+rhinoscript.view.IsWallpaper (view)
+参数
+
+
+
+
+view
+必须参数。字符串或 Guid。视图的名称或 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+filename = rs.OpenFileName()
+if filename and not rs.IsWallpaper(view):
+    rs.Wallpaper(view, filename)
+同见
+Wallpaper

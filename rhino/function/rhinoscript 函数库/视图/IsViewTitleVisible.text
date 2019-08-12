@@ -1,0 +1,34 @@
+
+IsViewTitleVisible
+判断指定视图的标题是否可见。
+语法
+rhinoscriptsyntax.IsViewTitleVisible (view=None)
+rhinoscript.view.IsViewTitleVisible (view=None)
+参数
+
+
+
+
+view
+可选参数。Guid 的字符串。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+title = rs.CurrentView()
+vis = rs.IsViewTitleVisible(title)
+if vis:
+    print "The ", title, " view's title is visible."
+else:
+    print "The ", title, " view's title is not visible."
+同见
+ShowViewTitle

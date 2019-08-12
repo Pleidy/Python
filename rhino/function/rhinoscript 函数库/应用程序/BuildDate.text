@@ -1,0 +1,22 @@
+
+BuildDate
+返回 Rhino 构建历史。
+语法
+rhinoscriptsyntax.BuildDate()
+rhinoscript.application.BuildDate()
+参数
+空值。
+返回值
+
+
+
+
+datetime
+执行成功返回 Rhino 的建构历史。
+
+
+示例
+import rhinoscriptsyntax as rs
+build = rs.BuildDate()
+print "Rhino Build:", build
+同见

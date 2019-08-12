@@ -1,0 +1,44 @@
+
+IsCurveLinear
+判断一个物件是否为平直的曲线。
+语法
+rhinoscriptsyntax.IsCurveLinear (object_id, segment_index=-1)
+rhinoscript.curve.IsCurveLinear (object_id, segment_index=-1)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 object_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a curve")
+if rs.IsCurve(id):
+    if rs.IsCurveLinear(id):
+        print "The object is a linear curve."
+    else:
+        print "The object is not a linear curve."
+else:
+    print "The object is not a curve."
+同见
+IsCurve
+IsCurveClosed
+IsCurvePeriodic
+IsCurvePlanar
+ 

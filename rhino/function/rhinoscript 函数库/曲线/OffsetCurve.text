@@ -1,0 +1,80 @@
+
+OffsetCurve
+按照指定距离偏移一条曲线。偏移生成的曲线将被添加到 Rhino。
+语法
+rhinoscriptsyntax.OffsetCurve ( object_id, direction, distance, normal==None, style=1)
+rhinoscript.curve.OffsetCurve ( object_id, direction, distance, normal==None, style=1)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+direction
+必须参数。表明偏移距离的Point3d 点、 Vector3d 向量或由三个数字组成的列表。
+
+
+distance
+必须参数。数字。偏移距离。
+
+
+normal
+可选参数。Point3d 点、 Vector3d 向量或由三个数字组成的列表，表名在哪个平面内进行偏移。如果省略，将使用当前的构造平面。
+
+
+style
+可选参数。数字。角类型。如果省略，将使用锐角。
+
+
+
+
+值
+描述
+
+
+0
+None
+
+
+1
+锐角（默认值）
+
+
+2
+圆角
+
+
+3
+平滑
+
+
+4
+斜角
+
+
+
+
+返回值
+
+
+
+
+列表
+A list containing the identifiers of the new objects if successful.
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve", rs.filter.curve)
+if rs.IsCurve(obj):
+    rs.OffsetCurve( obj, [0,0,0], 1.0 )
+同见
+OffsetCurveOnSurface
+OffsetSurface

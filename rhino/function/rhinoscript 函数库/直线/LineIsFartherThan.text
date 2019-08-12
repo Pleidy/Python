@@ -1,0 +1,48 @@
+
+LineIsFartherThan
+确定一条直线和一个点或另一条直线之间的距离是否大于指定的距离。
+语法
+rhinoscriptsyntax.LineIsFartherThan (line, distance, point_or_line)
+rhinoscript.line.LineIsFartherThan (line, distance, point_or_line)
+参数
+
+
+
+
+line
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。
+
+
+distance
+必须参数。数字。距离。
+
+
+point_or_line
+必须参数。Point3d 点对象或直线。测试点或直线。
+
+
+返回值
+
+
+
+
+布尔值
+如果直线到其他物件的最小距离大于 distance 参数指定的距离返回 True，否则返回 False 。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+line = (0,0,0), (10,10,0)
+testPoint = (10,5,0)
+print rs.LineIsFartherThan(line, 3, testPoint)
+同见
+LineClosestPoint
+LineMaxDistanceTo
+LineMinDistanceTo
+LinePlane
+LineTransform
+ 

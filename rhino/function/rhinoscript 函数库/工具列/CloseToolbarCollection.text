@@ -1,0 +1,42 @@
+
+CloseToolbarCollection
+关闭一个已打开的工具列收藏夹。
+语法
+rhinoscriptsyntax.CloseToolbarCollection(name, prompt=False)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+Prompt
+可选参数。布尔值。如果为 True，则提示用户在关闭收藏夹文件之前先保存对收藏夹所做的修改。如果为 False，不保存并直接关闭收藏夹文件。默认值为 Flase。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.ToolbarCollectionNames()
+if names:
+    for name in names: rs.CloseToolbarCollection( name, True )
+同见
+IsToolbarCollection
+OpenToolbarCollection
+ToolbarCollectionCount
+ToolbarCollectionNames
+ToolbarCollectionPath

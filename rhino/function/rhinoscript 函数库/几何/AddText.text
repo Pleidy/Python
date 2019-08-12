@@ -1,0 +1,107 @@
+
+AddText
+在文档中添加一个文本字符串。
+语法
+rhinoscriptsyntax.AddText ( text, point_or_plane, height=1.0, font="Arial", font_style=0, justification=None )
+rhinoscript.geometry.AddText ( text, point_or_plane, height=1.0, font="Arial", font_style=0, justification=None )
+参数
+
+
+
+
+text
+必须参数。字符串。要显示的文本。
+
+
+point_or_plane
+必须参数。表示文本显示位置的 3-D 点或平面。平面的原点将作为文本的原点。
+
+
+height
+可选参数。数字。文字高度。如果省略，文字高度将设置为 1.0。
+
+
+font
+可选参数。字符串。文本字体。如果省略， 将使用 Arial 字体。
+
+
+font_style
+可选参数。数字。字体样式。如果省略，字体样式设置为“标准” (0)。字体样式的数值对照表如下：
+
+
+
+
+值
+描述
+
+
+0
+标准
+
+
+1
+加粗
+
+
+2
+斜体
+
+
+
+
+justification
+可选参数。整数。对齐文本。对照表如下：注意：可以将这些值相加，以便同时生效。
+
+
+
+
+值
+描述
+
+
+1
+左
+
+
+2
+中心（水平）
+
+
+4
+右
+
+
+65536
+底部
+
+
+131072
+中心（垂直）
+
+
+262144
+顶部
+
+
+ 
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = rs.GetPoint("Pick point")
+if point: rs.AddText("Hello Rhino!", point)
+同见
+IsText

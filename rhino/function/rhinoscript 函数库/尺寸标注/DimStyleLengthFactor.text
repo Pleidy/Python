@@ -1,0 +1,44 @@
+
+DimStyleLengthFactor
+返回或修改一个尺寸标注型式的长度系数。长度系数是在 Rhino 单位和尺寸单位之间转换的系数。
+语法
+rhinoscriptsyntax.DimStyleLengthFactor (dimstyle, factor=None)
+rhinoscript.dimension.DimStyleLengthFactor (dimstyle, factor=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+factor
+可选参数。数字。新的长度系数。如果省略，返回当前的长度系数。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 factor 参数，返回当前的长度系数。
+
+
+数字
+如果指定了 factor 参数，返回先前的长度系数。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+factor = rs.DimStyleLengthFactor(dimstyle)
+if factor>1.0: rs.DimStyleLengthFactor( dimstyle, 1.0 )
+同见
+DimStylePrefix
+DimStyleSuffix

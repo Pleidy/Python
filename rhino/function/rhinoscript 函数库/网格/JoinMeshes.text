@@ -1,0 +1,39 @@
+
+JoinMeshes
+将一个或多个网格物件组合成一个网格物件。
+语法
+rhinoscriptsyntax.JoinMeshes (object_ids, delete_input=False)
+rhinoscript.mesh.JoinMeshes (object_ids, delete_input=False)
+参数
+
+
+
+
+object_ids
+必须参数。列表或元组。要组合网格物件的 Guid 或字符串构成的列表。
+
+
+delete_input
+可选参数。布尔值。组合以后删除输入物件。默认情况下不删除物件（False）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新生成网格物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select meshes to join", rs.filter.mesh)
+if objs and len(objs)>1: rs.JoinMeshes(objs, True)
+同见
+JoinCurves
+JoinSurfaces

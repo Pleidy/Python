@@ -1,0 +1,33 @@
+
+MeshHasVertexNormals
+判断一个网格物件是否具有顶点法线。
+语法
+rhinoscriptsyntax.MeshHasVertexNormals (object_id)
+rhinoscript.mesh.MeshHasVertexNormals (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a mesh", rs.filter.mesh)
+if rs.MeshHasVertexNormals(obj):
+    print "The mesh has vertex normals."
+else:
+    print "The mesh does not have vertex normals."
+同见
+MeshVertexNormals

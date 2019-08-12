@@ -1,0 +1,48 @@
+
+TrimBrep
+使用定向切割器剪切一个曲面或多重曲面。定向切割器可以是一个曲面、一个多重曲面或一个平面。
+要切割的曲面或多重曲面位于切割器内部（位于法向的反面）的部分将被保留，而位于切割器外部（位于法线方向）的部分将被去除。If the cutter is a closed surface or polysurface, or is s plane, then a connected component of the target surface or polysurface that does not intersect the cutter is kept if and only if it is contained in the inside of cutter.That is the region bounded by the cutter opposite from the normal of the cutter, or in the case of a plane cutter the half-space opposite from the plan normal.如果切割器是不闭合的，所有的部分都会被保留。
+语法
+rhinoscriptsyntax.TrimBrep (object_id, cutter, tolerance=None)
+rhinoscript.surface (object_id, cutter, tolerance=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要剪切的曲面或多重曲面的 ID 。
+
+
+cutter
+必须参数。字符串或 Guid。切割用曲面或多重曲面物件的 ID 。
+
+
+tolerance
+可选参数。数字。剪切公差。如果省略，使用文档的绝对公差。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回保留部分的ID。数组中第一个元素的 ID 和目标曲面或多重曲面的 ID 是对应的。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+filter = rs.filter.surface + rs.filter.polysurface
+obj = rs.GetObject("Select surface or polysurface to trim", filter)
+if obj:
+    cutter = rs.GetObject("Select cutting surface or polysurface", filter)
+    if cutter:
+        rs.TrimBrep(obj,cutter)
+同见
+SplitSurface
+TrimSurface

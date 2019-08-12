@@ -1,0 +1,43 @@
+
+SurfaceParameter
+转换一个标准化以后的曲面参数到曲面定义域范围内原本的参数。
+语法
+rhinoscriptsyntax.SurfaceParameter (surface_id, parameter)
+rhinoscript.surface.SurfaceParameter (surface_id, parameter)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。两个数构成的列表。要转换的标准曲面参数。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回曲面参数。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select surface")
+if obj:
+    normalized = (0.5, 0.5)
+    print "Normalized parameter:", normalized
+    parameter = rs.SurfaceParameter(obj, normalized)
+    print "Surface parameter:", parameter
+同见
+SurfaceDomain
+SurfaceNormalizedParameter

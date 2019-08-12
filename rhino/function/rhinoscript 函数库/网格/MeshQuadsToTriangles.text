@@ -1,0 +1,30 @@
+
+MeshQuadsToTriangles
+转化一个网格的四边面到三角面。
+语法
+rhinoscriptsyntax.MeshQuadsToTriangles (object_id)
+rhinoscript.mesh.MeshQuadsToTriangles (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+if rs.MeshQuadCount(obj)>0:
+    rs.MeshQuadsToTriangles(obj)
+同见

@@ -1,0 +1,40 @@
+
+ShowGridAxes
+显示或隐藏一个视图的工作平面格线坐标轴。
+语法
+rhinoscriptsyntax.ShowGridAxes ( view=None, show=None )
+rhinoscript.view.ShowGridAxes ( view=None, show=None )
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。要修改视图的标题或 ID 。如果省略，将使用当前视图。
+
+
+show
+可选参数。布尔值。格线坐标轴的显示状态。如果省略，返回当前的格线坐标轴显示状态。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 show 参数的值，返回格线坐标轴显示状态。
+
+
+布尔值
+如果指定了 show 参数的值，返回格线坐标轴之前的显示状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.ShowGridAxes(view)==False:
+    rs.ShowGridAxes( view, True )
+同见
+ShowGrid
+ShowWorldAxes

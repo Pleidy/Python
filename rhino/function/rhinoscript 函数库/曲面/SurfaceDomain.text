@@ -1,0 +1,43 @@
+
+SurfaceDomain
+返回曲面物件在指定方向的定义域范围。
+语法
+rhinoscriptsyntax.SurfaceDomain (objectId, direction)
+rhinoscript.surface.SurfaceDomain (objectId, direction)
+参数
+
+
+
+
+objectId
+必须参数。字符串。物件的 ID 。
+
+
+direction
+必须参数。数字。方向，0 = U方向， 1 = V方向。
+
+
+返回值
+
+
+
+
+List
+执行成功，返回包含曲面在指定方向定义域区间的列表。
+
+
+空值
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurface(object):
+    domainU = rs.SurfaceDomain(object, 0)
+    domainV = rs.SurfaceDomain(object, 1)
+    print "Domain in U direction:", domainU
+    print "Domain in V direction:", domainV
+同见
+IsSurface
+SurfaceDegree

@@ -1,0 +1,36 @@
+
+UnselectObjectGrips
+取消选取物件的所有操作点。注意，并不会关闭操作点。
+语法
+rhinoscriptsyntax.UnselectObjectGrips (object_id)
+rhinoscript.grips.UnselectObjectGrips (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回取消选取操作点的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if rs.ObjectGripsSelected(obj): rs.UnselectObjectGrips(obj)
+同见
+EnableObjectGrips
+ObjectGripCount
+UnselectObjectGrip

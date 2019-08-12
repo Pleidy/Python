@@ -1,0 +1,40 @@
+
+CurveEndPoint
+返回曲线物件的终点。
+语法
+rhinoscriptsyntax.CurveEndPoint (curve_id)
+rhinoscript.curve.CurveEndPoint (curve_id)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+Point3d
+如果执行成功，返回作为曲线终点的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select a curve")
+if rs.IsCurve(object):
+    point = rs.CurveEndPoint(object)
+    rs.AddPoint(point)
+同见
+CurveMidPoint
+CurveStartPoint
+IsCurve
+ 
+ 

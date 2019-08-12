@@ -1,0 +1,73 @@
+
+CurveClosestObject
+返回两个物件上距离彼此最近位置的 3-D 点。注意， 当使用 Object 项时，此函数功能接近于Rhino 的 ClosestPt 指令。
+语法
+rhinoscriptsyntax.CurveClosestObject (curve_id, objects)
+rhinoscript.curve.CurveClosestObject (curve_id, objects)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。要计算的曲线物件的 ID 。
+
+
+strObject
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。要计算的点云、曲线、曲面或多重曲面的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回一个元组，元组的三个元素为计算得到的最近点。元素分别是：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Guid
+最近物件的 ID。
+
+
+1
+Point3d
+靠近最近物件的 3-D 点。
+
+
+2
+Point3d
+靠近要计算曲线的 3-D 点。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+filter = rs.filter.curve | rs.filter.pointcloud | rs.filter.surface | rs.filter.polysurface
+objects = rs.GetObjects("Select target objects for closest point", filter)
+if objects:
+    curve = rs.GetObject("Select curve")
+    if curve:
+        results = rs.CurveClosestObject(curve, objects)
+        if results:
+              print "Curve id:", results[0]
+              rs.AddPoint( results[1] )
+              rs.AddPoint( results[2] )
+同见
+CurveClosestPoint
+EvaluateCurve
+IsCurve

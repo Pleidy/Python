@@ -1,0 +1,36 @@
+
+EdgeAnalysisColor
+返回或修改使用 ShowEdges 指令显示的边缘颜色。
+语法
+rhinoscriptsyntax.EdgeAnalysisColor( color=None )
+rhinoscript.application.EdgeAnalysisColor( color=None )
+参数
+
+
+
+
+color
+可选参数。新的颜色值。如果省略，返回当前条目颜色。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 color 参数，返回当前的边缘分析颜色。
+
+
+数字
+如果指定了 color 参数，返回先前的边缘分析颜色。
+
+
+示例
+import rhinoscriptsyntax as rs
+oldcolor = rs.EdgeAnalysisColor()
+newcolor = rs.GetColor(oldcolor)
+if newcolor is not None:
+    rs.EdgeAnalysisColor(newcolor)
+同见
+EdgeAnalysisMode

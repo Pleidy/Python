@@ -1,0 +1,44 @@
+
+ViewTarget
+返回或设置指定视图的目标位置。
+语法
+rhinoscriptsyntax.ViewTarget (view=None, target=None)
+rhinoscript.view.ViewTarget (view=None, target=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+target
+可选参数。数组或 Point3d 点对象。作为摄像机新目标位置的 3-D 点。如果没有指定 target 参数，返回当前的目标位置。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果没有指定 target 参数，返回代表当前目标位置的 3-D 点。
+
+
+Point3d 点
+如果指定了 target 参数，返回代表先前目标位置的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+target = rs.GetPoint("Select new target location")
+if target: rs.ViewTarget( view, target )
+同见
+ViewCamera
+ViewCameraTarget

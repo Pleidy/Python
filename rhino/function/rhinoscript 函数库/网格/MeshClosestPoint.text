@@ -1,0 +1,66 @@
+
+MeshClosestPoint
+返回网格上最靠近测试点的 3-D 点。
+语法
+rhinoscriptsyntax.MeshClosestPoint (object_id, point, maximum_distance=None)
+rhinoscript.mesh.MeshClosestPoint (object_id, point, maximum_distance=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。要计算的 3-D 点。
+
+
+maximum_distance
+可选参数。数字。测试点和网格之间距离的上限。如果只想在测试点和网格的距离小于一定值的时候求最近点，就可以把这个距离值赋值给 maximum_distance 参数。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回包含执行结果的列表。组成元素分别是：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Point3d 点
+网格物件上的 3-D 点。
+
+
+1
+数字
+3-D 点所在网格面的序号。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinocriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+point = rs.GetPoint("Pick test point")
+intersect = rs.MeshClosestPoint(obj, point)
+if intersect: rs.AddPoint(intersect)
+同见
+MeshFaceCount
+MeshFaces
+ 

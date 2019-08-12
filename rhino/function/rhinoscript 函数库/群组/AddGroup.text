@@ -1,0 +1,50 @@
+
+AddGroup
+在文档中添加一个空的新群组。
+语法
+rhinoscriptsyntax.AddGroup (group_name=None)
+rhinoscript.group.AddGroup (group_name=None)
+参数
+
+
+
+
+
+group_name
+
+
+可选参数。字符串。新群组的名称。如果省略，Rhino 自动生成新群组的名称。
+
+
+
+返回值
+
+
+
+
+
+字符串
+
+
+执行成功，返回新群组的名称。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+name = rs.AddGroup("NewGroup")
+同见
+DeleteGroup
+GroupCount
+GroupNames
+IsGroup
+RenameGroup
+ 

@@ -1,0 +1,85 @@
+
+CurveCurvature
+返回曲线在参数位置的曲率。请参考 Rhino 帮助文件中关于曲线曲率的论述。
+语法
+rhinoscriptsyntax.CurveCurvature (curve_id, parameter)
+rhinoscript.curve.CurveCurvature (curve_id, parameter)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字。要计算的参数位置。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回包含曲率信息的元组。元组包含以下信息：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Point3d
+指定参数位置的 3-D 点。
+
+
+1
+Vector3d
+切向量
+
+
+2
+Point3d
+曲率半径的中心点
+
+
+3
+Number
+曲率半径
+
+
+4
+Vector3d
+曲率向量
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    point = rs.GetPointOnCurve(obj, "Pick a test point")
+    if point:
+        param = rs.CurveClosestPoint(obj, point)
+        if param:
+            data = rs.CurveCurvature(obj, param)
+            if data:
+                print "Curve curvature evaluation at parameter", param, ":"
+                print "  3-D Point:", data[0]
+                print "  3-D Tangent:", data[1]
+                print "  Center of radius of curvature:", data[2]
+                print "  Radius of curvature:", data[3]
+                print "  3-D Curvature:", data[4]
+同见
+SurfaceCurvature

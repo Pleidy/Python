@@ -1,0 +1,45 @@
+
+EdgeAnalysisMode
+返回或修改使用 ShowEdges 指令显示的边缘分析模式。
+语法
+rhinoscriptsyntax.EdgeAnalysisMode( mode=None )
+rhinoscript.application.EdgeAnalysisMode( mode=None )
+参数
+
+
+
+
+mode
+可选参数。数字。新的显示模式。如果省略，返回当前的显示模式。有如下几种模式：
+
+
+
+
+0
+全部边缘。
+
+
+1
+外露边缘。
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 mode 参数，返回当前的边缘显示模式。
+
+
+数字
+如果指定了 mode 参数，返回先前的边缘显示模式。
+
+
+示例
+import rhinoscriptsyntax as rs
+previous_mode = rs.EdgeAnalysisMode(1)
+同见
+EdgeAnalysisColor

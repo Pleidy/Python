@@ -1,0 +1,38 @@
+
+HatchPatternDescription
+返回图案的描述。注意，并不是所有的图案都有描述。
+语法
+rhinoscriptsyntax.HatchPatternDescription(hatch_pattern)
+rhinoscript.hatch.HatchPatternDescription(hatch_pattern)
+参数
+
+
+
+
+hatch_pattern
+必须参数。字符串。现有图案的名称。
+
+
+返回值
+
+
+
+
+字符串
+执行成功返回图案描述。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+patterns = rs.HatchPatternNames()
+for pattern in patterns:
+    description = rs.HatchPatternDescription(pattern)
+    if description: print pattern, "-", description
+    else: print pattern
+同见
+HatchPatternCount
+HatchPatternNames

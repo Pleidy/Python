@@ -1,0 +1,43 @@
+
+AddCircle
+在文档中添加一个圆。
+语法
+rhinoscriptsyntax.AddCircle( plane_or_center, radius )
+rhinoscript.curve.AddCircle( plane_or_center, radius )
+参数
+
+
+
+
+plane_or_center
+必须参数。平面，Point3d 对象或由三个数组成的列表。在哪个平面上生成圆。平面的原点将作为圆的中心点。如果输入的是包含三个数的列表或 Poind3d 对象，将会使用活动视窗平面。
+
+
+radius
+必须参数。数字。圆的半径。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.WorldXYPlane()
+rs.AddCircle( plane, 5.0 )
+同见
+AddCircle3Pt
+CircleCenterPoint
+CircleCircumference
+CircleRadius
+IsCircle
+ 

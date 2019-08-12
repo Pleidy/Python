@@ -1,0 +1,45 @@
+
+IsObjectReference
+判断一个物件是否为参考物件。参考物件不是当前文档的一部分。
+语法
+rhinoscriptsyntax.IsObjectReference (object_id)
+rhinoscript.object.IsObjectReference (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件是参考物件。
+
+
+False
+物件不是参考物件。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if rs.IsObjectReference(id):
+    print "The object is a reference object."
+else:
+    print "The object is not a reference object."
+同见
+IsObject
+IsObjectHidden
+IsObjectInGroup
+IsObjectLocked
+IsObjectNormal
+IsObjectSelectable
+IsObjectSelected
+IsObjectSolid
+ 

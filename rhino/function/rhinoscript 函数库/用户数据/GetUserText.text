@@ -1,0 +1,66 @@
+
+GetUserText
+返回一个物件上记录的用户文本。更多关于用户数据的信息，请参考 用户数据方法 。
+语法
+rhinoscriptsyntax.GetUserText (object_id, key=None, attached_to_geometry=False)
+rhinoscript.userdata.GetUserText (object_id, key=None, attached_to_geometry=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+key
+可选参数。字符串。键名。如果省略或指定空字符串 ("") ，将返回物件上记录的所有键名。
+
+
+attached_to_geometry
+可选参数。布尔值。读取
+
+
+
+
+值
+描述
+
+
+True
+从物件几何体读取文本信息。如果信息是几何体附属的，将它附加到几何体。例如，圆的半径应该附加到几何体上，因为使用控制点编辑以后该信息就无效了，圆被转成了 NURBS 曲线。
+
+
+False (默认值)
+从一个物件的属性中获取文本信息。如果信息是更高级别的属性信息，如颜色，将其附加到物件属性。对物件进行控制点编辑、剪切、复制等操作时属性信息既然存在。
+
+
+
+
+返回值
+
+
+
+
+字符串
+如果指定了 key 参数，返回其相关值。
+
+
+列表
+如果没有指定 key 参数，返回键名列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    print rs.GetUserText(obj, "PartNo")
+    print rs.GetUserText(obj, "Price")
+同见
+IsUserText
+SetUserText
+ 

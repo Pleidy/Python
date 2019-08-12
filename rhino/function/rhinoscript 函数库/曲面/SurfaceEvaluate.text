@@ -1,0 +1,102 @@
+
+SurfaceEvaluate
+通过的曲面求值运算器。
+语法
+rhinoscriptsyntax.SurfaceEvaluate ( surface_id, parameter, derivative)
+rhinoscript.surface.SurfaceEvaluate ( surface_id, parameter, derivative)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。元组。UV参数值构成的元组。
+
+
+derivative
+必须参数。数字。要计算导数的数量。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回一个长度为(derivative+1)*(derivative+2)/2 的列表。元素分别是：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Point3d 点
+3-D 点。
+
+
+1
+Vector3d向量
+一阶导数。
+
+
+2
+Vector3d向量
+一阶导数。
+
+
+3
+Vector3d向量
+二阶导数。
+
+
+4
+Vector3d向量
+二阶导数。
+
+
+5
+Vector3d向量
+二阶导数。
+
+
+6
+Vector3d向量
+等等...
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def TestSurfaceEvaluate():
+    srf = rs.GetObject("Select surface to evaluate", rs.filter.surface, True)
+    if srf is None: return
+    point = rs.GetPointOnSurface(srf, "Point to evaluate")
+    if point is None: return
+    der = rs.GetInteger("Number of derivatives to evaluate", 1, 1)
+    if der is None: return
+    uv = rs.SurfaceClosestPoint(srf, point)
+    res = rs.SurfaceEvaluate(srf, uv, der)
+    if res is None:
+        print "Failed to evaluate surface."
+        return
+    for i,r in enumerate(res):
+        print i, " = ", r
+TestSurfaceEvaluate()
+同见
+EvaluateSurface
+SurfaceClosestPoint
+ 

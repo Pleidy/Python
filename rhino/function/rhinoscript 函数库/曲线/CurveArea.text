@@ -1,0 +1,59 @@
+
+CurveArea
+返回封闭平面曲线包围区域的面积。计算结果使用当前的绘图单位。
+语法
+rhinocsriptsyntax.CurveArea( object_id )
+rhinocsript.curve.CurveArea( object_id )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。闭合平面曲线物件 的 ID 。
+
+
+返回值
+
+
+
+
+List.
+执行成功，返回面积信息。返回的列表将包含以下信息：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Number
+面积。如果指定一个以上曲线，将使用累积面积。
+
+
+1
+Number
+面积的绝对(+/-)误差范围。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinocsriptsyntax as rs
+id = rs.GetObject("Select a curve", rs.filter.curve)
+if id:
+    props = rs.CurveArea(id)
+    if props:
+        print "The curve area is:", props[0]
+同见
+IsCurve
+IsCurveClosed
+IsCurvePlanar

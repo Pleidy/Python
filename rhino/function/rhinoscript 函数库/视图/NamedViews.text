@@ -1,0 +1,27 @@
+
+NamedViews
+返回此文档中所有已命名视图的名称。
+语法
+rhinoscriptsyntax.NamedViews()
+rhinoscript.view.NamedViews()
+参数
+空值。
+返回值
+
+
+
+
+列表
+由已命名视图 ID 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+views = rs.NamedViews()
+if views:
+    for view in views: print view
+同见
+AddNamedView
+DeleteNamedView
+RestoreNamedView
+ 

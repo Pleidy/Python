@@ -1,0 +1,63 @@
+
+IsXformZero
+判断一个矩阵是否为零变换。
+ 
+
+
+
+
+
+
+0
+0
+0
+0
+
+
+0
+0
+0
+0
+
+
+0
+0
+0
+0
+
+
+0
+0
+0
+0
+
+
+语法
+rhinoscriptsyntax.IsXformZero (xform)
+rhinoscript.transformation.IsXformZero (xform)
+参数
+
+
+
+
+xform
+必须参数。列表或 Rhino.Geometry.Transform 对象。一个 4x4 的变换矩阵。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+xform = rs.XformZero()
+print rs.IsXformZero(xform)
+同见
+IsXformIdentity
+IsXformSimilarity
+XformZero

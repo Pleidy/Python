@@ -1,0 +1,42 @@
+
+PlaneEquation
+返回平面的参数方程。平面的标准参数方程形式如下：
+Ax + By + Cz + D = 0
+语法
+rhinoscriptsyntax.PlaneEquation (plane)
+rhinoscript.plane.PlaneEquation (plane)
+参数
+
+
+
+
+plane
+必须参数。平面。平面。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回由标准参数方程系数构成的数组。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.ViewCPlane()
+equation = rs.PlaneEquation(plane)
+print "A =", equation[0]
+print "B =", equation[1]
+print "C =", equation[2]
+print "D =", equation[3]
+同见
+PlaneFromFrame
+PlaneFromNormal
+PlaneFromPoints
+ 

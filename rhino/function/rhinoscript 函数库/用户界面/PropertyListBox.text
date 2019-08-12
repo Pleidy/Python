@@ -1,0 +1,63 @@
+
+PropertyListBox
+在一个属性列表对话框中显示一组条目和它们的值。
+语法
+rhinoscriptsyntax.PropertyListBox (items, values, message=None, title=None)
+rhinoscript.userinterface.PropertyListBox (items, values, message=None, title=None)
+参数
+
+
+
+
+items
+必须参数。字符串条目的列表。
+
+
+values
+必须参数。列表中每个条目对应的值。
+
+
+message
+可选参数。字符串。提示信息。
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+返回值
+
+
+
+
+列表
+每个条目对应新值的字符串构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select Objects")
+if objs:
+    names = []
+    for obj in objs:
+        name = rs.ObjectName(obj)
+        if name is None: name=""
+        names.append(name)
+    results = rs.PropertyListBox(objs, names, "Modify object name(s)")
+    if results:
+        for i in xrange(len(objs)):
+            rs.ObjectName( objs[i], results[i] )
+ 
+
+ 
+同见
+CheckListBox
+ComboListBox
+ListBox
+MultiListbox
+ 
+ 

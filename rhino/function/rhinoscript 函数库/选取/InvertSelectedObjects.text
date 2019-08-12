@@ -1,0 +1,38 @@
+
+InvertSelectedObjects
+依据当前的选择反选物件。返回新选取物件的 ID 。
+语法
+rhinoscriptsyntax.InvertSelectedObjects (include_lights=False, include_grips=False)
+rhinoscript.selection.InvertSelectedObjects (include_lights=False, include_grips=False)
+参数
+
+
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+include_grips
+可选参数。布尔值。包含操作点物件。如果省略，不会返回操作点物件（False）。
+
+
+返回值
+
+
+
+
+列表
+返回新选取物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.GetObjects("Select some objects", select=True)
+objs = rs.InvertSelectedObjects()
+for id in objs: print "Object identifier:", id
+同见
+SelectedObjects
+UnselectAllObjects
+UnselectedObjects
+ 

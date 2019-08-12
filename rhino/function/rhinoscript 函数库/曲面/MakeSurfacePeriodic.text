@@ -1,0 +1,48 @@
+
+MakeSurfacePeriodic
+使一个已存在的曲面变为周期 NURBS 曲面。
+语法
+rhinoscriptsyntax.MakeSurfacePeriodic (surface_id, direction, delete_input=False)
+rhinoscript.surface.MakeSurfacePeriodic (surface_id, direction, delete_input=False)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+direction
+必须参数。数字。要周期化的方向，0 = U方向， 1 = V方向。
+
+
+delete_inut
+可选参数。布尔值。删除输入曲面。如果省略，输入曲面不会被删除（False）。
+
+
+返回值
+
+
+
+
+Guid
+如果 delete_input 为 False，返回新物件的 ID 。
+
+
+Guid
+如果 delete_input 为 True，返回修改后物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if not rs.IsSurfacePeriodic(obj, 0):
+    rs.MakeSurfacePeriodic(obj, 0)
+同见
+IsSurfacePeriodic
+MakeSurfaceNonPeriodic

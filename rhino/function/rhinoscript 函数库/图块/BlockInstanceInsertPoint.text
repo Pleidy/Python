@@ -1,0 +1,35 @@
+
+BlockInstanceInsertPoint
+返回一个图块引例的插入点（基准点）。
+语法
+rhinoscriptsyntax.BlockInstanceInsertPoint(object_id)
+rhinoscript.block.BlockInstanceInsertPoint(object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。现有图块插入点的 ID。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果执行成功，返回计算得到的 3-D 点。
+
+
+示例
+import rhinoscriptsyntax as rs
+strObject = rs.GetObject("Select block")
+if rs.IsBlockInstance(strObject):
+    rs.AddPoint( rs.BlockInstanceInsertPoint(strObject) )
+同见
+BlockInstanceCount
+BlockInstances
+BlockInstanceXform
+IsBlockInstance
+ 

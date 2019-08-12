@@ -1,0 +1,39 @@
+
+MeshFaceVertices
+返回一个网格物件所有面的顶点序号。
+语法
+rhinoscriptsyntax.MeshFaceVertices (object_id)
+rhinoscript.mesh.MeshFaceVertices (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+列表包含由每个网格面四个顶点的序号构成的子列表。同时返回三角面和四边面。如果第三个顶点和第四个顶点的序号一样，它就是三角面，如果不一样，就是四边面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+faceVerts = rs.MeshFaceVertices( obj )
+if faceVerts:
+    for count, face in enumerate(faceVerts):
+        print "face(", count, ") = (", face[0], ",", face[1], ",", face[2], ",", face[3], ")"
+同见
+IsMesh
+MeshFaceCount
+MeshFaces

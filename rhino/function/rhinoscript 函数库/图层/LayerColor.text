@@ -1,0 +1,48 @@
+
+LayerColor
+返回或修改一个图层的颜色。图层颜色使用 RGB 颜色格式。RGB 格式用红、绿、蓝三种颜色的比例定义一种颜色的显示。
+语法
+rhinoscriptsyntax.LayerColor (layer, color=None)
+rhinoscript.layer.LayerColor (layer, color=None)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。现有图层的名称。
+
+
+color
+可选参数。数字或 System.Drawing.Color 对象中的颜色。新的颜色值。如果省略，返回当前图层的颜色。
+
+
+返回值
+
+
+
+
+System.Drawing.Color
+如果没有指定颜色，返回当前的颜色。
+
+
+System.Drawing.Color
+如果指定了颜色，返回先前的颜色。
+
+
+示例
+import rhinoscriptsyntax as rs
+import random
+from System.Drawing import Color
+ 
+def randomcolor():
+    red = int(255*random.random())
+    green = int(255*random.random())
+    blue = int(255*random.random())
+    return Color.FromArgb(red,green,blue)
+ 
+layerNames = rs.LayerNames()
+if layerNames:
+    for name in layerNames: rs.LayerColor(name, randomcolor())
+同见
+LayerMode

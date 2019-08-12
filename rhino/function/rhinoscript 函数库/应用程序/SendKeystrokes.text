@@ -1,0 +1,28 @@
+
+SendKeystrokes
+发送一个包括空格在内的可显示字符串到 Rhino 的指令行。
+语法
+rhinoscriptsyntax.SendKeystrokes( keys=None, add_return=True )
+rhinoscript.application.SendKeystrokes( keys=None, add_return=True )
+参数
+
+
+
+
+keys
+可选参数。字符串。要发送到指令行的字符串。
+
+
+add_return
+可选参数。布尔值。是否在字符串的末尾加上回车。默认情况下会加上回车（Ture）。
+
+
+返回值
+空值。
+示例
+import rhinoscriptsyntax as rs
+rs.SendKeystroke( "Hello Rhino!")
+rs.SendKeystrokes( 25/4 )
+同见
+Command
+Print

@@ -1,0 +1,45 @@
+
+AddClippingPlane
+创建一个截平面。位于截平面背后的物件会被隐藏。注意，剪切面是无穷大的。
+语法
+rhinoscriptsyntax.AddClippingPlane ( plane, u_magnitude, v_magnitude, views=None )
+rhinoscript.document.AddClippingPlane ( plane, u_magnitude, v_magnitude, views=None )
+参数
+
+
+
+
+plane
+必须参数。平面。
+
+
+u_magnitude
+必须参数。数字。U 方向的长度。
+
+
+v_magnitude
+必须参数。数字。V 方向的长度。
+
+
+views
+可选参数。字符串、Guid 或由字符串、Guid 构成的列表。截平面起作用的视图标题或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddClippingPlane( rs.WorldXYPlane(), 5.0, 3.0 )
+同见
+IsClippingPlane

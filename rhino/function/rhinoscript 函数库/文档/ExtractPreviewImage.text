@@ -1,0 +1,69 @@
+
+ExtractPreviewImage
+从指定的模型（.3dm）提取一个预览位图。
+语法
+rhinoscriptsyntax.ExtractPreviewImage (filename, modelname=None )
+rhinoscript.document.ExtractPreviewImage (filename, modelname=None )
+参数
+
+
+
+
+filename
+必须参数。字符串。要创建的位图文件名。文件的扩展名决定了位图使用的格式。
+
+
+
+
+类型
+描述
+
+
+bmp
+Windows 位图
+
+
+tga
+Truevision Targa
+
+
+jpg, jpeg
+JPEG 压缩格式
+
+
+pcx
+Zsoft Paintbrush
+
+
+png
+Portable 网络图像
+
+
+.tif, .tiff
+标记图像文件格式
+
+
+
+
+modelname
+可选参数。字符串。要提取预览图的模型（.3dm）。如果省略，将使用当前载入的模型。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+result = rs.ExtractPreviewImage("test.jpg")
+if result:
+    print "Test.jpg created successfully."
+else:
+    print "Unable to extract preview image."
+同见
+CreatePreviewImage

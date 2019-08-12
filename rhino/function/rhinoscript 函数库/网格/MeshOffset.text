@@ -1,0 +1,38 @@
+
+MeshOffset
+向现有顶点法线的相反方向偏移顶点，然后用这些顶点生成新的网格。
+语法
+rhinoscriptsyntax.MeshOffset (mesh_id, distance)
+rhinoscript.mesh.MeshOffset (mesh_id, distance)
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+distance
+必须参数。数字。偏移距离。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回偏移生成网格的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+mesh = rs.GetObject("Select mesh to offset", rs.filter.mesh)
+rs.MeshOffset( mesh, 10.0 )
+同见
+IsMesh

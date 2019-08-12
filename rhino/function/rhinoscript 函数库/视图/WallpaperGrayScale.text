@@ -1,0 +1,42 @@
+
+WallpaperGrayScale
+返回或设置指定视图的底色图案灰阶显示。
+语法
+rhinoscriptsyntax.WallpaperGrayScale (view=None, grayscale=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+grayscale
+可选参数。布尔值。底色图案以灰阶显示（True）还是彩色显示（False）。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 grayscale 参数，返回当前的灰阶显示设置。
+
+
+布尔值
+如果指定了 grayscale 参数，返回先前的灰阶显示设置。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.WallpaperGrayScale(view)==False: rs.WallpaperGrayScale(view, True)
+同见
+Wallpaper
+WallpaperHidden

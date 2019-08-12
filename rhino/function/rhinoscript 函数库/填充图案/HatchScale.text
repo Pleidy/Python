@@ -1,0 +1,49 @@
+
+HatchScale
+返回或修改映射到填充图案平面时的图案缩放。
+语法
+rhinoscriptsyntax.HatchScale (hatch_id, scale=None)
+rhinoscript.hatch.HatchScale (hatch_id, scale=None)
+参数
+
+
+
+
+hatch_id
+必须参数。字符串或 Guid。填充图案物件的 ID 。
+
+
+scale
+可选参数。数字。缩放比例因数。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定比例因数，返回当前的缩放比。
+
+
+数字
+如果指定了比例因数，返回先前的缩放比。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.NormalObjects()
+if objects:
+    for obj in objects:
+        if rs.IsHatch(obj) and rs.HatchScale(obj)>1.0:
+            rs.HatchScale(obj, 1.0)
+同见
+AddHatch
+AddHatches
+HatchPattern
+HatchRotation
+IsHatch

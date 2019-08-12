@@ -1,0 +1,36 @@
+
+UnlockObjects
+解锁一个或多个物件。锁定的物件可见，也可以被物件锁点捕捉。但是，不能被选择。
+语法
+rhinoscriptsyntax.UnlockObjects (object_ids)
+rhinoscript.object.UnlockObjects (object_ids)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要解锁物件的 Guid 组成的列表。
+
+
+返回值
+
+
+
+
+数字
+返回成功解锁物件的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to lock")
+if objs: rs.LockObjects(objs)
+#Do something here...
+rs.UnlockObjects( objs )
+同见
+IsObjectLocked
+LockObject
+LockObjects
+UnlockObject
+ 

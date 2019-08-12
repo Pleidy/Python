@@ -1,0 +1,149 @@
+
+AddDetail
+在一个图纸视图中添加一个新的子视图。
+语法
+rhinoscriptsyntax.AddDetail (layout_id, corner1, corner2, title=None, projection=0)
+rhinoscript.view.AddDetail (layout_id, corner1, corner2, title=None, projection=0)
+参数
+
+
+
+
+
+layout_id
+
+
+字符串或 Guid。将要添加子视图的图纸视图的ID。
+
+
+
+
+corner1
+
+
+包含两个数字的列表或者 Point2d 对象。图纸视图的第一个 2d 角点。
+
+
+
+
+corner2
+
+
+包含两个数字的列表或者 Point2d 对象。图纸视图的第二个 2d 角点。
+
+
+
+
+title
+
+
+可选参数。字符串。新子视图的标题。如果省略，将会以子视图的投影模式作为名称。
+
+
+
+
+projection
+
+
+可选参数。子视图的初始投影模式。
+
+
+
+
+
+值
+
+
+描述
+
+
+
+
+1
+
+
+平行 top 视图
+
+
+
+
+2
+
+
+平行 bottom 视图
+
+
+
+
+3
+
+
+平行 left 视图
+
+
+
+
+4
+
+
+平行 right 视图
+
+
+
+
+5
+
+
+平行 left 视图
+
+
+
+
+6
+
+
+平行 right 视图
+
+
+
+
+7
+
+
+透视
+
+
+
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+如果执行成功，返回新建子视图的ID。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+layout = rs.AddLayout("Portrait", (8.5,11))
+if layout:
+    rs.AddDetail(layout, (0.5,0.5), (8,10.5), None, 7)
+同见
+DeleteNamedView
+NamedViews
+RestoreNamedView

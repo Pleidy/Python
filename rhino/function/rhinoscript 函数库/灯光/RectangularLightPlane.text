@@ -1,0 +1,34 @@
+
+RectangularLightPlane
+返回矩形灯光物件的平面。
+语法
+rhinoscriptsyntax.RectangularLightPlane (object_id)
+rhinoscript.light.RectangularLightPlane (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+返回值
+
+
+
+
+平面，范围
+平面及 x,y 方向范围值构成的元组。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a rectangular light", rs.filter.light)
+if id:
+    rc = rs.RectangularLightPlane(id)
+    if rc:
+        plane, extents = rc
+        rs.AddPlaneSurface( plane, extents[0], extents[1] )
+同见
+IsRectangularLight

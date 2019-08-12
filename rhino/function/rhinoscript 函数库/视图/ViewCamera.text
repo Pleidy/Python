@@ -1,0 +1,44 @@
+
+ViewCamera
+返回或设置指定视图的摄影机位置。
+语法
+rhinoscriptsyntax.ViewCamera ( view=None, camera_location=None)
+rhinoscript.view.ViewCamera ( view=None, camera_location=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+camera_location
+可选参数。数组或 Point3d 点对象。作为摄影机新位置的 3-D 点。如果没有指定 camera_location 参数，返回摄影机的当前位置。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果没有指定 camera_location 参数，返回代表摄影机当前位置的 3-D 点。
+
+
+Point3d 点
+如果指定了 camera_location 参数，返回代表摄影机之前所在位置的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+camera = rs.GetPoint("Select new camera location")
+if camera: rs.ViewCamera(view,camera)
+同见
+ViewCameraTarget
+ViewTarget

@@ -1,0 +1,68 @@
+
+XformDiagonal
+返回一个对角变换矩阵。对角变换是底行 = 0,0,0,1 的 3x3 矩阵。.
+ 
+
+
+
+
+
+
+d
+0
+0
+0
+
+
+0
+d
+0
+0
+
+
+0
+0
+d
+0
+
+
+0
+0
+0
+1
+
+
+语法
+rhinoscriptsyntax.XformDiagonal (diagonal_value)
+rhinoscript.transformation.XformDiagonal (diagonal_value)
+参数
+
+
+
+
+diagonal_value
+必须参数。数字。对角值。
+
+
+返回值
+
+
+
+
+变换
+执行成功返回 4x4 的变换矩阵。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def printmatrix(xform):
+    for i in range(4):
+        print "[", xform[i,0], ", ", xform[i,1], ", ", xform[i,2], ", ", xform[i,3], "]"
+printmatrix(rs.XformDiagonal(3))
+同见
+XformIdentity
+XformZero

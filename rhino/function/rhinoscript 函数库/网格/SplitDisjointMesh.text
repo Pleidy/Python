@@ -1,0 +1,39 @@
+
+SplitDisjointMesh
+分割一个网格物件到不连续的片。
+语法
+rhinoscriptsyntax.SplitDisjointMesh (object_id, delete_input=False)
+rhinoscript.mesh.SplitDisjointMesh (object_id, delete_input=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+delete_input
+可选参数。布尔值。删除输入物件。默认情况下不删除输入物件（False）。
+
+
+返回值
+
+
+
+
+列表
+返回新生成网格物件 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+if rs.DisjointMeshCount(obj)>0: rs.SplitDisjointMesh(obj)
+同见
+IsMesh
+DisjointMeshCount

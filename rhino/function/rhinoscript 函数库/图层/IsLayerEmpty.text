@@ -1,0 +1,44 @@
+
+IsLayerEmpty
+判断一个现有的图层是否为空或不包含任何物件。
+语法
+rhinoscriptsyntax.IsLayerEmpty (layer)
+rhinoscript.layer.IsLayerEmpty (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。现有图层的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.GetString("Layer name")
+if rs.IsLayer(layer):
+    if rs.IsLayerEmpty(layer): print "The layer is empty."
+    else: print "The layer is not empty."
+else:
+    print "The layer does not exist."
+同见
+IsLayer
+IsLayerChangeable
+IsLayerLocked
+IsLayerOn
+IsLayerReference
+IsLayerSelectable
+IsLayerVisible

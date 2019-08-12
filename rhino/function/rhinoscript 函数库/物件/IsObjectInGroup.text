@@ -1,0 +1,52 @@
+
+IsObjectInGroup
+判断一个物件是否为指定群组的成员。
+语法
+rhinoscriptsyntax.IsObjectInGroup ( object_id, group_name=None )
+rhinoscript.object.IsObjectInGroup ( object_id, group_name=None )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+group_name
+可选参数。字符串。群组的名称。如果省略，函数将判断物件是否是任意一个群组的成员。
+
+
+返回值
+
+
+
+
+True
+物件是指定群组的成员。如果群组名称没有指定，代表物件是某个群组的成员。
+
+
+False
+物件不是指定群组的成员。如果群组名称没有指定，代表物件不是任何一个群组的成员。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if id:
+    name = rs.GetString("Group name")
+    if name:
+        result = rs.IsObjectInGroup(id, name)
+        if result:
+            print "The object belongs to the group."
+        else:
+            print "The object does not belong to the group."
+同见
+IsObject
+IsObjectHidden
+IsObjectLocked
+IsObjectNormal
+IsObjectReference
+IsObjectSelectable
+IsObjectSelected
+IsObjectSolid

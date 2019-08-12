@@ -1,0 +1,43 @@
+
+MovePlane
+移动一个平面的原点。
+语法
+rhinoscriptsyntax.MovePlane (plane, origin)
+rhinoscript.plane.MovePlane (plane, origin)
+参数
+
+
+
+
+plane
+必须参数。Plane
+
+
+origin
+必须参数。三个数字组成的列表或 Point3d 对象。作为原点新目标位置的 3-D 点。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+origin = rs.GetPoint("CPlane origin")
+if origin:
+    plane = rs.ViewCPlane()
+    plane = rs.MovePlane(plane,origin)
+    rs.ViewCplane(plane)
+同见
+PlaneFromFrame
+PlaneFromNormal
+RotatePlane

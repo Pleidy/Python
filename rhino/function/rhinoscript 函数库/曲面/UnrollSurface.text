@@ -1,0 +1,48 @@
+
+UnrollSurface
+将一个曲面或多重曲面展平 (展开) 为平面曲面。更多关于可展开曲面的信息，请参考 Rhino 帮助文件。
+语法
+rhinoscriptsyntax.UnrollSurface (surface_id, explode=False, following_geometry=None)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。要展开的曲面或多重曲面的 ID 。
+
+
+explode
+可选参数。布尔值。如果为 True ,计算生成的曲面不会组合在一起。如果为 False (默认值)，计算生成的曲面依然按照原来多重曲面边缘的排布组合在一起。
+
+
+following_geometry
+可选参数。字符串或 Guid 构成的列表。沿着曲面上的曲线或注解点依次展开曲面时，曲线或注解点的 ID 。
+
+
+返回值
+
+
+
+
+列表
+如果 following_geometry 为空，返回展平后的曲面或多重曲面。
+
+
+两个列表构成的元组
+如果 following_geometry 不为空，返回两个列表构成的元组。
+列表 1 - 展平后曲面或多重曲面的 ID 。
+列表 2 - 沿着几何体依次展开曲面以后，展开后曲面上对应的几何体的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface or polysurface to unroll", rs.filter.surface + rs.filter.polysurface)
+if surface: rs.UnrollSurface(surface)
+同见
+IsSurfaceUnrollable
+ 

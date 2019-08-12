@@ -1,0 +1,40 @@
+
+IsPointOnSurface
+判断一个点是否在曲面上。
+语法
+rhinoscriptsyntax.IsPointOnSurface (object_id, point)
+rhinoscript.surface.IsPointOnSurface (object_id, point)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。要计算的点或采样点。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+surf = rs.GetObject("Select a surface")
+if rs.IsSurface(surf):
+    point = rs.GetPoint("Pick a test point")
+    if point:
+        if rs.IsPointOnSurface(surf, point):
+            print "The point is on the surface."
+        else:
+            print "The point is not on the surface."
+同见
+IsPointInSurface

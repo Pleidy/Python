@@ -1,0 +1,41 @@
+
+IsPolysurface
+判断一个物件是否为多重曲面。多重曲面是由两个或更多的曲面组合在一起构成的。如果多重曲面将一个空间体积完全包围，那么可以认为它是实体。在其他的一些 3-D 软件中，被称为“quilt(缝合)”。
+语法
+rhinoscriptsyntax.IsPolysurface (object_id)
+rhinoscript.surface.IsPolysurface (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a polysurface")
+if rs.IsPolysurface(obj):
+    print "The object is a polysurface."
+else:
+    print "The object is not a polysurface."
+同见
+IsBrep
+IsPolysurfaceClosed
+IsPolysurfacePlanar
+ 
+ 

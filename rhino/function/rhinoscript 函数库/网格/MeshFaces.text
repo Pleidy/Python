@@ -1,0 +1,67 @@
+
+MeshFaces
+返回一个网格物件网格面的顶点。
+语法
+rhinoscriptsyntax.MeshFaces (object_id, face_type = True)
+rhinoscript.mesh.MeshFaces (object_id, face_type = True)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+face_type
+可选参数。布尔值。返回面的类型。如果省略，同时三角面和四边面（True）。
+
+
+
+
+值
+描述
+
+
+True
+三角面和四边面。
+
+
+False
+仅三角面。
+
+
+
+
+返回值
+
+
+
+
+列表
+代表网格面顶点的 3-D 点列表。如果 face_type 设置为 True，同时返回四边面和三角面 （四个 3-D 点）。对于三角面，第三和第四个顶点是相同的。如果 face_type 设置为 False，仅返回三角面 （三个 3-D 点）。四边面将转为三角面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+faces = rs.MeshFaces(obj, False)
+if faces:
+    rs.EnableRedraw(False)
+    i = 0
+    while( i<=len(faces) ):
+        face = faces[i], faces[i+1], faces[i+2], faces[i]
+        rs.AddPolyline( face )
+        i += 3
+rs.EnableRedraw(True)
+同见
+IsMesh
+MeshContourPoints
+MeshFaceCount
+MeshVertexCount
+MeshVertices
+ 

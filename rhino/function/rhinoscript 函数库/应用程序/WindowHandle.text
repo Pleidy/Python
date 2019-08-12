@@ -1,0 +1,22 @@
+
+WindowHandle
+返回 Rhino 主窗口的窗口句柄。
+语法
+rhinoscriptsyntax.WindowHandle()
+rhinoscript.application.WindowHandle()
+参数
+空值。
+返回值
+
+
+
+
+数字
+Rhino 主窗口句柄。
+
+
+示例
+import rhinoscriptsyntax as rs
+handle = rs.WindowHandle()
+print handle
+同见

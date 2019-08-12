@@ -1,0 +1,40 @@
+
+IsVectorZero
+判断一个向量是否为零向量或微向量 - 其 x,y,z 值均约等于 0 。
+语法
+rhinoscriptsyntax.IsVectorZero (vector)
+rhinoscript.pointvector.IsVectorZero (vector)
+参数
+
+
+
+
+vector
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。用于判断的 3-D 向量。
+
+
+返回值
+
+
+
+
+Boolean
+如果为零向量，返回 True，否则返回 False 。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+pt1 = rs.GetPoint("First point")
+pt2 = rs.GetPoint("Next point")
+vector = pt2 - pt1
+if rs.IsVectorZero(vector):
+    print "The vector is zero."
+else:
+    print "The vector is not zero."
+同见
+IsVectorTiny
+VectorCreate

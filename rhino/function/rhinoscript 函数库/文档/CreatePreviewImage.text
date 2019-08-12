@@ -1,0 +1,101 @@
+
+CreatePreviewImage
+从当前模型创建一个预览位图。
+语法
+rhinoscriptsyntax.CreatePreviewImage (filename, view=None, size=None, flags=0, wireframe=False)
+rhinoscript.document.CreatePreviewImage (filename, view=None, size=None, flags=0, wireframe=False)
+参数
+
+
+
+
+filename
+必须参数。字符串。要创建的位图文件名。文件的扩展名决定了位图使用的格式。
+
+
+
+
+类型
+描述
+
+
+bmp
+Windows 位图
+
+
+tga
+Truevision Targa
+
+
+jpg, jpeg
+JPEG 压缩格式
+
+
+pcx
+Zsoft Paintbrush
+
+
+png
+Portable 网络图像
+
+
+.tif, .tiff
+标记图像文件格式
+
+
+
+
+view
+可选参数。字符串。视图的标题。如果省略，将使用当前视图。
+
+
+size
+可选参数。元组或列表。由表示图片分辨率宽度和高度的两个整数组成的元组或列表。
+
+
+flags
+可选参数。整数。位图创建标记。以下的值可以相加代入此参数实现多选：
+
+
+
+
+值
+描述
+
+
+1
+忽略高亮。默认情况下忽略高亮（False）。
+
+
+2
+绘制工作平面。默认情况下不绘制工作平面（False）。
+
+
+4
+使用半透明。默认情况下使用默认显示模式（False）。
+
+
+
+
+线框显示
+可选参数。布尔值。如果设置为 True，将创建线框预览图代替渲染图像。注意，如果设置为 True ，将忽略半透明设置。默认值为 Flase。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+result = rs.CreatePreviewImage("test.jpg")
+if result:
+    print "test.jpg created successfully."
+else:
+    print "Unable to create preview image."
+同见
+ExtractPreviewImage

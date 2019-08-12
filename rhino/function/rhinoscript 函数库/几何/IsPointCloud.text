@@ -1,0 +1,36 @@
+
+IsPointCloud
+判断一个物件是否是点云物件。
+语法
+rhinoscriptsyntax.IsPointCloud (object_id)
+rhinoscript.geometry.IsPointCloud (object_id)
+参数
+
+
+
+
+object_id
+必须参数。Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a point cloud")
+if rs.IsPointCloud(id):
+    print "The object is a point cloud."
+else:
+    print "The object is not a point cloud."
+同见
+AddPointCloud
+PointCloudCount
+PointCloudPoints
+ 

@@ -1,0 +1,36 @@
+
+EllipseQuadPoints
+返回椭圆曲线物件的四分点。
+语法
+rhinoscriptsyntax.EllipseQuadPoints (curve_id)
+rhinoscript.curve.EllipseQuadPoints (curve_id)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回作为椭圆四分点的 3-D 点元组。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select ellipse")
+if rs.IsEllipse(obj):
+    rs.AddPoints( rs.EllipseQuadPoints(obj) )
+同见
+IsEllipse
+EllipseCenterPoint

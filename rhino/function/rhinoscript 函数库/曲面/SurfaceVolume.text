@@ -1,0 +1,51 @@
+
+SurfaceVolume
+计算闭合曲面或多重曲面物件的体积。
+语法
+rhinoscriptsyntax.SurfaceVolume (object_id)
+rhinoscript.surface.SurfaceVolume (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回一个包含体积信息的列表。列表包含以下信息：
+
+
+
+
+数字
+体积。
+
+
+数字
+体积的绝对(+/-)误差范围。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.polysurface)
+if rs.IsPolysurfaceClosed(obj):
+    massprop = rs.SurfaceVolume(obj)
+    if massprop:
+        print "The polysurface volume is:", massprop[0]
+同见
+SurfaceVolume
+SurfaceVolumeCentroid
+SurfaceVolumeMoments

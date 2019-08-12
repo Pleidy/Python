@@ -1,0 +1,42 @@
+
+PlanePlaneIntersection
+计算两个平面的相交。
+语法
+rhinoscriptsyntax.PlanePlaneIntersection(plane1, plane2)
+rhinoscript.plane.PlanePlaneIntersection(plane1, plane2)
+参数
+
+
+
+
+plane1
+必须参数。要求交的第一个平面。
+
+
+plane2
+必须参数。要求交的第二个平面。
+
+
+返回值
+
+
+
+
+元组
+两个 3-D 点分别代表相交直线的起点和终点。。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane1 = rs.WorldXYPlane()
+plane2 = rs.WorldYZPlane()
+line = rs.PlanePlaneIntersection(plane1, plane2)
+if line: rs.AddLine(line[0], line[1])
+同见
+IntersectPlanes
+LineLineIntersection
+LinePlaneIntersection

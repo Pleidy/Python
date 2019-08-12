@@ -1,0 +1,40 @@
+
+VectorMultiply
+两个 3-D 向量相乘。
+语法
+rhinoscriptsyntax.VectorMultiply (vector1, vector2)
+rhinoscript.pointvector.VectorMultiply (vector1, vector2)
+参数
+
+
+
+
+vector1
+必须参数。数组。The first 3-D vector.
+
+
+vector2
+必须参数。数组。第二个 3-D 向量。
+
+
+返回值
+
+
+
+
+Number
+执行成功，返回计算结果。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+product = rs.VectorMultiply( [2,2,2], [3,3,3] )
+print product
+同见
+VectorAdd
+VectorCreate
+VectorSubtract

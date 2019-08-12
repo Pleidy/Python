@@ -1,0 +1,41 @@
+
+IsTorus
+判断曲面是否为圆环的一部分。
+语法
+rhinoscriptsyntax.IsTorus (surface_id)
+rhinoscript.surface.IsTorus (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select a surface", rs.filter.surface)
+if surface:
+    if rs.IsTorus(surface):
+        print "The surface is a portion of a torus."
+    else:
+        print "The surface is not a portion of a torus."
+同见
+IsCone
+IsCylinder
+IsSphere
+IsSurface

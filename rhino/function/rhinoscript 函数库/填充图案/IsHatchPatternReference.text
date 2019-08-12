@@ -1,0 +1,46 @@
+
+IsHatchPatternReference
+判断一个图案是否来自于一个参考文件。
+语法
+rhinoscriptsyntax.IsHatchPatternReference(hatch_pattern)
+rhinoscript.hatch.IsHatchPatternReference(hatch_pattern)
+参数
+
+
+
+
+hatch_pattern
+必须参数。字符串。现有图案的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+hatch = rs.GetString("Hatch pattern name")
+if rs.IsHatchPattern(hatch):
+    if rs.IsHatchPatternReference(hatch):
+        print "The hatch pattern is reference."
+    else:
+        print "The hatch pattern is not reference."
+else:
+    print "The hatch pattern does not exist."
+同见
+IsHatchPattern
+IsHatchPatternCurrent
+ 

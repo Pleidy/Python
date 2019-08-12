@@ -1,0 +1,46 @@
+
+IsToolbar
+判断一个工具列（或工具列组）是否存在于一个已打开工具列收藏夹中。
+语法
+rhinoscriptsyntax.IsToolbar(name, toolbar, group=False)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+toolbar
+必须参数。字符串。要判断工具列的名称。
+
+
+group
+可选参数。布尔值。toolbar 参数是否为工具列组。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+file = "C:\\SteveBaer\\AppData\\Roaming\\McNeel\\Rhinoceros\\5.0\\UI\\default.rui"
+name = rs.IsToolbarCollection(file)
+if name:
+    if rs.IsToolbar(name, "Layer"):
+        print "The collection contains the Layer toolbar."
+    else:
+        print "The collection does not contain the Layer toolbar."
+同见
+HideToolbar
+IsToolbarVisible
+ShowToolbar
+ToolbarCount
+ToolbarNames

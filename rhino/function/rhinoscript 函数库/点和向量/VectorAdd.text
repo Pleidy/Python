@@ -1,0 +1,42 @@
+
+VectorAdd
+两个 3-D 向量相加。
+语法
+rhinoscriptsyntax.VectorAdd (vector1, vector2)
+rhinoscript.pointvector.VectorAdd (vector1, vector2)
+参数
+
+
+
+
+vector1
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。用于相加的 3-D 向量。
+
+
+vector2
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。用于相加的 3-D 向量。
+
+
+返回值
+
+
+
+
+Vector2d
+如果执行成功，返回计算得到的 3-D 向量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector1 = (1,0,0)
+vector2 = (0,1,0)
+vector = rs.VectorAdd(vector1, vector2)
+print vector
+同见
+VectorCreate
+VectorScale
+VectorSubtract

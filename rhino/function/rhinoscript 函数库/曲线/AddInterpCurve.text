@@ -1,0 +1,80 @@
+
+AddInterpCurve
+在文档中添加一个内插点曲线。可以设定生成为周期曲线或设定终点位置为相切连续。在特定阶数下生成结果为非有理的 NURBS 曲线。
+语法
+rhinoscriptsyntax.AddInterpCurve(points, degree=3, knotstyle=0, start_tangent=None, end_tangent=None)
+rhinoscript.curve.AddInterpCurve(points, degree=3, knotstyle=0, start_tangent=None, end_tangent=None)
+参数
+
+
+
+
+points
+必须参数。一个包含作为内插点的 3-D 点列表。对于周期曲线，如果终点和起点相同，将被忽略。注意，控制点数量必须 >= (intDegree+1)。
+
+
+degree
+可选参数。数字。曲线的阶数。如果省略，阶数值将设定为 3 。阶数必须大于等于 1 。周期曲线阶数必须大于等于 2 。当 intKnotStyle = 1 或 2，阶数必须为 3 。当 intKnotStyle = 4 或 5，阶数必须为奇数 。
+
+
+knotstyle
+可选参数。数字。节点类型，以及是否为周期曲线。如果省略，将使用均匀节点（0）创建。
+
+
+
+
+值
+描述
+
+
+0
+均匀节点。连续参数之间的间隔必须为 1.0 。
+
+
+1
+弦长。需要 dblDegree = 3 并且指定 arrCV1 和 arrCVn1 。
+
+
+2
+平方 （弦长）。需要 dblDegree = 3 并且指定 arrCV1 和 arrCVn1 。
+
+
+3
+周期均匀。
+
+
+4
+周期弦长。阶数必须为奇数。
+
+
+5
+周期平方（弦长）。阶数必须为奇数。
+
+
+
+
+start_tangent, end_tangent
+可选参数。在曲线终点位置指示切线的 3D 向量。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = (0,0,0), (1,1,0), (2,0,0), (3,1,0), (4,0,0), (5,1,0)
+rs.AddInterpCurve(points)
+同见
+AddCurve
+CurvePointCount
+IsCurve

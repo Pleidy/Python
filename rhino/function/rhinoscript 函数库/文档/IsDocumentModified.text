@@ -1,0 +1,23 @@
+
+IsDocumentModified
+判断当前的文档是否被修改。
+语法
+rhinoscriptsyntax.IsDocumentModified ()
+rhinoscript.document.IsDocumentModified ()
+参数
+空值。
+返回值
+
+
+
+
+布尔值
+True 代表已修改，False 代表未修改。
+
+
+示例
+import rhinoscriptsyntax as rs
+modified = rs.IsDocumentModified()
+if not modified: rs.DocumentModified(True)
+同见
+DocumentModified

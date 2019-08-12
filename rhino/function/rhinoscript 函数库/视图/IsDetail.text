@@ -1,0 +1,48 @@
+
+IsDetail
+判断视图是否是一个现有图纸视图的子视图。
+语法
+rhinoscriptsyntax.IsDetail (layout, detail)
+rhinoscript.view.IsDetail (layout, detail)
+参数
+
+
+
+
+layout
+必须参数。字符串或 Guid。已存在图纸视图的标题或 ID 。
+
+
+detail
+必须参数。字符串或 Guid。现有子视图的标题或 ID 。
+
+
+返回值
+
+
+
+
+True
+ detail 是一个子视图。
+
+
+False
+ detail 不是子视图。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.IsLayout(view):
+    isdetail = rs.IsDetail(view, "Top")
+    if isdetail:
+        print "Top is a detail view."
+    else:
+        print "Top is not a detail view."
+同见
+IsLayout
+CurrentDetail

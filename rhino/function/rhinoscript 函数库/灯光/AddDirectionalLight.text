@@ -1,0 +1,36 @@
+
+AddDirectionalLight
+在当前文档中添加一个平行光。
+语法
+rhinoscriptsyntax.AddDirectionalLight (start_point, end_point)
+rhinoscript.light.AddDirectionalLight (start_point, end_point)
+参数
+
+
+
+
+start_point
+必须参数。三个数字组成的列表或 Point3d 对象。作为灯光起点的 3-D 点。
+
+
+end_point
+必须参数。三个数字组成的列表或 Point3d 对象。作为灯光终点的 3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+end = rs.GetPoint("End of light vector direction")
+if end:
+    start = rs.GetPoint("Start of light vector direction", end)
+    if start: rs.AddDirectionalLight( start, end )
+同见
+IsDirectionalLight

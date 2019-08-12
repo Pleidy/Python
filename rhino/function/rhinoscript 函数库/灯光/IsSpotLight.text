@@ -1,0 +1,36 @@
+
+IsSpotLight
+判断灯光物件是否为聚光灯。
+语法
+rhinoscriptsyntax.IsSpotLight (object_id)
+rhinoscript.light.IsSpotLight (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if rs.IsSpotLight(id):
+    print "The object is a spot light."
+else:
+    print "The object is not a spot light."
+同见
+AddSpotLight
+SpotLightHardness
+SpotLightShadowIntensity
+ 

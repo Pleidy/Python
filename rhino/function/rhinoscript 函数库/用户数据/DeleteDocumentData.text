@@ -1,0 +1,38 @@
+
+DeleteDocumentData
+移除当前文档中记录的用户数据。
+语法
+rhinoscriptsyntax.DeleteDocumentData (section=None, entry=None)
+rhinoscript.userdata.DeleteDocumentData (section=None, entry=None)
+参数
+
+
+
+
+section
+可选参数。字符串。小节名称。如果省略，所有小节和其对应的记录都会被移除。
+
+
+entry
+可选参数。字符串。记录名称。如果省略， section 参数指定的小节中所以的记录都会被移除。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.DeleteDocumentData( "MySection1", "MyEntry1" )
+rs.DeleteDocumentData( "MySection1", "MyEntry2" )
+rs.DeleteDocumentData( "MySection2", "MyEntry1" )
+同见
+DocumentDataCount
+GetDocumentData
+IsDocumentData
+SetDocumentData

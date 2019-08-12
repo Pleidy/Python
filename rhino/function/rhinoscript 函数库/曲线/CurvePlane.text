@@ -1,0 +1,37 @@
+
+CurvePlane
+返回平面曲线所在的平面。注意，此函数只对平面曲线起作用。
+语法
+rhinoscriptsyntax.CurvePlane (curve_id, segment_index=-1)
+rhinoscript.curve.CurvePlane (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。平面曲线物件 的 ID 。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回曲线所在平面。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve", rs.filter.curve)
+if rs.IsCurvePlanar(curve):
+    plane = rs.CurvePlane(curve)
+    rs.ViewCPlane(None, plane)
+同见
+IsCurve
+IsCurvePlanar

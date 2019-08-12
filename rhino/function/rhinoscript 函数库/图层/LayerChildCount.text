@@ -1,0 +1,30 @@
+
+LayerChildCount
+返回图层直属子图层的数量（子图层的子图层不计算在内）。
+语法
+rhinoscriptsyntax.LayerChildCount (layer)
+rhinoscript.layer.LayerChildCount (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。图层的名称或 ID。
+
+
+返回值
+
+
+
+
+数字
+直属子图层的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+children = rs.LayerChildCount("Default")
+if children: rs.ExpandLayer("Default", True)
+同见
+LayerChildren

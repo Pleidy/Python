@@ -1,0 +1,42 @@
+
+AddRectangle
+在文档中添加一个矩形。
+语法
+rhinoscriptsyntax.AddRectangle ( plane, width, height )
+rhinoscript.curve.AddRectangle ( plane, width, height )
+参数
+
+
+
+
+plane
+在哪个平面上生成矩形。
+
+
+width
+矩形的宽度，即所在平面 X 轴方向的尺寸。
+
+
+height
+矩形的高度，即所在平面 Y 轴方向的尺寸。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.WorldXYPlane()
+plane = rs.RotatePlane(plane, 45.0, [0,0,1])
+rs.AddRectangle( plane, 5.0, 15.0 )
+同见

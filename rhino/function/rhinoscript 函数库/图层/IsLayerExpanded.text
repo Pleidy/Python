@@ -1,0 +1,30 @@
+
+IsLayerExpanded
+判断一个图层是否展开。图层展开后就可以在 Rhino 图层面板中看到它的子图层。
+语法
+rhinoscriptsyntax.IsLayerExpanded (layer)
+rhinoscript.layer.IsLayerExpanded (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。被测试图层的名称或 ID。
+
+
+返回值
+
+
+
+
+布尔值
+展开返回 True，折叠返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+if rs.IsLayerExpanded("Default"):
+    rs.ExpandLayer( "Default", False )
+同见
+ExpandLayer

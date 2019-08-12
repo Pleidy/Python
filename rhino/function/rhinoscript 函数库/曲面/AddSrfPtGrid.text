@@ -1,0 +1,53 @@
+
+AddSrfPtGrid
+通过网状排布的点创建一个曲面。
+语法
+rhinoscriptsyntax.AddSrfPtGrid (count, points, degree=(3,3), closed=(False,False))
+rhinoscript.surface.AddSrfPtGrid (count, points, degree=(3,3), closed=(False,False))
+参数
+
+
+
+
+count
+必须参数。两个数构成的元组。U 方向和 V 方向点的数量。
+
+
+points
+必须参数。3-D 点构成的元组或列表。
+
+
+degree
+可选参数。两个数构成的元组。曲面在 U 方向和 V 方向的阶数。如果省略，新曲面 U 方向和 V 方向的阶数都将设置为 3 。
+
+
+closed
+可选参数。两个布尔值构成的元组。曲面在 U 方向和 V 方向是否闭合。如果省略，新生成的曲面在 U 方向 或 V 方向都是不闭合的。 
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = 5,5
+points = []
+for i in range(count[0]):
+    for j in range(count[1]):
+        pt = i*2, j*4, 0
+        points.append(pt)
+rs.AddSrfPtGrid(count, points)
+同见
+AddEdgeSrf
+AddSrfControlPtGrid
+AddSrfPt

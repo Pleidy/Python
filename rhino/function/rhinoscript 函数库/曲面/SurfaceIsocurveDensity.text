@@ -1,0 +1,68 @@
+
+SurfaceIsocurveDensity
+返回或修改曲面或多重曲面物件的iso结构线密度。由连续的U向或V向不间断的参数值点构成的曲线就是 iso 结构线。Rhino 使用 iso 结构线和曲面边缘使 NURBS 曲面呈现出可视形态。
+语法
+rhinoscriptsyntax.SurfaceIsocurveDensity (surface_id, density=None)
+rhinoscript.surface.SurfaceIsocurveDensity (surface_id, density=None)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+density
+可选参数。数字。iso 结构线密度。结果如下：
+
+
+
+
+值
+描述
+
+
+-1
+隐藏曲面的 iso 结构线。
+
+
+0        
+显示边线和节点位置线。
+
+
+1
+显示边线和节点位置线，并在没有内部节点的地方显示一条内部线。
+
+
+>= 2
+显示边线和节点线，并显示（N+1)条内部线。
+
+
+
+
+返回值
+
+
+
+
+数字
+如果 density 没有定义，返回当前的 iso 结构线密度 。
+
+
+数字
+如果定义了 density 参数，返回先前的 iso 结构线密度。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface | rs.filter.polysurface)
+if obj: rs.SurfaceIsocurveDensity( obj, 8 )
+同见
+IsPolysurface
+IsSurface
+ 

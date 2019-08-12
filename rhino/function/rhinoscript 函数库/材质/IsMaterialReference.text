@@ -1,0 +1,41 @@
+
+IsMaterialReference
+判断一个材质是否是从另一个文件引用的。
+语法
+rhinoscriptsyntax.IsMaterialReference (material_index)
+rhinoscript.material.IsMaterialReference (material_index)
+参数
+
+
+
+
+material_index
+必须参数。数字。材质的序号。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject()
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if rs.IsMaterialReference(index):
+        print "The material is referenced from another file."
+    else:
+        print "The material is not referenced from another file."
+同见
+IsLayerReference
+IsLightReference
+isObjectReference

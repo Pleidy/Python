@@ -1,0 +1,57 @@
+
+LastCommandResult
+返回最后执行指令的执行结果代码。
+语法
+rhinoscriptsyntax.LastCommandResult()
+rhinoscript.application.LastCommandResult()
+参数
+空值。
+返回值
+
+
+
+
+数字
+执行结果代码。执行结果代码如下：
+
+
+
+
+值
+描述
+
+
+0
+成功。指令执行成功。
+
+
+1
+取消。用户取消执行。
+
+
+2
+空。指令什么都没有做（但不是被用户取消的）。
+
+
+3
+失败。指令执行失败（不正确的输入、电脑计算错误等引起的）。
+
+
+4
+未知指令。指令没有找到。
+
+
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.Command( "Line" )
+result = rs.LastCommandResult()
+if result==0:
+    print "The command completed."
+else:
+    print "The command did not complete."
+同见
+Command
+IsCommand
+LastCommandName

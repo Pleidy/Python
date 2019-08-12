@@ -1,0 +1,42 @@
+
+IsCurveInPlane
+测试一条曲线是否在指定的平面内。
+语法
+rhinoscriptsyntax.IsCurveInPlane (object_id, plane=None)
+rhinoscript.curve.IsCurveInPlane (object_id, plane=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+plane
+可选参数。新的构造平面。如果省略，将使用当前启用的构造平面。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj) and rs.IsCurvePlanar(obj):
+    if rs.IsCurveInPlane(obj):
+        print "The curve lies in the current cplane."
+    else:
+        print "The curve does not lie in the current cplane."
+else:
+    print "The object is not a planar curve."
+同见
+IsCurve
+IsCurvePlanar
+ 

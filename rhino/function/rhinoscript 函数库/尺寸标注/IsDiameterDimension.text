@@ -1,0 +1,43 @@
+
+IsDiameterDimension
+判断一个物件是否为直径尺寸标注。
+语法
+rhinoscriptsyntax.IsDiameterDimension (object_id)
+rhinoscript.dimension.IsDiameterDimension (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+Boolean
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsDiameterDimension(obj):
+    print "The object is a diameter dimension."
+else:
+    print "The object is not a diameter dimension."
+同见
+IsAlignedDimension
+IsAngularDimension
+IsDimension
+IsLinearDimension
+IsOrdinateDimension
+IsRadialDimension
+ 

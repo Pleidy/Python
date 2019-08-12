@@ -1,0 +1,46 @@
+
+ViewCPlane
+返回或者设置指定视图的工作平面。
+语法
+rhinoscriptsyntax.ViewCPlane (view=None, plane=None)
+rhinoscript.view.ViewCPlane (view=None, plane=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+plane
+可选参数。新的工作平面。
+
+
+返回值
+
+
+
+
+Plane
+如果工作平面没有指定，返回当前的工作平面。
+
+
+Plane
+如果指定了工作平面，返回先前的工作平面。
+
+
+示例
+import rhinoscriptsyntax as rs
+origin = rs.GetPoint("CPlane origin")
+if origin:
+    plane = rs.ViewCPlane()
+    plane = rs.MovePlane(plane,origin)
+    rs.ViewCPlane(None, plane)
+同见
+ViewCameraLens
+ViewCameraTarget
+ViewDisplayModes
+ViewProjection
+ViewSize
+ 

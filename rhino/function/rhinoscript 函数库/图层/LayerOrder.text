@@ -1,0 +1,31 @@
+
+LayerOrder
+返回一个图层在 Rhino 图层面板中当前的显示序号。如果序号为 -1，说明按照当前的图层过滤器设置，该图层没有在图层面板中显示。
+语法
+rhinoscriptsyntax.LayerOrder(layer)
+rhinoscript.layer.LayerOrder(layer)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回图层的显示序号。
+
+
+示例
+import rhinoscriptsyntax as rs
+index = rs.LayerOrder("Default")
+if index is not None:
+    if index==-1: print "The layer does not display in the Layer dialog."
+    else: print "The layer does display in the Layer dialog."
+同见

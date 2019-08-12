@@ -1,0 +1,47 @@
+
+CurveArcLengthPoint
+曲线起点开始计算，返回曲线上指定弧长的点。
+语法
+rhinoscriptsyntax.CurveArcLengthPoint ( curve_id, length, from_start=True )
+rhinoscript.curve.CurveArcLengthPoint ( curve_id, length, from_start=True )
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+length
+必须参数。数字。从曲线起点开始的弧长。
+
+
+from_start
+可选参数。布尔值。如果省略此参数或设置为 True，将从曲线起点开始计算弧长点。如果省略此参数或设置为 False，将从曲线终点开始计算。
+
+
+返回值
+
+
+
+
+Point3d
+如果执行成功，返回计算得到的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    length = rs.CurveLength(obj)
+    point = rs.CurveArcLengthPoint(obj, length/3.0)
+    rs.AddPoint( point )
+同见
+CurveEndPoint
+CurveMidPoint
+CurveStartPoint

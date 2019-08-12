@@ -1,0 +1,44 @@
+
+CurveNormalizedParameter
+将曲线参数转换为标准化的曲线参数，标准化的曲线参数范围在 0.0 到 1.0 之间。
+语法
+rhinoscriptsyntax.CurveNormalizedParameter (curve_id, parameter)
+rhinoscript.curve.CurveNormalizedParameter (curve_id, parameter)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字。要转换的曲线参数。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回标准化的曲线参数。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve")
+if rs.IsCurve(obj):
+    domain = rs.CurveDomain(obj)
+    parameter = (domain[0]+domain[1])/2.0
+    print "Curve parameter:", parameter
+    normalized = rs.CurveNormalizedParameter(obj, parameter)
+    print "Normalized parameter:", normalized
+同见
+CurveDomain
+CurveParameter

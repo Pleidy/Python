@@ -1,0 +1,38 @@
+
+AddLine
+在当前的模型中添加一个直线。
+语法
+rhinoscriptsyntax.AddLine (start, end )
+rhinoscript.curve.AddLine (start, end )
+参数
+
+
+
+
+start
+必须参数。Point3d 对象或由三个数组成的列表。直线起点。
+
+
+end
+必须参数。Point3d 对象或由三个数组成的列表。直线终点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+start = rs.GetPoint("Start of line")
+if start:
+    end = rs.GetPoint("End of line")
+    if end: rs.AddLine(start, end)
+同见
+CurveEndPoint
+CurveStartPoint
+IsLine

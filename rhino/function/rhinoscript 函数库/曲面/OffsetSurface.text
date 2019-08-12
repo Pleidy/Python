@@ -1,0 +1,43 @@
+
+OffsetSurface
+按照一定的距离偏移一个剪切或未剪切的曲面。偏移生成的曲面将被添加到 Rhino。
+语法
+rhinoscriptsyntax.OffsetSurface (surface_id, distance, tolerance=None)
+rhinoscript.surface.OffsetSurface (surface_id, distance, tolerance=None)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+distance
+必须参数。数字。偏移距离。
+
+
+tolerance
+可选参数。数字。偏移公差。使用 0.0 将会执行一个不精确的偏移。省略此参数，将会使用当前文档的绝对公差，通常使用绝对公差已经够用了。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurface(surface):
+    rs.OffsetSurface( surface, 10.0 )
+同见
+OffsetCurve

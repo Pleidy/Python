@@ -1,0 +1,63 @@
+
+OrientObject
+按照输入的点定位一个单一物件。
+语法
+rhinoscriptsyntax.OrientObject (object_id, reference, target, flags=0)
+rhinoscript.object.OrientObject (object_id, reference, target, flags=0)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要定位物件的 ID 。
+
+
+reference
+必须参数。数组。包含 3-D 参考点的数组。如果指定了两个 3-D 点，这个函数就接近于 Rhino 的 Orient 指令。如果指定的 3-D 点在两个以上，这个函数就接近于 Rhino 的 Orient3Pt 指令。
+
+
+target
+必须参数。数组。包含 3-D 目标点的数组。如果指定了两个 3-D 点，这个函数就接近于 Rhino 的 Orient 指令。如果指定的 3-D 点在两个以上，这个函数就接近于 Rhino 的 Orient3Pt 指令。
+
+
+flags
+可选参数。数字。定位标示。可以加在一起指定多个选项。
+
+
+
+
+值
+描述
+
+
+1
+复制物件。默认情况下不复制物件。
+
+
+2
+缩放物件。默认情况下不缩放物件。注意，只有在 reference 参数和 target 参数都只包含两个3-D 点时此功能有效。
+
+
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回定位以后的物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object to orient")
+if obj:
+    reference = rs.GetPoints(message1="First reference point")
+    if reference and len(reference)>0:
+        target = rs.GetPoints(message1="First target point")
+        if target and len(target)>0:
+            rs.OrientObject( obj, reference, target )
+同见
+OrientObjects

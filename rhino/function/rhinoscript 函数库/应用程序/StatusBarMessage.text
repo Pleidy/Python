@@ -1,0 +1,24 @@
+
+StatusBarMessage
+设置 Rhino 的状态栏信息窗格距离。
+语法
+rhinoscriptsyntax.StatusBarMessage (message=None)
+rhinoscript.application.StatusBarMessage (message=None)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+rs.StatusBarMessage("Hello Rhino!")
+同见
+StatusBarDistance
+StatusBarNumber
+StatusBarPoint

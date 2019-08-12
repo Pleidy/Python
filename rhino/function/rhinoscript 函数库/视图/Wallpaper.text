@@ -1,0 +1,74 @@
+
+Wallpaper
+返回或设置指定视图的底色图案。要移除一个底色图案，传递一个空值或“”作为要显示底色图案的文件名。
+语法
+rhinoscriptsyntax.Wallpaper(view=None, filename=None)
+rhinoscript.view.Wallpaper(view=None, filename=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+filename
+可选参数。字符串。要设置为底色图案的位图的文件名。支持以下格式的位图文件：
+
+
+
+
+.bmp
+Windows 位图
+
+
+.tga
+Truevision Targa
+
+
+.jpg, .jpeg
+JPEG 压缩格式
+
+
+.pcx
+Zsoft Paintbrush
+
+
+.png
+Portable 网络图像
+
+
+.tif, .tiff
+标记图像文件格式
+
+
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 filename 参数，返回当前底色图案位图的文件名。
+
+
+字符串
+如果指定了 filename 参数，返回先前底色图案位图的文件名。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+filename = rs.OpenFileName()
+if filename and not rs.IsWallpaper(view):
+    rs.Wallpaper(view, filename)
+同见
+IsWallpaper
+WallpaperGrayScale
+WallpaperHidden

@@ -1,0 +1,41 @@
+
+IsCircle
+判断一个物件是否为圆。
+语法
+rhinoscriptsyntax.IsCircle (curve_id, segment_index)
+rhinoscript.curve.IsCircle (curve_id, segment_index)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a circle")
+if rs.IsCircle(obj):
+    print "The object is a circle."
+else:
+    print "The object is not a circle."
+同见
+AddCircle
+AddCircle3Pt
+CircleCenterPoint
+CircleCircumference
+CircleRadius

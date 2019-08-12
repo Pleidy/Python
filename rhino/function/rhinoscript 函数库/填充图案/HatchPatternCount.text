@@ -1,0 +1,22 @@
+
+HatchPatternCount
+返回当前文档中图案的数量。
+语法
+rhinoscriptsyntax.HatchPatternCount()
+rhinoscript.hatch.HatchPatternCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+文档中图案的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "There are", rs.HatchPatternCount(), "hatch patterns."
+同见
+HatchPatternNames

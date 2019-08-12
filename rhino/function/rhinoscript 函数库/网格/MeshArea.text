@@ -1,0 +1,61 @@
+
+MeshArea
+粗略计算一个或多个网格的面积。
+语法
+rhinoscriptsyntax.MeshArea (object_ids)
+rhinoscript.mesh.MeshArea (object_ids)
+参数
+
+
+
+
+object_ids
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回三个数字构成的元组。数组的三个元素如下：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+数字
+计算面积的网格数量。
+
+
+1
+数字
+所有网格的总面积。
+
+
+2
+数字
+估计误差。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+if obj:
+    area_rc = rs.MeshArea(obj)
+    if area_rc: print "Mesh area:", area_rc[1]
+同见
+MeshVolume

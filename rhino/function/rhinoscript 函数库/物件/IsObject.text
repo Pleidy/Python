@@ -1,0 +1,44 @@
+
+IsObject
+判断一个物件是否存在 。
+语法
+rhinocsriptsyntax.IsObject (object_id)
+rhinocsript.object.IsObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件存在。
+
+
+False
+物件不存在。
+
+
+示例
+import rhinoscriptsyntax as rs
+#Do something here...
+if rs.IsObject(id):
+    print "The object exists."
+else:
+    print "The object does not exist."
+同见
+IsObjectHidden
+IsObjectInGroup
+IsObjectLocked
+IsObjectNormal
+IsObjectReference
+IsObjectSelectable
+IsObjectSelected
+IsObjectSolid

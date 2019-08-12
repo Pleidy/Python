@@ -1,0 +1,44 @@
+
+AddLeader
+在文档中添加一个引线物件。引线物件是平面的，传入此函数的 3-D 点将被平面化。
+语法
+rhinoscriptsyntax.AddLeader ( points, view_or_plane=None, text=None )
+rhinoscript.dimension.AddLeader ( points, view_or_plane=None, text=None )
+参数
+
+
+
+
+points
+必须参数。一组 3-D 点。数组至少要有两个点。
+
+
+view_or_plane
+可选参数。字符串或平面。视图的标题。如果指定了视图标题，  points 参数将被约束到该视图的工作平面。如果没有指定视图标题， points 参数将被约束到逼近于点列表的平面。
+
+
+text
+可选参数。字符串。引线文本字符串。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True, False, "Select leader points")
+if points: rs.AddLeader( points )
+同见
+IsLeader
+LeaderText
+ 

@@ -1,0 +1,44 @@
+
+IsDimStyle
+判断一个尺寸标注型式是否存在与该文档。
+语法
+rhinoscriptsyntax.IsDimStyle (dimstyle)
+rhinoscript.dimension.IsDimStyle (dimstyle)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。要判断的尺寸标注型式的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.GetString("Dimension style to test")
+if rs.IsDimStyle(dimstyle):
+    if rs.IsDimStyleReference(dimstyle):
+        print "The dimension style is from a reference file."
+    else:
+        print "The dimension style is not from a reference file."
+else:
+    print "The dimension style does not exist."
+同见
+IsDimStyleReference

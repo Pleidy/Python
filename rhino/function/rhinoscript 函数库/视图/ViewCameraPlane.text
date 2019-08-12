@@ -1,0 +1,38 @@
+
+ViewCameraPlane
+返回或定位一个视图摄像机。
+语法
+rhinoscriptsyntax.ViewCameraPlane ( view=None )
+rhinoscript.view.ViewCameraPlane ( view=None )
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回视图的摄影机平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinocsriptsyntax as rs
+view = rs.CurrentView()
+target = rs.ViewTarget(view)
+camplane = rs.ViewCameraPlane(view)
+plane = rs.MovePlane(camplane, target)
+rs.ViewCPlane( view, plane )
+同见
+ViewCamera
+ViewTarget

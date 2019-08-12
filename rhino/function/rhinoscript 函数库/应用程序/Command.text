@@ -1,0 +1,59 @@
+
+Command
+执行一个 Rhino 指令。所有的 Rhino 指令都可以在脚本中调用。既可以是 Rhino 自带的指令也可以是第三方插件的指令。
+你可以像在指令行里面写指令一样在脚本中写指令。有一点不同是在脚本中写指令换行就相当于在指令行输入回车。更多关于指令的内容，请参考 Rhino 帮助文件中“指令巨集与指令码”的部分。
+注意，这个函数只能执行一条指令。不要在这个函数中一次载入多个 Rhino 指令。例如：
+ 
+错误：
+rhinoscriptsyntax.Command("_Line _SelLast _Invert")
+ 
+正确：
+rhinoscriptsyntax.Command("_Line")
+rhinoscriptsyntax.Command("_SelLast")
+rhinoscriptsyntax.Command("_Invert")
+ 
+同样，感叹号(!)可以在按钮和巨集编辑器中使用，但是不能在这里使用。例如：
+ 
+错误：
+rhinoscriptsyntax.Command("!_Line _Pause _Pause")
+ 
+正确：
+rhinoscriptsyntax.Command("_Line _Pause _Pause")
+ 
+当指令脚本执行以后，可以通过 LastCreatedObjects获得最后生成或修改物件的 ID 。
+语法
+rhinoscriptsyntax.Command (commandString, echo=True)
+rhinoscript.application.Command (commandString, echo=True)
+参数
+
+
+
+
+commandString
+必须参数。字符串。任何有效的 Rhino 指令。
+
+
+echo
+可选参数。布尔值。指令显示模式。如果省略，会显示指令提示（True）。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.Command("_Line 0,0,0 2,2,2")
+rs.Command("_Line _Pause _Pause")
+同见
+IsCommand
+LastCommandName
+LastCommandResult
+LastCreatedObjects
+Print
+Prompt

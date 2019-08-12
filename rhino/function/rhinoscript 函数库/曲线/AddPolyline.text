@@ -1,0 +1,40 @@
+
+AddPolyline
+在当前的模型中添加一条多重直线。
+语法
+rhinoscriptsyntax.AddPolyline (points, replace_id=None)
+rhinoscript.curve.AddPolyline (points, replace_id=None)
+参数
+
+
+
+
+points
+必须参数。List.   一组 3-D 点。列表中相邻位置重复的点将会被移除。列表至少要有两个 3-D 点。如果列表中的点少于 4 个，第一个点和最后一个点一定不能相同。
+
+
+replace_id
+可选参数。字符串或 Guid。用一个已存在物件的 ID 替换新生成多重直线的 ID 。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True)
+if points: rs.AddPolyline(points)
+同见
+IsPolyline
+PolylineVertices  
+ 

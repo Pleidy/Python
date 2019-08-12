@@ -1,0 +1,28 @@
+
+LightCount
+返回此文档中的灯光物件数量。
+语法
+rhinoscriptsyntax.LightCount()
+rhinoscript.light.LightCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+此文档中的灯光数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "There are", rs.LightCount(), " lights."
+同见
+EnableLight
+IsLight
+IsLightEnabled
+LightColor
+LightName
+LightObjects
+ 

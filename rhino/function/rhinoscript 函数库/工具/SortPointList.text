@@ -1,0 +1,40 @@
+
+SortPointList
+ 为一组点排序，使得排序后的点可以连接成为“合理的”多重直线。
+语法
+rhinoscriptsyntax.SortPointList (points, tolerance=None)
+rhinoscript.utility.SortPointList (points, tolerance=None)
+参数
+
+
+
+
+points
+必须参数。列表。一组 3-D 点。
+
+
+tolerance
+可选参数。数字。点与点之间的最小距离。在这个范围以内的点将被移除。如果省略，将使用 Rhino 内部的零公差 (1.0e-12)。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回排序好的 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPointCoordinates()
+if points:
+    sorted = rs.SortPointList(points)
+    rs.AddPolyline(sorted)
+同见
+SortPoints

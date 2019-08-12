@@ -1,0 +1,35 @@
+
+RemoveObjectFromAllGroups
+将一个单一物件从所有的群组中移出。不管群组或物件是否为参考物件，都可以用这个函数。
+语法
+rhinoscriptsyntax.RemoveObjectFromAllGroups (object_id)
+rhinoscript.group.RemoveObjectFromAllGroups (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select object")
+if object: rs.RemoveObjectFromAllGroups(object)
+同见
+IsGroupEmpty
+ObjectGroups
+ObjectsByGroup
+RemoveObjectFromGroup
+RemoveObjectFromTopGroup
+RemoveObjectsFromGroup

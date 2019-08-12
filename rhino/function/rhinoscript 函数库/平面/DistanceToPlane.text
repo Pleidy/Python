@@ -1,0 +1,44 @@
+
+DistanceToPlane
+返回一个 3-D 点到一个平面的距离。
+语法
+rhinoscriptsyntax.DistanceToPlane (plane, point)
+rhinoscript.plane.DistanceToPlane (plane, point)
+参数
+
+
+
+
+plane
+必须参数。平面。
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回距离。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = rs.GetPoint("Point to test")
+if point:
+    plane = rs.ViewCPlane()
+    if plane:
+        distance = rs.DistanceToPlane(plane, point)
+        if distance is not None:
+            print "Distance to plane:", distance
+同见
+Distance
+PlaneClosestPoint

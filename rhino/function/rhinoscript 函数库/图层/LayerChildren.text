@@ -1,0 +1,32 @@
+
+LayerChildren
+返回图层的直属子图层。
+语法
+rhinoscriptsyntax.LayerChildren (layer)
+rhinoscript.layer.LayerChildren (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。图层的名称或 ID。
+
+
+返回值
+
+
+
+
+列表
+直属子图层列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+children = rs.LayerChildren("Default")
+if children:
+    for child in children: print child
+同见
+LayerChildCount
+ParentLayer

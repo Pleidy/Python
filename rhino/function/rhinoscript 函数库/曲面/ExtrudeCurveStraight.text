@@ -1,0 +1,66 @@
+
+ExtrudeCurveStraight
+将一条曲线沿着由两个点定义的直线挤出，从而生成一个曲面。
+语法
+rhinoscriptsyntax.ExtrudeCurveStraight (curve_id, start_point, end_point)
+rhinoscript.surface.ExtrudeCurveStraight (curve_id, start_point, end_point)
+参数
+参数
+
+
+
+
+
+curve_id
+
+
+必须参数。字符串或 Guid。要挤出曲线物件的 ID 。
+
+
+
+
+start_point
+
+
+必须参数。三个数字组成的列表或 Point3d 对象。起点。
+
+
+
+
+end_point
+
+
+必须参数。三个数字组成的列表或 Point3d 对象。终点。
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+执行成功，返回新物件的ID。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.AddCircle(rs.WorldXYPlane(), 5)
+rs.ExtrudeCurveStraight( curve, (0,0,0), (0, 10, 10) )
+同见
+ExtrudeCurve
+ExtrudeCurvePoint
+ExtrudeCurveTapered
+ExtrudeSurface

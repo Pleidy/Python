@@ -1,0 +1,35 @@
+
+DeleteNamedView
+从文档中移除一个已命名视图。
+语法
+rhinocriptsyntax.DeleteNamedView (name)
+rhinocript.view.DeleteNamedView (name)
+参数
+
+
+
+
+name
+必须参数。字符串。要移除的已命名视图的名称。
+
+
+返回值
+参数
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+views = rs.NamedViews()
+if views:
+    for view in views: rs.DeleteNamedView(view)
+同见
+AddNamedView
+NamedViews
+RestoreNamedView
+ 

@@ -1,0 +1,59 @@
+
+MeshVertexFaces
+返回共用指定顶点的网格面。
+语法
+rhinoscriptsyntax.MeshVertexFaces (mesh_id, vertex_index)
+rhinoscript.mesh.MeshVertexFaces (mesh_id, vertex_index)
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+vertex_index
+必须参数。数字。网格顶点的序号 。
+
+
+返回值
+
+
+
+
+元组
+共用指定顶点的网格面的序号构成的元组。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+import random
+def TestMeshVertexFaces():
+    mesh = rs.GetObject("Select mesh", rs.filter.mesh)
+    vertices = rs.MeshVertices(mesh)
+    meshfaces = rs.MeshFaceVertices(mesh)
+    vertex = random.randint(0, len(vertices)-1) #some random vertex
+    vertex_faces = rs.MeshVertexFaces(mesh, vertex )
+    if vertex_faces:
+        rs.AddPoint( vertices[vertex] )
+        for face_index in vertex_faces:
+            face = meshfaces[face_index]
+            polyline = []
+            polyline.append( vertices[face[0]] )
+            polyline.append( vertices[face[1]] )
+            polyline.append( vertices[face[2]] )
+            if face[2]!=face[3]:
+                polyline.append( vertices[face[3]] )
+            polyline.append( polyline[0] )
+            rs.AddPolyline(polyline)
+ 
+TestMeshVertexFaces()
+同见
+MeshFaces
+MeshFaceVertices
+MeshVertices

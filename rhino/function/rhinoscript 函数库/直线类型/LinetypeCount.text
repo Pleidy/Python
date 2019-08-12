@@ -1,0 +1,23 @@
+
+LinetypeCount
+返回此文档中的线型数量。
+语法
+rhinoscriptsyntax.LinetypeCount()
+rhinoscript.linetype.LinetypCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+此文档中的线型数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.LinetypeCount()
+print "There are", count, "linetypes."
+同见
+LinetypeNames

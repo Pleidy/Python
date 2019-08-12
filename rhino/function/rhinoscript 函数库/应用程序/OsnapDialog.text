@@ -1,0 +1,36 @@
+
+OsnapDialog
+显示或隐藏 Rhino 的物件锁点工具列。
+语法
+rhinoscriptsyntax.OsnapDialog( visible=None )
+rhinoscript.application.OsnapDialog( visible=None )
+参数
+
+
+
+
+visible
+可选参数。布尔值。显示（True）或隐藏（False）。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 visible 参数，返回当前的可见状态。
+
+
+布尔值
+如果指定了 visible 参数，返回先前的可见状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+if not rs.OsnapDialog(): rs.OsnapDialog(True)
+同见
+Osnap
+OsnapMode
+ProjectOsnaps
+ 

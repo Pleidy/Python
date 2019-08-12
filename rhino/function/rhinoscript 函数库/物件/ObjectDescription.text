@@ -1,0 +1,33 @@
+
+ObjectDescription
+返回一个描述物件的简短文本。
+语法
+rhinoscriptsyntax.ObjectDescription (object_id)
+rhinoscript.object.ObjectDescription (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+字符串
+执行成功返回一个描述物件的简短文本。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    description = rs.ObjectDescription(obj)
+    print "Object description:", description
+同见
+ObjectDump
+ObjectType

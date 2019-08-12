@@ -1,0 +1,40 @@
+
+VectorScale
+对一个 3-D 向量进行缩放。
+语法
+rhinoscriptsyntax.VectorScale (vector, scale)
+rhinoscript.pointvector.VectorScale (vector, scale)
+参数
+
+
+
+
+vector
+必须参数。包含三个数字的列表或者 Vector3d 对象。要缩放的 3-D 向量。
+
+
+scale
+必须参数。数字。缩放因数。
+
+
+返回值
+
+
+
+
+Vector3d
+如果执行成功，返回计算得到的 3-D 向量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector = rs.VectorScale([1,0,0], 5)
+print vector
+同见
+VectorAdd
+VectorCreate
+VectorSubtract

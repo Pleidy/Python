@@ -1,0 +1,138 @@
+
+PlaneCurveIntersection
+求一个无限延伸平面和一个曲线物件的相交。
+语法
+rhinoscriptsyntax.PlaneCurveIntersection (plane, curve, tolerance=None)
+rhinoscript.plane.PlaneCurveIntersection (plane, curve, tolerance=None)
+参数
+
+
+
+
+plane
+必须参数。平面。要求交的平面。
+
+
+curve
+必须参数。Guid 或字符串。曲线物件的 ID 。
+
+
+tolerance
+可选参数。数字。相交公差。如果省略，使用文档的绝对公差。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回一个包含相交信息元组的列表。元组将包含以下元素中的一个或多个：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+数字
+相交类型，点相交（1） 或重叠相交（2）。
+
+
+1
+ 
+Point3d 点
+如果相交类型为点相交（1），此为曲线上的交点。
+如果相交类型为重叠相交（2），此为曲线上相交部分的起点。
+
+
+2
+ 
+Point3d 点
+如果相交类型为点相交（1），此为曲线上的交点。
+如果相交类型为重叠相交（2），此为曲线上相交部分的终点。
+
+
+3
+ 
+Point3d 点
+如果相交类型为点相交（1），此为平面上的交点。
+如果相交类型为重叠相交（2），此为平面上相交部分的起点。
+
+
+4
+ 
+Point3d 点
+如果相交类型为点相交（1），此为平面上的交点。
+如果相交类型为重叠相交（2），此为平面上相交部分的终点。
+
+
+5
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在曲线上参数范围的起点值。
+
+
+6
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在曲线上参数范围的终点值。
+
+
+7
+ 
+数字
+如果相交类型为点相交（1），此为交点在平面 U 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 5) 平面 U 方向的参数。
+
+
+8
+ 
+数字
+如果相交类型为点相交（1），此为交点在平面 V 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 5) 平面 V 方向的参数。
+
+
+9
+ 
+数字
+如果相交类型为点相交（1），此为交点在平面 U 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 6) 平面 U 方向的参数。
+
+
+10
+ 
+数字
+如果相交类型为点相交（1），此为交点在平面 V 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 6) 平面 V 方向的参数。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+ 
+curve = rs.GetObject("Select curve", rs.filter.curve)
+if curve:
+    plane = rs.WorldXYPlane()
+    intersections = rs.PlaneCurveIntersection(plane, curve)
+    if intersections:
+        for intersection in intersections:
+            rs.AddPoint(intersection[1])
+同见
+IntersectPlanes
+PlaneArcIntersection
+PlaneCircleIntersection
+PlanePlaneIntersection
+PlaneSphereIntersection
+ 

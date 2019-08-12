@@ -1,0 +1,75 @@
+
+AddMesh
+在文档中添加一个网格物件。
+语法
+rhinoscriptsyntax.AddMesh ( vertices, face_vertices, vertex_normals=None, texture_coordinates=None, vertex_colors=None )
+rhinoscript.mesh.AddMesh ( vertices, face_vertices, vertex_normals=None, texture_coordinates=None, vertex_colors=None )
+参数
+
+
+
+
+vertices
+必须参数。列表。网格顶点（3-D 点）构成的列表。
+
+
+face_vertices
+必须参数。列表。列表包含由每个网格面四个顶点的序号构成的子列表。如果第三和第四个顶点的序号是一样的，将创建三角面。不一样则创建四边面。
+
+
+vertex_normals
+可选参数。列表。网格顶点法线 3-D 向量构成的列表。注意，对于每一个顶点，顶点向量要与之相匹配。
+
+
+texture_coordinates
+可选参数。列表。由 2-D 贴图坐标构成的列表。注意，对于每一个顶点，贴图坐标要与之相匹配。
+
+
+vertex_colors
+可选参数。列表。 RGB 颜色值构成的列表。注意，对于每一个顶点，顶点颜色要与之相匹配。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vertices = []
+vertices.append((0.0,0.0,0.0))
+vertices.append((5.0, 0.0, 0.0))
+vertices.append((10.0, 0.0, 0.0))
+vertices.append((0.0, 5.0, 0.0))
+vertices.append((5.0, 5.0, 0.0))
+vertices.append((10.0, 5.0, 0.0))
+vertices.append((0.0, 10.0, 0.0))
+vertices.append((5.0, 10.0, 0.0))
+vertices.append((10.0, 10.0, 0.0))
+faceVertices = []
+faceVertices.append((0,1,4,4))
+faceVertices.append((2,4,1,1))
+faceVertices.append((0,4,3,3))
+faceVertices.append((2,5,4,4))
+faceVertices.append((3,4,6,6))
+faceVertices.append((5,8,4,4))
+faceVertices.append((6,4,7,7))
+faceVertices.append((8,7,4,4))
+rs.AddMesh( vertices, faceVertices )
+ 
+
+同见
+MeshFaces
+MeshFaceVertices
+MeshTextureCoordinates
+MeshVertexNormals
+MeshVertices
+ 

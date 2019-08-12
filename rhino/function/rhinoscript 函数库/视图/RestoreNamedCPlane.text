@@ -1,0 +1,42 @@
+
+RestoreNamedCPlane
+还原一个指定的已命名工作平面。
+语法
+rhinoscriptsyntax.RestoreNamedCPlane (cplane_name, view=None)
+rhinoscript.view.RestoreNamedCPlane (cplane_name, view=None)
+参数
+
+
+
+
+cplane_name
+必须参数。字符串。要还原的已命名工作平面的名称。
+
+
+view
+可选参数。字符串或 Guid。要还原视图的工作平面名称或 ID。如果省略，将使用当前视图。
+
+
+返回值
+参数
+
+
+
+
+字符串
+执行成功，返回被还原的已命名工作平面的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+cplanes = rs.NamedCplanes()
+if cplanes: rs.RestoreNamedCPlane( cplanes[0] )
+同见
+AddNamedCPlane
+DeleteNamedCPlane
+NamedCPlane
+NamedCPlanes

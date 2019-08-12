@@ -1,0 +1,73 @@
+
+ObjectPrintColorSource
+返回或修改一个物件的打印颜色来源。物件打印颜色来源于下列四个途径之一：
+
+打印颜色来自图层。使用物件所在图层的打印颜色。
+打印颜色来自物件。使用指定给物件自身的打印颜色。
+来自显示颜色。使用物件的显示颜色。
+打印颜色来自父物件。有父物件，比如物件在图块实例中，使用父物件的打印颜色。如果没有父物件，从图层获得打印颜色。
+
+语法
+rhinoscriptsyntax.ObjectPrintColorSource ( object_ids, source=None )
+rhinoscript.object.ObjectPrintColorSource ( object_ids, source=None )
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。物件的 ID 。
+
+
+source
+可选参数。数字。新的打印颜色来源。如果省略，返回当前的打印颜色来源。注意，如果 object_ids 是列表或元组， source 就是必须参数。
+
+
+
+
+值
+描述
+
+
+0
+来自图层。
+
+
+1
+来自物件。
+
+
+2
+来自显示颜色。
+
+
+3
+来自父物件。
+
+
+
+
+返回值
+
+
+
+
+数字
+如果打印颜色来源没有指定，返回当前的颜色来源。
+
+
+数字
+如果指定了打印颜色来源，返回先前的颜色来源。
+
+
+数字
+如果 object_ids 是一个列表或元组，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects to reset print color source")
+if objects:
+    for object in objects: rs.ObjectPrintColorSource(object, 0)
+同见
+ObjectPrintColor

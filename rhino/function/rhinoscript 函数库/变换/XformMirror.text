@@ -1,0 +1,45 @@
+
+XformMirror
+创建一个镜像变换矩阵。
+语法
+rhinscriptsyntax.XformMirror (mirror_plane_point, mirror_plane_normal)
+rhinscript.transformation.XformMirror (mirror_plane_point, mirror_plane_normal)
+参数
+
+
+
+
+mirror_plane_point
+必须参数。三个数字组成的列表或 Point3d 对象。镜像平面上的 3-D 点。
+
+
+mirror_plane_normal
+必须参数。三个数字构成的列表、Vector3d 向量或者 Point3d 点对象。镜像平面的法向 3-D 向量。
+
+
+返回值
+
+
+
+
+变换
+执行成功返回 4x4 的变换矩阵。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to mirror")
+if objs:
+    plane = rs.ViewCPlane()
+    xform = rs.XformMirror(plane.Origin, plane.Normal)
+    rs.TransformObjects( objs, xform, True )
+同见
+XformPlanarProjection
+XformRotation
+XformScale
+XformShear
+XformTranslation

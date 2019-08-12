@@ -1,0 +1,39 @@
+
+BooleanUnion
+对输入的两组曲面和多重曲面进行布尔联集运算。获取更多信息，请参考 Rhino 帮助文件中有关 BooleanUnion 指令的内容。
+语法
+rhinoscriptsyntax.BooleanUnion (input, delete_input=True)
+rhinoscript.surface.BooleanUnion (input, delete_input=True)
+参数
+
+
+
+
+input
+必须参数。列表。要求联集的曲面或多重曲面的 ID 。
+
+
+delete_input
+可选参数。布尔值。删除所有的输入物件。默认情况下会删除所有的输入物件（Ture）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回包含新生成物件 ID 的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+input = rs.GetObjects("Select surfaces or polysurfaces to union", rs.filter.surface | rs.filter.polysurface)
+if input and len(input)>1: rs.BooleanUnion(input)
+同见
+BooleanDifference
+BooleanUnion

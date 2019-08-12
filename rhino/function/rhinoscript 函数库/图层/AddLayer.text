@@ -1,0 +1,52 @@
+
+AddLayer
+在文档中添加一个新图层。
+语法
+rhinoscriptsyntax.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
+rhinoscript.layer.AddLayer (name=None, color=0, visible=True, locked=False, parent=None)
+参数
+
+
+
+
+name
+可选参数。字符串。新图层的名称。如果省略，Rhino 自动生成新图层的名称。
+
+
+color
+可选参数。数字或 System.Drawing.Color 对象中的颜色。RGB 颜色值。如果省略，将使用黑色。
+
+
+visible
+可选参数。布尔值。图层是否看见。默认是可见的（True）。
+
+
+locked
+可选参数。布尔值。图层锁定状态。默认是不锁定（False）。
+
+
+parent
+可选参数。字符串或 Guid。新图层的父图层。如果省略，新图层没有父图层。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回新图层的名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+from System.Drawing import Color
+print "New layer:", rs.AddLayer()
+print "New layer:", rs.AddLayer("MyLayer1")
+print "New layer:", rs.AddLayer("MyLayer2", Color.DarkSeaGreen)
+print "New layer:", rs.AddLayer("MyLayer3", Color.Cornsilk)
+print "New layer:", rs.AddLayer("MyLayer4",parent="MyLayer3")
+同见
+CurrentLayer
+DeleteLayer
+RenameLayer

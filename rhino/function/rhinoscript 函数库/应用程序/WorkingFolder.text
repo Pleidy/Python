@@ -1,0 +1,36 @@
+
+WorkingFolder
+返回或设置 Rhino 的工作目录或文件夹。工作文件夹是所有文件操作的默认文件夹。
+语法
+rhinoscriptsyntax.WorkingFolder( folder=None )
+rhinoscript.application.WorkingFolder( folder=None )
+参数
+
+
+
+
+enable
+可选参数。字符串。新的工作文件夹。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定文件夹，返回当前的工作文件夹。
+
+
+字符串
+如果指定了文件夹，返回先前的工作文件夹。
+
+
+示例
+import rhinoscriptsyntax as rs
+folder = rs.WorkingFolder()
+folder = rs.BrowseForFolder(folder, "Directory", "Select Directory")
+if folder is not None:
+    rs.WorkingFolder(folder)
+同见
+BrowseForFolder

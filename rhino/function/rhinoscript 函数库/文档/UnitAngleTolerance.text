@@ -1,0 +1,44 @@
+
+UnitAngleTolerance
+返回或设置文档的角度公差。角度公差使用角度值。详情请参考 Rhino 帮助文档中关于 文档属性 的部分。
+语法
+rhinoscriptsyntax.UnitAngleTolerance (angle_tolerance_degrees=None, in_model_units=True)
+rhinoscript.document.UnitAngleTolerance (angle_tolerance_degrees=None, in_model_units=True)
+参数
+
+
+
+
+angle_tolerance_degrees
+可选参数。数字。角度公差（角度值）。
+
+
+in_model_units
+可选参数。布尔值。返回或修改文档的模型单位（True）或文档的页面单位（False）。默认值为 True 。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 angle_tolerance_degrees 参数，返回当前的角度公差。
+
+
+数字
+如果指定了 angle_tolerance_degrees 参数，返回先前的角度公差。
+
+
+示例
+import rhinoscriptsyntax as rs
+tol = rs.UnitAngleTolerance()
+if tol<3.0:
+    rs.UnitAngleTolerance(3.0)
+同见
+UnitAbsoluteTolerance
+UnitCustomUnitSystem
+UnitDistanceDisplayMode
+UnitDistanceDisplayPrecision
+UnitRelativeTolerance
+UnitSystem

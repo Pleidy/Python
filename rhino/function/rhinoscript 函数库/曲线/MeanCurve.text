@@ -1,0 +1,43 @@
+
+MeanCurve
+在两条曲线之间创建一条平均曲线。
+语法
+rhinoscriptsyntax.MeanCurve (curve0, curve1, tolerance=None)
+rhinoscript.curve.MeanCurve (curve0, curve1, tolerance=None)
+参数
+
+
+
+
+curve0
+必须参数。字符串或 Guid。第一个曲线物件的 ID 。
+
+
+curve1
+必须参数。字符串或 Guid。第二个曲线物件的 ID 。
+
+
+tolerance
+可选参数。数字。角度公差，用于调节曲线间的扭结。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新曲线物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve0 = rs.GetObject("Select the first curve", rs.filter.curve)
+curve1 = rs.GetObject("Select the second curve", rs.filter.curve)
+rs.MeanCurve( curve0, curve1 )
+同见
+UnitAngleTolerance

@@ -1,0 +1,40 @@
+
+CloseCurve
+调节曲线终点位置，使曲线闭合。
+语法
+rhinoscriptsyntax.CloseCurve (curve_id, tolerance=-1.0 )
+rhinoscript.curve.CloseCurve (curve_id, tolerance=-1.0 )
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+tolerance
+可选参数。数字。曲线起点与终点小于此距离就认为是闭合的。如果省略，将使用文档的绝对公差。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回闭合曲线物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve", rs.filter.curve)
+if not rs.IsCurveClosed(obj) and rs.IsCurveClosable(obj):
+    rs.CloseCurve( obj )
+同见
+IsCurveClosable
+IsCurveClosed

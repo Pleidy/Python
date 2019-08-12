@@ -1,0 +1,35 @@
+
+XformInverse
+返回一个非奇变化矩阵的逆。
+语法
+rhinoscriptsyntax.XformInverse (xform)
+rhinoscript.transformation.XformInverse (xform)
+参数
+
+
+
+
+xform
+必须参数。列表或 Rhino.Geometry.Transform 对象。一个 4x4 的变换矩阵。
+
+
+返回值
+
+
+
+
+变换
+执行成功返回反向 4x4 的变换矩阵。
+
+
+None
+如果是偶矩阵或出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+xform = rs.BlockInstanceXform(obj)
+if xform:
+    rs.TransformObject( obj, rs.XformInverse(xform) )
+同见
+XformDeterminant

@@ -1,0 +1,49 @@
+
+CurveTangent
+返回曲线在参数位置与曲线相切的 3-D 向量。
+语法
+rhinoscriptsyntax.CurveTangent (curve_id, parameter, segment_index=-1)
+rhinoscript.curve.CurveTangent (curve_id, parameter, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字。要计算的参数位置。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+Vector3d
+如果执行成功，返回 3-D 向量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve", rs.filter.curve)
+if obj:
+    point = rs.GetPointOnCurve(obj)
+    if point:
+        param = rs.CurveClosestPoint(obj, point)
+        normal = rs.CurveTangent(obj, param)
+        print normal
+同见
+CurveClosestPoint
+CurveDomain
+ 

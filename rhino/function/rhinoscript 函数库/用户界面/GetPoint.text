@@ -1,0 +1,57 @@
+
+GetPoint
+暂停并等待用户输入一个点。
+语法
+rhinoscriptsyntax.GetPoint ( message=None, basePoint=None, distance=None, in_plane=False )
+rhinoscript.userinterface.GetPoint ( message=None, basePoint=None, distance=None, in_plane=False )
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+basePoint
+可选参数。列表或 ON3dPoint 点三个数字构成的列表或代表起点或基点的 ON_3dPoint 点。
+
+
+distance
+可选参数。数字。约束距离。如果指定了约束距离，必须指定基点。
+
+
+in_plane
+可选参数。布尔值。只能在活动的工作平面上选取点。
+
+
+返回值
+
+
+
+
+Point3d 点
+用户输入的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = rs.GetPoint("Pick first point")
+if point1:
+    rs.AddPoint(point1)
+    point2 = rs.GetPoint("Pick second point", point1)
+    if point2:
+        rs.AddPoint(point2)
+        distance = (point1-point2).Length
+        point3 = rs.GetPoint("Pick third point", point2, distance)
+        if point3: rs.AddPoint(point3)
+同见
+GetPointOnCurve
+GetPointOnSurface
+GetPoints
+GetRectangle
+ 

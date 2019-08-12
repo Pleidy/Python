@@ -1,0 +1,43 @@
+
+DimStylePrefix
+返回或修改一个尺寸标注型式的前缀 - 尺寸标注文本的前缀。
+语法
+rhinoscriptsyntax.DimStylePrefix (dimstyle, prefix=None)
+rhinoscript.dimension.DimStylePrefix (dimstyle, prefix=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+prefix
+可选参数。字符串。新的前缀。如果省略，返回当前的前缀。要移除前缀，为此参数传递空值或""。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 prefix 参数，返回当前的前缀。注意，如果当前不存在前缀，返回空值。
+
+
+字符串
+如果指定了 prefix 参数，返回先前的前缀。注意，如果先前没有前缀，返回空值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+rs.DimStylePrefix( dimstyle, "[" )
+同见
+DimStyleLengthFactor
+DimStyleSuffix

@@ -1,0 +1,51 @@
+
+Polar
+返回相对与一个 3-D 点指定角度和距离的另一个 3-D 点。
+语法
+rhinoscriptsyntax.Polar(point, angle_degrees, distance, plane=None)
+rhinoscript.utility.Polar(point, angle_degrees, distance, plane=None)
+参数
+
+
+
+
+point
+必须参数。三个数字组成的列表或元组或 Point3d 对象。要移动的 3-D 点。
+
+
+angle_degrees
+必须参数。数字。角度值。
+
+
+distance
+必须参数。数字。距离。
+
+
+plane
+可选参数。变换的基平面。如果省略，将使用世界坐标的 XY 平面。平面数组所包含的元素如下：
+
+
+返回值
+
+
+
+
+Point3d 点
+如果执行成功，返回计算得到的 3-D 点。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = (1.0, 1.0, 0.0)
+result = rs.Polar(point, 45.0, 1.414214)
+print result
+同见
+PointAdd
+PointCompare
+PointDivide
+PointScale
+PointSubtract

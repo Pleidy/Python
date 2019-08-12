@@ -1,0 +1,73 @@
+
+ObjectColorSource
+返回或修改一个物件的颜色来源。   物件显示的颜色来源于下列四个途径之一：
+
+来自图层。物件所在图层决定了物件颜色。
+来自物件。物件颜色来自物件自身的设置。
+来自材质。物件漫反射材质颜色决定了物件颜色。
+来自父物件。有父物件，比如物件在图块实例中，使用父物件的颜色。如果没有父物件，从图层获得颜色。
+
+语法
+rhinoscriptsyntax.ObjectColorSource(object_ids, source=None)
+rhinoscript.object.ObjectColorSource(object_ids, source=None)
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。物件的 ID 。
+
+
+source
+可选参数。数字。新的颜色来源。如果省略，返回当前的颜色来源。注意，如果 object_ids 参数是列表， soruce 参数就是必须参数。
+
+
+
+
+值
+描述
+
+
+0
+来自图层
+
+
+1
+来自物件
+
+
+2
+来自材质
+
+
+3
+来自父物件
+
+
+
+
+返回值
+
+
+
+
+数字
+如果颜色来源没有指定，返回当前的颜色来源。
+
+
+数字
+如果指定了颜色来源，返回先前的颜色来源。
+
+
+数字
+如果 object_ids 是一个列表，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to reset color source")
+if objs:
+    for obj In objs: rs.ObjectColorSource(obj, 0)
+同见
+ObjectColor

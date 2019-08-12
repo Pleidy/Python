@@ -1,0 +1,44 @@
+
+VectorRotate
+对一个 3-D 向量进行旋转。
+语法
+rhinoscriptsyntax.VectorRotate (vector, angle_degrees, axis )
+rhinoscript.pointvector.VectorRotate (vector, angle_degrees, axis )
+参数
+
+
+
+
+vector
+必须参数。包含三个数字的列表或者 Vector3d 对象。3-D 向量。
+
+
+angle_degrees
+必须参数。数字。旋转度数（角度值）。
+
+
+axis
+必须参数。包含三个数字的列表或者 Vector3d 对象。一个作为旋转轴的向量。
+
+
+返回值
+
+
+
+
+Vector3d
+如果执行成功，返回计算得到的 3-D 向量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector = rs.VectorRotate([1,0,0], 90.0, [0,0,1])
+print vector
+同见
+VectorCreate
+VectorScale
+ 

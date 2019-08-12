@@ -1,0 +1,38 @@
+
+MeshFaceNormals
+返回一个网格物件上所有网格面的单位法线向量。  
+语法
+rhinoscriptsyntax.MeshFaceNormals (mesh_id)
+rhinoscript.mesh.MeshFaceNormals (mesh_id)
+参数
+
+
+
+
+mesht_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+代表所有网格面法线的单位 3-D 向量构成的列表。数组中元素的数量和 MeshFaceCount 函数的返回值是相等的。而且每个单位向量都和 MeshFaces函数返回的网格面一一对应。.
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+normals = rs.MeshFaceNormals(obj)
+if normals:
+    for vector in normals: print vector
+同见
+MeshHasFaceNormals
+MeshFaceCount
+MeshFaces

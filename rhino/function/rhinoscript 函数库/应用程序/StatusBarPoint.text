@@ -1,0 +1,25 @@
+
+StatusBarPoint
+设置 Rhino 的状态栏点坐标窗格距离。
+语法
+rhinoscriptsyntax.StatusBarPoint(point=None)
+rhinoscript.application.StatusBarPoint(point=None)
+参数
+
+
+
+
+point
+可选参数。一个 3-D 点。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+pt = (1.1, 2.2, 3.3)
+rs.StatusBarPoint(pt)
+同见
+StatusBarDistance
+StatusBarMessage
+StatusBarNumber

@@ -1,0 +1,33 @@
+
+ExplodeBlockInstance
+炸开图块引例到几何体。将炸开生成的物件添加到当前文档。
+语法
+rhinoscriptsyntax.ExplodeBlockInstance (object_id)
+rhinoscript.block.ExplodeBlockInstance (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。现有图块定义的 ID 。
+
+
+返回值
+
+
+
+
+列表
+由炸开得到物件标识符构成的数组。
+
+
+示例
+import rhinoscriptsyntax as rs
+strObject = rs.GetObject("Select block instance to explode")
+if rs.IsBlockInstance(strObject):
+    rs.ExplodeBlockInstance(strObject)
+同见
+DeleteBlock
+IsBlockInstance
+ 

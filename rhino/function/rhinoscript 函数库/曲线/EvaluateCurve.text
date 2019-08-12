@@ -1,0 +1,48 @@
+
+EvaluateCurve
+通过参数获取曲线上的3D点对象。
+语法
+rhinoscriptsyntax.EvaluateCurve (curve_id, t, index=-1)
+rhinoscript.curve.EvaluateCurve (curve_id, t, index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+t
+必须参数。数字。要计算的参数位置。
+
+
+index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+Point3d
+如果执行成功，返回计算得到的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    domain = rs.CurveDomain(obj)
+    t = domain[1]/2.0
+    point = rs.EvaluateCurve(obj, t)
+    rs.AddPoint( point )
+同见
+CurveClosestPoint
+IsCurve
+ 

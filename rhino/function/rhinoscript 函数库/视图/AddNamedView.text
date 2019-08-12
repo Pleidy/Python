@@ -1,0 +1,43 @@
+
+AddNamedView
+在文档中添加一个已命名视图。
+语法
+rhinoscriptsyntax.AddNamedView (name, view=None)
+rhinoscript.view.AddNamedView (name, view=None)
+参数
+
+
+
+
+name
+必须参数。字符串。新创建已命名视图的名称。
+
+
+view
+可选参数。字符串或 Guid。要保存视图的名称或 ID 。如果省略，将保存当前视图。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回新生成已命名视图的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+views = rs.ViewNames()
+if views:
+    for view in views:
+        name = view + "_view"
+        rs.AddNamedView( name, view )
+同见
+DeleteNamedView
+NamedViews
+RestoreNamedView

@@ -1,0 +1,42 @@
+
+LayerPrintWidth
+返回或修改一个图层的打印宽度。打印宽度以毫米为单位。如果打印宽度设置是 0.0，将使用默认打印宽度。
+语法
+rhinoscriptsyntax.LayerPrintWidth(layer, width=None)
+rhinoscript.layer.LayerPrintWidth(layer, width=None)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+width
+可选参数。数字。新打印宽度（以毫米为单位）。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定图层打印宽度，返回当前的打印宽度。
+
+
+数字
+如果指定了图层打印宽度，返回先前的打印宽度。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    for layer in layers:
+        if rs.LayerPrintWidth(layer)!=0:
+            rs.LayerPrintWidth(layer, 0)
+同见
+LayerLinetype
+LayerPrintColor

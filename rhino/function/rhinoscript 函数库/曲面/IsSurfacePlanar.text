@@ -1,0 +1,45 @@
+
+IsSurfacePlanar
+判断一个曲面物件是否平坦。
+语法
+rhinoscriptsyntax.IsSurfacePlanar (surface_id, tolerance=None)
+rhinoscript.surface.IsSurfacePlanar (surface_id, tolerance=None)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+tolerance
+可选参数。数字。判断时使用的公差值。默认使用 Rhino 当前的绝对公差。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurfacePlanar(obj):
+    print "The surface is planar."
+else:
+    print "The surface is not planar."
+同见
+IsSurface
+IsSurfaceClosed
+IsSurfacePeroidic
+IsSurfaceSingular
+IsSurfaceTrimmed

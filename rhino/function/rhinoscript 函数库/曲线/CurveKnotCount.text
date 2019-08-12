@@ -1,0 +1,41 @@
+
+CurveKnotCount
+返回曲线物件的节点数。
+语法
+rhinoscriptsyntax.CurveKnotCount (curve_id, segment_index=-1)
+rhinoscript.curve.CurveKnotCount (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回节点数。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    count = rs.CurveKnotCount(obj)
+    print "Curve knot count:", count
+同见
+DivideCurve
+IsCurve

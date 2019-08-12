@@ -1,0 +1,34 @@
+
+IsViewCurrent
+判断指定视图是否为当前的活动视图。
+语法
+rhinoscriptsyntax.IsViewCurrent (view)
+rhinoscript.view.IsViewCurrent (view)
+参数
+
+
+
+
+view
+必须参数。字符串或 Guid。视图的名称或 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+title = "Perspective"
+result = rs.IsViewCurrent(title)
+if result:
+    print "The " + title + " view is current."
+else:
+    print "The " + title + " view is not current."
+同见
+CurrentView

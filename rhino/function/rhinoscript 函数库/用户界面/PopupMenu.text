@@ -1,0 +1,66 @@
+
+PopupMenu
+显示一个弹出菜单。弹出菜单可以显示在任何地方。不论鼠标左键还是右键点击以后它都会消失。
+语法
+rhinoscriptsyntax.PopupMenu (items, modes=None, point=None, view=None)
+rhinoscript.userinterface.PopupMenu (items, modes=None, point=None, view=None)
+参数
+
+
+
+
+items
+必须参数。代表菜单条目的字符串构成的列表或元组。空字符串或""，将会创建一个菜单分割线。
+
+
+modes
+可选参数。代表菜单条目显示模式的数字构成的列表或元组。如果省略，菜单中所有的条目都是可用的。注意，显示模式会忽略菜单分割线。显示模式如下：
+
+
+
+
+0
+菜单条目可用。
+
+
+1
+菜单条目不可用。
+
+
+2
+菜单条目被选中。
+
+
+3
+菜单条目被选中但不可用。
+
+
+
+
+point
+可选参数。代表菜单条目显示位置的 3D 点。如果省略，菜单将出现在鼠标所在的位置。
+
+
+view
+可选参数。字符串。如果指定了 point 参数， view 参数为菜单将要显示的视图。如果指定了 point 参数但是省略了 view 参数，菜单将会在活动的视图中显示。
+
+
+返回值
+
+
+
+
+数字
+被选取菜单条目的序号。
+
+
+数字
+如果没有选取菜单条目则为 -1。
+
+
+示例
+import rhinoscriptsyntax as rs
+items = "Line", "", "Circle", "Arc"
+modes = 2,0,0,0
+result = rs.PopupMenu(items, modes)
+if result>=0: rs.MessageBox(items[result])

@@ -1,0 +1,44 @@
+
+IsLayerReference
+判断一个现有图层是否来自于一个引用文件。
+语法
+rhinoscriptsyntax.IsLayerReference (layer)
+rhinoscript.layer.IsLayerReference (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。现有图层的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.GetString("Layer name")
+if rs.IsLayer(layer):
+    if rs.IsLayerReference(layer): print "The layer is a reference layer."
+    else: print "The layer is not a reference layer."
+else:
+    print "The layer does not exist."
+同见
+IsLayer
+IsLayerChangeable
+IsLayerEmpty
+IsLayerLocked
+IsLayerOn
+IsLayerSelectable
+IsLayerVisible

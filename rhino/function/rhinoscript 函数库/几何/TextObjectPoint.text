@@ -1,0 +1,49 @@
+
+TextObjectPoint
+返回或修改一个文本物件的位置。
+语法
+rhinoscriptsyntax.TextObjectPoint (object_id, point=None)
+rhinoscript.geometry.TextObjectPoint (object_id, point=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+point
+可选参数。三个数字组成的列表或 Point3d 对象。代表注释点物件新位置的 3-D 点。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果没有指定新位置，返回代表当前位置的 3-D 点。
+
+
+Point3d 点
+如果指定了新位置，返回代表先前位置的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select text")
+if rs.IsText(obj):
+    rs.TextObjectPoint( obj, [0,0,0] )
+同见
+AddText
+IsText
+TextObjectFont
+TextObjectHeight
+TextObjectPlane
+TextObjectStyle
+TextObjectText

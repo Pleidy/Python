@@ -1,0 +1,49 @@
+
+TrimSurface
+移除曲面上指定间隔以外的部分。
+语法
+rhinoscriptsyntax.TrimSurface (surface_id, direction, interval, delete_input=False)
+rhinoscript.surface.TrimSurface (surface_id, direction, interval, delete_input=False)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。要修剪曲面的 ID 。
+
+
+direction
+必须参数。数字。如果为 0 (U)，interval 参数指定的是 SurfaceDomain (surface_id, 0) 的子区间。如果为 1 (V)，interval 参数指定的是 SurfaceDomain (surface_id, 1) 的子区间。
+
+
+interval
+必须参数。两个数构成的元组。要保留的曲面区间。如果 direction = 0，曲面参数 (s, t) 满足 s < SurfaceDomain(surface_id, 0)(0) 或 s > SurfaceDomain(surface_id, 0)(1) 的部分将被去除。如果 direction = 1, 曲面参数 (s, t) 满足 t <SurfaceDomain(surface_id, 1)(0) 或 t >SurfaceDomain(surface_id, 1)(1) 的部分将被去除。
+
+
+delete_input
+可选参数。布尔值。删除输入曲面。如果省略，输入曲面不会被删除（False）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新生成曲面的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface to split", rs.filter.surface)
+if surface:
+    domain_u = rs.SurfaceDomain(surface, 0)
+    domain_u[0] = (domain_u[1] - domain_u[0]) * 0.25
+    rs.TrimSurface( surface, 0, domain_u, True )
+同见
+SplitSurface

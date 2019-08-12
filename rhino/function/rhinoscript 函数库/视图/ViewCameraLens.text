@@ -1,0 +1,44 @@
+
+ViewCameraLens
+返回或设置指定透视视图的 35mm 摄影机镜头长度。
+语法
+rhinoscriptsyntax.ViewCameraLens ( view=None, length=None )
+rhinoscript.view.ViewCameraLens ( view=None, length=None )
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+length
+可选参数。数字。新的 35mm 摄影机镜头长度。如果省略，返回当前的 35mm 摄影机镜头长度。
+
+
+返回值
+
+
+
+
+数字
+如果镜头长度没有指定，返回当前的镜头长度。
+
+
+数字
+如果指定了镜头长度，返回先前的镜头长度。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.IsViewPerspective(view):
+    length = rs.ViewCameraLens(view, 100)
+同见
+ViewCameraTarget
+ViewCPlane
+ViewDisplayModes
+ViewProjection
+ViewSize
+ 

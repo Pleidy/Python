@@ -1,0 +1,54 @@
+
+InsertBlock
+在文档中插入一个现有图块定义的图块引例。
+语法
+rhinoscriptsyntax.InsertBlock(block_name, insertion_point, scale=[1,1,1], angle_degrees=0, rotation_normal=[0,0,1])
+rhinoscriptsyntax.InsertBlock2(block_name, xform)
+rhinoscript.block.InsertBlock(block_name, insertion_point, scale=[1,1,1], angle_degrees=0, rotation_normal=[0,0,1])
+rhinoscript.block.InsertBlock2(block_name, xform)
+参数
+
+
+
+
+block_name
+必须参数。字符串。要插入图块定义的名称。
+
+
+insertion_point
+必须参数。列表或 ON_3dPoint 点作为图块插入点的 3-D 点。
+
+
+scale
+可选参数。数组。代表 x,y,z 三个轴向缩放因子的数字构成的数组。如果省略，图块不会被缩放。
+
+
+angle_degrees
+可选参数。数字。旋转度数（角度值）。如果省略，图块不会被旋转。
+
+
+rotation_normal
+可选参数。数组。一个作为旋转轴的 3-D 向量。省略了此参数，但是指定了 dblAngle 参数，将使用世界坐标的 Z 轴作为此参数的值。
+
+
+xform
+必须参数。数组。4x4 的变换矩阵。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新插入的图块引例 ID 。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = rs.GetString("Name of block to insert")
+if rs.IsBlock(name):
+    rs.InsertBlock( name, [0,0,0], [2,2,2], 45.0)
+同见
+BlockNames
+IsBlock

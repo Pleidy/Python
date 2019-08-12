@@ -1,0 +1,50 @@
+
+PlaneFromNormal
+通过原点和一个法线向量创建一个平面。
+语法
+rhinoscriptsyntax.PlaneFromNormal (origin, normal, xaxis=None)
+rhinoscript.plane.PlaneFromNormal (origin, normal, xaxis=None)
+参数
+
+
+
+
+origin
+必须参数。三个数字组成的列表或 Point3d 对象。代表平面原点的 3-D 点。
+
+
+normal
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。定义平面法线的非零 3-D 向量。
+
+
+xaxis
+可选参数。三个数构成的列表、Point3d 点或 Vector3d 向量。定义平面 X 轴的非零 3-D 向量。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。平面数组所包含的元素如下：
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+origin = rs.GetPoint("CPlane origin")
+if origin:
+    direction = rs.GetPoint("CPlane direction")
+    if direction:
+        normal = direction - origin
+        normal = rs.VectorUnitize(normal)
+        rs.ViewCPlane( None, rs.PlaneFromNormal(origin, normal) )
+同见
+MovePlane
+PlaneFromFrame
+PlaneFromPoints
+RotatePlane

@@ -1,0 +1,35 @@
+
+ObjectsByLayer
+返回图层中物件的ID标识。
+语法
+rhinoscriptsyntax.ObjectsByLayer (layer_name, select=False)
+rhinoscript.selection.ObjectsByLayer (layer_name, select=False)
+参数
+
+
+
+
+layer_name
+必须参数。字符串。图层的名称。
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+返回值
+
+
+
+
+列表
+由物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Pick any object")
+if obj:
+    layer = rs.ObjectLayer(obj)
+    rs.ObjectsByLayer(layer, True)
+同见

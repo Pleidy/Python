@@ -1,0 +1,64 @@
+
+XformCPlaneToWorld
+将一个点从工作平面坐标变换到世界坐标。
+语法
+rhinoscriptsyntax.XformCPlaneToWorld (point, plane)
+rhinoscript.transformation.XformCPlaneToWorld (point, plane)
+参数
+
+
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。工作平面坐标中的 3-D 点。
+
+
+plane
+必须参数。平面列表。工作平面。如果是列表，平面数组的元素如下：
+
+
+
+
+元素
+描述
+
+
+0
+必须参数。工作平面的原点（3-D点）。
+
+
+1
+必须参数。工作平面的 X 轴方向 (3-D 向量)。
+
+
+2
+必须参数。工作平面的 Y 轴方向 (3-D 向量)。
+
+
+3
+可选参数。工作平面的 Z 轴方向 (3-D 向量)。
+
+
+
+
+返回值
+
+
+
+
+Point3d 点
+执行成功返回世界坐标的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.ViewCPlane()
+point = rs.XFormCPlaneToWorld([0,0,0], plane)
+if point: print "World point:", point
+同见
+XformWorldToCPlane
+ 

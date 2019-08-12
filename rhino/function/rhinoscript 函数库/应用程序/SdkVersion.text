@@ -1,0 +1,21 @@
+
+SdkVersion
+返回当前运行的 Rhino 支持的 Rhino SDK 版本。Rhino SDK 的版本以 YYYYMMDDn 形式的 9 个数字构成。
+语法
+rhinoscriptsyntax.SdkVersion()
+rhinoscript.application.SdkVersion()
+参数
+空值。
+返回值
+
+
+
+
+数字
+执行成功返回 Rhino SDK 版本。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "Required SDK Version:", rs.SdkVersion()
+同见

@@ -1,0 +1,49 @@
+
+ObjectName
+返回或修改一个物件的用户定义名称。
+语法
+rhinoscriptsyntax.ObjectName ( object_id, name=None )
+rhinoscript.object.ObjectName ( object_id, name=None )
+参数
+
+
+
+
+object
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。物件的 ID 。
+
+
+name
+可选参数。字符串。物件名称。如果省略，返回物件当前的名称。注意，如果 object_id 是多个 ID 值构成的列表， name 就是必须参数。
+
+
+返回值
+
+
+
+
+字符串
+如果名称没有指定，返回物件当前的名称。
+
+
+字符串
+如果指定了名称，返回物件先前的名称。
+
+
+数字
+如果 object_id 是一个列表，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(message1="Pick some points")
+if points:
+    count = 0
+    for point in points:
+        obj = rs.AddPoint(point)
+        if obj:
+            rs.ObjectName( obj, "Point"+str(count) )
+            count += 1
+同见
+ObjectsByName
+ObjectNames

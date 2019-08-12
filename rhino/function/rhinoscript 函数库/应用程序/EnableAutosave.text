@@ -1,0 +1,31 @@
+
+EnableAutosave
+启用或禁用 Rhino 文件自动保存。
+语法
+rhinoscriptsyntax.EnableAutosave( enable=True )
+rhinoscript.application.EnableAutosave( enable=True )
+参数
+
+
+
+
+enable
+可选参数。布尔值。是否开启自动保存。如果省略，将启用自动保存。
+
+
+返回值
+
+
+
+
+布尔值
+先前是否开启自动保存。
+
+
+示例
+import rhinoscriptsyntax as rs
+prevstate = rs.EnableAutosave()
+同见
+AutosaveFile
+AutosaveInterval
+ 

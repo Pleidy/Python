@@ -1,0 +1,46 @@
+
+AddEllipse
+在文档中添加一个椭圆曲线。
+语法
+rhinoscriptsyntax.AddEllipse ( plane, radiusX, radiusY )
+rhinoscript.curve.AddEllipse ( plane, radiusX, radiusY )
+参数
+
+
+
+
+plane
+必须参数。在哪个平面上生成椭圆。平面的原点将作为椭圆的中心点。
+
+
+radiusX
+必须参数。数字。X 方向半径。
+
+
+radiusY
+必须参数。数字。Y 方向半径。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.WorldXYPlane()
+rs.AddEllipse( plane, 5.0, 10.0 )
+同见
+AddEllipse3Pt
+IsEllipse
+EllipseCenterPoint
+EllipseQuadPoints
+ 

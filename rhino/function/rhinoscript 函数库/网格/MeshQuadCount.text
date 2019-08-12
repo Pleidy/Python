@@ -1,0 +1,32 @@
+
+MeshQuadCount
+返回一个网格物件的四边面数量。
+语法
+rhinoscriptsyntax.MeshQuadCount (object_id)
+rhinoscript.mesh.MeshQuadCount (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回四边网格面的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+print "Quad faces:", rs.MeshQuadCount(obj)
+print "Triangle faces:", rs.MeshTriangleCount(obj)
+print "Total faces:", rs.MeshFaceCount(obj)
+同见
+MeshQuadCount

@@ -1,0 +1,56 @@
+
+EvaluatePlane
+通过 UV 参数获取平面上的点。
+语法
+rhinoscriptsyntax.EvaluatePlane (plane, parameter)
+rhinoscript.plane.EvaluatePlane (plane, parameter)
+参数
+
+
+
+
+
+plane
+
+
+必须参数。平面。
+
+
+
+
+parameter
+
+
+必须参数。列表。UV参数值构成的列表。
+
+
+
+返回值
+
+
+
+
+
+Point3d 点
+
+
+如果执行成功，返回计算得到的 3-D 点。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+plane = rs.ViewCPlane(view)
+point = rs.EvaluatePlane(plane, (5,5))
+rs.AddPoint( point )
+同见
+PlaneClosestPoint

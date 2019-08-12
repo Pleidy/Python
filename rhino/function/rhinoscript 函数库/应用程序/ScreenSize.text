@@ -1,0 +1,22 @@
+
+ScreenSize
+返回主显示器当前的显示分辨率。
+语法
+rhinoscriptsyntax.ScreenSize()
+rhinoscript.application.ScreenSize()
+参数
+空值。
+返回值
+
+
+
+
+列表
+代表宽度和高度的两个数字。
+
+
+示例
+import rhinoscriptsyntax as rs
+size = rs.ScreenSize()
+print "Screen Width:", size[0], "pixels"
+print "Screen Height:", size[1], "pixels"

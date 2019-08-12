@@ -1,0 +1,33 @@
+
+BlockNames
+返回此文档中所有图块定义的名称。
+语法
+rhinoscriptsyntax.BlockNames (sort=False)
+rhinoscript.block.BlockNames (sort=False)
+参数
+
+
+
+
+sort
+可选参数。布尔值。排序好的图块引例名称数组。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回图块定义名称列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.BlockNames(True)
+if names:
+    for name in names: print name
+同见
+BlockCount
+IsBlock
+ 

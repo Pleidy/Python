@@ -1,0 +1,42 @@
+
+SpotLightShadowIntensity
+返回或修改一个聚光灯的阴影强度。
+语法
+rhinoscriptsyntax.SpotLightShadowIntensity (object_id, intensity=None)
+rhinoscript.light.SpotLightShadowIntensity (object_id, intensity=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+intensity
+可选参数。数字。新的阴影强度。聚光灯的阴影强度范围在 0.0 到 1.0 之间。如果设置为 0.0，聚光灯将不会产生阴影。如果设置为 1.0，聚光灯投射黑色阴影。如果省略，返回当前的阴影强度。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 intensity 参数，返回当前的阴影强度。
+
+
+数字
+如果指定了 intensity 参数，返回先前的阴影强度。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id: rs.SpotLightShadowIntensity(id, 0.75)
+同见
+AddSpotLight
+IsSpotLight
+SpotLightHardness
+SpotLightRadius
+ 

@@ -1,0 +1,40 @@
+
+AddLinearLight
+在文档中添加一个管状灯。
+语法
+rhinoscriptsyntax.AddLinearLight (start_point, end_point, width=None)
+rhinoscript.light.AddLinearLight (start_point, end_point, width=None)
+参数
+
+
+
+
+start_point
+必须参数。三个数字组成的列表或 Point3d 对象。作为灯光起点的 3-D 点。
+
+
+end_point
+必须参数。三个数字组成的列表或 Point3d 对象。作为灯光终点的 3-D 点。
+
+
+width
+可选参数。数字。灯光宽度 。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+start = rs.GetPoint("Light origin")
+if start:
+    end = rs.GetPoint("Light length and direction", start)
+    if end: rs.AddLinearLight(start, end)
+同见
+IsLinearLight

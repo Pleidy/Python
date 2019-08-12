@@ -1,0 +1,35 @@
+
+DeleteGroup
+从文档中移除一个现有的群组。引用群组不能被移除。移除群组并不会删除群组包含的物件。
+语法
+rhinoscriptsyntax.DeleteGroup (group_name)
+rhinoscript.group.DeleteGroup (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+groups = rs.GroupNames()
+if groups:
+    for group in groups: rs.DeleteGroup(group)
+同见
+AddGroup
+GroupCount
+GroupNames
+IsGroup
+RenameGroup

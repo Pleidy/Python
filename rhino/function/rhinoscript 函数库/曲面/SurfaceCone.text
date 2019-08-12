@@ -1,0 +1,64 @@
+
+SurfaceCone
+返回圆锥曲面的定义参数。
+语法
+rhinoscriptsyntax.SurfaceCone (surface_id)
+rhinoscript.surface.SurfaceCone (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功，返回包含圆锥定义参数的元组。元组所包含的元素如下：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Plane
+圆锥的平面。圆锥体顶点在平面的原点处，圆锥中心线在平面的 Z 轴上。
+
+
+1
+数字
+圆锥的高度。
+
+
+2
+数字
+圆锥的半径。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+cone = rs.AddCone(rs.WorldXYPlane(), 6, 2, False)
+if rs.IsCone(cone):
+    cone_def = rs.SurfaceCone(cone)
+    rs.AddCone( cone_def[0], cone_def[1], cone_def[2], False )
+示例
+SurfaceCone
+SurfaceCylinder
+SurfaceSphere
+SurfaceTorus

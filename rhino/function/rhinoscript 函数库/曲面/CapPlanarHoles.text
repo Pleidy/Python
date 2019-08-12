@@ -1,0 +1,34 @@
+
+CapPlanarHoles
+给曲面或多重曲面上的平面洞加盖。获取更多信息，请参考 Rhino 帮助文件中有关 Cap 指令的内容。
+语法
+rhinoscriptsyntax.CapPlanarHoles (surface_id)
+rhinoscript.surface.CapPlanarHoles (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。要加盖的曲面或多重曲面的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface or polysurface to cap", rs.filter.surface | rs.filter.polysurface)
+if surface: rs.CapPlanarHoles( surface )
+同见
+ExtrudeCurve
+ExtrudeCurvePoint
+ExtrudeCurveStraight
+ExtrudeSurface
+ 

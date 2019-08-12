@@ -1,0 +1,39 @@
+
+CurrentHatchPattern
+返回或设置当前的填充图案文件。
+语法
+rhinoscriptsyntax.CurrentHatchPattern (hatch_pattern=None)
+rhinoscript.hatch.CurrentHatchPattern (hatch_pattern=None)
+参数
+
+
+
+
+hatch_pattern
+可选参数。字符串。要设置为当前填充图案的名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定填充图案名称，返回当前的填充图案。
+
+
+字符串
+如果指定了填充图案名称，返回先前的填充图案。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+if rs.IsHatchPattern("Hatch2"): rs.CurrentHatchPattern("Hatch2")
+同见
+HatchPatternCount
+HatchPatternNames
+ 

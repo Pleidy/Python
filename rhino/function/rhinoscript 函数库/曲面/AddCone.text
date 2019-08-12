@@ -1,0 +1,76 @@
+
+AddCone
+在文档中添加一个圆椎体多重曲面。
+语法
+rhinoscriptsyntax.AddCone (base, height, radius, cap=True)
+rhinoscript.surface.AddCone (base, height, radius, cap=True)
+参数
+
+
+
+
+
+base
+
+
+必须参数。圆椎体的 3-D 基点或基平面，圆锥体的顶点在平面原点开始沿着Z轴的法线上。
+
+
+
+
+height
+
+
+必须参数。如果基点为 3-D 点，height 也是 3-D 点。height 点定义圆锥体的高度和方向。如果基点为平面，高度是一个数值。
+
+
+
+
+radius
+
+
+必须参数。数字。圆锥体底面半径。注意，tan(cone_angle) = radius/ height.
+
+
+
+
+cap
+
+
+可选参数。布尔值。圆锥体底面加盖。默认情况下圆锥体底面是加盖的（Ture）。
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+执行成功，返回新物件的ID。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+radius = 5.0
+base = rs.GetPoint("Base of cone")
+if base:
+    height = rs.GetPoint("Height of cone", base)
+    if height: rs.AddCone(base, height, radius)
+同见
+AddBox
+AddCylinder
+AddSphere
+AddTorus

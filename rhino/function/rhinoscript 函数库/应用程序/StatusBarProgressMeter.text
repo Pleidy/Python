@@ -1,0 +1,75 @@
+
+StatusBarProgressMeter
+Manipulates Rhino's status bar progress meter.
+语法
+Start, or show, the progress meter.
+rhinoscriptsyntax.StatusBarProgressMeterShow(label, lower, upper, embed_label, show_percent=True)
+Set the current position of the progress meter.
+rhinoscriptsyntax.StatusBarProgressMeterUpdate(position, absolute=True)
+End, or hide, the progress meter.
+rhinoscriptsyntax.StatusBarProgressMeterHide()
+参数
+
+
+
+
+label
+Required.字符串。A short description of the progress.(e.g. "Calculating", "Meshing", etc.)
+
+
+lower
+Required.Number.The lower limit of the progress meter's range.
+
+
+upper
+Required.Number.The upper limit of the progress meter's range.
+
+
+embed_label
+可选参数。Boolean.If True (Default), then the label will be embedded in the progress meter.If False, then the label will appear to the left of the progress meter.
+
+
+show_percent
+可选参数。Boolean.If True (Default), then the percent complete will appear in the progress meter.
+
+
+position
+Required.Number.The new position of the progress meter.
+
+
+absolute
+可选参数。Number.If True (Default), then the progress meter is moved to position (absolute).If False, then the progress meter is moved position from the current position (relative).
+
+
+返回值
+
+
+
+
+Boolean
+If starting, or showing, the progress bar, the True or False indicating success or failure.
+
+
+Number
+If setting the position of the progress bar, then the previous position if successful.
+
+
+None
+If ending, or closing, the progress meter, or on error.
+
+
+示例
+import rhinoscriptsyntax as rs
+def TestStatusBarProgressMeter():
+    lower = 0
+    upper = 100
+    rs.StatusBarProgressMeterShow("Solving", lower, upper)
+    for i in range(lower, upper):
+        print i
+        rs.StatusBarProgressMeterUpdate(i)
+        rs.Sleep(300)
+    rs.StatusBarProgressMeterHide()
+TestStatusBarProgressMeter()
+同见
+Print
+MessageBox

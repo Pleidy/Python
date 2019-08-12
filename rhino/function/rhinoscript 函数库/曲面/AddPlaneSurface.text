@@ -1,0 +1,46 @@
+
+AddPlaneSurface
+创建平面曲面。
+语法
+rhinoscriptsyntax.AddPlaneSurface (plane, u_dir, v_dir)
+rhinoscript.surface.AddPlaneSurface (plane, u_dir, v_dir)
+参数
+
+
+
+
+plane
+必须参数。数组。平面。
+
+
+u_dir
+必须参数。数字。U 方向的长度。
+
+
+v_dir
+必须参数。数字。V 方向的长度。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddPlaneSurface( rs.WorldXYPlane(), 5.0, 3.0 )
+同见
+AddCutPlane
+AddEdgeSrf
+AddSrfControlPtGrid
+AddSrfPt
+AddSrfPtGrid
+IsPlaneSurface

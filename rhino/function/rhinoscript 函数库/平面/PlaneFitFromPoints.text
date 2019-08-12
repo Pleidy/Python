@@ -1,0 +1,42 @@
+
+PlaneFitFromPoints
+返回通过一组点逼近生成的一个平面。
+语法
+rhinoscriptsyntax.PlaneFitFromPoints (points)
+rhinoscript.plane.PlaneFitFromPoints (points)
+参数
+
+
+
+
+points
+必须参数。列表。一组 3-D 点。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints()
+if points:
+    plane = rs.PlaneFitFromPoints(points)
+    if plane:
+        magX = plane.XAxis.Length
+        magY = plane.YAxis.Length
+        rs.AddPlaneSurface( plane, magX, magY )
+同见
+PlaneFromFrame
+PlaneFromNormal
+PlaneFromPoints
+ 

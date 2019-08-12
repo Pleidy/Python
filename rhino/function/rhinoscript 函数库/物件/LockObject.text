@@ -1,0 +1,33 @@
+
+LockObject
+锁定一个单一物件。锁定的物件可见，也可以被物件锁点捕捉。但是，不能被选择。
+语法
+rhinoscriptsyntax.LockObject (object_id)
+rhinoscript.object.LockObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要锁定物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object to lock")
+if id: rs.LockObject(id)
+同见
+IsObjectLocked
+LockObjects
+UnlockObject
+UnlockObjects

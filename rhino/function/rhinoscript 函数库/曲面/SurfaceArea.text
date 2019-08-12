@@ -1,0 +1,58 @@
+
+SurfaceArea
+计算曲面或多重曲面物件的面积。计算结果使用当前的绘图单位。
+语法
+rhinoscriptsyntax.SurfaceArea (object_id)
+rhinoscript.surface.SurfaceArea (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回一个包含面积信息的列表。列表包含以下信息：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+数字
+面积。
+
+
+1
+数字
+面积的绝对(+/-)误差范围。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if obj:
+    massprop = rs.SurfaceArea( obj )
+    if massprop:
+        print "The surface area is:", massprop[0]
+同见
+SurfaceAreaCentroid
+SurfaceAreaMoments

@@ -1,0 +1,37 @@
+
+DimensionValue
+返回一个尺寸标注物件的值。
+语法
+rhinoscriptsyntax.DimensionValue (object_id)
+rhinoscript.dimension.DimensionValue (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回尺寸标注的值。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsDimension(obj):
+    print rs.DimensionValue(obj)
+同见
+DimensionText
+DimensionUserText
+IsDimension

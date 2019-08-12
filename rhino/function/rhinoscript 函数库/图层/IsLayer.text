@@ -1,0 +1,43 @@
+
+IsLayer
+判断图层是否存在于当前的文档。
+语法
+rhinoscriptsyntax.IsLayer (nameOrId)
+rhinoscript.layer.IsLayer (nameOrId)
+参数
+
+
+
+
+nameOrId
+必须参数。要查找图层的 Guid。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.GetString("Layer name")
+if rs.IsLayer(layer):
+    print "The layer exists."
+else:
+    print "The layer does not exist."
+同见
+IsLayerChangeable
+IsLayerEmpty
+IsLayerLocked
+IsLayerOn
+IsLayerReference
+IsLayerSelectable
+IsLayerVisible

@@ -1,0 +1,42 @@
+
+PolylineVertices
+返回多重直线物件的顶点。
+语法
+rhinoscriptsyntax.PolylineVertices (curve_id, index=-1)
+rhinoscript.curve.PolylineVertices (curve_id, index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+数组
+执行成功返回表示顶点的 Point3d 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a polyline")
+if rs.IsPolyline(obj):
+    points = rs.PolylineVertices(obj)
+    if points:
+        for point in points: rs.AddPoint(point)
+同见
+AddPolyline
+IsPolyline

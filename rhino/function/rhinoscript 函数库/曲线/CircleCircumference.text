@@ -1,0 +1,45 @@
+
+CircleCircumference
+返回圆的周长。
+语法
+rhinoscriptsyntax.CircleCircumference ( curve_id, segment_index=-1 )
+rhinoscript.curve.CircleCircumference ( curve_id, segment_index=-1 )
+参数
+
+
+
+
+curve_id
+必须参数。代表曲线标识符的符串或 Guid
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+Number
+执行成功，返回圆的周长。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select circle")
+if rs.IsCircle(id):
+    circumference = rs.CircleCircumference(id)
+    print "Circle circumference:", circumference
+同见
+AddCircle
+AddCircle3Pt
+CircleCenterPoint
+CircleRadius
+IsCircle
+ 

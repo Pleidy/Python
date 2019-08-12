@@ -1,0 +1,47 @@
+
+ShortPath
+在曲面上两个点之间创建最短的曲线(测地线)。获取更多信息，请参考 Rhino 帮助文件中有关 ShortPath 指令的内容。
+语法
+rhinoscriptsyntax.ShortPath (surface_id, start_point, end_point)
+rhinoscript.surface.ShortPath (surface_id, start_point, end_point)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。要拉回的目标曲面的ID。
+
+
+start_point
+必须参数。代表曲面上最短连线起点的 3-D 点。
+
+
+end_point
+必须参数。代表曲面上最短连线终点的 3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新曲线物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface for short path", rs.filter.surface + rs.filter.surface)
+if surface:
+    start = rs.GetPointOnSurface(surface, "First point")
+    end = rs.GetPointOnSurface(surface, "Second point")
+    rs.ShortPath(surface, start, end)
+同见
+EvaluateSurface
+SurfaceClosestPoint
+ 

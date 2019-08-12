@@ -1,0 +1,79 @@
+
+XformChangeBasis / XformChangeBasis2
+返回一个基变换矩阵的变换。
+语法
+rhinoscriptsyntax.XformChangeBasis (initial_plane, final_plane)
+rhinoscriptsyntax.XformChangeBasis2 (x0, y0, z0, x1, y1, z1)
+rhinoscript.transformation.XformChangeBasis (initial_plane, final_plane)
+rhinoscript.transformation.XformChangeBasis2 (x0, y0, z0, x1, y1, z1)
+参数
+
+
+
+
+initial_plane
+必须参数。初始平面。
+
+
+final_plane
+必须参数。最终平面。
+
+
+x0
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。初始基 X (X0,Y0,Z0 可以是任何 3-D 基)
+
+
+y0
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。初始基 Y
+
+
+z0
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。初始基 Z
+
+
+x1
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。最终基 X (X1,Y1,Z1 可以是任何 3-D 基)
+
+
+y1
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。最终基 Y
+
+
+z1
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。最终基 Z
+
+
+返回值
+
+
+
+
+变换
+执行成功返回 4x4 的变换矩阵。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+说明
+如果使用由点定义的平面，XformChangeBasis 使用两个平面计算变换，使坐标从一个平面变到另一个。预定义的世界平面， WorldXYPlane，可以当作参数来使用。
+XformChangeBasis 使用六个向量时，从 (a0, b0, c0) 到 (a1, b1, c1) 为 a0*X0 + b0*Y0 + c0*Z0 = a1*X1 + b1*Y1 + c1*Z1。
+基变换不同于旋转变换，旋转变换是从一个正交平面旋转到另一个正交平面。参考 XformRotation。
+示例
+import rhinoscriptsyntax as rs
+import math
+objs = rs.GetObjects("Select objects to shear")
+if objs:
+    cplane = rs.ViewCPlane()
+    cob = rs.XformChangeBasis(rs.WorldXYPlane(), cplane)
+    shear2d = rs.XformIdentity()
+    shear2d[0,2] = math.tan(math.radians(45.0))
+    cob_inverse = rs.XformChangeBasis(cplane, rs.WorldXYPlane())
+    temp = rs.XformMultiply(shear2d, cob)
+    xform = rs.XformMultiply(cob_inverse, temp)
+    rs.TransformObjects( objs, xform, True )
+同见
+XformCPlaneToWorld
+XformWorldToCPlane
+ 

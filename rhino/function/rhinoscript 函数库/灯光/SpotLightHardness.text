@@ -1,0 +1,42 @@
+
+SpotLightHardness
+返回或修改一个聚光灯的锐利度。灯光锐利度控制被灯光完全照射的区域。
+语法
+rhinoscriptsyntax.SpotLightHardness (object_id, hardness=None)
+rhinoscript.light.SpotLightHardness (object_id, hardness=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+hardness
+可选参数。数字。新的锐利度。聚光灯的锐利度范围在 0.0 到 1.0 之间。如果省略，返回当前的锐利度。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 hardness 参数，返回当前的锐利度。
+
+
+数字
+如果指定了 hardness 参数，返回先前的锐利度。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id: rs.SpotLightHardness(id, 0.75)
+同见
+AddSpotLight
+IsSpotLight
+SpotLightRadius
+SpotLightShadowIntensity
+ 

@@ -1,0 +1,57 @@
+
+RealBox
+显示一个对话框，提示用户输入一个数字。
+语法
+rhinoscriptsyntax.RealBox (message=None, default_number=None, title=None, minimum=None, maximum=None)
+rhinoscript.userinterface.RealBox (message=None, default_number=None, title=None, minimum=None, maximum=None)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+default_number
+可选参数。数字。默认的数值。
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+minimum
+可选参数。数字。允许的最小值。
+
+
+maximum
+可选参数。数字。允许的最大值。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回数值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+radius = rs.RealBox("Enter a radius value", 5.0 )
+if radius:
+    point = (0,0,0)
+    rs.AddCircle( point, radius )
+ 
+
+ 
+同见
+GetReal
+ 
+ 

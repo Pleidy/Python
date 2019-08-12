@@ -1,0 +1,58 @@
+
+XformZero
+返回一个零变换矩阵。
+ 
+
+
+
+
+
+
+0
+0
+0
+0
+
+
+0
+0
+0
+0
+
+
+0
+0
+0
+0
+
+
+0
+0
+0
+0
+
+
+语法
+rhinoscriptsyntax.XformZero()
+rhinoscript.transformation.XformZero()
+参数
+None
+返回值
+
+
+
+
+变换
+4x4 的变换矩阵。
+
+
+示例
+import rhinoscriptsyntax as rs
+def printmatrix(xform):
+    for i in range(4):
+        print "[", xform[i,0], ", ", xform[i,1], ", ", xform[i,2], ", ", xform[i,3], "]"
+printmatrix( rs.XformZero() )
+同见
+XformDiagonal
+XformIdentity
+ 

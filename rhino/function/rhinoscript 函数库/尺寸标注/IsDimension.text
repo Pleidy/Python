@@ -1,0 +1,42 @@
+
+IsDimension
+判断一个物件是否为尺寸标注。
+语法
+rhinoscriptsyntax.IsDimension (object_id)
+rhinoscript.dimension.IsDimension (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+Boolean
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsDimension(obj):
+    print "The object is a dimension."
+else:
+    print "The object is not a dimension."
+同见
+IsAlignedDimension
+IsAngularDimension
+IsDiameterDimension
+IsLinearDimension
+IsOrdinateDimension
+IsRadialDimension

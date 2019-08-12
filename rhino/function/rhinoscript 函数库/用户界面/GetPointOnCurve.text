@@ -1,0 +1,44 @@
+
+GetPointOnCurve
+暂停并等待用户在一条曲线上选取一个点物件。
+语法
+rhinoscriptsyntax.GetPointOnCurve (curve_id, message=None)
+rhinoscript.userinterface.GetPointOnCurve (curve_id, message=None)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+message
+可选参数。字符串。提示信息。
+
+
+返回值
+
+
+
+
+Point3d 点
+用户选取的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Pick a curve")
+if rs.IsCurve(obj):
+    point = rs.GetPointOnCurve(obj, "Point on curve")
+    if point: rs.AddPoint(point)
+同见
+GetPoint
+GetPointOnMesh
+GetPointOnSurface
+GetPoints
+ 

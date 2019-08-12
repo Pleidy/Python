@@ -1,0 +1,45 @@
+
+RenameGroup
+重命名一个现有的群组。
+语法
+rhinocsriptsyntax.RenameGroup (old_name, new_name)
+rhinocsript.group.RenameGroup (old_name, new_name)
+参数
+
+
+
+
+old_name
+必须参数。字符串。现有群组的名称。
+
+
+new_name
+必须参数。字符串。群组的新名称。
+
+
+返回值
+
+
+
+
+字符串
+返回群组的新名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+strOldGroup = rs.GetString("Old group name")
+if strOldGroup:
+    strNewGroup = rs.GetString("New group name")
+    if strNewName: rs.RenameGroup(strOldGroup, strNewGroup)
+同见
+AddGroup
+DeleteGroup
+GroupCount
+GroupNames
+IsGroup
+ 

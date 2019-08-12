@@ -1,0 +1,51 @@
+
+PointCloudHidePoints
+返回或修改点云中的隐藏的点。
+注意，隐藏点云中的点仅在程序运行时有效 - 不会保存到 3dm 文件中。
+语法
+rhinoscriptsyntax.PointCloudHidePoints(object_id, hidden=[])
+rhinoscript.geometry.PointCloudHidePoints(object_id, hidden=[])
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+hidden
+可选参数。列表。表示隐藏状态（True = 隐藏，False = 显示）的列表（或元组）。注意，对于每一个点，都要有与之对应的布尔值。如果是空列表，将忽略此参数，不会修改点云。
+如果参数是 None，将移除点云中所有已存在的隐藏点信息。
+
+
+返回值
+
+
+
+
+列表
+如果 hidden 参数没有指定或为空列表，返回当前的隐藏状态。
+
+
+列表
+如果指定了 hidden 参数，返回先前的隐藏状态。
+
+
+None
+如果 object_id 参数对应的点云中没有隐藏点，或没有执行成功，或执行出错都返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select point cloud", rs.filter.pointcloud)
+if obj:
+    hidden = [True] * rs.PointCloudCount(obj)
+    for i in range(len(hidden)):
+        hidden[i] = (i%2==0)
+    rs.PointCloudHidePoints(obj, hidden)
+同见
+PointCloudHasHiddenPoints
+PointCloudHasPointColors
+PointCloudPointColors
+ 

@@ -1,0 +1,48 @@
+
+ClosedCurveOrientation
+定义封闭平面曲线的方向（逆时针或者顺时针）。
+语法
+rhinoscriptsyntax.ClosedCurveOrientation (curve_id, direction=[0,0,1])
+rhinoscript.curve.ClosedCurveOrientation (curve_id, direction=[0,0,1])
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+direction
+可选参数。包含三个数字的列表或者 Vector3d 对象。3-D 向量定义曲线所在平面的上面或者Z方向。如果省略，将使用世界坐标的 Z 坐标向量 (0,0,1)。
+
+
+返回值
+
+
+
+
+1
+曲线方向为逆时针。
+
+
+-1
+曲线方向为顺时针。
+
+
+0
+无法计算曲线方向。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select curve", rs.filter.curve)
+if rs.IsCurveClosed(curve) and rs.IsCurvePlanar(curve):
+    print rs.ClosedCurveOrientation(curve)
+同见
+IsCurveClosed
+IsCurvePlanar

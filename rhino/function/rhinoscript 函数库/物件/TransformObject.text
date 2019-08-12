@@ -1,0 +1,49 @@
+
+TransformObject
+按照给定的 4x4 的变换矩阵移动、缩放或旋转一个物件。左边是矩阵变换方式。以下列表显示矩阵变换设置：
+语法
+rhinoscriptsyntax.TransformObject (object_id, matrix, copy=False)
+rhinoscript.object.TransformObject (object_id, matrix, copy=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+matrix
+必须参数。数字或变换组成的 4x4 的列表。变换矩阵。
+
+
+copy
+可选参数。布尔值。复制物件。如果省略，执行过程中不复制物件（False）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回变换得到物件的ID。
+
+
+示例
+# Rotate an object by theta degrees about the world Z axis
+import math
+import rhinoscriptsyntax as rs
+degrees = 90.0 # Some angle
+radians = math.radians(degrees)
+c = math.cos(radians)
+s = math.sin(radians)
+matrix = []
+matrix.append( [c,-s, 0, 0] )
+matrix.append( [s,c, 0, 0] )
+matrix.append( [0, 0, 1, 0] )
+matrix.append( [0, 0, 0, 1] )
+obj = rs.GetObject("Select object to rotate")
+if obj: rs.TransformObject( obj, matrix )
+同见
+TransformObjects

@@ -1,0 +1,42 @@
+
+SurfaceFrame
+按照给定的 UV 参数，基于这一点上的法线方向和UV的方向返回一个平面。
+语法
+rhinoscriptsyntax.SurfaceFrame (surface_id, uv_parameter)
+rhinoscript.surface.SurfaceFrame (surface_id, uv_parameter)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+uv_parameter
+必须参数。UV参数值构成的元组。
+
+
+返回值
+
+
+
+
+Plane
+执行成功，返回指定参数位置的平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetSurfaceObject("Select a surface")
+if surface:
+    plane = rs.SurfaceFrame(surface[0], surface[4])
+    rs.ViewCPlane(None, plane)
+同见
+EvaluateSurface
+SurfaceClosestPoint
+SurfaceNormal

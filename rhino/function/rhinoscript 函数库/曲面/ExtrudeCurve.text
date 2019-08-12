@@ -1,0 +1,43 @@
+
+ExtrudeCurve
+通过沿路径曲线挤出另一条曲线生成曲面。
+语法
+rhinoscriptsyntax.ExtrudeCurve( curve_id, path_id )
+rhinoscript.surface.ExtrudeCurve( curve_id, path_id )
+参数
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。要挤出曲线物件的 ID 。
+
+
+path_id
+必须参数。字符串或 Guid。路径曲线的ID。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.AddCircle(rs.WorldXYPlane(), 5)
+path = rs.AddLine([5,0,0], [10,0,10])
+rs.ExtrudeCurve( curve, path )
+同见
+ExtrudeCurvePoint
+ExtrudeCurveStraight
+ExtrudeCurveTapered
+ExtrudeSurface

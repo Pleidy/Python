@@ -1,0 +1,37 @@
+
+UnlockGroup
+解锁群组中被锁定的物件。锁定的物件可见，也可以被物件锁点捕捉。但是，不能被选取。
+语法
+rhinoscriptsyntax.UnlockGroup (group_name)
+rhinoscript.group.UnlockGroup (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+数字
+执行过程中解锁物件的数量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+groups = rs.GroupNames()
+if groups:
+    for group in groups: rs.UnlockGroup(group)
+同见
+HideGroup
+LockGroup
+ShowGroup

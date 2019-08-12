@@ -1,0 +1,43 @@
+
+IsCurvePlanar
+判断一个物件是否为平面曲线。
+语法
+rhinoscriptsyntax.IsCurvePlanar (object_id, segment_index=-1)
+rhinoscript.curve.IsCurvePlanar (object_id, segment_index=-1)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 object_id 标示出一个多重曲线物件，那么 index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    if rs.IsCurvePlanar(obj):
+        print "The object is a planar curve."
+    else:
+        print "The object is not a planar curve."
+else:
+    print "The object is not a curve."
+同见
+IsCurve
+IsCurveClosed
+IsCurveLinear
+IsCurvePeriodic

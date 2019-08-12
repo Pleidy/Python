@@ -1,0 +1,35 @@
+
+AutosaveInterval
+返回或设置 Rhino 自动保存文档的时间间隔。
+语法
+rhinoscriptsyntax.AutosaveInterval (minutes=None)
+rhinoscript.application.AutosaveInterval (minutes=None)
+参数
+
+
+
+
+minutes
+可选参数。数字。隔多少分钟自动保存一次文档。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定间隔，返回当前间隔的分钟数。
+
+
+数字
+如果指定了间隔，返回先前间隔的分钟数。
+
+
+示例
+import rhinoscriptsyntax as rs
+minutes = rs.AutosaveInterval()
+if minutes>20: rs.AutosaveInterval(20)
+同见
+AutosaveFile
+EnableAutosave

@@ -1,0 +1,73 @@
+
+AddBlendCurve
+按照指定的参数位置、方向和连续性混接曲线。
+语法
+rhinoscriptsyntax.AddBlendCurve (curves, parameters, reverses, continuities)
+rhinoscript.curve.AddBlendCurve (curves, parameters, reverses, continuities)
+参数
+
+
+
+
+curves
+必须参数。列表或元组。两个要混接的曲线物件的 Guid。
+
+
+parameters
+必须参数。列表或元组。两个代表曲线参数的数字，与两条曲线一一对应，表示曲线上混接端点的位置。
+
+
+reverses
+必须参数。列表或元组。两个布尔值，与两条曲线一一对应，表示是否使用曲线原本的方向进行混接（False），或按照曲线方向的反方向进行混接（True）。
+
+
+continuities
+必须参数。列表或元组。两个数字，两条曲线一一对应，表示混接端点处的连续性。结果如下：
+
+
+
+
+值
+描述
+
+
+0
+位置 - 仅满足位置连续。
+
+
+1
+相切 - 位置和相切连续。
+
+
+2
+曲率 - 位置，相切，曲率连续都满足。 
+
+
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新生成曲线物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+  import rhinoscriptsyntax as rs
+  curve0 = rs.AddLine((0,0,0), (0,9,0))
+  curve1 = rs.AddLine((1,10,0), (10,10,0))
+  curves = curve0, curve1
+  domain_crv0 = rs.CurveDomain(curve0)
+  domain_crv1 = rs.CurveDomain(curve1)
+  params = domain_crv0[1], domain_crv1[0]
+  revs = False, True
+  cont = 2,2
+  rs.AddBlendCurve( curves, params, revs, cont )
+同见
+AddFilletCurve

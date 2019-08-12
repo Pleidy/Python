@@ -1,0 +1,78 @@
+
+IntersectSpheres
+计算两个球体的相交。   
+语法
+rhinoscript.surface.IntersectSpheres (sphere_plane0, sphere_radius0, sphere_plane1, sphere_radius1)
+rhinoscriptsyntax.IntersectSpheres (sphere_plane0, sphere_radius0, sphere_plane1, sphere_radius1)
+参数
+
+
+
+
+sphere_plane0
+必须参数。平面。第一个球体的赤道平面。平面的原点将作为球体的中心点。
+
+
+sphere_radius0
+必须参数。数字。第一个球体的半径。
+
+
+sphere_plane1
+必须参数。平面。第二个球体的赤道平面。平面的原点将作为球体的中心点。
+
+
+sphere_radius1
+必须参数。数字。第二个球体的半径。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回相交计算结果组成的列表。计算结果如下：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+数字
+相交类型，0 = 点， 1 = 圆， 2 = 球体。
+
+
+1
+Point3d 点对象或平面。
+如果相交得到点，此为表明相交位置的数组。
+如果相交得到圆，此为圆所在的平面。平面的原点将作为圆的中心点。
+
+
+2 (相交得到圆时才有)
+数字
+如果相交得到圆，圆的半径。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane0 = rs.WorldXYPlane()
+plane1 = rs.MovePlane(plane0, (10,0,0))
+radius = 10
+results = rs.IntersectSpheres(plane0, radius, plane1, radius)
+if results:
+    if results[0] == 0: rs.AddPoint(results[1])
+    else: rs.AddCircle( results[1], results[2])
+同见
+IntersectBreps
+IntersectPlanes

@@ -1,0 +1,41 @@
+
+PullPoints
+将一组点拉回到一个曲面或一个网格物件。获取更多相关信息，请参考 Rhino 帮助文件中有关Pull 指令的部分。
+语法
+rhinoscriptsyntax.PullPoints (object_id, points)
+rhinoscript.pointvector.PullPoints (object_id, points)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。目标曲面或目标网格的ID。
+
+
+points
+必须参数。列表或元组。要拉回的 3-D 点列表。
+
+
+返回值
+
+
+
+
+List
+执行成功返回 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface that pulls", rs.filter.surface)
+objects = rs.GetObjects("Select points to pull", rs.filter.point)
+points = [rs.PointCoordinates(obj) for obj in objects]
+results = rs.PullPoints( surface, points )
+rs.AddPoints( results )
+同见
+PullCurve

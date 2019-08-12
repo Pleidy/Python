@@ -1,0 +1,42 @@
+
+LayerLinetype
+返回或修改一个图层的线型。
+语法
+rhinoscriptsyntax.LayerLinetype(layer, linetype=None)
+rhinoscript.layer.LayerLinetype(layer, linetype=None)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+linetype
+可选参数。字符串。图层新线型的名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定线型，返回当前线型的名称。
+
+
+字符串
+如果指定了线型，返回先前线型的名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    for layer in layers:
+        if rs.LayerLinetype(layer)!="Continuous":
+            rs.LayerLinetype(layer,"Continuous")
+同见
+LayerPrintColor
+LayerPrintWidth

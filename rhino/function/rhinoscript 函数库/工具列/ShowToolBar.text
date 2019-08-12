@@ -1,0 +1,39 @@
+
+ShowToolbar
+显示一个已打开工具列收藏夹中被隐藏的工具列组。
+语法
+rhinoscriptsyntax.ShowToolbar(name, toolbar_group)
+rhinoscript.toolbar.ShowToolbar(name, toolbar_group)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+toolbar_group
+必须参数。字符串。工具列收藏夹中要显示的工具列组的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+file = "C:\\SteveBaer\\AppData\\Roaming\\McNeel\\Rhinoceros\\5.0\\UI\\default.rui"
+name = rs.IsToolbarCollection(file)
+if name: rs.ShowToolbar(name, "Layer")
+同见
+HideToolbar
+IsToolbar
+IsToolbarVisible
+ToolbarCount
+ToolbarNames

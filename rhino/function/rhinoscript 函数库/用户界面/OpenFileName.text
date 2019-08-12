@@ -1,0 +1,60 @@
+
+OpenFileName
+显示一个 Windows 文件打开对话框，让用户选取一个文件名。注意，这个函数不会打开文件。
+语法
+rhinoscriptsyntax.OpenFileName (title=None, filter=None, folder=None, filename=None, extension=None)
+rhinoscript.userinterface.OpenFileName (title=None, filter=None, folder=None, filename=None, extension=None)
+参数
+
+
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+filter
+可选参数。字符串。格式过滤字符串。格式过滤字符串必须使用如下格式："描述1|格式1|描述2|格式2||", 字符串 "||" 为终止标记。如果省略，格式过滤将使用 (*.*) 。也就是说所有格式的文件都可以选择。
+
+
+folder
+可选参数。字符串。默认文件夹。
+
+
+filename
+可选参数。字符串。默认文件名。
+
+
+extension
+可选参数。字符串。默认的文件扩展名。
+
+
+返回值
+
+
+
+
+字符串
+返回文件名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+filename = rs.OpenFileName()
+if filename: rs.MessageBox(filename)
+filename = rs.OpenFileName("Open", "Text Files (*.txt)|*.txt||")
+if filename: rs.MessageBox(filename)
+filename = rs.OpenFileName("Open", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*||")
+if filename: rs.MessageBox(filename)
+ 
+
+ 
+同见
+BrowseForFolder
+OpenFileNames
+SaveFileName
+ 

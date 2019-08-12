@@ -1,0 +1,23 @@
+
+LayerCount
+返回此文档中的图层数量。
+语法
+rhinoscriptsyntax.LayerCount ()
+rhinoscript.layer.LayerCount ()
+参数
+空值。
+返回值
+
+
+
+
+数字
+此文档中的图层数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.LayerCount()
+print "There are", count, "layers."
+同见
+LayerNames

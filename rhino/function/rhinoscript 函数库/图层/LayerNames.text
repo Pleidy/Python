@@ -1,0 +1,31 @@
+
+LayerNames
+返回此文档中所有图层的名称。
+语法
+rhinoscriptsyntax.LayerNames (sort=False)
+rhinoscript.layer.LayerNames (sort=False)
+参数
+
+
+
+
+sort
+可选参数。布尔值。对图层名称列表排序。默认情况下返回未排序的列表（False）。
+
+
+返回值
+
+
+
+
+列表
+图层名称列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    for layer in layers:print layer
+同见
+LayerCount

@@ -1,0 +1,37 @@
+
+ColorRedValue
+从一组RGB值中检索出红色值。
+语法
+rhinoscriptsyntax.ColorRedValue (rgb)
+rhinoscript.utility.ColorRedValue (rgb)
+参数
+
+
+
+
+rgb
+必须参数。数字。RGB 颜色值。
+
+
+返回值
+
+
+
+
+数字
+执行成功，返回红色值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rgb = rs.LayerColor("Default")
+print "Red = ", rs.ColorRedValue(rgb)
+print "Green = ", rs.ColorGreenValue(rgb)
+print "Blue = ", rs.ColorBlueValue(rgb)
+同见
+ColorBlueValue
+ColorGreenValue

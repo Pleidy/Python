@@ -1,0 +1,25 @@
+
+WorldZXPlane
+返回 Rhino 世界坐标的ZX平面。同样也可以这样创建平面：
+rhinoscriptsyntax.PlaneFromFrame( (0,0,0), (0,0,1), (1,0,0) )
+语法
+rhinoscriptsyntax.WorldZXPlane()
+rhinoscript.plane.WorldZXPlane()
+参数
+空值。
+返回值
+
+
+
+
+Plane
+返回 Rhino 世界坐标的ZX平面。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+rs.ViewCPlane( view, rs.WorldZXPlane() )
+同见
+WorldXYPlane
+WorldYZPlane

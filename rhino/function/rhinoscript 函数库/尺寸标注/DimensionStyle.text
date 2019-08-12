@@ -1,0 +1,44 @@
+
+DimensionStyle
+返回或修改一个尺寸标注物件的尺寸标注型式。
+语法
+rhinoscriptsyntax.DimensionStyle (object_id, dimstyle_name=None)
+rhinoscript.dimension.DimensionStyle (object_id, dimstyle_name=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+dimstyle_name
+可选参数。字符串。现有尺寸标注型式的名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 dimstyle_name 参数，返回物件当前的尺寸标注型式。
+
+
+字符串
+如果指定了 dimstyle_name 参数，返回物件先前的尺寸标注型式。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsDimension(obj): rs.DimensionStyle(obj, "Default")
+同见
+DimStyleNames
+IsDimStyle
+ 

@@ -1,0 +1,46 @@
+
+PlaneFromPoints
+从不共线的三个点创建一个平面。
+语法
+rhinoscriptsyntax.PlaneFromPoints(origin, x, y)
+rhinoscript.plane.PlaneFromPoints(origin, x, y)
+参数
+
+
+
+
+origin
+必须参数。三个数字组成的列表或 Point3d 对象。第一个点，平面的原点。
+
+
+x
+必须参数。三个数字组成的列表或 Point3d 对象。平面 X 轴上点。
+
+
+y
+必须参数。三个数字组成的列表或 Point3d 对象。平面 Y 轴上点。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+corners = rs.GetRectangle()
+if corners:
+    rs.ViewCPlane( rs.PlaneFromPoints(corners[0], corners[1], corners[3]))
+同见
+PlaneFromFrame
+PlaneFromNormal
+ 
+ 

@@ -1,0 +1,37 @@
+
+ViewTitle
+通过视图的 ID ，得到这个视图的名称和标题。
+语法
+rhinoscriptsyntax.ViewTitle (view_id)
+rhinoscript.view.ViewTitle (view_id)
+参数
+
+
+
+
+view_id
+必须参数。字符串或 Guid。要用 ViewNames 函数获取名称的视图的 ID 。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回视图的名称或标题。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view_ids = rs.ViewNames(False)
+for id in view_ids:
+    print id + " = " + rs.ViewTitle(id)
+同见
+CurrentView
+ViewNames
+ 

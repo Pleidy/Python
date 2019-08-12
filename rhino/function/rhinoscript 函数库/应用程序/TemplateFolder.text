@@ -1,0 +1,35 @@
+
+TemplateFolder
+返回或设置 Rhino 模版文件的存放路径。
+语法
+rhinoscriptsyntax.TemplateFolder( folder=None )
+rhinoscript.application.TemplateFolder( folder=None )
+参数
+
+
+
+
+folder
+可选参数。字符串。Rhino 模版文件的存放路径。注意，路径或文件夹必须存在。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 folder 参数，返回当前的模版路径。
+
+
+字符串
+如果指定了 folder 参数，返回先前的模版路径。
+
+
+示例
+import rhinoscriptsyntax as rs
+folder = rs.TemplateFolder()
+filename = folder + "\\Millimeters.3dm"
+rs.TemplateFile(filename)
+同见
+TemplateFile

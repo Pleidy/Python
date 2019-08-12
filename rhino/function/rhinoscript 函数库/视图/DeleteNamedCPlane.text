@@ -1,0 +1,35 @@
+
+DeleteNamedCPlane
+在文档中移除一个已命名工作平面。
+语法
+rhinoscriptsyntax.DeleteNamedCPlane (name)
+rhinoscript.view.DeleteNamedCPlane (name)
+参数
+
+
+
+
+name
+必须参数。字符串。要移除的已命名工作平面的名称。
+
+
+返回值
+参数
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+cplanes = rs.NamedCplanes()
+if cplanes:
+    for cplane in cplanes: rs.DeleteNamedCPlane(cplane)
+同见
+AddNamedCPlane
+NamedCPlane
+NamedCPlanes
+RestoreNamedCPlane

@@ -1,0 +1,38 @@
+
+EllipseCenterPoint
+返回椭圆曲线物件的中心点。
+语法
+rhinoscriptsyntax.EllipseCenterPoint ( curve_id )
+rhinoscript.curve.EllipseCenterPoint ( curve_id )
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+Point3d
+如果执行成功，返回作为椭圆中心点的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select ellipse")
+if rs.IsEllipse(obj):
+    point = rs.EllipseCenterPoint(obj)
+    rs.AddPoint( point )
+同见
+IsEllipse
+EllipseQuadPoints
+ 

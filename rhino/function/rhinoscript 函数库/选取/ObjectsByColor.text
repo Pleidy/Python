@@ -1,0 +1,39 @@
+
+ObjectsByColor
+通过物件颜色返回物件的ID标识。物件颜色使用 RGB 颜色格式。   RGB 格式用红、绿、蓝三种颜色的比例定义要显示的颜色。
+语法
+rhinoscriptsyntax.ObjectsByColor (color, select=False, include_lights=False)
+rhinoscript.selection.ObjectsByColor (color, select=False, include_lights=False)
+参数
+
+
+
+
+color
+必须参数。
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+返回值
+
+
+
+
+列表
+由物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Pick any object")
+if obj:
+    color = rs.ObjectColor(obj)
+    rs.ObjectsByColor(color, True)
+同见

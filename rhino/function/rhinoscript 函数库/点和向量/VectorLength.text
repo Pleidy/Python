@@ -1,0 +1,40 @@
+
+VectorLength
+返回 3-D 向量的长度。
+语法
+rhinoscriptsyntax.VectorLength (vector)
+rhinoscript.pointvector.VectorLength (vector)
+参数
+
+
+
+
+vector
+必须参数。包含三个数字的列表或者 Vector3d 对象。3-D 向量。
+
+
+返回值
+
+
+
+
+Double
+执行成功，返回向量长度。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = rs.GetPoint("First point")
+point2 = rs.GetPoint("Next point")
+vector = rs.VectorCreate(point1, point2)
+print rs.VectorLength(vector)
+同见
+VectorAdd
+VectorCreate
+VectorSubtract
+VectorUnitize
+ 

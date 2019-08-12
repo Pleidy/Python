@@ -1,0 +1,48 @@
+
+TextObjectFont
+返回或修改一个文本物件使用的字体。
+语法
+rhinoscriptsyntax.TextObjectFont (object_id, font=None)
+rhinoscript.geometry.TextObjectFont (object_id, font=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+font
+可选参数。字符串。新字体的名称。如果省略，返回当前字体。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定字体，返回当前字体的名称。
+
+
+字符串
+如果指定了字体，返回先前字体的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select text")
+if rs.IsText(obj): rs.TextObjectFont(obj, "Arial") 
+同见
+AddText
+IsText
+TextObjectHeight
+TextObjectPlane
+TextObjectPoint
+TextObjectStyle
+TextObjectText

@@ -1,0 +1,47 @@
+
+MaterialTransparencyMap
+返回或修改一个材质的透明贴图。
+语法
+rhinoscriptsyntax.MaterialTransparencyMap ( material_index, filename=None )
+rhinoscript.material.MaterialTransparencyMap ( material_index, filename=None )
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+filename
+可选参数。字符串。作为透明贴图的位图文件。
+
+
+返回值
+
+
+
+
+字符串
+如果没有定义 strFileName 参数，返回当前的透明贴图文件名。
+
+
+字符串
+如果定义了 strFileName 参数，返回先前的透明贴图文件名。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1:
+        rs.MaterialTransparencyMap( index, "C:\\Users\\Steve\\Desktop\\texture.png" )
+同见
+MaterialBump
+MaterialEnvironmentMap
+MaterialTexture

@@ -1,0 +1,44 @@
+
+DetailScale
+返回或修改子视图物件的缩放。
+语法
+rhinoscriptsyntax.DetailScale (detail_id, model_length=None, page_length=None)
+rhinoscript.view.DetailScale (detail_id, model_length=None, page_length=None)
+参数
+
+
+
+
+detail_id
+必须参数。字符串或 Guid。现有子视图的 ID 。
+
+
+model_length
+可选参数。数字。当前模型单位的长度。
+
+
+page_length
+可选参数。数字。当前页面单位的长度。
+
+
+返回值
+
+
+
+
+数字
+如果 model_length 和 page_length 参数不为空，返回当前页面缩放比例因数。
+如果 model_length 和 page_length 参数不为空，返回先前页面缩放比例因数。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+detail = rs.GetObject("select a detail", rs.filter.detail)
+if detail: rs.DetailScale(detail,1,1)
+同见
+IsDetail
+IsLayout

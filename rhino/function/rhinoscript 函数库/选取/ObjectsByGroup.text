@@ -1,0 +1,33 @@
+
+ObjectsByGroup
+返回群组中物件的ID标识。
+语法
+rhinoscriptsyntax.ObjectsByGroup (group_name, select=False)
+rhinoscript.selection.ObjectsByGroup (group_name, select=False)
+参数
+
+
+
+
+group_name
+必须参数。字符串。群组的名称。
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+返回值
+
+
+
+
+列表
+由物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+group = rs.GetString("Group to select")
+if group: rs.ObjectsByGroup( group, True )
+同见

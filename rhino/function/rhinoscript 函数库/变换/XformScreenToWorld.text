@@ -1,0 +1,45 @@
+
+XformScreenToWorld
+变换指定视图的应用区域坐标或屏幕坐标到世界坐标。结果用 3-D 点表示。
+语法
+rhinoscriptsyntax.XformScreenToWorld (point, view=None, screen_coordinates=False)
+rhinoscript.transformation.XformScreenToWorld (point, view=None, screen_coordinates=False)
+参数
+
+
+
+
+point
+必须参数。两个数字组成的列表或 Point2d 对象。表示指定视图或屏幕坐标的 2-D 点。
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，使用当前视图。
+
+
+screen_coordinates
+可选参数。布尔值。如果省略或设置为 False，point 参数使用应用区域坐标。如果设置为 True，point 参数使用屏幕坐标。
+
+
+返回值
+
+
+
+
+Point3d 点
+执行成功返回世界坐标的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point2d = 200,100
+view = rs.CurrentView()
+point = rs.XformScreenToWorld(point2d, view)
+print point
+同见
+XformWorldToScreen
+ 

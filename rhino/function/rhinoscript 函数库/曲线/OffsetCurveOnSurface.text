@@ -1,0 +1,56 @@
+
+OffsetCurveOnSurface
+在曲面上偏移一条曲线。原始曲线必须在曲面表面上。偏移生成的曲线将被添加到 Rhino。
+语法
+rhinoscriptsyntax.OffsetCurveOnSurface (curve_id, surface_id, distance_or_parameter)
+rhinoscript.curve.OffsetCurveOnSurface (curve_id, surface_id, distance_or_parameter)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。曲线物件的 ID 。注意，原始曲线必须在曲面表面上。
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件的 ID 。
+
+
+distance_or_parameter
+必须参数。数字或两个数组成的元组。
+如果是单一数字，表示偏移的距离。基于曲线的方向，正值表示向左偏移，负值表示向右偏移。
+如果是两个数的元组，表示曲面的 U,V参数，偏移曲线将会通过此位置。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回包含新物件ID的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def TestOffset():
+    curve = rs.GetObject("Select curve on a surface", rs.filter.curve)
+    if curve is None: return False
+    surface = rs.GetObject("Select base surface", rs.filter.surface)
+    if surface is None: return False
+    point = rc.GetPointOnSurface( surface, "Through point" )
+    if point is None: return False
+    parameter = rs.SurfaceClosestPoint(surface, point)
+    rc = rs.OffsetCurveOnSurface( curve, surface, parameter )
+    return rc is not None
+ 
+TestOffset()
+ 
+同见
+OffsetCurve
+OffsetSurface

@@ -1,0 +1,77 @@
+
+SortPoints
+排序一组 3-D 点。
+语法
+rhinoscriptsyntax.SortPoints (points, ascending=True, order=0)
+rhinoscript.utility.SortPoints (points, ascending=True, order=0)
+参数
+
+
+
+
+points
+必须参数。数组。3-D 点数组。
+
+
+ascending
+可选参数。布尔值。排序模式，递增或递减。如果省略，按照递增排序（True）。
+
+
+order
+可选参数。数字。元素排列次序：
+
+
+
+
+值
+元素排列次序
+
+
+0 (默认值)
+X, Y, Z
+
+
+1
+X, Z, Y
+
+
+2
+Y, X, Z
+
+
+3
+Y, Z, X
+
+
+4
+Z, X, Y
+
+
+5
+Z, Y, X
+
+
+
+
+返回值
+
+
+
+
+列表
+执行成功返回排序好的 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints()
+if points:
+    points = rs.SortPoints(points)
+    for p in points: print p
+同见
+SortStrings
+SortNumbers

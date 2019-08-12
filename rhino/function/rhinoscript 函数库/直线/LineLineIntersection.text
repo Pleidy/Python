@@ -1,0 +1,46 @@
+
+LineLineIntersection
+计算两条不平行直线的相交。注意，此函数并不需要这两条直线真正相交。  
+三维空间中的两条直线大多数情况下不会相交于一个点，有可能一条直线与另一条直线所在的平面平行或相交，但它们彼此之间并不平行或相交，只有将他们投影到一个平面上的时候它们才相交。所以当两条直线没有真正相交在一个点的时候，将它们与它们之间最短连线的交点视为这两条直线的交点。
+语法
+rhinoscriptsyntax.LineLineIntersection (lineA, lineB, planar=True)
+rhinoscript.line.LineLineIntersection (lineA, lineB, planar=True)
+参数
+
+
+
+
+lineA
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。
+
+
+lineB
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。
+
+
+返回值
+
+
+
+
+列表
+第一条直线上的点和第二条直线上的点组成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+lineA = (1,1,0), (5,0,0)
+lineB = (1,3,0), (5,5,0)
+point = rs.LineLineIntersection(lineA, lineB)
+if point:
+    rs.AddPoint(point[0])
+    rs.AddPoint(point[1])
+同见
+IntersectPlanes
+LinePlaneIntersection
+PlanePlaneIntersection
+ 

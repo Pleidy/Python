@@ -1,0 +1,37 @@
+
+Osnap
+打开或关闭  Rhino 的物件锁点。物件锁点可以将鼠标锁定在物件上的某一点。
+语法
+rhinoscriptsyntax.Osnap( enable=None )
+rhinoscript.application.Osnap( enable=None )
+参数
+
+
+
+
+enable
+可选参数。布尔值。打开（True）或关闭（False）。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 enable 参数，返回当前物件锁点的状态。
+
+
+布尔值
+如果指定了 enable 参数，返回先前的物件锁点状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+if not rs.Osnap(): rs.Osnap(True)
+同见
+Ortho
+OsnapMode
+Planar
+Snap
+ 

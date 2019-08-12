@@ -1,0 +1,34 @@
+
+UnifyMeshNormals
+统一一个网格物件中方向不一致的面。
+语法
+rhinoscriptsyntax.UnifyMeshNormals (object_id)
+rhinoscript.mesh.UnifyMeshNormals (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+函数执行过程中修改面的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+if rs.IsMesh(obj): rs.UnifyMeshNormals(obj)
+同见
+IsMesh

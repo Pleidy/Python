@@ -1,0 +1,39 @@
+
+PointCloudHasHiddenPoints
+判断点云物件中是否有隐藏的点。
+语法
+rhinoscriptsyntax.PointCloudHasHiddenPoints(object_id)
+rhinoscript.geometry.PointCloudHasHiddenPoints(object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a point cloud", rs.filter.pointcloud)
+if rs.PointCloudHasHiddenPoints(obj):
+    print "The point cloud has hidden points."
+else:
+    print "The point cloud has no hidden points."
+同见
+PointCloudHasPointColors
+PointCloudHidePoints
+PointCloudPointColors

@@ -1,0 +1,68 @@
+
+RenderSettings
+返回或设置渲染设置。详情请参考 Rhino 帮助文档中关于 文档属性 的部分。
+语法
+rhinoscriptsyntax.RenderSettings (settings=None)
+rhinoscript.document.RenderSettings (settings=None)
+参数
+
+
+
+
+settings
+可选参数。数字。要返回或修改的设置。以下设置可以相加实现多选：
+
+
+
+
+值
+描述
+
+
+0
+空值。
+
+
+1
+创建阴影。
+
+
+2
+使用图层中关闭的灯光。
+
+
+4
+渲染曲线和  ISO 结构线。
+
+
+8
+渲染尺寸标注和文本。
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 settings 参数，返回当前的渲染设置。
+
+
+数字
+如果指定了 settings 参数，返回先前的渲染设置。
+
+
+示例
+import rhinoscriptsyntax as rs
+render_annotations = 8
+settings = rs.RenderSettings()
+if settings & render_annotations:
+    settings = settings - render_annotations
+    rs.RenderSettings( settings )
+同见
+RenderAntialias
+RenderColor
+RenderResolution
+ 

@@ -1,0 +1,38 @@
+
+RebuildCurve
+按照给定的阶数和控制点数重建一条曲线。获取更多信息，请参考 Rhino 帮助文件中 Rebuild 指令的部分。
+语法
+rhinoscriptsyntax.RebuildCurve ( curve_id, degree=3, point_count=10)
+rhinoscript.curve.RebuildCurve ( curve_id, degree=3, point_count=10)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+degree
+可选参数。数字。新的阶数，数值必须大于 0 。默认值为 3 。
+
+
+point_count
+可选参数。数字。新的点数，必须大于 degree参数。对于闭合曲线，最小的点数为3.
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select curve to rebuild", rs.filter.curve)
+if curve: rs.RebuildCurve(curve, 3, 10)
+同见
+RebuildSurface

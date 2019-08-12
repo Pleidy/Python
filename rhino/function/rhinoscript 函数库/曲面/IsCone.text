@@ -1,0 +1,37 @@
+
+IsCone
+判断曲面是否为圆锥的一部分。
+语法
+rhinoscriptsyntax.IsCone (object_id)
+rhinoscript.surface.IsCone (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。曲面物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select a surface", rs.filter.surface)
+if surface:
+    if rs.IsCone(surface):
+        print "The surface is a portion of a cone."
+    else:
+        print "The surface is not a portion of a cone."
+同见
+IsCylinder
+IsSphere
+IsSurface
+IsTorus

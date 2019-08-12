@@ -1,0 +1,37 @@
+
+MeshFaceCount
+返回一个网格物件总共有多少个网格面。
+语法
+rhinocriptsyntax.MeshFaceCount (object_id)
+rhinocript.mesh.MeshFaceCount (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回网格面的数量。
+
+
+示例
+import rhinocsriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+print "Quad faces:", rs.MeshQuadCount(obj)
+print "Triangle faces:", rs.MeshTriangleCount(obj)
+print "Total faces:", rs.MeshFaceCount(obj)
+同见
+IsMesh
+MeshContourPoints
+MeshFaces
+MeshVertexCount
+MeshVertices
+ 

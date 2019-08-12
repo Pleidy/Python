@@ -1,0 +1,44 @@
+
+LightColor
+返回或修改灯光的颜色。
+语法
+rhinoscriptsyntax.LightColor (object_id, color=None)
+rhinoscript.light.LightColor (object_id, color=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+color
+可选参数。颜色。新的颜色值。如果省略，返回灯光当前的颜色。
+
+
+返回值
+
+
+
+
+Color
+如果没有指定颜色，返回灯光当前的颜色。
+
+
+Color
+如果指定了颜色，返回灯光先前的颜色。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id: rs.LightColor( id, (0,255,255) )
+同见
+EnableLight
+IsLight
+IsLightEnabled
+LightCount
+LightName
+LightObjects
+ 

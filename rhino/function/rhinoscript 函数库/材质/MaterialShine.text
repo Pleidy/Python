@@ -1,0 +1,52 @@
+
+MaterialShine
+返回或修改一个材质的光泽度。
+语法
+rhinoscriptsyntax.MaterialShine (material_index, shine=None)
+rhinoscript.material.MaterialShine (material_index, shine=None)
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+shine
+可选参数。数字。新的光泽度。材质光泽度在 0.0 到 255.0 之间，0.0 为粗糙，255.0 为光滑。如果省略，返回当前的光泽度。
+
+
+返回值
+
+
+
+
+数字
+如果没有定义 shine 参数，返回当前的光泽度。
+
+
+数字
+如果定义了 shine 参数，返回先前的光泽度。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+MAX_SHINE = 255.0
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1:
+        rs.MaterialShine( index, MAX_SHINE/2 )
+同见
+MaterialBump
+MaterialColor
+MaterialName
+MaterialReflectiveColor
+MaterialTexture
+MaterialTransparency
+ 

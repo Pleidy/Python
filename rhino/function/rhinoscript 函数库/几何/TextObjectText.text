@@ -1,0 +1,49 @@
+
+TextObjectText
+返回或修改一个文本物件的文本内容。可以使用 Rhino 的 Text 指令创建文本物件。
+语法
+rhinoscriptsyntax.TextObjectText (object_id, text=None)
+rhinoscript.geometry.TextObjectText (object_id, text=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+text
+可选参数。字符串。新的字符或文本字符串。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定新的文本字符串，返回当前的文本。
+
+
+字符串
+如果指定了新的文本字符串，返回先前的文本。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select text")
+if rs.IsText(obj): rs.TextObjectText(obj, "Rhino")
+同见
+AddText
+IsText
+TextObjectFont
+TextObjectHeight
+TextObjectPlane
+TextObjectPoint
+TextObjectStyle
+ 

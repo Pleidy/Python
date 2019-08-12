@@ -1,0 +1,46 @@
+
+CurrentView
+返回或设置当前的活动视图。
+语法
+rhinoscriptsyntax.CurrentView (view=None, return_name=True)
+rhinoscript.view.CurrentView (view=None, return_name=True)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。要设置为当前视图的视图标题或 ID 。如果省略，仅返回当前视图的名称或 ID 。
+
+
+return_name
+可选参数。布尔值。如果为 True (默认值)，返回视图的名称或标题。如果为 False，返回视图的 ID 。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定标题 ，返回当前视图的标题或 ID 。
+
+
+字符串
+如果指定了标题 ，返回先前视图的标题或 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+previous = rs.CurrentView("Perspective")
+print "The previous current view was ", previous
+viewId = rs.CurrentView( return_name=False )
+print "The identifier of the current view is ", viewId
+同见
+IsViewCurrent
+ViewNames
+ 

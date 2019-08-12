@@ -1,0 +1,35 @@
+
+BlockInstanceName
+返回一个图块引例的图块名称。
+语法
+rhinoscriptsyntax.BlockInstanceName(object_id)
+rhinoscript.block.BlockInstanceName(object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。现有图块插入点的 ID。
+
+
+返回值
+
+
+
+
+字符串
+返回图块名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+strObject = rs.GetObject("Select block")
+if rs.IsBlockInstance(strObject):
+    print rs.BlockInstanceName(strObject)
+同见
+BlockInstanceCount
+BlockInstances
+BlockInstanceXform
+IsBlockInstance
+ 

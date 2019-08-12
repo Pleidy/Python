@@ -1,0 +1,30 @@
+
+AddPointLight
+在文档中添加一个点光源。
+语法
+rhinoscriptsyntax.AddPointLight (point)
+rhinoscript.light.AddPointLight (point)
+参数
+
+
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。作为灯光位置的 3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = rs.GetPoint("Point light location")
+if point: rs.AddPointLight(point)
+同见
+IsPointLight

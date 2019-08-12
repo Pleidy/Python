@@ -1,0 +1,39 @@
+
+LightDirection
+返回或修改一个灯光物件的方向。这个函数可以用来返回或修改聚光灯的目标点。
+语法
+rhinoscriptsyntax.LightDirection (object_id, direction=None)
+rhinoscript.light.LightDirection (object_id, direction=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+direction
+可选参数。三个数字构成的列表或 Vector3d 向量。新的终点或方向。如果省略，返回当前的方向点。
+
+
+返回值
+
+
+
+
+Vector3d向量
+如果没有指定方向点，返回当前的方向点。
+
+
+Vector3d向量
+如果指定了方向点，返回当前的方向点。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id: rs.AddPoint( rs.LightDirection(id) )
+同见
+IsLight
+LightLocation

@@ -1,0 +1,51 @@
+
+PrevObjectGrip
+返回一个物件指定操作点序号的前一个操作点序号。
+语法
+rhinoscriptsyntax.PrevObjectGrip (object_id, index, direction=0, enable=True)
+rhinoscript.grips.PrevObjectGrip (object_id, index, direction=0, enable=True)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+index
+必须参数。数字。要获取前一个操作点序号的当前操作点序号。
+
+
+direction
+可选参数。数字。从哪个方向获取前一个操作点序号， 0=U 或 1=V，默认值为 0。注意，这个参数只对曲面起作用。
+
+
+enable
+可选参数。布尔值。如果为 True (默认值)，前一个操作点将处于选中状态。反之，则不选取。
+
+
+返回值
+
+
+
+
+数字
+指定操作点的下一个操作点序号。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object_id = rs.GetObject("Select curve", rs.filter.curve)
+if object_id:
+    rs.EnableObjectGrips(object_id)
+    count = rs.ObjectGripCount(object_id)
+    for i in range(count-1, 0, -2):
+        rs.PrevObjectGrip(object_id, i, 0, True)
+同见
+EnableObjectGrips
+NextObjectGrip

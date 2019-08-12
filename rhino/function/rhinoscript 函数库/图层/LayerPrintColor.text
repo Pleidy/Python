@@ -1,0 +1,43 @@
+
+LayerPrintColor
+返回或修改一个图层的打印颜色。图层打印颜色使用 RGB 颜色格式。RGB 格式用红、绿、蓝三种颜色的比例定义要打印的颜色。
+语法
+rhinoscriptsyntax.LayerPrintColor(layer, color=None)
+rhinoscript.layer.LayerPrintColor(layer, color=None)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+color
+可选参数。数字。新的打印颜色值。如果省略，返回当前图层的打印颜色。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定图层打印颜色，返回当前的打印颜色。
+
+
+数字
+如果指定了图层打印颜色，返回先前的打印颜色。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    for layer in layers:
+        black = rs.coercecolor((0,0,0))
+        if rs.LayerPrintColor(layer)!=black:
+            rs.LayerPrintColor(layer, black)
+同见
+LayerLinetype
+LayerPrintWidth

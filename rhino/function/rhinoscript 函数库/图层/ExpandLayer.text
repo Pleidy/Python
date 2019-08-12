@@ -1,0 +1,34 @@
+
+ExpandLayer
+展开一个图层。图层展开后就可以在 Rhino 图层面板中看到它的子图层。
+语法
+rhinoscriptsyntax.ExpandLayer (layer, expand)
+rhinoscript.layer.ExpandLayer (layer, expand)
+参数
+
+
+
+
+layer
+必须参数。字符串。要展开图层的名称。
+
+
+expand
+必须参数。布尔值。True 为展开， False 为折叠。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+if rs.IsLayerExpanded("Default"):
+    rs.ExpandLayer( "Default", False )
+同见
+IsLayerExpanded

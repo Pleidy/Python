@@ -1,0 +1,39 @@
+
+AddPoint
+在文档中添加一个点物件。
+语法
+rhinoscriptsyntax.AddPoint (point, y=None, z=None)
+rhinoscript.geometry.AddPoint (point, y=None, z=None)
+参数
+
+
+
+
+point
+必须参数。Point3d 点对象或由三个数组成的列表。一个 3-D 点。
+
+
+x, z
+可选参数。如果第一个参数输入的不是点，而是一个数字，那么就需要使用这个参数指定 y 和 z 的值。 有了这个参数，调用这个函数的时候就可以不再写成 AddPoint((1,2,3))，直接写 AddPoint(1,2,3) 就可以了。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddPoint( (1,2,3) )
+同见
+IsPoint
+PointCoordinates
+ 

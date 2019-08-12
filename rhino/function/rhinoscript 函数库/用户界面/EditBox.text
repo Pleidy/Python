@@ -1,0 +1,46 @@
+
+EditBox
+显示一个对话框，提示用户输入字符串。字符串可以是多行的。
+语法
+rhinoscriptsyntax.EditBox (default_string=None, message=None, title=None)
+rhinoscript.userinterface.EditBox (default_string=None, message=None, title=None)
+参数
+
+
+
+
+default_string
+可选参数。字符串。默认字符串。
+
+
+message
+可选参数。字符串。提示信息。
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+返回值
+
+
+
+
+字符串
+多行字符串行与行之间是用换行符隔开的。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+text = rs.EditBox(message="Enter some text")
+print text
+ 
+
+ 
+同见
+GetString
+StringBox

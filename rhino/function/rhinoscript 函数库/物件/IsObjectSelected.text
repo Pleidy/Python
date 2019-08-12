@@ -1,0 +1,44 @@
+
+IsObjectSelected
+判断一个物件当前是否处于选中状态。
+语法
+rhinoscriptsyntax.IsObjectSelected (object_id)
+rhinoscript.object.IsObjectSelected (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件处于选中状态。
+
+
+False
+物件没有被选择。
+
+
+示例
+import rhinocsriptsyntax as rs
+# Do something here...
+if rs.IsObjectSelected(object):
+    print "The object is selected."
+else:
+    print "The object is not selected."
+同见
+IsObject
+IsObjectHidden
+IsObjectInGroup
+IsObjectLocked
+IsObjectNormal
+IsObjectReference
+IsObjectSelectable
+IsObjectSolid

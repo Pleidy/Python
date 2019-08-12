@@ -1,0 +1,37 @@
+
+SelectObjectGrips
+选取一个物件所有的操作点。如果物件操作点没有打开，将不会选取。
+语法
+rhinoscriptsyntax.SelectObjectGrips (object_id)
+rhinoscript.grips.SelectObjectGrips (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回选取操作点的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if rs.ObjectGripsSelected(obj)==False:
+    rs.SelectObjectGrips( obj )
+同见
+EnableObjectGrips
+ObjectGripCount
+SelectObjectGrip

@@ -1,0 +1,52 @@
+
+GetLayer
+显示一个对话框，提示用户选择一个图层。
+语法
+rhinoscriptsyntax.GetLayer (title="Select Layer", layer=None, show_new_button=False, show_set_current=False)
+rhinoscript.userinterface.GetLayer (title="Select Layer", layer=None, show_new_button=False, show_set_current=False)
+参数
+
+
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+layer
+可选参数。字符串。预选图层的名称。如果省略，当前图层将被设置为预选图层。
+
+
+show_new_button
+可选参数。布尔值。显示新建图层按钮。如果省略，不会显示该按钮。
+
+
+show_set_current
+可选参数。布尔值。显示“设置为当前图层”选框。如果省略，不会显示该选框。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，选取图层的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    layer = rs.GetLayer("Select Layer", rs.ObjectLayer(obj), True, True)
+    if layer: rs.ObjectLayer( obj, layer )
+ 
+
+同见
+GetLinetype
+GetPrintWidth
+ 

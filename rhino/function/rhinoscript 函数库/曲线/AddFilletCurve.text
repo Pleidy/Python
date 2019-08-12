@@ -1,0 +1,51 @@
+
+AddFilletCurve
+在两条曲线之间添加圆角曲线。
+语法
+rhinoscriptsyntax.AddFilletCurve ( curve0id, curve1id , radius=1.0, base_point0=None, base_point1=None)
+rhinoscript.curve.AddFilletCurve ( curve0id, curve1id , radius=1.0, base_point0=None, base_point1=None)
+参数
+
+
+
+
+curve0id
+必须参数。第一个曲线物件ID。
+
+
+curve1id
+必须参数。第二个曲线物件ID。
+
+
+radius
+可选参数。数字。圆角半径。如果省略，半径将设置为 1.0。
+
+
+base_point0
+可选参数。第一条曲线基点。如果省略，将使用曲线起点。
+
+
+base_point1
+可选参数。第二条曲线基点。如果省略，将使用曲线起点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve0 = rs.AddLine([0,0,0], [5,1,0])
+curve1 = rs.AddLine([0,0,0], [1,5,0])
+rs.AddFilletCurve( curve0, curve1 )
+同见
+CurveFilletPoints

@@ -1,0 +1,38 @@
+
+RebuildSurface
+按照给定的阶数和控制点数重建一个曲面。获取更多信息，请参考 Rhino 帮助文件中 Rebuild 指令的部分。
+语法
+rhinoscriptsyntax.RebuildSurface ( object_id, degree=(3,3), pointcount=(10,10))
+rhinoscript.surface.RebuildSurface ( object_id, degree=(3,3), pointcount=(10,10))
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+degree
+可选参数。指明曲面在 UV 两个方向阶数的两个数字构成的元组或列表。每个阶数值都必须大于 1 。默认情况下每个方向都是 3 。
+
+
+pointcount
+可选参数。指明曲面在 UV 两个方向点数的两个数字构成的元组或列表。点数必须大于阶数 degree 的值。每个方向的默认值都是 10 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface to rebuild", rs.filter.surface)
+if surface:rs.RebuildSurface( surface )
+同见
+RebuildCurve

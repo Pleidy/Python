@@ -1,0 +1,26 @@
+
+UnselectAllObjects
+取消选取所有物件。
+语法
+rhinoscriptsyntax.UnselectAllObjects()
+rhinoscript.selection.UnselectAllObjects()
+参数
+空值。
+返回值
+
+
+
+
+数字
+函数执行过程中取消选取物件的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.UnselectAllObjects()
+print count, " objects were unselected"
+同见
+InvertSelectedObjects
+SelectedObjects
+UnselectedObjects
+ 

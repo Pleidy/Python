@@ -1,0 +1,44 @@
+
+GetString
+暂停并等待用户输入一个字符串。
+语法
+rhinoscriptsyntax.GetString (message=None, defaultString=None, strings=None)
+rhinoscript.userinterface.GetString (message=None, defaultString=None, strings=None)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+defaultString
+可选参数。字符串。默认值。
+
+
+strings
+可选参数。列表。列表中的字符串显示为可点击的指令行选项。注意，不能用数字作为字符串。
+
+
+返回值
+
+
+
+
+字符串
+用户选取的字符串。如果用户在没有输入的情况下按了回车，将会返回空字符串""。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.CurrentLayer()
+layer = rs.GetString("Layer to set current", layer)
+if layer: rs.CurrentLayer(layer)
+同见
+GetBoolean
+StringBox

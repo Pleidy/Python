@@ -1,0 +1,45 @@
+
+XformScale
+返回一个缩放变换矩阵。
+语法
+rhinoscriptsyntax.XformScale ( scale, point=None )
+rhinoscript.transformation.XformScale ( scale, point=None )
+参数
+
+
+
+
+scale
+必须参数。单个数字，三个数构成的列表、Point3d 点或 Vector3d 向量。缩放比例因数。单个数字，将等比例缩放。其他都是非均匀缩放。
+
+
+point
+可选参数。缩放中心。如果省略，将使用世界坐标原点。
+
+
+返回值
+
+
+
+
+变换
+4x4 的变换矩阵。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to scale")
+if objs:
+    xform = rs.XformScale( (3.0,1.0,1.0) )
+    rs.TransformObjects( objs, xform, True)
+同见
+XformMirror
+XformPlanarProjection
+XformRotation
+XformShear
+XformTranslation
+ 

@@ -1,0 +1,40 @@
+
+TransformObjects
+按照给定的 4x4 的变换矩阵移动、缩放或旋转一个或多个物件。左边是矩阵变换方式。以下列表显示矩阵变换设置：
+语法
+rhinoscriptsyntax.TransformObjects (object_ids, matrix, copy=False)
+rhinoscript.object.TransformObjects (object_ids, matrix, copy=False)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要变换物件的 Guid 或字符串构成的列表。
+
+
+matrix
+必须参数。数字或变换组成的 4x4 的列表。变换矩阵。
+
+
+copy
+可选参数。布尔值。复制物件。如果省略，执行过程中不复制物件（False）。
+
+
+返回值
+
+
+
+
+列表
+返回由变换得到物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+# Translate (move) objects by (10,10,0)
+xform = rs.XformTranslation([10,10,0])
+objs = rs.GetObjects("Select objects to translate")
+if objs: rs.TransformObjects(objs, xform)
+同见
+TransformObject

@@ -1,0 +1,39 @@
+
+ObjectGripCount
+返回一个物件操作点的数量。
+语法
+rhinoscriptsyntax.ObjectGripCount (object_id)
+rhinoscript.grips.ObjectGripCount (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回操作点的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if rs.ObjectGripsOn(obj):
+    print "Grip count =", rs.ObjectGripCount(obj)
+同见
+EnableObjectGrips
+ObjectGripsOn
+ObjectGripsSelected
+SelectObjectGrips
+UnselectObjectGrips

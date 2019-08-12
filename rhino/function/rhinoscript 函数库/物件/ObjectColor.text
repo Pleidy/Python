@@ -1,0 +1,46 @@
+
+ObjectColor
+返回或修改一个物件的颜色。物件颜色使用 RGB 颜色格式。RGB 格式用红、绿、蓝三种颜色的比例定义一种颜色的显示。
+语法
+rhinoscriptsyntax.ObjectColor (object_ids, color=None)
+rhinoscript.object.ObjectColor (object_ids, color=None)
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。物件的 ID 。
+
+
+color
+可选参数。数字，由三个数组成的列表。新的颜色值。如果省略，返回当前的颜色。注意，如果 object_ids 参数是一组物件的列表， color 参数就是必须参数。
+
+
+返回值
+
+
+
+
+Color
+如果颜色没有指定，返回当前的颜色。
+
+
+Color
+如果指定了颜色，返回先前的颜色。
+
+
+数字
+如果 object_ids 是一个列表，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to change color")
+if objs:
+    color = rs.GetColor(0)
+    if color:
+        for obj in objs: rs.ObjectColor( obj, color )
+同见
+ObjectColorSource
+ObjectsByColor

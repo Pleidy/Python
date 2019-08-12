@@ -1,0 +1,52 @@
+
+XformMultiply
+倍数变换矩阵为 xform_result = xform1 * xform2。
+语法
+rhinoscriptsyntax.XformMultiply (xform1, xform2)
+rhinoscript.transformation.XformMultiply (xform1, xform2)
+参数
+
+
+
+
+xform1
+必须参数。列表或 Rhino.Geometry.Transform 对象。第一个要相乘的 4x4 变换矩阵。
+
+
+xform2
+必须参数。列表或 Rhino.Geometry.Transform 对象。第二个要相乘的 4x4 变换矩阵。
+
+
+返回值
+
+
+
+
+变换
+4x4 的变换矩阵。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+import math
+objs = rs.GetObjects("Select objects to shear")
+if objs:
+    cplane = rs.ViewCPlane()
+    cob = rs.XformChangeBasis(rs.WorldXYPlane(), cplane)
+    shear2d = rs.XformIdentity()
+    shear2d[0,2] = math.tan(math.radians(45.0))
+    cob_inv = rs.XformChangeBasis(cplane, rs.WorldXYPlane())
+    temp = rs.XformMultiply(shear2d, cob)
+    xform = rs.XformMultiply(cob_inv, temp)
+    rs.TransformObjects( objs, xform, True )
+同见
+XformPlanarProjection
+XformRotation
+XformScale
+XformShear
+XformTranslation
+ 

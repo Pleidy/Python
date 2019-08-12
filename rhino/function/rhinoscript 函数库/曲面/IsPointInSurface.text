@@ -1,0 +1,40 @@
+
+IsPointInSurface
+判断一个点是否在一个闭合曲面或多重曲面内部。
+语法
+rhinoscriptsyntax.IsPointInSurface ( object_id, point )
+rhinoscript.surface.IsPointInSurface ( object_id, point )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+point
+必须参数。三个数字构成的列表或者 Point3d 对象。要计算的点或采样点。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a polysurface", rs.filter.polysurface)
+if rs.IsPolysurfaceClosed(obj):
+    point = rs.GetPoint("Pick a test point")
+    if point:
+        if rs.IsPointInSurface(obj, point):
+            print "The point is inside the polysurface."
+        else:
+            print "The point is not inside the polysurface."
+同见
+IsPointOnSurface

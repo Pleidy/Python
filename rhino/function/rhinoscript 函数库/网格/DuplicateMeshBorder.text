@@ -1,0 +1,35 @@
+
+DuplicateMeshBorder
+使用网格边缘创建一条曲线。
+语法
+rhinoscriptsyntax.DuplicateMeshBorder( mesh_id )
+rhinoscript.mesh.DuplicateMeshBorder( mesh_id )
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+由新生成曲线物件的 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+if obj: rs.DuplicateMeshBorder(obj)
+同见
+DuplicateEdgeCurves
+DuplicateSurfaceBorder

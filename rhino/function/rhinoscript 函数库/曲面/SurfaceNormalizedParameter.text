@@ -1,0 +1,45 @@
+
+SurfaceNormalizedParameter
+将曲面UV两个方向的参数转换到标准化的曲面参数，即 0.0 到 1.0 之间的参数。
+语法
+rhinoscriptsyntax.SurfaceNormalizedParameter (surface_id, parameter)
+rhinoscript.surface.SurfaceNormalizedParameter (surface_id, parameter)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。两个数构成的元组。要转换的曲面参数。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回标准化的曲面参数。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select surface")
+if rs.IsSurface(obj):
+    domain_u = rs.SurfaceDomain(obj, 0)
+    domain_v = rs.SurfaceDomain(obj, 1)
+    parameter = (domain_u[1] + domain_u[0]) / 2.0, (domain_v[1] + domain_v[0]) / 2.0
+    print "Surface parameter:", parameter
+    normalized = rs.SurfaceNormalizedParameter(obj, parameter)
+    print "Normalized parameter:", normalized
+同见
+SurfaceDomain
+SurfaceParameter

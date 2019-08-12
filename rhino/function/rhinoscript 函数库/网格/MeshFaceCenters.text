@@ -1,0 +1,38 @@
+
+MeshFaceCenters
+返回一个网格物件上所有网格面的中心点。  
+语法
+rhinoscriptsyntax.MeshFaceCenters (mesh_id)
+rhinoscript.mesh.MeshFaceCenters (mesh_id)
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+代表所有网格面中心点的 3-D 点构成的列表。列表中元素的数量和 MeshFaceCount 函数的返回值是相等的。而且每一个中心点都和 MeshFaces函数返回的网格面一一对应。.
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+centers = rs.MeshFaceCenters(obj)
+if centers:
+    for point in centers: rs.AddPoint(point)
+同见
+IsMesh
+MeshFaceCount
+MeshFaces

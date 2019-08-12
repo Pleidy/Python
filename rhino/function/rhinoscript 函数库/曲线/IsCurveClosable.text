@@ -1,0 +1,40 @@
+
+IsCurveClosable
+通过曲线起点终点的间隙大小以及曲线是否能够接近由六个点定义的弦，来确定移动曲线终点到起点是否能构成有意义的闭合曲线。
+语法
+rhinoscriptsyntax.IsCurveClosable (curve_id, tolerance=None)
+rhinoscript.curve.IsCurveClosable (curve_id, tolerance=None)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+tolerance
+可选参数。数字。曲线起点与终点小于此距离就认为是闭合的。如果省略，将使用文档当前的绝对公差。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+crv = rs.GetObject("Select curve", rs.filter.curve)
+if not rs.IsCurveClosed(crv) and rs.IsCurveClosable(crv):
+    rs.CloseCurve( crv, 0.1 )
+同见
+CloseCurve
+IsCurveClosed

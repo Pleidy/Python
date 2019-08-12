@@ -1,0 +1,33 @@
+
+LayerMaterialIndex
+返回一个图层的材质序号。如果序号为 -1，说明没有给图层指定材质，没有指定材质的图层使用 Rhino 的默认图层材质。
+语法
+rhinoscriptsyntax.LayerMaterialIndex (layer)
+rhinoscript.layer.LayerMaterialIndex (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+返回值
+
+
+
+
+数字
+ 执行成功返回材质的序号。
+
+
+示例
+import rhinoscriptsyntax as rs
+index = rs.LayerMaterialIndex("Default")
+if index is not None:
+    if index==-1:
+        print "The default layer does not have a material assigned."
+    else:
+        print "The default layer has a material assigned."
+同见

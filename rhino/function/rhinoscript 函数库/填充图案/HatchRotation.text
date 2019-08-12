@@ -1,0 +1,49 @@
+
+HatchRotation
+返回或修改映射到填充图案平面时的图案旋转。
+语法
+rhinoscriptsyntax.HatchRotation (hatch_id, rotation=None)
+rhinoscript.hatch.HatchRotation (hatch_id, rotation=None)
+参数
+
+
+
+
+hatch_id
+必须参数。字符串或 Guid。填充图案物件的 ID 。
+
+
+rotation
+可选参数。数字。旋转度数（角度值）。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定旋转角度，返回当前的旋转角度。
+
+
+数字
+如果指定了旋转角度，返回先前的旋转角度。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.AllObjects()
+if objects:
+    for obj in objects:
+        if rs.IsHatch(obj) and rs.HatchRotation(obj)>0:
+            rs.HatchRotation(obj,0)
+同见
+AddHatch
+AddHatches
+HatchPattern
+HatchScale
+IsHatch

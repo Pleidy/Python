@@ -1,0 +1,154 @@
+
+CurveSurfaceIntersection
+计算一条曲线和一个曲面物件的相交。注意，此函数在曲面未修剪的部分执行。
+语法
+rhinoscriptsyntax.CurveSurfaceIntersection (curve_id, surface_id, tolerance=-1, angle_tolerance=-1)
+rhinoscript.curve.CurveSurfaceIntersection (curve_id, surface_id, tolerance=-1, angle_tolerance=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。曲线物件 的 ID 。
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件 的 ID 。
+
+
+tolerance
+可选参数。数字。以当前单位设定为标准的绝对公差。如果省略，将使用文档当前的绝对公差。
+
+
+angle_tolerance
+可选参数。数字。角度公差（角度值）。角度公差用于确定什么时候曲线与曲面相切。如果省略，将使用文档当前的角度公差。
+
+
+返回值
+
+
+
+
+List.
+执行成功返回一个包含相交信息的二维列表。列表将包含以下元素中的一个或多个：
+
+
+
+
+
+元素
+类型
+描述
+
+
+[n][0]
+数字
+相交类型，点相交（1） 或重叠相交（2）。
+
+
+[n][1]
+Point3d
+如果相交类型为点相交（1），此为曲线上的交点。
+如果相交类型为重叠相交（2），此为曲线上相交部分的起点。
+
+
+[n][2]
+ 
+Point3d 点
+如果相交类型为点相交（1），此为曲线上的交点。
+如果相交类型为重叠相交（2），此为曲线上相交部分的终点。
+
+
+[n][3]
+ 
+Point3d 点
+如果相交类型为点相交（1），此为曲面上的交点。
+如果相交类型为重叠相交（2），此为曲面上相交部分的起点。
+
+
+[n][4]
+ 
+Point3d 点
+如果相交类型为点相交（1），此为曲面上的交点。
+如果相交类型为重叠相交（2），此为曲面上相交部分的终点。
+
+
+[n][5]
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在曲线上参数范围的起点值。
+
+
+[n][6]
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在曲线上参数范围的终点值。
+
+
+[n][7]
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲面 U 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 5) 曲面 U 方向的参数。
+
+
+[n][8]
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲面 V 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 5) 曲面 V 方向的参数。
+
+
+[n][9]
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲面 U 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 6) 曲面 U 方向的参数。
+
+
+[n][10]
+ 
+数字
+如果相交类型为点相交（1），此为交点在曲面 V 方向的参数位置。
+如果相交类型为重叠相交（2），此为曲线在 (n, 6) 曲面 V 方向的参数。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def csx():
+    curve = rs.GetObject("Select curve", rs.filter.curve)
+    if curve is None: return
+    surface = rs.GetObject("Select surface", rs.filter.surface)
+    if surface is None: return
+    intersection_list = rs.CurveSurfaceIntersection(curve, surface)
+    if intersection_list is None:
+        print "Curve and surface do not intersect."
+        return
+    for intersection in intersection_list:
+        if intersection[0]==1:
+            print "Point"
+            print "Intersection point on curve:", intersection[1]
+            print "Intersection point on surface:", intersection[3]
+            print "Curve parameter:", intersection[5]
+            print "Surface parameter:", intersection[7], ",", intersection[8]
+        else:
+            print "Overlap"
+            print "Intersection start point on curve:", intersection[1]
+            print "Intersection end point on curve:", intersection[2]
+            print "Intersection start point on surface:", intersection[3]
+            print "Intersection end point on surface:", intersection[4]
+            print "Curve parameter range:", intersection[5], "to", intersection[6]
+            print "Surface parameter range:", intersection[7], ",", intersection[8], "to", intersection[9], ",", intersection[10]
+csx()
+同见
+CurveCurveIntersection
+CurveBrepIntersect

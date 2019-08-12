@@ -1,0 +1,45 @@
+
+IsSurfaceSingular
+判断一个曲面物件在指定方向是否为单一曲面。如果曲面在一个方向缩回到一个点，就可以认为曲面是单一的。
+语法
+rhinoscriptsyntax.IsSurfaceSingular (surface_id, direction)
+rhinoscript.surface.IsSurfaceSingular (surface_id, direction)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+direction
+必须参数。数字。方向，0 = 南， 1 = 东， 2 = 北， 3 = 西。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurfaceSingular(obj, 0):
+    print "The surface is singular."
+else:
+    print "The surface is not singular."
+同见
+IsSurface
+IsSurfaceClosed
+IsSurfacePeroidic
+IsSurfacePlanar
+IsSurfaceTrimmed

@@ -1,0 +1,40 @@
+
+MeshVertices
+返回一个网格物件的顶点。
+语法
+rhinoscriptsyntax.MeshVertices (object_id)
+rhinoscript.mesh.MeshVertices (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+代表所有网格顶点的 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+vertices = rs.MeshVertices(obj)
+if vertices: rs.AddPointCloud(vertices)
+同见
+IsMesh
+MeshContourPoints
+MeshFaceCount
+MeshFaces
+MeshVertexCount
+ 

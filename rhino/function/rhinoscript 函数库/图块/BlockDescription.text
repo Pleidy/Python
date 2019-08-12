@@ -1,0 +1,45 @@
+
+BlockDescription
+返回或设置图块定义的描述。
+语法
+rhinoscriptsyntax.BlockDescription(block_name, description=None)
+rhinoscript.block.BlockDescription(block_name, description=None)
+参数
+
+
+
+
+block_name
+必须参数。字符串。现有图块定义的名称。
+
+
+description
+可选参数。字符串。新的图块定义描述。如果省略，返回当前的描述。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 description 参数，返回当前的描述。
+
+
+字符串
+如果指定了 description 参数，返回先前的描述。
+
+
+示例
+import rhinoscriptsyntax as rs
+blockname = rs.GetString("Block name to list description")
+if rs.IsBlock(blockname):
+    desc = rs.BlockDescription(blockname)
+    if desc is None: print "No description"
+    else: print desc
+同见
+BlockURL
+BlockURLTag
+IsBlock
+ 
+ 

@@ -1,0 +1,63 @@
+
+SurfaceTorus
+返回圆环面的定义参数。
+语法
+rhinoscriptsyntax.SurfaceTorus(surface_id)
+rhinoscript.surface.SurfaceTorus(surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功，返回包含圆环定义参数的元组。元组所包含的元素如下：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Plane
+圆环的基平面。
+
+
+1
+数字
+圆环的主半径。
+
+
+2
+数字
+圆环的第二半径。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+torus = rs.AddTorus(rs.WorldXYPlane(), 6, 2)
+if rs.IsTorus(torus):
+    torus_def = rs.SurfaceTorus(torus)
+    rs.AddTorus( torus_def[0], torus_def[1], torus_def[2] )
+示例
+SurfaceCone
+SurfaceCylinder
+SurfaceSphere

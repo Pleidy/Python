@@ -1,0 +1,22 @@
+
+CommandHistory
+返回 Rhino 指令历史窗口中的内容。您可以使用 CommandHistory 指令查看指令历史。
+语法
+rhinoscriptsyntax.CommandHistory()
+rhinoscript.application.CommandHistory()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+执行成功返回一个包含 Rhino 指令历史窗口内容的字符串。
+
+
+示例
+import rhinoscriptsyntax as rs
+print rs.CommandHistory()
+同见
+ClearCommandHistory

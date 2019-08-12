@@ -1,0 +1,44 @@
+
+IntersectBreps
+计算两个 brep 物件的相交。注意，与 SurfaceSurfaceIntersection 函数不同，这个函数可以用在剪切曲面上。
+语法
+rhinoscriptsyntax.IntersectBreps (brep1, brep2, tolerance=None)
+rhinoscript.surface.IntersectBreps (brep1, brep2, tolerance=None)
+参数
+
+
+
+
+brep1
+必须参数。字符串或 Guid。第一个 brep 物件的 ID 。
+
+
+brep2
+必须参数。字符串或 Guid。第二个 brep 物件的 ID 。
+
+
+tolerance
+可选参数。数字。生成的直线段的中点与曲线的距离公差。如果省略，将使用当前文档的绝对公差。
+
+
+返回值
+
+
+
+
+列表
+返回由计算相交得到的曲线和点物件 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+brep1 = rs.GetObject("Select the first brep", rs.filter.surface | rs.filter.polysurface)
+if brep1:
+    brep2 = rs.GetObject("Select the second", rs.filter.surface | rs.filter.polysurface)
+    if brep2: rs.IntersectBreps( brep1, brep2)
+同见
+SurfaceSurfaceIntersection

@@ -1,0 +1,58 @@
+
+AddHatchPatterns
+从一个图案文件导入填充图案到当前的文档。更多关于填充图案的信息，请参考 Rhino 帮助文件中对 Hatch 指令的论述。
+语法
+rhinoscriptsyntax.AddHatchPatterns (filename, replace=False)
+rhinoscript.hatch.AddHatchPatterns (filename, replace=False)
+参数
+
+
+
+
+
+filename
+
+
+必须参数。字符串。要导入的填充图案文件名。
+
+
+
+
+replace
+
+
+可选参数。布尔值。如果从图案文件导入图案的名称与文档中现有的图案名称相同，现有的图案将会被重新定义。如果省略，现有的图案不会被重新定义（False）。
+
+
+
+返回值
+
+
+
+
+
+列表
+
+
+执行成功，返回新添加图案名称 。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+filename = rs.OpenFileName("Import", "Pattern Files (*.pat)|*.pat||")
+if filename:
+    patterns = rs.AddHatchPatterns(filename)
+    if patterns:
+        for pattern in patterns: print pattern
+同见
+HatchPatternCount
+HatchPatternNames

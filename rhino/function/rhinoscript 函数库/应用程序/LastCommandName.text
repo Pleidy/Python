@@ -1,0 +1,25 @@
+
+LastCommandName
+返回最后执行指令的名称。
+语法
+rhinoscriptsyntax.LastCommandName()
+rhinoscript.application.LastCommandName()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+最后执行指令的名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.Command( "Line" )
+print "The last command was the", rs.LastCommandName(), "command."
+同见
+Command
+IsCommand
+LastCommandResult

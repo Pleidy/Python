@@ -1,0 +1,49 @@
+
+SurfacePoints
+返回曲面物件的控制点或控制顶点。
+语法
+rhinoscriptsyntax.SurfacePoints (surface_id, return_all=True)
+rhinoscript.surface.SurfacePoints (surface_id, return_all=True)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+return_all
+可选参数。布尔值。如果为 True（默认值），返回曲面所有的编辑点。如果为 False，函数将基于曲面是否闭合以及是否为周期曲面而返回编辑点。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回曲面的控制点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def PrintControlPoints():
+    surface = rs.GetObject("Select surface", rs.filter.surface)
+    points = rs.SurfacePoints(surface)
+    if points is None: return
+    count = rs.SurfacePointCount(surface)
+    i = 0
+    for u in range(count[0]):
+        for v in range(count[1]):
+            print "CV[", u, ",", v, "] = ", points[i]
+            i += 1
+PrintControlPoints()
+同见
+IsSurface
+SurfacePointCount
+ 

@@ -1,0 +1,75 @@
+
+AddHatch
+从一个闭合的平面曲线创建一个填充图案物件。
+语法
+rhinoscriptsyntax.AddHatch (curve_id, hatch_pattern=None, scale=1.0, rotation=0.0)
+rhinoscript.hatch.AddHatch (curve_id, hatch_pattern=None, scale=1.0, rotation=0.0)
+参数
+
+
+
+
+
+curve_id
+
+
+必须参数。字符串或 Guid。定义填充图案物件边缘的闭合平面曲线 ID 。
+
+
+
+
+hatch_pattern
+
+
+可选参数。字符串。填充图案物件要使用的图案名称。如果省略，将使用当前的图案。
+
+
+
+
+scale
+
+
+可选参数。数字。图案比例因数如果省略，比例因数将设置为 1.0。
+
+
+
+
+rotation
+
+
+可选参数。数字。图案旋转角度（角度值）。如果省略，旋转角度将设置为 0.0。
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+执行成功，返回新创建填充图案物件的 ID 。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+circle = rs.AddCircle(rs.WorldXYPlane(), 10.0)
+if rs.IsHatchPattern("Grid"):
+    rs.AddHatch( circle, "Grid" )
+else:
+    rs.AddHatch( circle, rs.CurrentHatchPattern() )
+同见
+AddHatches
+CurrentHatchPattern
+HatchPatternNames

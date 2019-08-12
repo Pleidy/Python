@@ -1,0 +1,41 @@
+
+XformTranslation
+创建一个平移变换矩阵。
+语法
+rhinoscriptsyntax.XformTranslation (vector)
+rhinoscript.transformation.XformTranslation (vector)
+参数
+
+
+
+
+vector
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。3-D 移动向量。
+
+
+返回值
+
+
+
+
+变换
+执行成功返回 4x4 的变换矩阵。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to copy")
+if objs:
+    xform = rs.XformTranslation([1,0,0])
+    rs.TransformObjects( objs, xform, True )
+同见
+XformMirror
+XformPlanarProjection
+XformRotation
+XformScale
+XformShear
+ 

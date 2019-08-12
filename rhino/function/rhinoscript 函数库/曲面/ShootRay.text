@@ -1,0 +1,64 @@
+
+ShootRay
+从一组选取的曲面放射线。
+语法
+rhinoscriptsyntax.ShootRay (surface_ids, start_point, direction, reflections=10)
+rhinoscript.surface.ShootRay (surface_ids, start_point, direction, reflections=10)
+参数
+
+
+
+
+surface_ids
+必须参数。Guid 或 Guid 组成的列表。一个或多个反射曲面或多重曲面物件的 ID 。
+
+
+start_point
+必须参数。代表光线起点的 3-D 点。
+
+
+direction
+必须参数。代表光线方向的 3-D 向量。
+
+
+reflections
+可选参数。数字。光线的最大反射次数。默认的反射值为 10 。
+
+
+返回值
+
+
+
+
+列表
+代表反射点的 3-D 点构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def TestRayShooter():
+    corners = []
+    corners.append((0,0,0))
+    corners.append((10,0,0))
+    corners.append((10,10,0))
+    corners.append((0,10,0))
+    corners.append((0,0,10))
+    corners.append((10,0,10))
+    corners.append((10,10,10))
+    corners.append((0,10,10))
+    box = rs.AddBox(corners)
+    dir = 10,7.5,7
+    reflections = rs.ShootRay(box, (0,0,0), dir)
+    rs.AddPolyline( reflections )
+    rs.AddPoints( reflections )
+ 
+TestRayShooter()
+ 
+同见
+IsPolysurface
+IsSurface
+ 

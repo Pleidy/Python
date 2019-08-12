@@ -1,0 +1,54 @@
+
+DivideCurve
+按照指定的段数将曲线分段。
+语法
+rhinoscriptsyntax.DivideCurve (curve_id, segments, create_points=False, return_points=True)
+rhinoscript.curve.DivideCurve (curve_id, segments, create_points=False, return_points=True)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segments
+必须参数。数字。段数。
+
+
+create_points
+可选参数。布尔值。创建分段点。如果省略或为 False，将不会创建点。
+
+
+return_points
+可选参数。布尔值。返回一组 3-D 点。如果省略或为 True，将返回点。如果为 False，将返回一组曲线参数。
+
+
+返回值
+
+
+
+
+Point3d 列表
+如果省略 return_points 参数或设为 True，返回包含 3-D 分段点的列表。
+
+
+数字列表
+如果 return_points 参数设为 False，返回包含分段位置参数的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if obj:
+    points = rs.DivideCurve(obj, 4)
+    for point in points: rs.AddPoint(point)
+同见
+DivideCurveEquidistant
+DivideCurveLength
+ 

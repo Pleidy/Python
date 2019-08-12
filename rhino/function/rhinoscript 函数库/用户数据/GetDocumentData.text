@@ -1,0 +1,55 @@
+
+GetDocumentData
+返回一个当前文档中记录的用户数据条目。
+语法
+rhinoscriptsyntax.GetDocumentData (section=None, entry=None)
+rhinoscript.userdata.GetDocumentData (section=None, entry=None)
+参数
+
+
+
+
+section
+可选参数。字符串。小节名称。如果省略，返回所有小节的名称。
+
+
+entry
+可选参数。字符串。记录名称。如果省略，返回 section 参数指定小节中所有的记录名称。
+
+
+返回值
+
+
+
+
+列表
+如果没有指定 section 参数，返回所有小节名称构成的一维数组。
+
+
+列表
+如果没有指定 entry 参数，返回 section 参数指定小节中的所有记录名称构成的一维数组。
+
+
+字符串
+由 section 参数和 entry 参数指定记录的值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+value = rs.GetDocumentData("MySection1", "MyEntry1")
+print value
+ 
+value = rs.GetDocumentData("MySection1", "MyEntry2")
+print value
+ 
+value = rs.GetDocumentData("MySection2", "MyEntry1")
+print value
+同见
+DeleteDocumentData
+DocumentDataCount
+IsDocumentData
+SetDocumentData

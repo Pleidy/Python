@@ -1,0 +1,39 @@
+
+AddLayout
+在文档中添加一个图纸视图。
+语法
+rhinoscriptsyntax.AddLayout (title=None, size=None)
+rhinoscript.view.AddLayout (title=None, size=None)
+参数
+
+
+
+
+title
+可选参数。字符串。新图纸视图的名称。
+
+
+size
+可选参数。表示新图纸视图页面宽高的两个数字构成的列表。数值按照文档当前页面单位系统来计算
+
+
+返回值
+
+
+
+
+Guid
+如果执行成功，返回新图纸视图的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddLayout("Portrait")
+同见
+DeleteNamedView
+NamedViews
+RestoreNamedView

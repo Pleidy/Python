@@ -1,0 +1,45 @@
+
+ToolbarNames
+返回一个已打开工具列收藏夹文件中所有工具列或工具列组的名称。
+语法
+rhinoscriptsyntax.ToolbarNames(name, groups=False)
+rhinoscript.toolbar.ToolbarNames(name, groups=False)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+groups
+可选参数。布尔值，如果为True，返回收藏夹中工具列组的名称。
+
+
+返回值
+
+
+
+
+列表
+工具列收藏夹中所有工具列（或工具列组）的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsytax as rs
+names = rs.ToolbarCollectionNames()
+if names:
+    toolbars = rs.ToolbarNames(names[0])
+    if toolbars:
+        for toolbar in toolbars: print toolbar
+同见
+HideToolbar
+IsToolbar
+IsToolbarVisible
+ShowToolbar
+ToolbarCount

@@ -1,0 +1,44 @@
+
+IsCurveClosed
+判断一个物件是否为闭合曲线。
+语法
+rhinoscriptsyntax.IsCurveClosed (curve_id)
+rhinoscript.curve.IsCurveClosed (curve_id)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select a curve")
+if rs.IsCurve(object):
+    if rs.IsCurveClosed(oObject):
+        print "The object is a closed curve."
+    else:
+        print "The object is not a closed curve."
+else:
+    print "The object is not a curve."
+同见
+IsCurve
+IsCurveLinear
+IsCurvePeriodic
+IsCurvePlanar
+ 

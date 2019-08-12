@@ -1,0 +1,30 @@
+
+GetPlugInObject
+从指定的插件中得到一个可脚本化的物件。注意，并不是所有的插件都包含可脚本化的物件。是否支持，请咨询相关插件的开发商。
+语法
+rhinoscriptsyntax.GetPlugInObject( plug_in )
+rhinoscript.application.GetPlugInObject( plug_in )
+参数
+
+
+
+
+plug_in
+必须参数。字符串或 Guid。支持可脚本化的物件并且已经安装在 Rhino 中的插件的名称。如果插件已安装但是没有载入，执行后将会载入。
+
+
+返回值
+
+
+
+
+Object
+执行成功返回可脚本化的物件。
+
+
+示例
+import rhinoscriptsyntax as rs
+objPlugIn = rs.GetPlugInObject("SomePlugIn")
+if objPlugIn is not None:
+    print objPlugIn.About()
+ 

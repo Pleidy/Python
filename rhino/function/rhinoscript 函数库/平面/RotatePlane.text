@@ -1,0 +1,45 @@
+
+RotatePlane
+旋转一个平面。
+语法
+rhinoscriptsyntax.RotatePlane (plane, angle_degees, axis)
+rhinoscript.plane.RotatePlane (plane, angle_degees, axis)
+参数
+
+
+
+
+plane
+必须参数。平面。
+
+
+angle_degrees
+必须参数。数字。旋转度数（角度值）。
+
+
+axis
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。一个作为旋转轴的非零 3-D 向量。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.ViewCPlane()
+rotated = rs.RotatePlane(plane, 45.0, plane.XAxis)
+rs.ViewCPlane( None, rotated )
+同见
+MovePlane
+PlaneFromFrame
+PlaneFromNormal

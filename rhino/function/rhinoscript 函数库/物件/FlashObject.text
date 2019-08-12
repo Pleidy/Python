@@ -1,0 +1,39 @@
+
+FlashObject
+使一个或多个物件快速变化一下选中状态，从而让物件在屏幕上闪一下。
+语法
+rhinoscriptsyntax.FlashObject (object_ids, style=True)
+rhinoscript.object.FlashObject (object_ids, style=True)
+参数
+
+
+
+
+
+object_ids
+
+
+必须参数。字符串、Guid 或 Guid 组成的列表。要闪现物件的 ID 。
+
+
+
+
+style
+
+
+可选参数。布尔值。闪现模式如果为 True (默认值)，物件将以自身的颜色和 Rhino 选择物件的颜色闪现。如果为 false，物件将以可见和隐藏的方式闪现。
+
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+objs = rs.ObjectsByLayer("Default")
+if objs: rs.FlashObject(objs)
+同见
+HideObjects
+SelectObjects
+ShowObjects
+UnselectObjects
+ 

@@ -1,0 +1,40 @@
+
+IsLinetypeReference
+判断一个现有线型是否来自于一个引用文件。
+语法
+rhinoscriptsyntax.IsLinetypeReference (name_or_id)
+rhinoscript.linetype.IsLinetypeReference (name_or_id)
+参数
+
+
+
+
+name_or_id
+必须参数。字符串或 Guid。现有线型的名称或 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = rs.GetString("Linetype name")
+if rs.IsLinetype(name):
+    if rs.IsLinetypeReference(name):
+        print "The linetype is a reference linetype."
+    else:
+        print "The linetype is not a reference linetype."
+else:
+    print "The linetype does not exist."
+同见
+IsLinetype

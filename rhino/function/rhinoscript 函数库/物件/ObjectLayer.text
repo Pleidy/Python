@@ -1,0 +1,42 @@
+
+ObjectLayer
+返回或修改一个物件的图层。
+语法
+rhinoscriptsyntax.ObjectLayer ( object_id, layer=None )
+rhinoscript.object.ObjectLayer ( object_id, layer=None )
+参数
+
+
+
+
+object_id
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表/元组。物件的 ID 。
+
+
+layer
+可选参数。字符串。已存在图层的名称。如果省略，使用当前的图层。如果 object_ids 参数是包含一个以上物件的列表或元组，此参数为必须参数。
+
+
+返回值
+
+
+
+
+字符串
+如果图层没有指定，返回物件当前的图层。
+
+
+字符串
+如果指定了图层，返回物件先前的图层。
+
+
+数字
+如果 object_id 是多个物件，返回执行过程中修改物件的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if id: rs.ObjectLayer(id, "Default")
+同见
+ObjectsByLayer

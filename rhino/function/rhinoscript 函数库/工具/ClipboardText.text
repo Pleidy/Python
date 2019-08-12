@@ -1,0 +1,37 @@
+
+ClipboardText
+返回或放置文本字符串到 Windows 剪贴板。
+语法
+rhinoscriptsyntax.ClipboardText (text=None)
+rhinoscript.utility.ClipboardText (text=None)
+参数
+
+
+
+
+text
+可选参数。字符串。文本字符串。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 text 参数，返回 Windows 剪贴板中现有的文本字符串。
+
+
+字符串
+如果指定了 text 参数，返回 Windows 剪贴板中先前的文本字符串。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+txt = rs.ClipboardText("Hello Rhino!")
+if txt: rs.MessageBox(txt, 0, "Clipboard Text")
+ 

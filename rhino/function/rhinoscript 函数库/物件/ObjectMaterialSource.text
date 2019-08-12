@@ -1,0 +1,75 @@
+
+ObjectMaterialSource
+返回或修改一个物件的渲染材质来源。
+渲染材质储存在 Rhino 渲染材质面板中的。这个面板可以看作是一个数组。这个数组从 0 开始计数，按照材质在这个数组中的序号将材质指定给物件和图层。
+指定给物件的渲染材质序号来源于以下三个途径之一：
+
+材质来自图层。使用指定给图层的渲染材质。
+材质来自物件。使用指定给物件的渲染材质。
+材质来自父物件。有父物件，比如物件在图块实例中，使用父物件的材质。如果没有父物件，从图层获得材质。
+
+默认情况下新物件的渲染材质来源于图层。
+语法
+rhinoscriptsyntax.ObjectMaterialSource ( object_ids, source=None )
+rhinoscript.object.ObjectMaterialSource ( object_ids, source=None )
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。物件的 ID 。
+
+
+source
+可选参数。数字。新的渲染材质来源。如果省略，返回当前材质的来源。注意，如果 object_ids 参数是列表， source 参数就是必须参数。
+
+
+
+
+值
+描述
+
+
+0
+材质来自图层
+
+
+1
+材质来自物件
+
+
+2
+<未使用>
+
+
+3
+材质来自父物件
+
+
+
+
+返回值
+
+
+
+
+数字
+如果材质来源没有指定，返回当前的材质来源。
+
+
+数字
+如果指定了材质来源，返回先前的材质来源。
+
+
+数字
+如果 object_ids 是一个列表，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects to reset rendering material source")
+if objects:
+    [rs.ObjectMaterialSource(obj, 0) for obj in objects]
+同见
+ObjectMaterialIndex

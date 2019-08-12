@@ -1,0 +1,34 @@
+
+IsViewMaximized
+判断指定的视窗是否为最大化显示 - 即填充整个 Rhino 显示窗口。
+语法
+rhinoscriptsyntax.IsViewMaximized (view=None)
+rhinoscript.view.IsViewMaximized (view=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+title = rs.CurrentView()
+result = rs.IsViewMaximized(title)
+if result:
+    print "The " + title + " view is maximized."
+else:
+    print "The " + title + " view is not maximized."
+同见
+MaximizeRestoreView

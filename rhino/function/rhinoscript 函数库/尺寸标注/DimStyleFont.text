@@ -1,0 +1,50 @@
+
+DimStyleFont
+返回或修改一个尺寸标注型式的字体。
+语法
+rhinoscriptsyntax.DimStyleFont (dimstyle, font=None)
+rhinoscript.dimension.DimStyleFont (dimstyle, font=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+font
+可选参数。字符串。新字体的名称。如果省略，返回当前字体。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定字体，返回当前字体。
+
+
+字符串
+如果指定了字体，返回先前的字体。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+font = rs.DimStyleFont(dimstyle)
+if font!="Arial": rs.DimStyleFont( dimstyle, "Arial" )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleExtension
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleOffset
+DimStyleTextAlignment
+DimStyleTextHeight

@@ -1,0 +1,37 @@
+
+CopyMaterial
+将源材质的定义复制到目标材质。
+语法
+rhinoscriptsyntax.CopyMaterial (source_index, destination_index)
+rhinoscript.material.CopyMaterial (source_index, destination_index)
+参数
+
+
+
+
+source_index
+必须参数。数字。源材质的序号 。
+
+
+destination_index
+必须参数。数字。目标材质的序号 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+src = rs.LayerMaterialIndex("Default")
+dest = rs.LayerMaterialIndex(rs.CurrentLayer())
+if src>=0 and dest>=0 and src!=dest:
+    rs.CopyMaterial( src, dest )
+同见
+LayerMaterialIndex
+ObjectMaterialIndex

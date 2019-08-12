@@ -1,0 +1,43 @@
+
+BlockInstanceCount
+返回此文档中指定图块定义包含实例的数量。
+语法
+rhinoscriptsyntax.BlockInstanceCount(block_name, where_to_look=0)
+rhinoscript.block.BlockInstanceCount(block_name, where_to_look=0)
+参数
+
+
+
+
+block_name
+必须参数。字符串。现有图块定义的名称。
+
+
+where_to_look
+可选参数。整数。检查层级。
+0 = 当前文档中的顶层引例。
+1 = 当前文档中的顶层引例及嵌套引例。
+2 = 检查来自其他引例的引用。
+
+
+返回值
+
+
+
+
+数字
+此文档中指定图块定义包含实例的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+blockname = rs.GetString("Block to count")
+if rs.IsBlock(blockname):
+    count = rs.BlockInstanceCount(blockname)
+    print count, "block(s) found."
+同见
+BlockInstanceInsertPoint
+BlockInstances
+BlockInstanceXform
+IsBlockInstance
+ 

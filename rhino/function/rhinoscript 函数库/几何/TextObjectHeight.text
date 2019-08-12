@@ -1,0 +1,49 @@
+
+TextObjectHeight
+返回或修改一个文本物件的高度。
+语法
+rhinoscriptsyntax.TextObjectHeight ( object_id, height=None )
+rhinoscript.geometry.TextObjectHeight ( object_id, height=None )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+height
+可选参数。数字。新的文字高度。如果省略，返回当前的文字高度。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定高度，返回当前的文字高度。
+
+
+数字
+如果指定了高度，返回先前的文字高度。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select text")
+if rs.IsText(obj):
+    rs.TextObjectHeight( obj, 1.0 )
+同见
+AddText
+IsText
+TextObjectFont
+TextObjectPlane
+TextObjectPoint
+TextObjectStyle
+TextObjectText

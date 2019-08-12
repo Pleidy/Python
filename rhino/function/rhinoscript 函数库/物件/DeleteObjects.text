@@ -1,0 +1,30 @@
+
+DeleteObjects
+从文档中删除一个或多个物件。
+语法
+rhinoscriptsyntax.DeleteObjects (object_ids)
+rhinoscript.object.DeleteObjects (object_ids)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要删除物件的 Guid 组成的数组。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回被删除物件的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+object_ids = rs.GetObjects("Select objects to delete")
+if object_ids: rs.DeleteObjects(object_ids)
+同见
+DeleteObject

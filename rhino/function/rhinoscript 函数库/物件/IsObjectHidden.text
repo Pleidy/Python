@@ -1,0 +1,45 @@
+
+IsObjectHidden
+判断一个物件是否被隐藏。隐藏物件，使其不可见、不可捕捉、不可选择。
+语法
+rhinoscriptsyntax.IsObjectHidden (object_id)
+rhinoscript.object.IsObjectHidden (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件被隐藏。
+
+
+False
+物件没有被隐藏。
+
+
+示例
+import rhinoscriptsyntax as rs
+# Do something here...
+if rs.IsObjectHidden(id):
+    print "The object is hidden."
+else:
+    print "The object is not hidden."
+同见
+IsObject
+IsObjectInGroup
+IsObjectLocked
+IsObjectNormal
+IsObjectReference
+IsObjectSelectable
+IsObjectSelected
+IsObjectSolid
+ 

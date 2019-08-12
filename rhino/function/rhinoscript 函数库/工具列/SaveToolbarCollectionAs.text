@@ -1,0 +1,35 @@
+
+SaveToolbarCollectionAs
+在硬盘上以不同的名称另存一个工具列收藏夹。
+语法
+rhinoscriptsyntax.SaveToolbarCollectionAs(name, file)
+rhinoscript.toolbar.SaveToolbarCollectionAs(name, file)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+file
+必须参数。字符串。要创建工具列收藏夹文件的完整路径。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = "Default"
+file = "D:\\NewDefault.rui"
+rs.SaveToolbarCollectionAs(name,file)
+同见
+SaveToolbarCollection

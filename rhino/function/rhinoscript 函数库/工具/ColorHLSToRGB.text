@@ -1,0 +1,37 @@
+
+ColorHLSToRGB
+转换HLS（色调-亮度-饱和度）格式颜色值到RGB（红-绿-蓝）颜色值。
+语法
+rhinoscriptsyntax.ColorHLSToRGB (hls)
+rhinoscript.utility.ColorHLSToRGB (hls)
+参数
+
+
+
+
+hls
+必须参数。列表。HLS 颜色值。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回 RGB 颜色值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rgb = rs.ColorHLSToRGB( (160, 120, 0) )
+print "Red = ", rs.ColorRedValue(rgb)
+print "Green = ", rs.ColorGreenValue(rgb)
+print "Blue = ", rs.ColorBlueValue(rgb)
+同见
+ColorAdjustLuma
+ColorRGBToHLS

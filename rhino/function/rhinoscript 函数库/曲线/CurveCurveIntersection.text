@@ -1,0 +1,137 @@
+
+CurveCurveIntersection
+计算两个曲线物件的相交。
+语法
+rhinoscriptsyntax.CurveCurveIntersection (curveA, curveB=None, tolerance=-1)
+rhinoscript.curve.CurveCurveIntersection (curveA, curveB=None, tolerance=-1)
+参数
+
+
+
+
+curveA
+必须参数。字符串或 Guid。第一个曲线物件ID。
+
+
+curveB
+可选参数。字符串或 Guid。第二个曲线物件ID。如果省略，将计算 curveA 参数代表物件的自相交。
+
+
+tolerance
+可选参数。数字。以当前单位设定为标准的绝对公差。如果省略，将使用文档当前的绝对公差。
+
+
+返回值
+
+
+
+
+List.
+执行成功返回一个包含相交信息的二维列表。列表将包含以下元素中的一个或多个：
+
+
+
+
+
+元素
+类型
+描述
+
+
+[n][0]
+数字
+相交类型，点相交（1） 或重叠相交（2）。
+
+
+[n][1]
+ 
+Point3d
+如果相交类型为点相交（1），此为第一条曲线上的交点。
+如果相交类型为重叠相交（2），此为第一条曲线上相交部分的起点。
+
+
+[n][2]
+ 
+Point3d
+如果相交类型为点相交（1），此为第一条曲线上的交点。
+如果相交类型为重叠相交（2），此为第一条曲线上相交部分的终点。
+
+
+[n][3]
+ 
+Point3d
+如果相交类型为点相交（1），此为第二条曲线上的交点。
+如果相交类型为重叠相交（2），此为第二条曲线上相交部分的起点。
+
+
+[n][4]
+ 
+Point3d
+如果相交类型为点相交（1），此为第二条曲线上的交点。
+如果相交类型为重叠相交（2），此为第二条曲线上相交部分的终点。
+
+
+[n][5]
+ 
+数字
+如果相交类型为点相交（1），此为交点在第一条曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在第一条曲线上参数范围的起点值。
+
+
+[n][6]
+ 
+数字
+如果相交类型为点相交（1），此为交点在第一条曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在第一条曲线上参数范围的终点值。
+
+
+[n][7]
+ 
+数字
+如果相交类型为点相交（1），此为交点在第二条曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在第二条曲线上参数范围的起点值。
+
+
+[n][8]
+ 
+数字
+如果相交类型为点相交（1），此为交点在第二条曲线上的参数位置。
+如果相交类型为重叠相交（2），此为相交部分在第二条曲线上参数范围的终点值。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def ccx():
+    curve1 = rs.GetObject("Select first curve", rs.filter.curve)
+    if curve1 is None: return
+    curve2 = rs.GetObject("Select second curve", rs.filter.curve)
+    if curve2 is None: return
+    intersection_list = rs.CurveCurveIntersection(curve1, curve2)
+    if intersection_list is None:
+        print "Selected curves do not intersect."
+        return
+    for intersection in intersection_list:
+        if intersection[0] == 1:
+            print "Point"
+            print "Intersection point on first curve:", intersection[1]
+            print "Intersection point on second curve:", intersection[3]
+            print "First curve parameter:", intersection[5]
+            print "Second curve parameter:", intersection[7]
+        else:
+            print "Overlap"
+            print "Intersection start point on first curve:", intersection[1]
+            print "Intersection end point on first curve:", intersection[2]
+            print "Intersection start point on second curve:", intersection[3]
+            print "Intersection end point on second curve:", intersection[4]
+            print "First curve parameter range:", intersection[5], " to ", intersection[6]
+            print "Second curve parameter range:", intersection[7], " to ", intersection[8]
+ccx()
+同见
+CurveSurfaceIntersection
+ 

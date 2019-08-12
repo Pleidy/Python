@@ -1,0 +1,39 @@
+
+MeshOutline
+通过网格物件的轮廓创建多重直线。
+语法
+rhinoscriptsyntax.MeshOutline (objects, view=None)
+rhinoscript.mesh.MeshOutline (objects, view=None)
+参数
+
+
+
+
+objects
+必须参数。一个或多个要计算轮廓的网格的 ID 。
+
+
+view
+可选参数。显示轮廓方向视图的名称或 ID。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回新生成多重直线的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select mesh objects to outline", rs.filter.mesh)
+if objs: rs.MeshOutline(objs)
+同见
+IsMesh
+MeshObjects

@@ -1,0 +1,40 @@
+
+CurvePerpFrame
+返回曲线参数位置的垂直平面。结果为相对平行（零扭转）平面。
+语法
+rhinoscriptsyntax.CurvePerpFrame (curve_id, parameter)
+rhinoscript.curve.CurvePerpFrame (curve_id, parameter)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字。要计算的参数位置。
+
+
+返回值
+
+
+
+
+Plane
+执行成功，返回指定参数位置的平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+crv = rs.GetCurveObject("Select a curve")
+if crv:
+    plane = rs.CurvePerpFrame(crv[0], crv[4])
+    rs.AddPlaneSurface( plane, 1, 1 )
+同见
+CurveFrame

@@ -1,0 +1,84 @@
+
+CurveDeviation
+返回两条曲线之间的最小与最大偏差值。关于曲线偏差的更多信息，请参考 Rhino 帮助文件中关于 CrvDeviation 指令的论述。
+语法
+rhinoscriptsyntax.CurveDeviation (curve_a, curve_b)
+rhinoscript.curve.CurveDeviation (curve_a, curve_b)
+参数
+
+
+
+
+curve_a
+必须参数。字符串或 Guid。第一个曲线物件ID。
+
+
+curve_b
+必须参数。字符串或 Guid。第二个曲线物件ID。
+
+
+返回值
+
+
+
+
+元组
+执行成功，返回一个元组，元组包含两条曲线的最小和最大偏差值。
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+数字
+重叠距离最大的点在曲线 A 上的参数位置
+
+
+1
+数字
+重叠距离最大的点在曲线 B 上的参数位置
+
+
+2
+数字
+最大距离
+
+
+3
+数字
+重叠距离最小的点在曲线 A 上的参数
+
+
+4
+数字
+重叠距离最小的点在曲线 B 上的参数
+
+
+5
+数字
+曲线之间的最小距离
+
+
+
+
+None
+出错或没有找到间隔重叠。
+
+
+示例
+import rhinoscriptsyntax as rs
+curveA = rs.GetObject("Select first curve to test", rs.filter.curve)
+curveB = rs.GetObject("Select second curve to test", rs.filter.curve)
+deviation = rs.CurveDeviation(curveA, curveB)
+if deviation:
+    print "Minimum deviation =", deviation[5]
+    print "Maximum deviation =", deviation[2]
+同见
+CurveArea
+CurveAreaCentroid
+ 

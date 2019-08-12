@@ -1,0 +1,61 @@
+
+SetUserText
+设置或移除记录在一个物件上的用户文本。更多关于用户数据的信息，请参考 用户数据方法 。
+语法
+rhinoscriptsyntax.SetUserText (object_id, key, value=None, attach_to_geometry=False)
+rhinoscript.userdata.SetUserText (object_id, key, value=None, attach_to_geometry=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+key
+必须参数。字符串。要设置的键名。
+
+
+value
+可选参数。字符串。要设置的字符串值。如果省略，key 参数指定键对应的键/值将被删除。
+
+
+attach_to_geometry
+可选参数。布尔值。记录用户数据的位置。
+
+
+
+
+值
+描述
+
+
+True
+在物件几何体上附加文本信息。如果信息是几何体附属的，将它附加到几何体。例如，圆的半径应该附加到几何体上，因为使用控制点编辑以后该信息就无效了，圆被转成了 NURBS 曲线。
+
+
+False (默认值)
+在一个物件的属性中附件文本信息。如果信息是更高级别的属性信息，如颜色，将其附加到物件属性。对物件进行控制点编辑、剪切、复制等操作时属性信息既然存在。
+
+
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+  rs.SetUserText( obj, "PartNo", "KM40-4960" )
+  rs.SetUserText( obj, "Price", "1.25" )
+同见
+GetUserText
+IsUserText

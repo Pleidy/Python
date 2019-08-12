@@ -1,0 +1,51 @@
+
+MaterialName
+返回或修改一个材质的用户定义名称。
+语法
+rhinoscriptsyntax.MaterialName (material_index, name=None)
+rhinoscript.material.MaterialName (material_index, name=None)
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+name
+可选参数。字符串。新名称。如果省略，返回当前的名称。
+
+
+返回值
+
+
+
+
+字符串
+如果 name 参数没有指定，返回材质当前的名称。
+
+
+字符串
+如果指定了 name 参数，返回材质先前的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1:
+        rs.MaterialName( index, "Fancy_Material" )
+同见
+MaterialBump
+MaterialColor
+MaterialReflectiveColor
+MaterialShine
+MaterialTexture
+MaterialTransparency
+ 

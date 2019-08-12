@@ -1,0 +1,63 @@
+
+SurfaceCylinder
+返回圆柱曲面的定义参数。
+语法
+rhinoscriptsyntax.SurfaceCylinder (surface_id)
+rhinoscript.surface.SurfaceCylinder (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功，返回包含圆柱定义参数的元组。元组所包含的元素如下：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Plane
+圆柱的平面。
+
+
+1
+数字
+圆柱的高度。
+
+
+2
+数字
+圆柱体的半径。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+cylinder = rs.AddCylinder(rs.WorldXYPlane(), 6, 2, False)
+if rs.IsCylinder(cylinder):
+    plane, height, radius = rs.SurfaceCylinder(cylinder)
+    rs.AddCylinder(plane, height, radius, False)
+示例
+SurfaceCone
+SurfaceSphere
+SurfaceTorus

@@ -1,0 +1,56 @@
+
+Angle2
+测量两条直线之间的角度。
+语法
+rhinoscriptsyntax.Angle2 (line1, line2)
+rhinoscript.utility.Angle2 (line1, line2)
+参数
+
+
+
+
+line1
+必须参数。六个数字或两个 Point3d 点对象构成的列表。
+
+
+line2
+必须参数。六个数字或两个 Point3d 点对象构成的列表。
+
+
+返回值
+
+
+
+
+元组
+元组包含以下元素.
+
+
+
+
+0
+角度值。
+
+
+1
+优角（角度值）。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = rs.GetPoint("Start of first line")
+point2 = rs.GetPoint("End of first line", point1)
+point3 = rs.GetPoint("Start of second line")
+point4 = rs.GetPoint("End of second line", point3)
+angle = rs.Angle2( (point1, point2), (point3, point4))
+if angle: print "Angle:", angle
+同见
+Angle
+Distance
+ 

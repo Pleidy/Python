@@ -1,0 +1,47 @@
+
+AddEllipse3Pt
+通过三点添加一个椭圆。
+语法
+rhinoscriptsyntax.AddEllipse3Pt (center, second, third)
+rhinoscript.curve.AddEllipse3Pt (center, second, third)
+参数
+
+
+
+
+center
+必须参数。椭圆中心点。
+
+
+second
+必须参数。X 方向端点。
+
+
+third
+必须参数。Y 方向端点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+center = (0,0,0)
+second = (5,0,0)
+third = (0,10,0)
+rs.AddEllipse3Pt( center, second, third )
+同见
+AddEllipse
+IsEllipse
+EllipseCenterPoint
+EllipseQuadPoints

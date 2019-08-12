@@ -1,0 +1,69 @@
+
+TextObjectStyle
+返回或修改一个文本物件的字体风格。
+语法
+rhinoscriptsyntax.TextObjectStyle (object_id, style=None)
+rhinoscript.geometry.TextObjectStyle (object_id, style=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+style
+可选参数。数字。字体样式。如果省略，返回当前的字体风格。字体样式的数值对照表如下：
+
+
+
+
+值
+描述
+
+
+0
+标准。
+
+
+1
+加粗。
+
+
+2
+倾斜。
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定字体风格，返回当前的字体风格。
+
+
+数字
+如果指定了字体风格，返回先前的字体风格。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select text")
+if rs.IsText(obj):
+    rs.TextObjectStyle( obj, 3 )
+同见
+AddText
+IsText
+TextObjectFont
+TextObjectHeight
+TextObjectPlane
+TextObjectPoint
+TextObjectText

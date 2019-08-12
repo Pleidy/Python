@@ -1,0 +1,68 @@
+
+CurveDiscontinuity
+找出一个曲线物件导数、切向或曲率不连续的地方。
+语法
+rhinoscriptsyntax.CurveDiscontinuity (curve_id, style)
+rhinoscript.curve.CurveDiscontinuity (curve_id, style)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+style
+必须参数。数字。需要测试的连续类型。连续类型如下：
+
+
+
+
+值
+描述
+
+
+1
+C0 - 函数连续
+
+
+2
+C1 - 一阶导数连续
+
+
+3
+C2 - 一阶及二阶导数连续
+
+
+4
+G1 - 相切连续
+
+
+5
+G2 - 曲率及相切连续
+
+
+
+
+返回值
+
+
+
+
+List.
+执行成功，将返回一组 3-D 点，每个点代表曲线上不连续的地方。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve", rs.filter.curve)
+if rs.IsCurve(curve):
+    points = rs.CurveDiscontinuity(curve, 2)
+    if points: rs.AddPoints( points )
+同见
+IsCurve

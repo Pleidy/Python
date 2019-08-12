@@ -1,0 +1,44 @@
+
+CurveBooleanDifference
+计算两个封闭平面曲线的互异区域，将计算结果添加到文档。注意，曲线必须是共面的。
+语法
+rhinoscriptsyntax.CurveBooleanDifference (curve_id_0, curve_id_1)
+rhinoscript.curve.CurveBooleanDifference (curve_id_0, curve_id_1)
+参数
+
+
+
+
+curve_id_0
+必须参数。字符串或 Guid。第一个曲线物件ID。
+
+
+curve_id_1
+必须参数。字符串或 Guid。第二个曲线物件ID。
+
+
+返回值
+
+
+
+
+List.
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curveA = rs.GetObject("Select first curve", rs.filter.curve)
+curveB = rs.GetObject("Select second curve", rs.filter.curve)
+arrResult = rs.CurveBooleanDifference(curveA, curveB)
+if arrResult:
+    rs.DeleteObject( curveA )
+    rs.DeleteObject( curveB )
+同见
+CurveBooleanIntersection
+CurveBooleanUnion
+ 

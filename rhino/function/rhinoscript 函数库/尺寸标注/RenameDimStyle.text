@@ -1,0 +1,44 @@
+
+RenameDimStyle
+为尺寸标注型式重命名。
+语法
+rhinoscriptsyntax.RenameDimStyle (oldstyle, newstyle)
+rhinoscript.dimension.RenameDimStyle (oldstyle, newstyle)
+参数
+
+
+
+
+oldstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+newstyle
+必须参数。字符串。尺寸标注型式的新名称。
+
+
+返回值
+
+
+
+
+字符串
+尺寸标注型式的新名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+oldstyle = rs.GetString("Old dimension style name")
+if oldstyle:
+    newstyle = rs.GetString("New dimension style name")
+    if newstyle: rs.RenameDimStyle( oldstyle, newstyle )
+同见
+AddDimStyle
+CurrentDimStyle
+DeleteDimStyle
+IsDimStyle
+ 

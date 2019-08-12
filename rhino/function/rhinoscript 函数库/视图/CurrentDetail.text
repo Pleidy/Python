@@ -1,0 +1,48 @@
+
+CurrentDetail
+返回或者改变一个图纸视图当前的子视图。
+语法
+rhinoscriptsyntax.CurrentDetail (layout, detail=None, return_name=True)
+rhinoscript.view.CurrentDetail (layout, detail=None, return_name=True)
+参数
+
+
+
+
+layout
+必须参数。字符串或 Guid。已存在图纸视图的标题或 ID 。
+
+
+detail
+可选参数。字符串或 Guid。要设置为当前视图的子视图的标题。如果省略，返回当前子视图的 ID 。注意，如果当前没有子视图处于活动状态，将返回图纸视图的 ID。同样，要设置图纸视图为“当前”，仅需要赋值给 layout 就可以传递给 detail。
+
+
+return_name
+可选参数。布尔值。如果为 True (默认值)，返回子视图的名称或标题。如果为 False，返回子视图的 ID 。
+
+
+返回值
+
+
+
+
+字符串或 Guid
+如果没有指定 detail ，返回当前子视图的标题或 ID 。
+
+
+字符串或 Guid
+如果指定了 detail ，返回先前子视图的标题或 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+layout = rs.CurrentView(return_name=False)
+if rs.IsLayout(layout):
+    rs.CurrentDetail( layout, layout )
+同见
+IsDetail
+IsLayout

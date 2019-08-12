@@ -1,0 +1,58 @@
+
+GetPoints
+暂停并等待用户输入一个或多个点。
+语法
+rhinoscriptsyntax.GetPoints( draw_lines=False, in_plane=False, message1=None, message2=None, max_points=None, base_point=None)
+rhinoscript.userinterface.GetPoints( draw_lines=False, in_plane=False, message1=None, message2=None, max_points=None, base_point=None)
+参数
+
+
+
+
+draw_lines
+可选参数。布尔值。在点之间画连接线。默认情况下不会画连接线（False）。
+
+
+in_plane
+可选参数。布尔值。只能在活动的工作平面上选取点。默认情况下不会约束到工作平面上选取（False）。
+
+
+message1
+可选参数。字符串。选取第一个点的提示信息。
+
+
+message2
+可选参数。字符串。选取其余点的提示信息。
+
+
+max_points
+可选参数。数字。选取点的最大数量。如果没有指定，不限制选取数量。
+
+
+base_point
+可选参数。起点或基点。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True)
+if points: rs.AddPointCloud(points)
+同见
+GetPoint
+GetPointOnCurve
+GetPointOnSurface
+GetRectangle
+ 

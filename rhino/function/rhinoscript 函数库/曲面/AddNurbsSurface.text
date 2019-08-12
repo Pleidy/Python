@@ -1,0 +1,70 @@
+
+AddNurbsSurface
+在文档中添加一个 NURBS 曲面。
+语法
+rhinoscriptsyntax.AddNurbsSurface (point_count, points, knots_u, knots_v, degree, weights=None)
+rhinoscript.surface.AddNurbsSurface (point_count, points, knots_u, knots_v, degree, weights=None)
+参数
+
+
+
+
+point_count
+必须参数。列表。 U 方向和 V 方向的控制点数量。
+
+
+points
+必须参数。列表。由 3-D 控制点组成的列表。
+
+
+knots_u
+必须参数。列表。曲面 U 方向的节点数值。列表必须包含 point_count[0] + degree[0] - 1 个元素。
+
+
+knots_v
+必须参数。列表。曲面 U 方向的节点数值。列表必须包含 point_count[1] + degree[1] - 1 个元素。
+
+
+degree
+必须参数。列表。曲面在 U 方向和 V 方向的阶数。每个方向的阶数必须大于等于 1 。
+
+
+weights
+可选参数。列表。曲面的权重值。weights 参数的个数等于 points参数的个数。权重值必须大于 0 。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Pick a surface", rs.filter.surface)
+if obj:
+    point_count = rs.SurfacePointCount(obj)
+    points = rs.SurfacePoints(obj)
+    knots = rs.SurfaceKnots(obj)
+    degree = rs.SurfaceDegree(obj)
+    if rs.IsSurfaceRational(obj):
+        weights = rs.SurfaceWeights(obj)
+        obj = rs.AddNurbsSurface(point_count, points, knots[0], knots[1], degree, weights)
+    else:
+        obj = rs.AddNurbsSurface(point_count, points, knots[0], knots[1], degree)
+    if obj: rs.SelectObject(obj)
+同见
+IsSurfaceRational
+SurfaceDegree
+SurfaceKnotCount
+SurfaceKnots
+SurfacePointCount
+SurfacePoints
+SurfaceWeights

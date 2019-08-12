@@ -1,0 +1,79 @@
+
+PlanarClosedCurveContainment
+确定由两个共面的简单闭合曲线围成区域的关系。
+语法
+rhinoscriptsyntax.PlanarClosedCurveContainment (curve_a, curve_b, plane=None, tolerance=None)
+rhinoscript.curve.PlanarClosedCurveContainment (curve_a, curve_b, plane=None, tolerance=None)
+参数
+
+
+
+
+curve_a
+必须参数。字符串或 Guid。第一个闭合平面曲线的 ID 。
+
+
+curve_b
+必须参数。字符串或 Guid。第二个闭合平面曲线的 ID 。
+
+
+plane
+可选参数。新的构造平面。如果省略，将使用当前启用的构造平面。
+
+
+tolerance
+可选参数。数字。公差。如果省略，将使用当前文档的绝对公差。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回表示相互关系的数字。结果如下：
+
+
+
+
+值
+描述
+
+
+0
+曲线围成的区域不相交。
+
+
+1
+两个曲线相交。
+
+
+2
+曲线围成的区域 curve_a 在 curve_b以内。
+
+
+3
+曲线围成的区域 curve_b 在 curve_a以内。  
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve1 = rs.GetObject("Select first curve", rs.filter.curve )
+curve2 = rs.GetObject("Select second curve", rs.filter.curve )
+if rs.IsCurvePlanar(curve1) and rs.IsCurvePlanar(curve2):
+    if rs.IsCurveClosed(curve1) and rs.IsCurveClosed(curve2):
+        if rs.IsCurveInPlane(curve1) and rs.IsCurveInPlane(curve2):
+            result = rs.PlanarClosedCurveContainment(curve1, curve2)
+            if result==0: print "The regions bounded by the curves are disjoint."
+            elif result==1: print "The two curves intersect.."
+            elif result==2: print "The region bounded by Curve1 is inside of Curve2."
+            else: print "The region bounded by Curve2 is inside of Curve1."
+同见
+PlanarCurveCollision
+PointInPlanarClosedCurve

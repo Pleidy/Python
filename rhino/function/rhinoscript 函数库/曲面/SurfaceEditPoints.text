@@ -1,0 +1,51 @@
+
+SurfaceEditPoints
+返回曲面物件的编辑点或 Greville 点。对于曲面的每一个控制点，都有一个编辑点与之对应。
+语法
+rhinoscriptsyntax.SurfaceEditPoints (surface_id, return_parameters=False, return_all=True)
+rhinoscript.surface.SurfaceEditPoints (surface_id, return_parameters=False, return_all=True)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+return_parameters
+可选参数。布尔值。如果为 False (默认值)，返回表示编辑点的 3-D 点列表。如果为 True,将以UV参数的形式返回编辑点。
+
+
+return_all
+可选参数。布尔值。如果为 True（默认值），返回曲面所有的编辑点。如果为 False，函数将基于曲面是否闭合以及是否为周期曲面而返回编辑点。
+
+
+返回值
+
+
+
+
+列表
+如果 return_parameters 省略或设置为 False，返回形式为 3-D 点的编辑点列表。
+
+
+列表
+如果 return_parameters 设置为 True，返回由UV参数值组成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface")
+if rs.IsSurface(obj):
+    points = rs.SurfaceEditPoints(obj)
+    if points: rs.AddPointCloud(points)
+同见
+IsSurface
+SurfacePointCount
+SurfacePoints
+ 

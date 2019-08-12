@@ -1,0 +1,34 @@
+
+InCommand
+Rhino 当前正在运行指令的数量。Rhino 允许透射指令（指可以在其他指令中运行的指令），所以此函数用于计算正处于运行状态指令的数量。
+语法
+rhinoscriptsyntax.InCommand( ignore_runners=True )
+rhinoscript.application.InCommand( ignore_runners=True )
+参数
+
+
+
+
+ignore_runners
+可选参数。布尔值。如果为 True，将不会计算脚本运行指令（如 LoadScript, RunScript, 以及 ReadCommandFile 等）。默认情况下不会计算脚本运行指令。
+
+
+返回值
+
+
+
+
+数字
+正在运行指令的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+commands = rs.InCommand()
+if commands > 0:
+    print "Rhino is running", commands, "command(s)."
+else:
+    print "Rhino is not running any command(s)."
+同见
+Command
+IsCommand

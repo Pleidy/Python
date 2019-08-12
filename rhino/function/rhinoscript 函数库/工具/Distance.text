@@ -1,0 +1,47 @@
+
+Distance
+测量两个 3-D 点或一个 3-D 点到一组 3-D 点之间的距离。
+语法
+rhinoscriptsyntax.Distance (point1, point2)
+rhinoscript.utility.Distance (point1, point2)
+参数
+
+
+
+
+point1
+必须参数。三个数字组成的列表或 Point3d 对象。第一个 3-D 点。
+
+
+point2
+必须参数。点或点列表。
+
+
+返回值
+
+
+
+
+数字
+如果 point1 和 point2 参数都是单个点，返回它们之间的距离。
+
+
+列表
+如果 point2 是点列表，返回距离列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = rs.GetPoint("First point")
+if point1:
+    point2 = rs.GetPoint("Second point")
+    if point2:
+        print "Distance:", rs.Distance(point1, point2)
+同见
+Angle
+Angle2
+ 

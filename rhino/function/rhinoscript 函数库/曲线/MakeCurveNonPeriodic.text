@@ -1,0 +1,43 @@
+
+MakeCurveNonPeriodic
+使一条周期曲线变为非周期曲线。变形时非周期曲线会导致扭结。
+语法
+rhinoscriptsyntax.MakeCurveNonPeriodic (curve_id, delete_input=False)
+rhinoscript.curve.MakeCurveNonPeriodic (curve_id, delete_input=False)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+delete_input
+可选参数。布尔值。删除输入曲线。如果省略，输入曲线不会被删除（False）。
+
+
+返回值
+
+
+
+
+Guid
+如果 delete_input 为 False，返回新物件的 ID 。
+
+
+Guid
+如果 delete_input 为 True，返回修改后物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve", rs.filter.curve)
+if rs.IsCurvePeriodic(curve): rs.MakeCurveNonPeriodic( curve )
+同见
+IsCurvePeriodic
+MakeCurvePeriodic

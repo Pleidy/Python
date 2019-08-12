@@ -1,0 +1,46 @@
+
+AddInterpCrvOnSrf
+在指定的曲面表面添加一个内插点曲线物件。注意，这个函数无法创建周期曲线，但是可以创建闭合曲线。
+语法
+rhinoscriptsyntax.AddInterpCrvOnSrf (surface_id, points )
+rhinoscript.curve.AddInterpCrvOnSrf (surface_id, points )
+参数
+
+
+
+
+surface_id
+必须参数。曲面物件的 ID 。
+
+
+points
+必须参数。包含 3-D 点的列表，这些点位于指定曲面表面。列表至少要有两个点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface_id = rs.GetObject("Select surface to draw curve on", rs.filter.surface)
+if surface_id:
+    point1 = rs.GetPointOnSurface( surface_id, "First point on surface")
+    if point1:
+        point2 = rs.GetPointOnSurface( surface_id, "Second point on surface")
+        if point2:
+            rs.AddInterpCrvOnSrf( surface_id, [point1, point2])
+同见
+AddCurve
+AddInterpCurve
+AddInterpCrvOnSrfUV
+ 

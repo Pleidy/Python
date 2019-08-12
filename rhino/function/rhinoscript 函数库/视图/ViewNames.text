@@ -1,0 +1,66 @@
+
+ViewNames
+返回文档中所有视图的名称、标题或 ID 。
+语法
+rhinoscriptsyntax.ViewNames (return_names=True, view_type=0)
+rhinoscript.view.ViewNames (return_names=True, view_type=0)
+参数
+
+
+
+
+return_names
+可选参数。布尔值。如果为 True (默认值)，返回视图的名称或标题。如果为 False，返回视图的 ID 。
+
+
+view_type
+可选参数。数字。要返回视图类型。
+
+
+
+
+值
+描述
+
+
+0
+标准模型视图。
+
+
+1
+图纸视图。
+
+
+2
+标准视图和图纸视图。
+
+
+
+
+返回值
+
+
+
+
+列表
+由视图名称、标题或 ID 字符串构成的数组。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+# Print view names
+views = rs.ViewNames()
+if views:
+    for view in views: print view
+# Print view identifiers
+view_ids = rs.ViewNames(False)
+if view_ids:
+    for id in view_ids:
+        print id, " = ", rs.ViewTitle(id)
+同见
+IsView
+ViewTitle

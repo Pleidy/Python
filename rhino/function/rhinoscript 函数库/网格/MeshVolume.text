@@ -1,0 +1,62 @@
+
+MeshVolume
+粗略计算一个或多个闭合网格物件的体积。
+语法
+rhinoscriptsyntax.MeshVolume (object_ids)
+rhinoscript.mesh.MeshVolume (object_ids)
+参数
+
+
+
+
+object_ids
+必须参数。字符串或 Guid。物件的 ID，或包含物件 ID 的列表。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回三个数字构成的元组。数组的三个元素如下：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+数字
+计算体积的网格数量。
+
+
+1
+数字
+所有网格的总体积。
+
+
+2
+数字
+估计误差。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+if obj and rs.IsMeshClosed(obj):
+    volume = rs.MeshVolume(obj)
+    if volume: print "Mesh volume:", volume[1]
+同见
+IsMeshClosed
+MeshArea

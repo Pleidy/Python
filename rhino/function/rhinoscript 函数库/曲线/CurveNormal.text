@@ -1,0 +1,38 @@
+
+CurveNormal
+返回平面曲线物件所在平面的法线。
+语法
+rhinoscriptsyntax.CurveNormal (curve_id, segment_index=-1)
+rhinoscript.curve.CurveNormal (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+Vector3d
+如果执行成功，返回计算得到的 3-D 向量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select a planar curve")
+if rs.IsCurve(object) and rs.IsCurvePlanar(object):
+    normal = rs.CurveNormal(object)
+    if normal: print "Curve Normal:", normal
+同见
+IsCurve
+IsCurvePlanar
+ 

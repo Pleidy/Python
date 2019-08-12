@@ -1,0 +1,24 @@
+
+MaximizeRestoreView
+在最大化显示与还原显示之间切换指定视图窗口的显示状态。
+语法
+rhinoscriptsyntax.MaximizeRestoreView (view=None)
+rhinoscript.view.MaximizeRestoreView (view=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+title = rs.CurrentView()
+if rs.IsViewMaximized(title):
+    rs.MaximizeRestoreView( title )
+同见
+IsViewMaximized

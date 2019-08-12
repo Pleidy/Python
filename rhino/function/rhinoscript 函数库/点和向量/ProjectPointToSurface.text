@@ -1,0 +1,49 @@
+
+ProjectPointToSurface
+将一个或多个点拉到一个或多个曲面或多重曲面。
+语法
+rhinoscriptsyntax.ProjectPointToSurface (points, surface_ids, direction)
+rhinoscript.pointvector.ProjectPointToSurface (points, surface_ids, direction)
+参数
+
+
+
+
+points
+必须参数。要拉回的一个或多个 3-D 点。
+
+
+surface_ids
+必须参数。一个或多个目标曲面或目标多重曲面的 ID。
+
+
+direction
+必须参数。要拉回点的方向（3-D 向量）。
+
+
+返回值
+
+
+
+
+List.
+执行成功返回 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface to project onto", rs.filter.surface)
+objects = rs.GetObjects("Select points to project", rs.filter.point)
+points = [rs.PointCoordinates(obj) for obj in objects]
+#Project down...
+results = rs.ProjectPointToSurface(points, surface, (0,0,-1))
+rs.AddPoints(results)
+同见
+ProjectCurveToMesh
+ProjectCurveToSurface
+ProjectPointToMesh
+ 

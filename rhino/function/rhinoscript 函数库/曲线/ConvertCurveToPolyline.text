@@ -1,0 +1,48 @@
+
+ConvertCurveToPolyline
+转化一条曲线到多重直线。
+语法
+rhinoscriptsyntax.ConvertCurveToPolyline ( curve_id, angle_tolerance=5.0, tolerance=0.01, delete_input=False )
+rhinoscript.curve.ConvertCurveToPolyline ( curve_id, angle_tolerance=5.0, tolerance=0.01, delete_input=False )
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+angle_tolerance
+可选参数。数字。曲线在直线端点位置的切线方向与此直线之间的最大角度。如果省略，角度公差将会设置为 5.0 。
+
+
+tolerance
+可选参数。数字。生成的直线段的中点与曲线的距离公差。如果省略，公差将会设置为 0.01 。
+
+
+delete_input
+可选参数。布尔值。删除由 curve_id 参数标识的曲线物件。如果省略，curve_id 不会被删除。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    polyline = rs.ConvertCurveToPolyline(obj)
+    if polyline: rs.SelectObject(polyline)
+同见
+IsCurve

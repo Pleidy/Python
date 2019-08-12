@@ -1,0 +1,37 @@
+
+IsObjectValid
+判断一个物件是否为没有错误的有效几何体。
+语法
+rhinoscriptsyntax.IsObjectValid (object_id)
+rhinoscript.object.IsObjectValid (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件有效。
+
+
+False
+物件无效。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if rs.IsObjectValid(id):
+    print "The object is valid."
+else:
+    print "The object is not valid."
+同见
+IsObject

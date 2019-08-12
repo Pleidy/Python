@@ -1,0 +1,63 @@
+
+IsXformIdentity
+判断一个矩阵是否为恒等变换。
+ 
+
+
+
+
+
+
+1
+0
+0
+0
+
+
+0
+1
+0
+0
+
+
+0
+0
+1
+0
+
+
+0
+0
+0
+1
+
+
+语法
+rhinoscriptsyntax.IsXformIdentity (xform)
+rhinoscript.transformation.IsXformIdentity (xform)
+参数
+
+
+
+
+xform
+必须参数。列表或 Rhino.Geometry.Transform 对象。一个 4x4 的变换矩阵。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+xform = rs.XformIdentity()
+print rs.IsXformIdentity(xform)
+同见
+IsXformSimilarity
+IsXformZero
+XformIdentity

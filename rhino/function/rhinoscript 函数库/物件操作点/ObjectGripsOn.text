@@ -1,0 +1,39 @@
+
+ObjectGripsOn
+判断一个物件的操作点是否打开。
+语法
+rhinoscriptsyntax.ObjectGripsOn (object_id)
+rhinoscript.grips.ObjectGripsOn (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if rs.ObjectGripsOn(obj):
+    print "Grip count =", rs.ObjectGripCount(obj)
+同见
+EnableObjectGrips
+ObjectGripCount
+ObjectGripsSelected
+SelectObjectGrips
+UnselectObjectGrips

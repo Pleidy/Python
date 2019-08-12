@@ -1,0 +1,47 @@
+
+GetInteger
+暂停并等待用户输入一个整数。
+语法
+rhinoscriptsyntax.GetInteger (message=None, number=None, minimum=None, maximum=None)
+rhinoscript.userinterface.GetInteger (message=None, number=None, minimum=None, maximum=None)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+number
+可选参数。数字。默认的整数值。
+
+
+minimum
+可选参数。数字。允许的最小值。
+
+
+maximum
+可选参数。数字。允许的最大值。
+
+
+返回值
+
+
+
+
+数字
+用户输入的整数值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+color = rs.LayerColor("Default")
+color = rs.GetInteger("Enter an RGB color value", color.ToArgb(), 0)
+if color: rs.LayerColor("Default", color)
+同见
+IntegerBox

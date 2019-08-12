@@ -1,0 +1,44 @@
+
+IsObjectLocked
+判断一个物件是否被锁定。锁定的物件可见，也可以被物件锁点捕捉。但是，不能被选择。
+语法
+rhinoscriptsyntax.IsObjectLocked (object_id)
+rhinoscript.object.IsObjectLocked (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件被锁定。
+
+
+False
+物件没有被锁定。
+
+
+示例
+import rhinoscriptsyntax as rs
+# Do something here...
+if rs.IsObjectLocked(object):
+    print "The object is locked."
+else:
+    print "The object is not locked."
+同见
+IsObject
+IsObjectHidden
+IsObjectInGroup
+IsObjectNormal
+IsObjectReference
+IsObjectSelectable
+IsObjectSelected
+IsObjectSolid

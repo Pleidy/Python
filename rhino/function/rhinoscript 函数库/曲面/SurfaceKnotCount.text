@@ -1,0 +1,38 @@
+
+SurfaceKnotCount
+返回一个曲面物件的节点数。
+语法
+rhinoscriptsyntax.SurfaceKnotCount (surface_id)
+rhinoscript.surface.SurfaceKnotCount (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+U 方向和 V 方向节点的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface")
+if rs.IsSurface(obj):
+    count = rs.SurfaceKnotCount(obj)
+    print "Knot count in U direction:", count[0]
+    print "Knot count in V direction:", count[1]
+同见
+IsSurface
+SurfaceKnots

@@ -1,0 +1,48 @@
+
+RotateObject
+旋转一个单一物件。旋转基于当前的构造平面。
+语法
+rhinoscriptsyntax.RotateObject (object_id, center_point, rotation_angle, axis=None, copy=False)
+rhinoscript.object.RotateObject (object_id, center_point, rotation_angle, axis=None, copy=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要旋转物件的 ID 。
+
+
+center_point
+必须参数。三个数字组成的列表或 Point3d 对象。作为旋转中心点的 3-D 点。
+
+
+rotation_angle
+必须参数。数字。旋转度数（角度值）。
+
+
+axis
+可选参数。三个数构成的列表、Point3d 点或 Vector3d 向量。一个作为旋转轴的 3-D 向量。如果省略，将以当前构造平面的 Z 轴作为旋转轴。
+
+
+copy
+可选参数。布尔值。复制物件。如果省略，执行过程中不复制物件（False）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回旋转物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object to rotate")
+if obj:
+    point = rs.GetPoint("Center point of rotation")
+    if point: rs.RotateObject(obj, point, 45.0, None, copy=True)
+同见
+RotateObjects

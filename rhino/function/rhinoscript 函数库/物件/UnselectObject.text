@@ -1,0 +1,37 @@
+
+UnselectObject
+取消选择一个之前选定的物件。
+语法
+rhinoscriptsyntax.UnselectObject (object_id)
+rhinoscript.object.UnselectObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要取消选择物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.Command("Line 0,0,0 5,5,0")
+obj = rs.FirstObject()
+if obj: rs.SelectObject(obj)
+#Do something here...
+rs.UnselectObject( obj )
+同见
+IsObjectSelected
+SelectObject
+SelectObjects
+UnselectObjects
+ 

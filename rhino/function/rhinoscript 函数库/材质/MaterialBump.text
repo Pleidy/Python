@@ -1,0 +1,51 @@
+
+MaterialBump
+返回或修改一个材质的凹凸贴图。
+语法
+rhinoscriptsyntax.MaterialBump (material_index, filename=None)
+rhinoscript.material.MaterialBump (material_index, filename=None)
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+filename
+可选参数。字符串。作为凹凸贴图的位图文件。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 filename 参数，返回当前的凹凸贴图文件名。
+
+
+字符串
+如果指定了 filename 参数，返回先前的凹凸贴图文件名。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1:
+        rs.MaterialBump( index, "C:\\Users\\Steve\\Desktop\\bumpimage.png" )
+同见
+MaterialColor
+MaterialName
+MaterialReflectiveColor
+MaterialShine
+MaterialTexture
+MaterialTransparency
+ 

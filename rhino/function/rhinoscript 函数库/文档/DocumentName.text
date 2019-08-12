@@ -1,0 +1,28 @@
+
+DocumentName
+返回当前载入的 Rhino 文档（3DM 文件）名称。
+语法
+rhinoscriptsyntax.DocumentName()
+rhinoscript.document.DocumentName()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+返回当前文档的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = rs.DocumentName()
+print name
+同见
+DocumentPath
+DocumentURL

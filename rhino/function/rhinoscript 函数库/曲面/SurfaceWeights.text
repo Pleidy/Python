@@ -1,0 +1,40 @@
+
+SurfaceWeights
+返回一个包含曲面控制点权重值的列表返回权重值的数量与 UV 两个方向控制点的数量是一样的。
+语法
+rhinoscriptsyntax.SurfaceWeights (object_id)
+rhinoscript.surface.SurfaceWeights (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回权重值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surf = rs.GetObject("Select a surface")
+if rs.IsSurface(surf):
+    weights = rs.SurfaceWeights(surf)
+    if weights:
+        for w in weights:
+            print "Surface control point weight value:", w
+同见
+IsSurface
+SurfacePointCount
+SurfacePoints

@@ -1,0 +1,64 @@
+
+GetBoolean
+暂停并等待用户输入一个或多个布尔值。各个布尔值是以可点击的命令行选项的形式一起显示的。
+语法
+rhinoscriptsyntax.GetBoolean (message, items, defaults)
+rhinoscript.userinterface.GetBoolean (message, items, defaults)
+参数
+
+
+
+
+message
+必须参数。字符串。提示信息。
+
+
+items
+必须参数。列表或元组。作为布尔值命令行选项条目的字符串。每个布尔值条目对应一个含有三个字符串的元组。
+
+
+
+
+元素
+描述
+
+
+0
+布尔值的描述。只能是字母和数字。（不能用空格，句号，破折号等）
+
+
+1
+代表 False 值的字符串。
+
+
+2
+代表 True 值的字符串。
+
+
+
+
+defaults
+必须参数。列表或元组。条目默认或初始的布尔值。
+
+
+返回值
+
+
+
+
+列表
+布尔值条目反馈的布尔值列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+items = ("Lights", "Off", "On"), ("Cameras", "Disabled", "Enabled"), ("Action", "False", "True")
+results = rs.GetBoolean("Boolean options", items, (True, True, True) )
+if results:
+    for val in results: print val
+同见
+GetString

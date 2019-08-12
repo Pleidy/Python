@@ -1,0 +1,35 @@
+
+IsPoint
+判断一个物件是否是点物件。
+语法
+rhinoscriptsyntax.IsPoint (object_id)
+rhinoscript.geometry.IsPoint (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a point")
+if rs.IsPoint(id):
+    print "The object is a point."
+else:
+    print "The object is not a point."
+同见
+AddPoint
+PointCoordinates
+ 

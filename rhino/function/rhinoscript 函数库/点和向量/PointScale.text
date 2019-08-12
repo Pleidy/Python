@@ -1,0 +1,43 @@
+
+PointScale
+缩放一个 3-D 点。
+语法
+rhinoscriptsyntax.PointScale (point, scale)
+rhinoscript.pointvector.PointScale (point, scale)
+参数
+
+
+
+
+point
+必须参数。包含三个数字的列表或者 Point3d 对象。要缩放的 3-D 点。
+
+
+scale
+必须参数。数字。缩放因数。
+
+
+返回值
+
+
+
+
+Point3d
+如果执行成功，返回计算得到的 3-D 点。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = rs.PointScale([1,0,0], 5)
+print point
+同见
+PointAdd
+PointCompare
+PointDivide
+PointSubtract
+PointTransform
+ 

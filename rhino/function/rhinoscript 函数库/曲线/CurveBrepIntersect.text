@@ -1,0 +1,44 @@
+
+CurveBrepIntersect
+计算一条曲线和一个 brep 物件的交叉。注意，与 CurveSurfaceIntersection 函数不同，这个函数可以用在剪切曲面上。
+语法
+rhinoscriptsyntax.CurveBrepIntersect (curve_id, brep_id, tolerance=None)
+rhinoscript.curve.CurveBrepIntersect (curve_id, brep_id, tolerance=None)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。曲线物件的 ID 。
+
+
+brep_id
+必须参数。字符串或 Guid。brep 物件的 ID 。
+
+
+tolerance
+可选参数。数字。生成的直线段的中点与曲线的距离公差。如果省略，将使用当前文档的绝对公差。
+
+
+返回值
+
+
+
+
+元组
+执行成功，返回一个元组，元组中包含两个列表，一个列表为所有新生成曲线的 ID，一个列表为所有新生成点的 ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve", rs.filter.curve)
+if curve:
+    brep = rs.GetObject("Select a brep", rs.filter.surface + rs.filter.polysurface)
+    if brep: rs.CurveBrepIntersect( curve, brep )
+同见
+CurveSurfaceIntersection

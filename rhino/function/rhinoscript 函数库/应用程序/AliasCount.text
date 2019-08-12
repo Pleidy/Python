@@ -1,0 +1,26 @@
+
+AliasCount
+返回 Rhino 中指令别名的数量。
+语法
+rhinoscriptsyntax.AliasCount()
+rhinoscript.application.AliasCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+Rhino 中指令别名的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "alias count = ", rs.AliasCount()
+同见
+AddAlias
+AliasMacro
+AliasNames
+DeleteAlias
+IsAlias

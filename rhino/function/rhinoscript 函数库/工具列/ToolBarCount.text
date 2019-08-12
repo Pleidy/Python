@@ -1,0 +1,43 @@
+
+ToolbarCount
+返回一个已打开工具列收藏夹文件中所包含的工具列或工具列组的数量。
+语法
+rhinoscriptsyntax.ToolbarCount(name, groups=False)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+groups
+可选参数。布尔值。如果为 True，返回文件中工具列组的数量，反之，返回文件中工具列的数量。
+
+
+返回值
+
+
+
+
+数字
+工具列收藏夹中工具列（或工具列组）的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.ToolbarCollectionNames()
+if names:
+    count = rs.ToolbarCount(names[0])
+    print "The", names[0], " collection contains", count, " toolbars."
+同见
+HideToolbar
+IsToolbar
+IsToolbarVisible
+ShowToolbar
+ToolbarNames

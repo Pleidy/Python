@@ -1,0 +1,43 @@
+
+ObjectPrintWidth
+返回或修改一个物件的打印线宽。物件打印线宽以毫米为单位。
+语法
+rhinoscriptsyntax.ObjectPrintWidth (object_ids, width=None)
+rhinoscript.object.ObjectPrintWidth (object_ids, width=None)
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。物件的 ID 。
+
+
+width
+可选参数。数字。打印线宽以毫米为单位，当 width = 0.0 时使用默认宽度， 当 width < 0.0 时不打印（在平面上可见，但是不打印）。如果省略，返回当前的打印线宽。注意，如果 object_ids 是列表或元组， width 就是必须参数。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定打印线宽，返回当前的打印线宽。
+
+
+数字
+如果指定了打印线宽，返回先前的打印线宽。
+
+
+数字
+如果 object_ids 是一个列表或元组，返回此函数执行过程中修改过的物件数量。.
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to change print width")
+if objs:
+    for obj in objs: rs.ObjectPrintWidth(obj,0.5)
+同见
+ObjectPrintWidthSource

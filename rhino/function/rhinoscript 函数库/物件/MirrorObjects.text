@@ -1,0 +1,46 @@
+
+MirrorObjects
+镜像一个或多个物件。
+语法
+rhinoscriptsyntax.MirrorObjects ( object_ids, start_point, end_point, copy=False)
+rhinoscript.object.MirrorObjects ( object_ids, start_point, end_point, copy=False)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要镜像物件的 Guid 或字符串构成的列表。
+
+
+start_point
+必须参数。三个数字组成的列表或 Point3d 对象。镜像平面的起点。
+
+
+end_point
+必须参数。三个数字组成的列表或 Point3d 对象。镜像平面的终点。
+
+
+copy
+可选参数。布尔值。复制物件。如果省略，执行过程中不复制物件（False）。
+
+
+返回值
+
+
+
+
+列表
+由镜像生成物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to mirror")
+if objs:
+    start = rs.GetPoint("Start of mirror plane")
+    end = rs.GetPoint("End of mirror plane")
+    if start and end:
+        rs.MirrorObjects( objs, start, end, True )
+同见
+MirrorObject

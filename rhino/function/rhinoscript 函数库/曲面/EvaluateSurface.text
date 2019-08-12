@@ -1,0 +1,45 @@
+
+EvaluateSurface
+获取UV参数在曲面上对应的点。
+语法
+rhinoscriptsyntax.EvaluateSurface (objectId, u, v)
+rhinoscript.surface.EvaluateSurface (objectId, u, v)
+参数
+
+
+
+
+objectId
+必须参数。Guid 或字符串。物件的 ID 。
+
+
+u, v
+必须参数。数字。要计算的UV参数。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果执行成功，返回计算得到的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objectId = rs.GetObject("Select a surface")
+if rs.IsSurface(objectId):
+    domainU = rs.SurfaceDomain(objectId, 0)
+    domainV = rs.SurfaceDomain(objectId, 1)
+    u = domainU[1]/2.0
+    v = domainV[1]/2.0
+    point = rs.EvaluateSurface(objectId, u, v)
+    rs.AddPoint( point )
+同见
+IsSurface
+SurfaceClosestPoint

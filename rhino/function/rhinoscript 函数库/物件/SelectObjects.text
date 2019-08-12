@@ -1,0 +1,38 @@
+
+SelectObjects
+选择一个或多个物件。
+语法
+rhinoscriptsyntax.SelectObjects (objectIds)
+rhinoscript.object.SelectObjects (objectIds)
+参数
+
+
+
+
+objectIds
+必须参数。要选择物件的 Guid 组成的数组。
+
+
+返回值
+
+
+
+
+数字
+选择物件的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+ids = rs.GetObjects("Select object to copy in-place")
+if ids:
+    rs.UnselectObjects(ids)
+    copies = rs.CopyObjects(ids)
+    if copies: rs.SelectObjects(copies)
+同见
+IsObjectSelectable
+IsObjectSelected
+SelectObject
+UnselectObject
+UnselectObjects
+ 

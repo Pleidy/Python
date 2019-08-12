@@ -1,0 +1,45 @@
+
+RestoreNamedView
+还原一个指定的已命名视图。
+语法
+rhinoscriptsyntax.RestoreNamedView (named_view, view=None, restore_bitmap=False)
+rhinoscript.view.RestoreNamedView (named_view, view=None, restore_bitmap=False)
+参数
+
+
+
+
+named_view
+必须参数。字符串。要还原的已命名视图的名称。
+
+
+view
+可选参数。字符串或 Guid。要还原视图的标题或 ID。如果省略，将使用当前视图。
+
+
+restore_bitmap
+可选参数。布尔值。还原已命名视图的背景图。如果省略，不还原已命名视图的背景图。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回被还原的已命名视图的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+views = rs.NamedViews()
+if views: rs.RestoreNamedView(views[0])
+同见
+AddNamedView
+DeleteNamedView
+NamedViews
+ 

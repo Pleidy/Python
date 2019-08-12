@@ -1,0 +1,38 @@
+
+AddTextDot
+在文档中添加一个注释文本。
+语法
+rhinoscriptsyntax.AddTextDot (text, point)
+rhinoscript.geometry.AddTextDot (text, point)
+参数
+
+
+
+
+text
+必须参数。字符串。单个字符或文本字符串。
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。作为原点的 3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddTextDot("howdy",(1,2,3))
+同见
+IsTextDot
+ 

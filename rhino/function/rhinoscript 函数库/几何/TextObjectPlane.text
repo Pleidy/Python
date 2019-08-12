@@ -1,0 +1,50 @@
+
+TextObjectPlane
+返回或修改一个文本物件使用的平面。
+语法
+rhinoscriptsyntax.TextObjectPlane(object_id, plane=None)
+rhinoscript.geometry.TextObjectPlane(object_id, plane=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+plane
+可选参数。新的文本物件平面。
+
+
+返回值
+
+
+
+
+Plane
+如果没有指定平面，返回当前使用的平面。
+
+
+Plane
+如果指定了平面，返回先前使用的平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select text")
+if rs.IsText(obj):
+    plane = rs.ViewCPlane("Top")
+    rs.TextObjectPlane( obj, plane )
+同见
+AddText
+IsText
+TextObjectFont
+TextObjectHeight
+TextObjectPoint
+TextObjectStyle
+TextObjectText

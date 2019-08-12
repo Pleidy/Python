@@ -1,0 +1,53 @@
+
+RenderColor
+返回或设置渲染的环境光或背景色。渲染颜色使用 RGB 颜色格式。RGB 格式用红、绿、蓝三种颜色的比例定义要显示的颜色。详情请参考 Rhino 帮助文档中关于 文档属性 的部分。
+语法
+rhinoscriptsyntax.RenderColor (item, color=None)
+rhinoscript.document.RenderColor (item, color=None)
+参数
+
+
+
+
+item
+必须参数。数字。要查询或修改的条目。
+
+
+
+
+0
+环境光颜色。
+
+
+1
+背景颜色。
+
+
+
+
+color
+可选参数。新的颜色值。如果省略，返回 item 参数指定条目当前的颜色。
+
+
+返回值
+
+
+
+
+Color
+如果没有指定 color 参数，返回 item 参数指定条目当前的颜色。
+
+
+Color
+如果指定了 color 参数，返回 item 参数指定条目先前的颜色。
+
+
+示例
+import rhinoscriptsyntax as rs
+render_background_color = 1
+rs.RenderColor( render_background_color, (0,0,255) )
+同见
+RenderAntialias
+RenderResolution
+RenderSettings
+ 

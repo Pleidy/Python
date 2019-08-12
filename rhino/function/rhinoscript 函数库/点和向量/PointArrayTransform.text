@@ -1,0 +1,42 @@
+
+PointArrayTransform
+移动一组 3-D 点。
+语法
+rhinoscriptsyntax.PointArrayTransform (points, xform)
+rhinoscript.pointvector.PointArrayTransform (points, xform)
+参数
+
+
+
+
+points
+必须参数。列表或元组。一组要移动的 3-D 点列表。
+
+
+xform
+必须参数。列表或 Rhino.Geometry.Transform 对象。一个有效的 4x4 的矩阵变换。
+
+
+返回值
+
+
+
+
+List.
+如果执行成功，返回计算得到的 3-D 点列表。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+points = rs.BoundingBox(obj)
+xform = rs.XformRotation2(45.0, (0,0,1), (0,0,0))
+points = rs.PointArrayTransform(points, xform)
+rs.AddPoints(points)
+同见
+PointArrayBoundingBox
+PointArrayClosestPoint

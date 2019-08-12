@@ -1,0 +1,44 @@
+
+IsLayerSelectable
+判断一个现有的图层是否可以被选取（正常图层和引用图层都适用）。
+语法
+rhinoscriptsyntax.IsLayerSelectable (layer)
+rhinoscript.layer.IsLayerSelectable (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。现有图层的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.GetString("Layer name")
+if rs.IsLayer(layer):
+    if rs.IsLayerSelectable(layer): print "The layer is selectable."
+    else: print "The layer is not selectable."
+else:
+    print "The layer does not exist."
+同见
+IsLayer
+IsLayerChangeable
+IsLayerEmpty
+IsLayerLocked
+IsLayerOn
+IsLayerReference
+IsLayerVisible

@@ -1,0 +1,47 @@
+
+BoundingBox
+返回一个物件或多个物件对齐于世界坐标轴或一个工作平面的边框方块。
+语法
+rhinoscriptsyntax.BoundingBox ( objects, view_or_plane=None, in_world_coords=True )
+rhinoscript.geometry.BoundingBox ( objects, view_or_plane=None, in_world_coords=True )
+参数
+
+
+
+
+objects
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。物件的 ID 。
+
+
+view_or_plane
+可选参数。字符串、Guid 或平面。边框方块要对齐的平面，这里的参数可以是可以是用户定义的平面，也可以视图的 ID，如果是视图的 ID，将使用该视图的工作平面。如果省略，边框方块将会与世界坐标轴对齐。
+
+
+in_world_coords
+可选参数。布尔值。是否以世界坐标轴或工作平面返回边框方块。默认情况下返回世界坐标轴（Ture）。注意，这个选项在对齐于世界坐标轴的边框方块上不起作用。
+
+
+返回值
+
+
+
+
+列表
+代表边框方块顶点的八个 3-D 点组成的列表。点是从方体底部开始按照逆时针顺序排列。请参考下方的图示。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select object")
+if object:
+    box = rs.BoundingBox(object)
+    if box:
+        for i, point in enumerate(box):
+            rs.AddTextDot( i, point )
+
+同见
+ 

@@ -1,0 +1,42 @@
+
+CurveSeam
+调节闭合曲线的接缝或起点/终点。
+语法
+rhinoscriptsyntax.CurveSeam (curve_id, parameter)
+rhinoscript.curve.CurveSeam (curve_id, parameter)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字。新的起点/终点的参数位置。注意，成功执行后，得到曲线的定义域将从 dblParameter 开始。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select closed curve", rs.filter.curve)
+if rs.IsCurveClosed(obj):
+    domain = rs.CurveDomain(obj)
+    parameter = (domain[0] + domain[1])/2.0
+    rs.CurveSeam( obj, parameter )
+同见
+IsCurve
+IsCurveClosed

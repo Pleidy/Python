@@ -1,0 +1,43 @@
+
+IsAlignedDimension
+判断一个物件是否为对齐尺寸标注。
+语法
+rhinoscriptsyntax.IsAlignedDimension(object_id)
+rhinoscript.dimension.IsAlignedDimension(object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+Boolean
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsAlignedDimension(obj):
+    print "The object is an aligned dimension."
+else:
+    print "The object is not an aligned dimension."
+同见
+IsAngularDimension
+IsDiameterDimension
+IsDimension
+IsLinearDimension
+IsOrdinateDimension
+IsRadialDimension
+ 

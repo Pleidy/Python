@@ -1,0 +1,46 @@
+
+AddSrfContourCrvs
+通过曲面或多重曲面与切平面相交计算得到一系列间隔的平面曲线。获取更多相关信息，请参考 Rhino 帮助文件中有关 Contour 指令的部分。
+语法
+rhinoscriptsyntax.AddSrfContourCrvs(object_id, points_or_plane, interval=None)
+rhinoscript.surface.AddSrfContourCrvs(object_id, points_or_plane, interval=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。曲面或多重曲面物件的 ID 。
+
+
+points_or_plane
+必须参数。两个 3-D 点或平面。如果是两个点，它们定义一条中心线的起点和终点。如果是平面，平面定义切平面。
+
+
+interval
+可选参数。数字。等高线之间的间隔。如果省略，间隔值将设置为物件边框方框对角的距离除以50.
+
+
+返回值
+
+
+
+
+列表
+返回由新生成等高线 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object", rs.filter.surface + rs.filter.polysurface)
+startpoint = rs.GetPoint("Base point of center line")
+endpoint = rs.GetPoint("Endpoint of center line", startpoint)
+rs.AddSrfContourCrvs( obj, (startpoint, endpoint) )
+同见
+CurveContourPoints
+MeshContourPoints
+SurfaceContourPoints

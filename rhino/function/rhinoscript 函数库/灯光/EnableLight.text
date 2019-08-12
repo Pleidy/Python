@@ -1,0 +1,43 @@
+
+EnableLight
+打开或关闭灯光。
+语法
+rhinoscriptsyntax.EnableLight (object_id, enable=None)
+rhinoscript.light.EnableLight (object_id, enable=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+enable
+可选参数。布尔值。灯光的打开状态。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 enable 参数，返回当前的打开状态。
+
+
+布尔值
+如果指定了 enable 参数，返回先前的打开状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select light", rs.filter.light)
+if id: rs.EnableLight( id, False )
+同见
+IsLight
+IsLightEnabled
+LightColor
+LightCount
+LightName
+LightObjects

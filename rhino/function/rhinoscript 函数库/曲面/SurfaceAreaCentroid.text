@@ -1,0 +1,57 @@
+
+SurfaceAreaCentroid
+计算曲面或多重曲面物件的面积中心。
+语法
+rhinoscriptsyntax.SurfaceAreaCentroid (object_id)
+rhinoscript.surface.SurfaceAreaCentroid (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回一个包含面积中心信息的列表。列表包含以下信息：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Point3d 点
+中心点。
+
+
+1
+元组(X,Y,Z)
+面积中心的绝对(+/-)公差范围。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if obj:
+    massprop = rs.SurfaceAreaCentroid(obj)
+    if massprop: rs.AddPoint( massprop[0] )
+同见
+SurfaceArea
+SurfaceAreaMoments

@@ -1,0 +1,36 @@
+
+IsBlock
+判断一个图块定义在当前文档中是否存在。
+语法
+rhinocriptsyntax.IsBlock (block_name)
+rhinocript.block.IsBlock (block_name)
+参数
+
+
+
+
+block_name
+必须参数。字符串。现有图块定义的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+strBlock = rs.GetString("Block name")
+if rs.IsBlock(strBlock):
+    print "The block definition exists."
+else:
+    print "The block definition does not exist."
+同见
+IsBlockEmbedded
+IsBlockInstance
+IsBlockInUse
+IsBlockReference

@@ -1,0 +1,41 @@
+
+ObjectLinetype
+返回或修改一个物件的线形。
+语法
+rhinoscript.object.ObjectLinetype (object_ids, linetype=None)
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。物件的 ID 。
+
+
+linetype
+可选参数。字符串。已存在线形的名称。如果省略，返回物件当前的线型。注意，如果 object_ids 参数是列表， linetype 参数就是必须参数。
+
+
+返回值
+
+
+
+
+字符串
+如果线形没有指定，返回物件当前的线形。
+
+
+字符串
+如果指定了线形，返回物件先前的线形。
+
+
+数字
+如果 object_ids 是一个列表，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj: rs.ObjectLinetype(obj, "Continuous")
+同见
+ObjectLinetypeSource

@@ -1,0 +1,48 @@
+
+FitCurve
+在保持曲线大致形状的基础上减少曲线控制点的数量。此函数用于替换有太多控制点的曲线。获取更多信息，请参考 Rhino 帮助文件中 FitCrv 指令的部分。
+语法
+rhinoscriptsyntax.FitCurve (curve_id, degree=3, distance_tolerance=-1, angle_tolerance=-1)
+rhinoscript.curve.FitCurve (curve_id, degree=3, distance_tolerance=-1, angle_tolerance=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+degree
+可选参数。数字。曲线阶数必须大于 1 。默认值为 3 。
+
+
+distance_tolerance
+可选参数。数字。逼近公差。如果 distance_tolerance 未指定 或者 <= 0.0，将使用文档的绝对公差。
+
+
+angle_tolerance
+可选参数。数字。扭结平滑公差（角度值）。如果 angle_tolerance 为 0.0，所有的扭结均为平滑的。如果 angle_tolerance为 > 0.0，比 angle_tolerance小的扭结将被平滑处理。如果 angle_toleranceis 未指定或 < 0.0，将使用文档的角度公差设定平滑扭结。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+oldCurve = rs.GetObject("Select curve to fit", rs.filter.curve)
+if oldCurve:
+    newCurve = rs.FitCurve(oldCurve)
+    if newCurve: rs.DeleteObject(oldCurve)
+同见
+FitSurface

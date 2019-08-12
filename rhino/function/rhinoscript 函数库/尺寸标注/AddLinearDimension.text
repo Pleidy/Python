@@ -1,0 +1,45 @@
+
+AddLinearDimension
+在文档中添加一个直线尺寸标注型式。
+语法
+rhinoscriptsyntax.AddLinearDimension ( start_point, end_point, point_on_dimension_line )
+rhinoscript.dimension.AddLinearDimension ( start_point, end_point, point_on_dimension_line )
+参数
+
+
+
+
+start_point
+必须参数。代表尺寸标注起点的 3-D 点。
+
+
+end_point
+必须参数。代表尺寸标注终点的 3-D 点。
+
+
+point_on_dimension_line
+必须参数。3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True, False, "Select 3 dimension points")
+if points and len(points)>2:
+    rs.AddLinearDimension( points[0], points[1], points[2] )
+同见
+IsLeader
+LeaderText
+ 

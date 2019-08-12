@@ -1,0 +1,81 @@
+
+GetSurfaceObject
+提示用户选取一个曲面物件。
+语法
+rhinoscriptsyntax.GetSurfaceObject (message="select surface", preselect=False, select=False)
+rhinoscript.selection.GetSurfaceObject (message="select surface", preselect=False, select=False)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+preselect
+可选参数。布尔值。允许直接使用执行函数之前选取的物件。如果省略，将不会使用之前选取的物件（False）。
+
+
+select
+可选参数。布尔值。使选取的物件点处于选中状态。如果省略，选取的物件不会处于选中状态（False）。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回选取信息元组。元组包含以下信息：
+
+
+
+
+元素
+描述
+
+
+0
+Guid。曲面物件的 ID 。
+
+
+1
+布尔值。如果曲面是执行函数之前就选取的，返回 True，反之则返回 False。
+
+
+2
+数字。选取方式：     
+0: 非鼠标选取 (全选等)。
+1: 鼠标点击选取。
+2: 鼠标从左至右选取。
+3: 鼠标从右至左选取。
+
+
+3
+Point3d 点。选取点。只有鼠标点击选取非预选的曲面时这个值才有效。
+
+
+4
+元组。选取点的在曲面上的 UV 参数。只有鼠标点击选取非预选的曲面时这个值才有效。
+
+
+5
+字符串。选取物件视图的名称。
+
+
+
+
+None
+没有选取物件。
+
+
+示例
+import rhinoscriptsyntax as rs
+select = rs.GetSurfaceObject("Select surface")
+if select:
+    print "Surface identifier:", select[0]
+同见
+GetCurveObject
+GetObject
+GetObjects

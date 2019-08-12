@@ -1,0 +1,34 @@
+
+IsEllipse
+判断一个物件是否为椭圆曲线物件。
+语法
+rhinoscriptsyntax.IsEllipse (object_id)
+rhinoscript.curve.IsEllipse (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select an ellipse")
+if rs.IsEllipse(obj):
+    print "The object is an ellipse."
+else:
+    print "The object is not an ellipse."
+同见
+EllipseCenterPoint
+EllipseQuadPoints

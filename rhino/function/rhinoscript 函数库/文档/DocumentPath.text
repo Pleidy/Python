@@ -1,0 +1,29 @@
+
+DocumentPath
+返回当前载入的 Rhino 文档（3DM 文件）路径。
+语法
+rhinoscriptsyntax.DocumentPath ()
+rhinoscript.document.DocumentPath ()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+返回当前文档的路径。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+path = rs.DocumentPath()
+print path
+同见
+DocumentName
+DocumentURL
+ 

@@ -1,0 +1,54 @@
+
+ExplodeMeshes
+炸开一个或多个网格物件为细分网格面。细分网格面之间的边缘彼此相连但是并没有焊接在一起。未焊接在一起的网格边缘有共同的网格顶点（不是网格的拓扑顶点）。
+语法
+rhinoscriptsyntax.ExplodeMeshes (mesh_ids, delete=False)
+rhinoscript.mesh.ExplodeMeshes (mesh_ids, delete=False)
+参数
+
+
+
+
+
+mesh_ids
+
+
+必须参数。字符串、Guid 或 Guid 组成的列表。要炸开网格的 ID 。
+
+
+
+
+delete
+
+
+可选参数。布尔值。炸开以后删除输入物件。默认情况下不删除物件（False）。
+
+
+
+返回值
+
+
+
+
+
+列表
+
+
+返回新生成网格物件 Guid 构成的列表。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh to explode", rs.filter.mesh)
+if rs.IsMesh(obj): rs.ExplodeMeshes(obj)
+同见
+IsMesh

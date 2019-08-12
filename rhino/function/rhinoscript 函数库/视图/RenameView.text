@@ -1,0 +1,38 @@
+
+RenameView
+重命名或修改一个指定视窗的标题。
+语法
+rhinoscriptsyntax.RenameView (old_title, new_title)
+rhinoscript.view.RenameView (old_title, new_title)
+参数
+
+
+
+
+old_title
+必须参数。字符串或 Guid。要重命名视图的名称或 ID 。
+
+
+new_title
+必须参数。字符串。视图的新标题。
+
+
+返回值
+
+
+
+
+字符串
+执行成功返回视图之前的标题。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+oldtitle = rs.CurrentView()
+rs.renameview( oldtitle, "Current" )
+同见
+ViewNames

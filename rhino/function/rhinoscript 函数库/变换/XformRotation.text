@@ -1,0 +1,100 @@
+
+XformRotation
+返回一个旋转变换矩阵。XformRotation 函数提供了多种旋转变换的方式。旋转角度为正值则围绕旋转轴逆向旋转（右手法则）。
+语法
+rhinoscriptsyntax.XformRotation1 (initial_plane, final_plane)
+rhinoscriptsyntax.XformRotation2 (angle_degrees, rotation_axis, center_point)
+rhinoscriptsyntax.XformRotation3 (start_direction, end_direction, center_point)
+rhinoscriptsyntax.XformRotation4 (x0, y0, z0, x1, y1, z1)
+rhinoscript.transformation.XformRotation1 (initial_plane, final_plane)
+rhinoscript.transformation.XformRotation2 (angle_degrees, rotation_axis, center_point)
+rhinoscript.transformation.XformRotation3 (start_direction, end_direction, center_point)
+rhinoscript.transformation.XformRotation4 (x0, y0, z0, x1, y1, z1)
+参数
+
+
+
+
+initial_plane
+必须参数。开始平面。
+
+
+final_plane
+必须参数。结束平面。
+
+
+angle
+必须参数。数字。旋转度数（角度值）。
+
+
+rotation_axis
+必须参数。3-D 向量。旋转轴。
+
+
+start_direction
+必须参数。3-D 向量。开始方向。
+
+
+end_direction
+必须参数。3-D 向量。结束方向。
+
+
+center_point
+必须参数。3-D 点。旋转中心点。
+
+
+x0
+必须参数。3-D 向量。初始框架的 X 轴。
+
+
+y0
+必须参数。3-D 向量。初始框架的 Y 轴。
+
+
+z0
+必须参数。3-D 向量。初始框架的 Z 轴。
+
+
+x1
+必须参数。3-D 向量。目标框架的 X 轴。
+
+
+y1
+必须参数。3-D 向量。目标框架的 Y 轴。
+
+
+z1
+必须参数。3-D 向量。目标框架的 Z 轴。
+
+
+返回值
+
+
+
+
+变换
+4x4 的变换矩阵。
+
+
+None
+出错返回空值。
+
+
+Notes
+选项 1 从 initial_plane 到 final_plane 创建一个旋转变换。平面为右手法则平面。此变换和基变换是不一样的。更多内容请参考 XformChangeBasis。
+选项 3 计算 center_point 参数确定以后，从 start_direction 旋转到 end_direction 的最小变换。
+选项 4 必须有一个符合右手法则的框架。计算结果围绕原点 (0,0,0)，映射原本的 X 到目标 X，原始的 Y 到目标 Y，原始的 Z 到目标 Z 。
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to rotate")
+if objs:
+    cplane = rs.ViewCPlane()
+    xform = rs.XformRotation2(45.0, cplane[3], cplane[0])
+    rs.TransformObjects( objs, xform, True )
+同见
+XformMirror
+XformPlanarProjection
+XformScale
+XformShear
+XformTranslation
+ 

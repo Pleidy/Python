@@ -1,0 +1,31 @@
+
+IsLinetype
+判断线型是否存在于当前的文档。
+语法
+rhinoscriptsyntax.IsLinetype (name_or_id)
+rhinoscript.linetype.IsLinetype (name_or_id)
+参数
+
+
+
+
+name_or_id
+必须参数。字符串或 Guid。现有线型的名称或 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = rs.GetString("Linetype name")
+if rs.IsLinetype(name): print "The linetype exists."
+else: print "The linetype does not exist"
+同见
+IsLinetypeReference

@@ -1,0 +1,39 @@
+
+IsLayoutObject
+判断一个物件在图层中还是在模型空间中。
+语法
+rhinoscriptsyntax.IsLayoutObject (object_id)
+rhinoscript.object.IsLayoutObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件在图层中。
+
+
+False
+物件在模型空间中。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if id:
+    if rs.IsLayoutObject(id):
+        print "The object is in page layout space."
+    else:
+        print "The object is in model space."
+同见
+IsObject
+IsObjectReference

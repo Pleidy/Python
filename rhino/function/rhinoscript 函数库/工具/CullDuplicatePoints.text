@@ -1,0 +1,41 @@
+
+CullDuplicatePoints
+从一组3D点中移除重复的点。
+语法
+rhinoscriptsyntax.CullDuplicatePoints ( points, tolerance=-1 )
+rhinoscript.utility.CullDuplicatePoints ( points, tolerance=-1 )
+参数
+
+
+
+
+points
+必须参数。列表。一组 3-D 点。
+
+
+tolerance
+可选参数。数字。点与点之间的最小距离。在这个范围以内的点将被移除。如果省略，将使用 Rhino 内部的零公差 (1.0e-12)。
+
+
+返回值
+
+
+
+
+列表
+被移除的 3-D 点组成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(,,"First point", "Next point")
+if points:
+    points= rs.CullDuplicatePoints(points)
+    for p in points: print p
+同见
+CullDuplicateNumbers
+CullDuplicateStrings

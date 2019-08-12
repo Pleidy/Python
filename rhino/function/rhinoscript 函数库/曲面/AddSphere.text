@@ -1,0 +1,42 @@
+
+AddSphere
+在文档中添加一个球体。
+语法
+rhinoscriptsyntax.AddSphere ( center_or_plane, radius)
+rhinoscript.surface.AddSphere ( center_or_plane, radius)
+参数
+
+
+
+
+center_or_plane
+必须参数。三个数字构成的列表、Vector3d 向量或者 Point3d 点对象。球体中心点。如果输入的是平面，平面原点将作为球体的中心点。
+
+
+radius
+必须参数。数字。以当前模型单位为度量基准的半径值。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+radius = 2
+center = rs.GetPoint("Center of sphere")
+if center: rs.AddSphere(center, radius)
+同见
+AddBox
+AddCone
+AddCylinder
+AddTorus

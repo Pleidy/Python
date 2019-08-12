@@ -1,0 +1,41 @@
+
+IsVectorTiny
+判断一个向量是否特别小或为微向量 - 其 x,y,z 值均小于等于 1.0e-12 。
+语法
+rhinoscriptsyntax.IsVectorTiny (vector)
+rhinoscript.pointvector.IsVectorTiny (vector)
+参数
+
+
+
+
+vector
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。用于判断的 3-D 向量。
+
+
+返回值
+
+
+
+
+Boolean
+如果为微向量，返回 True，否则返回 False 。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+pt1 = rs.GetPoint("First point")
+pt2 = rs.GetPoint("Next point")
+vector = pt2 - pt1
+if rs.IsVectorTiny(vector):
+    print "The vector is tiny."
+else:
+    print "The vector is not tiny."
+同见
+IsVectorZero
+VectorCreate
+ 

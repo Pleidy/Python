@@ -1,0 +1,40 @@
+
+MoveObjects
+移动一个或多个物件。
+语法
+rhinoscriptsyntax.MoveObjects (object_ids, translation)
+rhinoscript.object.MoveObjects (object_ids, translation)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要移动物件的 Guid 或字符串构成的列表。
+
+
+translation
+必须参数。三个数字构成的列表或者 Vector3d 向量。3-D 移动向量。
+
+
+返回值
+
+
+
+
+列表
+由移动物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+ids = rs.GetObjects("Select objects to move")
+if ids:
+    start = rs.GetPoint("Point to move from")
+    if start:
+        end = rs.GetPoint("Point to move to")
+        if end:
+            translation = end-start
+            rs.MoveObjects( ids, translation )
+同见
+MoveObject

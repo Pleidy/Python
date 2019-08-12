@@ -1,0 +1,40 @@
+
+CurveFrame
+返回曲线参数位置的平面。此平面基于参数位置的切向量与曲率向量。
+语法
+rhinoscriptsyntax.CurveFrame (curve_id, parameter, segment_index=-1)
+rhinoscript.curve.CurveFrame (curve_id, parameter, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字。要计算的参数位置。
+
+
+返回值
+
+
+
+
+Plane
+执行成功，返回指定参数位置的平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetCurveObject("Select a curve")
+if curve:
+    plane = rs.CurveFrame(curve[0], curve[4])
+    rs.AddPlaneSurface(plane, 5.0, 3.0)
+同见
+CurvePerpFrame

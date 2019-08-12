@@ -1,0 +1,43 @@
+
+ShrinkTrimmedSurface
+将原始曲面缩回至"接近"曲面修剪边界的大小。获取更多信息，请参考 Rhino 帮助文件中有关 ShrinkTrimmedSrf 指令的内容。
+语法
+rhinoscriptsyntax.ShrinkTrimmedSurface (object_id, create_copy=False)
+rhinoscript.surface.ShrinkTrimmedSurface (object_id, create_copy=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要缩回的曲面或多重曲面的 ID 。
+
+
+create_copy
+可选参数。布尔值。如果为 True，原始曲面不会被删除。
+
+
+返回值
+
+
+
+
+布尔值
+如果 create_copy 为 False， 返回表明成功与否的布尔值 True 或 False。
+
+
+Guid
+如果 create_copy 为 True，返回新曲面的 ID 。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+filter = rs.filter.surface | rs.filter.polysurface
+surface = rs.GetObject("Select surface or polysurface to shrink", filter )
+if surface: rs.ShrinkTrimmedSurface( surface )
+同见
+IsSurfaceTrimmed

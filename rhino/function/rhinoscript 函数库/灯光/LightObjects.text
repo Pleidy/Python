@@ -1,0 +1,31 @@
+
+LightObjects
+返回此文档中所有灯光的ID标识。
+语法
+rhinoscriptsyntax.LightObjects ()
+rhinoscript.light.LightObjects ()
+参数
+空值。
+返回值
+
+
+
+
+列表
+此文档中所有灯光的ID标识。
+
+
+示例
+import rhinoscriptsyntax as rs
+lights = rs.LightObjects()
+if lights:
+    rs.AddLayer( "Lights" )
+    for light in lights: rs.ObjectLayer( light, "Lights" )
+同见
+EnableLight
+IsLight
+IsLightEnabled
+LightColor
+LightCount
+LightName
+ 

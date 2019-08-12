@@ -1,0 +1,37 @@
+
+IsBlockInstance
+判断一个物件是否为图块引例。
+语法
+rhinocriptsyntax.IsBlockInstance (object_id)
+rhinocript.block.IsBlockInstance (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。现有图块定义的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select block instance")
+if rs.IsBlockInstance(obj):
+    print "The object is a block instance."
+else:
+    print "The object is not a block instance."
+同见
+IsBlock
+IsBlockEmbedded
+IsBlockInUse
+IsBlockReference
+ 

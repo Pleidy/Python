@@ -1,0 +1,44 @@
+
+IsLayerChangeable
+判断图层上的物件是否可以被修改（正常状态）。
+语法
+rhinoscriptsyntax.IsLayerChangeable (layer)
+rhinoscript.layer.IsLayerChangeable (layer)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。现有图层的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.GetString("Layer name")
+if rs.IsLayer(layer):
+    if rs.IsLayerChangeable(layer): print "The layer is changeable."
+    else: print "The layer is not changeable."
+else:
+    print "The layer does not exist."
+同见
+IsLayer
+IsLayerEmpty
+IsLayerLocked
+IsLayerOn
+IsLayerReference
+IsLayerSelectable
+IsLayerVisible

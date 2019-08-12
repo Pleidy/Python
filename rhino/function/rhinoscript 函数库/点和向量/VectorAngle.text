@@ -1,0 +1,47 @@
+
+VectorAngle
+返回两个 3-D 向量之间的夹角（角度值）。
+语法
+rhinoscriptsyntax.VectorAngle (vector1, vector2)
+rhinoscript.pointvector.VectorAngle (vector1, vector2)
+参数
+
+
+
+
+vector1
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。The first 3-D vector.
+
+
+vector2
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。第二个 3-D 向量。
+
+
+返回值
+
+
+
+
+数字
+如果执行成功，返回角度值。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+s0 = rs.GetObject("Surface 0", rs.filter.surface)
+s1 = rs.GetObject("Surface 1", rs.filter.surface)
+du0 = rs.SurfaceDomain(s0, 0)
+dv0 = rs.SurfaceDomain(s0, 1)
+du1 = rs.SurfaceDomain(s1, 0)
+dv1 = rs.SurfaceDomain(s1, 1)
+n0 = rs.SurfaceNormal(s0, (du0[0], dv0[0]))
+n1 = rs.SurfaceNormal(s1, (du1[0], dv1[0]))
+print rs.VectorAngle(n0, n1)
+print rs.VectorAngle(n0, rs.VectorReverse(n1))
+同见
+Angle
+Angle2

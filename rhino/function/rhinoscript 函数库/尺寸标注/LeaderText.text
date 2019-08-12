@@ -1,0 +1,43 @@
+
+LeaderText
+返回或修改一个引线标注物件的文本字符串。
+语法
+rhinoscriptsyntax.LeaderText (object_id, text=None)
+rhinoscript.dimension.LeaderText (object_id, text=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+text
+可选参数。字符串。新的文本字符串。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 text 参数，返回当前的文本字符串。
+
+
+字符串
+如果指定了 text 参数，返回先前的文本字符串。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a leader")
+if rs.IsLeader(obj): print rs.LeaderText(obj)
+同见
+AddLeader
+IsLeader

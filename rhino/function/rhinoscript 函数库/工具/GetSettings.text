@@ -1,0 +1,66 @@
+
+GetSettings
+返回 Windows ini 文件指定小节中的一个字符串。ini 文件必须是下面这种形式：
+ 
+[小节]
+记录 = 字符串
+...
+ 
+语法
+rhinoscriptsyntax.GetSettings(filename, section=None, entry=None)
+rhinoscript.utility.GetSettings(filename, section=None, entry=None)
+参数
+
+
+
+
+filename
+必须参数。字符串。ini 文件的文件名。
+
+
+section
+可选参数。字符串。要提取记录的小节。
+
+
+entry
+可选参数。字符串。与字符串关联的记录。
+
+
+注意，参数不区分大小写， 所以 小节 和 记录 可以是任意的大小写组合。
+返回值
+
+
+
+
+列表
+如果没有指定 section 参数，将返回 filename 参数所指定文件中所有小节的名称列表。
+
+
+列表
+如果没有指定 entry 参数，将返回 section 参数所指定小节中所有记录的名称列表。
+
+
+字符串
+如果 section 和 entry 都指定了，返回 entry 的值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+filename = rs.OpenFileName("Open", "Initialization Files (*.ini)|*.ini||")
+if filename:
+    sections = rs.GetSettings(filename)
+    if sections:
+        section = rs.ListBox(sections, "Select a section", filename)
+        if section:
+            entries = rs.GetSettings(filename, section)
+            if entries:
+                entry = rs.ListBox(entries, "Select an entry", section)
+                if entry
+                    value = rs.GetSettings(filename, section, entry)
+                    if value: rs.MessageBox( value, 0, entry )
+同见
+SaveSettings

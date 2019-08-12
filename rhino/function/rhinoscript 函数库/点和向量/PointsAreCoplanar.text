@@ -1,0 +1,50 @@
+
+PointsAreCoplanar
+判断一组 3-D 点是否共面。
+语法
+rhinoscriptsyntax.PointsAreCoplanar (points, tolerance=1.0e-12)
+rhinoscript.pointvector.PointsAreCoplanar (points, tolerance=1.0e-12)
+参数
+
+
+
+
+points
+必须参数。列表或元组。一组 3-D 点。
+
+
+tolerance
+可选参数。数字。判断时使用的公差值。默认使用 Rhino 内部的零公差 (1.0e-12)。
+
+
+返回值
+
+
+
+
+Boolean
+彼此共面或不共面时返回 True 或者 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+def SurfacesAreCoplanar(srf1, srf2):
+    if( not rs.IsSurface(srf1) or not rs.IsSurface(srf2) ): return False
+    if( not rs.IsSurfacePlanar(srf1) or not rs.IsSurfacePlanar(srf2) ): return False
+    pts1 = rs.SurfacePoints(srf1)
+    pts2 = rs.SurfacePoints(srf2)
+    if( pts1==None or pts2==None ): return False
+    pts1.extend(pts2)
+    return rs.PointsAreCoplanar(pts1)
+ 
+x = rs.GetObject( "First surface to test", rs.filter.surface)
+y = rs.GetObject( "Second surface to test", rs.filter.surface)
+print SurfacesAreCoplanar(x, y)
+同见
+IsPoint
+IsPointCloud
+PointCoordinates

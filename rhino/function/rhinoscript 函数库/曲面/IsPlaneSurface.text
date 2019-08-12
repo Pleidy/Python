@@ -1,0 +1,39 @@
+
+IsPlaneSurface
+判断一个物件是否为平面曲面。平面曲面可以用 Rhino 的 Plane 指令创建。注意，平面曲面并不是一个平面的 NURBS 曲面。
+语法
+rhinoscriptsyntax.IsPlaneSurface(object_id)
+rhinoscript.surface.IsPlaneSurface(object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要判断物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface to trim", rs.filter.surface)
+if surface and rs.IsPlaneSurface(surface):
+    print "got a plane surface"
+else:
+    print "not a plane surface"
+同见
+IsBrep
+IsPolysurface
+IsSurface

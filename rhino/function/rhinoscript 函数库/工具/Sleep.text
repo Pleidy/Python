@@ -1,0 +1,35 @@
+
+Sleep
+按照指定的时间间隔暂停脚本的执行。
+语法
+rhinoscriptsyntax.Sleep (milliseconds)
+rhinoscript.utility.Sleep (milliseconds)
+参数
+
+
+
+
+milliseconds
+必须参数。数字。间隔的秒数。
+
+
+返回值
+
+
+
+
+None
+执行成功或出错，都返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "This"
+rs.Sleep(2000)
+print "is"
+rs.Sleep(2000)
+print "a"
+rs.Sleep(2000)
+print "slow"
+rs.Sleep(2000)
+print "message!"

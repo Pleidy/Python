@@ -1,0 +1,40 @@
+
+IsPolysurfaceClosed
+判断一个多重曲面物件是否闭合。如果多重曲面将一个空间体积完全包围，那么可以认为它是实体。
+语法
+rhinoscriptsyntax.IsPolysurfaceClosed (object_id)
+rhinoscript.surface.IsPolysurfaceClosed (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a polysurface", rs.filter.polysurface)
+if rs.IsPolysurfaceClosed(obj):
+    print "The polysurface is closed."
+else:
+    print "The polysurface is not closed."
+同见
+IsBrep
+IsPolysurface
+IsPolysurfacePlanar
+ 

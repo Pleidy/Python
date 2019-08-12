@@ -1,0 +1,42 @@
+
+XformPlanarProjection
+返回一个平面投影变换矩阵。
+语法
+rhinoscriptsyntax.XformPlanarProjection (plane)
+rhinoscript.transformation.XformPlanarProjection (plane)
+参数
+
+
+
+
+plane
+必须参数。平面列表。要投影的目标平面。
+
+
+返回值
+
+
+
+
+变换
+4x4 的变换矩阵。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects to project")
+if objects:
+    cplane = rs.ViewCPlane()
+    xform = rs.XformPlanarProjection(cplane)
+    rs.TransformObjects( objects, xform, True )
+同见
+XformMirror
+XformRotation
+XformScale
+XformShear
+XformTranslation
+ 

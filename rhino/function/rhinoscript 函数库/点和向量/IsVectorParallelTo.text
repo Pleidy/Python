@@ -1,0 +1,62 @@
+
+IsVectorParallelTo
+比较两个向量是否平行。
+语法
+rhinoscriptsyntax.IsVectorParallelTo (vector1, vector2)
+rhinoscript.pointvector.IsVectorParallelTo (vector1, vector2)
+参数
+
+
+
+
+vector1
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。3-D 向量。
+
+
+vector2
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。用于比较的 3-D 向量。
+
+
+返回值
+
+
+
+
+Number
+执行成功，返回结果对应的数值。结果如下：
+
+
+
+
+值
+描述
+
+
+-1
+向量反向平行。
+
+
+0
+向量不平行。
+
+
+1
+向量平行。
+
+
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector1 = (1,0,0)
+vector2 = (0,1,0)
+print rs.IsVectorParallelTo( vector1, vector2 )
+同见
+IsVectorPerpendicularTo
+IsVectorTiny
+IsVectorZero
+ 

@@ -1,0 +1,73 @@
+
+PointInPlanarClosedCurve
+确定一点处于闭合曲线内还是闭合曲线外。
+语法
+rhinoscriptsyntax.PointInPlanarClosedCurve (point, curve, plane=None, tolerance=None)
+rhinoscript.curve.PointInPlanarClosedCurve (point, curve, plane=None, tolerance=None)
+参数
+
+
+
+
+point
+必须参数。包含三个数字的列表或者 Point3d 对象。要计算的 3-D 点。
+
+
+curve
+必须参数。字符串或 Guid。闭合平面曲线的 ID 。
+
+
+plane
+可选参数。平面。闭合曲线及点所在的平面。如果省略，将使用当前启用的构造平面。
+
+
+tolerance
+可选参数。数字。公差。如果省略，将使用当前文档的绝对公差。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回代表执行结果的数字。结果如下：
+
+
+
+
+值
+描述
+
+
+0
+点在闭合曲线之外。
+
+
+1
+点在闭合曲线之内。
+
+
+2
+点在闭合曲线之上。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a planar, closed curve", rs.filter.curve)
+if rs.IsCurveClosed(curve) and rs.IsCurvePlanar(curve):
+    point = rs.GetPoint("Pick a point")
+    if point:
+        result = rs.PointInPlanarClosedCurve(point, curve)
+        if result==0:print "The point is outside of the closed curve."
+        elif result==1: print "The point is inside of the closed curve."
+        else: print "The point is on the closed curve."
+同见
+PlanarClosedCurveContainment
+PlanarCurveCollision

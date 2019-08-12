@@ -1,0 +1,38 @@
+
+IsSurface
+判断一个物件是否为曲面。只有一个面的 Brep 物件同样被认为是曲面。
+语法
+rhinoscriptsyntax.IsSurface (objectId)
+rhinoscript.surface.IsSurface (objectId)
+参数
+
+
+
+
+objectId
+必须参数。Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+objectId = rs.GetObject("Select a surface")
+if rs.IsSurface(objectId):
+    print "The object is a surface."
+else:
+    print "The object is not a surface."
+同见
+IsPointOnSurface
+IsSurfaceClosed
+IsSurfacePeroidic
+IsSurfacePlanar
+IsSurfaceSingular
+IsSurfaceTrimmed

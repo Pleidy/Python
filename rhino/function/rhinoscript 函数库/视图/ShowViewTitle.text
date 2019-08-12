@@ -1,0 +1,28 @@
+
+ShowViewTitle
+显示或隐藏一个视图的窗口标题。
+语法
+rhinocriptsyntax.ShowViewTitle ( view=None, show=True)
+rhinocript.view.ShowViewTitle ( view=None, show=True)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+state
+可选参数。布尔值。视图窗口标题的显示状态。如果省略，将显示标题（True）。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.IsViewTitleVisible(view)==False:
+    rs.ShowViewTitle( view, True )
+同见
+IsViewTitleVisible

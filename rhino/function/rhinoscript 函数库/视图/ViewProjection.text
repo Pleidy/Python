@@ -1,0 +1,59 @@
+
+ViewProjection
+返回或者设置一个视图的投影模式。视图的投影模式有平行投影和透视投影。
+语法
+rhinoscriptsyntax.ViewProjection (view=None, mode=None)
+rhinoscript.view.ViewProjection (view=None, mode=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+mode
+可选参数。数字。投影模式。投影模式如下：
+
+
+
+
+值
+描述
+
+
+1
+平行
+
+
+2
+透视
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 mode 参数，返回指定视图当前的投影模式。
+
+
+数字
+如果指定了 mode 参数，返回指定视图先前的投影模式。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+views = rs.ViewNames()
+if views:
+    for view in views: rs.ViewProjection(view,1)
+同见
+IsViewPerspective

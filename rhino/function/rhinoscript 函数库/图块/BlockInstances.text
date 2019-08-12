@@ -1,0 +1,37 @@
+
+BlockInstances
+返回现有图块引例的 ID 。
+语法
+rhinoscriptsyntax.BlockInstances (block_name)
+rhinoscript.block.BlockInstances (block_name)
+参数
+
+
+
+
+block_name
+必须参数。字符串或 Guid。现有图块定义的名称。
+
+
+返回值
+
+
+
+
+列表
+代表图块引例的字符串构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+strBlock = rs.GetString("Block to select")
+if rs.IsBlock(strBlock):
+    arrObjects = rs.BlockInstances(strBlock)
+    if arrobjects:
+        rs.SelectObjects(arrObjects)
+同见
+BlockInstanceCount
+BlockInstanceInsertPoint
+BlockInstanceXform
+IsBlockInstance
+ 

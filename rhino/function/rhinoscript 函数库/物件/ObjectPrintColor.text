@@ -1,0 +1,45 @@
+
+ObjectPrintColor
+返回或修改一个物件的打印颜色。
+语法
+rhinoscriptsyntax.ObjectPrintColor (object_ids, color=None)
+rhinoscript.object.ObjectPrintColor (object_ids, color=None)
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。物件的 ID 。
+
+
+color
+可选参数。新的打印颜色值。如果省略，返回当前的颜色。注意，如果 object_ids 是列表或元组， color 就是必须参数。
+
+
+返回值
+
+
+
+
+Color
+如果没有指定打印颜色，返回当前的打印颜色。
+
+
+Color
+如果指定了打印颜色，返回先前的打印颜色。
+
+
+数字
+如果 object_ids 是一个列表或元组，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects to change print color")
+if objects:
+    color = rs.GetColor()
+    if color:
+        for object in objects: rs.ObjectPrintColor(object, color)
+同见
+ObjectPrintColorSource

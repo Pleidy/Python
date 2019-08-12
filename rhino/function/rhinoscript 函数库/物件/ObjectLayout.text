@@ -1,0 +1,44 @@
+
+ObjectLayout
+返回或修改一个物件的图纸或模型空间。
+语法
+rhinoscriptsyntax.ObjectLayout (object_id, layout=None, return_name=True)
+rhinoscript.object.ObjectLayout (object_id, layout=None, return_name=True)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+layout
+可选参数。字符串。如果要将物件从模型空间移到图纸，或从一个图纸移到另一个图纸，输入已存在图纸的标题或 ID 。如果要将物件从图纸移到模型空间，此参数指定为空值 None。
+
+
+return_name
+可选参数。布尔值。如果为 True (默认值)，返回图纸视图的名称或标题。如果为 False，返回图纸视图的 ID 。
+
+
+返回值
+
+
+
+
+字符串
+如果 layout 参数没有指定，返回物件当前所在的图纸视图。注意，如果物件不在图纸上，返回空值。
+
+
+字符串
+如果指定了 layout 参数，返回物件先前所在的图纸视图。注意，如果物件先前不在图纸上，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj: rs.ObjectLayout(obj, "Page 1")
+同见
+IsLayoutObject
+IsLayout
+ViewNames

@@ -1,0 +1,35 @@
+
+BlockContainerCount
+返回图块中包含的指定图块定义的数量。
+语法
+rhinoscriptsyntax.BlockContainerCount(block_name)
+rhinoscript.block.BlockContainerCount(block_name)
+参数
+
+
+
+
+block_name
+必须参数。字符串。现有图块定义的名称。
+
+
+返回值
+
+
+
+
+数字
+图块中包含指定图块定义的数量。
+
+
+示例
+import rhinoscriptscriptsyntax as rs
+block = rs.GetString("Block name to query")
+if rs.IsBlock(block):
+    count = rs.BlockContainerCount(block)
+    print "This block is nested in", count, "block(s)."
+同见
+BlockContainers
+IsBlock
+ 
+ 

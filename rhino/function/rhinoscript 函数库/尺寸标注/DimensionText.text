@@ -1,0 +1,38 @@
+
+DimensionText
+返回一个尺寸标注物件的显示文本。
+语法
+rhinoscriptsyntax.DimensionText (object_id)
+rhinoscript.dimension.DimensionText (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+字符串
+尺寸标注文本。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsDimension(obj):
+    print rs.DimensionText(obj)
+同见
+DimensionUserText
+DimensionValue
+IsDimension
+ 

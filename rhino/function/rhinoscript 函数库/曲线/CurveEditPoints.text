@@ -1,0 +1,51 @@
+
+CurveEditPoints
+返回曲线物件的编辑点或 Greville 点。对于曲线的每一个控制点，都有一个编辑点与之对应。
+语法
+rhinoscriptsyntax.CurveEditPoints (curve_id, return_parameters=False, segment_index=-1)
+rhinoscript.curve.CurveEditPoints (curve_id, return_parameters=False, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+return_parameters
+可选参数。布尔值。返回值列表中的编辑点是否为参数形式。如果省略，编辑点列表将以 3-D 点的形式返回。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+List.
+如果 return_parameters 省略或设置为 False，返回形式为 3-D 点的编辑点列表。
+
+
+List.
+如果 return_parameters 设置为 True，返回一组参数值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    points = rs.CurveEditPoints(obj)
+    if points: rs.AddPointCloud( points )
+同见
+IsCurve
+CurvePointCount
+CurvePoints
+ 

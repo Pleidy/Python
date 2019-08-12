@@ -1,0 +1,38 @@
+
+MeshVolumeCentroid
+返回一个网格物件的体积中心。
+语法
+rhinoscriptsyntax.MeshVolumeCentroid (object_id)
+rhinoscript.mesh.MeshVolumeCentroid (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+Point3d 点
+作为体积中心的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+centroid = rs.MeshVolumeCentroid(obj)
+rs.AddPoint( centroid )
+同见
+IsMesh
+MeshArea
+MeshAreaCentroid
+MeshVolume

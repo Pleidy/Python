@@ -1,0 +1,44 @@
+
+IsRadialDimension
+判断一个物件是否为半径尺寸标注。
+语法
+rhinoscriptsyntax.IsRadialDimension (object_id)
+rhinoscript.dimension.IsRadialDimension (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsRadialDimension(obj):
+    print "The object is a radial dimension."
+else:
+    print "The object is not a radial dimension."
+同见
+IsAlignedDimension
+IsAngularDimension
+IsDiameterDimension
+IsDimension
+IsLinearDimension
+IsOrdinateDimension
+ 
+ 

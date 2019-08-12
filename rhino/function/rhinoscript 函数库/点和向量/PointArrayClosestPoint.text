@@ -1,0 +1,46 @@
+
+PointArrayClosestPoint
+从一组 3D 点中找出距离测试点最近的点。
+语法
+rhinoscriptsyntax.PointArrayClosestPoint (points, test_point)
+rhinoscript.pointvector.PointArrayClosestPoint (points, test_point)
+参数
+
+
+
+
+points
+必须参数。List.一组 3-D 点列表。
+
+
+test_point
+必须参数。包含三个数字的列表或者 Point3d 对象。用于测试的 3-D 点。
+
+
+返回值
+
+
+
+
+Number
+如果执行成功，返回点列表中距离测试点最近的点在列表中的序号。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+cloud = rs.GetObject("Select point cloud")
+if cloud:
+    point = rs.GetPoint("Point to test")
+    if point:
+        cloud = rs.PointCloudPoints(cloud)
+        index = rs.PointArrayClosestPoint(cloud, point)
+        if index is not None:
+            point_id = rs.AddPoint(cloud[index])
+            rs.SelectObject( point_id )
+同见
+CurveClosestPoint
+SurfaceClosestPoint

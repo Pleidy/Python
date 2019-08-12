@@ -1,0 +1,38 @@
+
+SelectObject
+选择一个单一物件。
+语法
+rhinoscriptsyntax.SelectObject (object_id)
+rhinoscript.object.SelectObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。Guid。要选择物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.Command( "Line 0,0,0 5,5,0" )
+id = rs.FirstObject()
+if id: rs.SelectObject(id)
+# Do something here...
+rs.UnselectObject(id)
+同见
+IsObjectSelectable
+IsObjectSelected
+SelectObjects
+UnselectObject
+UnselectObjects
+ 

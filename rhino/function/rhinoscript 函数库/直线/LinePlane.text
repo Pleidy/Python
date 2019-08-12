@@ -1,0 +1,42 @@
+
+LinePlane
+返回包含此直线的平面。平面的原点在直线的起点上。如果可能，平面将平行于世界坐标的 XY, YZ 或 ZX 平面。
+语法
+rhinoscriptsyntax.LinePlane (line)
+rhinoscript.line.LinePlane (line)
+参数
+
+
+
+
+line
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+lineFrom = (0,0,0)
+lineTo = (10,10,0)
+distance = rs.Distance(lineFrom, lineTo)
+plane = rs.LinePlane([lineFrom, lineTo])
+rs.AddPlaneSurface( plane, distance, distance )
+同见
+LineClosestPoint
+LineIsFartherThan
+LineMaxDistanceTo
+LineMinDistanceTo
+LineTransform
+ 

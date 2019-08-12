@@ -1,0 +1,42 @@
+
+WallpaperHidden
+返回或设置指定视图的底色图案是否可见。
+语法
+rhinoscriptsyntaxs.WallpaperHidden (view=None, hidden=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+hidden
+可选参数。布尔值。隐藏（True）或显示（False）底色图案。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 hidden 参数，返回当前底色图案的可见性。
+
+
+布尔值
+如果指定了 hidden 参数，返回先前底色图案的可见性。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.WallpaperHidden(view) == False: rs.WallpaperHidden(view, True)
+同见
+Wallpaper
+WallpaperGrayScale

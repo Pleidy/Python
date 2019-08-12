@@ -1,0 +1,29 @@
+
+IsDocumentData
+判断当前文档是否包含 Script 用户数据。
+语法
+rhinoscriptsyntax.IsDocumentData ()
+rhinoscript.userdata.IsDocumentData ()
+参数
+空值。
+返回值
+
+
+
+
+布尔值
+含有用户数据返回 True，没有用户数据返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+result = rs.IsDocumentData()
+if result:
+    print "This document contains Script document user data"
+else:
+    print "This document contains no Script document user data"
+同见
+DeleteDocumentData
+DocumentDataCount
+GetDocumentData
+SetDocumentData

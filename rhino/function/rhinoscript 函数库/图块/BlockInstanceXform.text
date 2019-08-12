@@ -1,0 +1,38 @@
+
+BlockInstanceXform
+返回图块引例相对于世界坐标原点 (0,0,0) 的位置。位置以 4x4 矩阵的形式返回。
+语法
+rhinoscriptsyntax.BlockInstanceXform (object_id)
+rhinoscript.block.BlockInstanceXform (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。现有图块插入点的 ID。
+
+
+返回值
+
+
+
+
+列表
+变化矩阵（4x4 的数组）。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select block to query")
+if rs.IsBlockInstance(obj):
+    arrMatrix = rs.BlockInstanceXform(obj)
+    if arrMatrix is not None:
+        pointId = rs.AddPoint([0,0,0])
+        rs.TransformObject( pointId, arrMatrix)
+同见
+BlockInstanceCount
+BlockInstanceInsertPoint
+BlockInstances
+IsBlockInstance
+ 

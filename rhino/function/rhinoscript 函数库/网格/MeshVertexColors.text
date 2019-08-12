@@ -1,0 +1,56 @@
+
+MeshVertexColors
+返回或修改一个网格物件的顶点颜色
+语法
+rhinoscriptsyntax.MeshVertexColors (mesh_id, colors=0)
+rhinoscript.mesh.MeshVertexColors (mesh_id, colors=0)
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+colors
+可选参数。列表。颜色值构成的列表。注意，对于每一个顶点，顶点颜色要与之相匹配。如果给这个参数传递空值，将会移除现有网格顶点的颜色。
+
+
+返回值
+
+
+
+
+列表
+如果没有指定 colors 参数，返回当前的顶点颜色。
+
+
+列表
+如果指定了 colors 参数，返回先前的顶点颜色。
+
+
+None
+mesh_id 代表的物件没有顶点颜色、 函数没有执行成功或执行出错，都会返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+import random
+ 
+def randomcolor():
+    r = random.randint(0,255)
+    g = random.randint(0,255)
+    b = random.randint(0,255)
+    return r,g,b
+ 
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+if obj:
+    colors = []
+    for i in range(rs.MeshVertexCount(obj)): colors.append( randomcolor() )
+    rs.MeshVertexColors( obj, colors )
+同见
+MeshHasVertexColors
+MeshVertexCount
+MeshVertices
+ 

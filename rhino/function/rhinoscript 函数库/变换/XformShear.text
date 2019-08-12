@@ -1,0 +1,54 @@
+
+XformShear
+返回一个切变矩阵。
+语法
+rhinoscriptsyntax.XformShear(plane, x, y, z)
+rhinoscript.transformation.XformShear(plane, x, y, z)
+参数
+
+
+
+
+plane
+必须参数。平面，plane[0] 为定点。
+
+
+x
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。x 轴缩放因数。
+
+
+y
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。y 轴缩放因数。
+
+
+z
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。z 轴缩放因数。
+
+
+返回值
+
+
+
+
+变换
+4x4 的变换矩阵。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects to shear")
+if objects:
+    cplane = rs.ViewCPlane()
+    xform = rs.XformShear(cplane, (1,1,0), (-1,1,0), (0,0,1))
+    rs.TransformObjects(objects, xform, True)
+同见
+XformMirror
+XformPlanarProjection
+XformRotation
+XformScale
+XformTranslation
+ 

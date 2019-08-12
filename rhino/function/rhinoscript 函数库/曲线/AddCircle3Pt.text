@@ -1,0 +1,52 @@
+
+AddCircle3Pt
+通过三点添加一个圆。
+语法
+rhinoscriptsyntax.AddCircle3Pt (first, second, third)
+rhinoscript.curve.AddCircle3Pt (first, second, third)
+参数
+
+
+
+
+first
+圆上的第一个点。
+
+
+second
+圆上的第二个点。
+
+
+third
+圆上的第三个点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = rs.GetPoint("First point on circle")
+if point1:
+    point2 = rs.GetPoint("Second point on circle")
+    if point2:
+        point3 = rs.GetPoint("Third point on circle")
+        if point3:
+            rs.AddCircle3Pt(point1, point2, point3)
+同见
+AddCircle
+CircleCenterPoint
+CircleCircumference
+CircleRadius
+IsCircle
+ 

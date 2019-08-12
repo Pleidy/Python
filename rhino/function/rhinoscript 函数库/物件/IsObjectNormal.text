@@ -1,0 +1,45 @@
+
+IsObjectNormal
+判断一个物件是否为正常显示。正常显示的物件，是可见、可捕捉、可选择的。
+语法
+rhinoscriptsyntax.IsObjectNormal (object_id)
+rhinoscript.object.IsObjectNormal (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件为正常显示。
+
+
+False
+物件不是正常显示的。
+
+
+示例
+import rhinoscriptsyntax as rs
+#Do something here...
+if rs.IsObjectNormal(object):
+    print "The object is normal."
+else:
+    print "The object is not normal."
+同见
+IsObject
+IsObjectHidden
+IsObjectInGroup
+IsObjectLocked
+IsObjectReference
+IsObjectSelectable
+IsObjectSelected
+IsObjectSolid
+ 

@@ -1,0 +1,47 @@
+
+LineTransform
+移动一条直线。
+语法
+rhinoscriptsyntax.LineTransform (line, xform)
+rhinoscript.line.LineTransform (line, xform)
+参数
+
+
+
+
+line
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。
+
+
+xform
+必须参数。一个有效的 4x4 的矩阵变换。
+
+
+返回值
+
+
+
+
+直线
+执行成功，返回直线。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+line = (0,0,0), (10,10,0)
+rs.AddLine( line[0], line[1] )
+plane = rs.WorldXYPlane()
+xform = rs.XformRotation(30, plane.Zaxis, plane.Origin)
+line = rs.LineTransform(line, xform)
+rs.AddLine( line.From, line.To )
+同见
+LineClosestPoint
+LineIsFartherThan
+LineMaxDistanceTo
+LineMinDistanceTo
+LinePlane
+ 

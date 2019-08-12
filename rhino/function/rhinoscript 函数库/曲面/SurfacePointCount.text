@@ -1,0 +1,39 @@
+
+SurfacePointCount
+返回曲面物件的控制点数量。
+语法
+rhinoscriptsyntax.SurfacePointCount (surface_id)
+rhinoscript.surface.SurfacePointCount (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回U 方向和 V 方向控制点的数量。(U 方向的数量, V 方向的数量)
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface")
+if rs.IsSurface(obj):
+    count = rs.SurfacePointCount(obj)
+    print "Point count in U direction:", count[0]
+    print "Point count in V direction:", count[1]
+同见
+IsSurface
+SurfacePoints
+ 

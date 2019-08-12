@@ -1,0 +1,41 @@
+
+IsVectorPerpendicularTo
+比较两个向量是否垂直。
+语法
+rhinoscriptsyntax.IsVectorPerpendicularTo (vector1, vector2)
+rhinoscript.pointvector.IsVectorPerpendicularTo (vector1, vector2)
+参数
+
+
+
+
+vector1
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。3-D 向量。
+
+
+vector2
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。用于比较的 3-D 向量。
+
+
+返回值
+
+
+
+
+Boolean
+如果向量垂直返回 True，如果向量不垂直返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector1 = (1,0,0)
+vector2 = (0,1,0)
+print rs.IsVectorPerpendicularTo( vector1, vector2 )
+同见
+IsVectorParallelTo
+IsVectorTiny
+IsVectorZero

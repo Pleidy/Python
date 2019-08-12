@@ -1,0 +1,51 @@
+
+DimStyleLeaderArrowSize
+返回或修改一个尺寸标注型式的引线箭头大小。
+语法
+rhinoscriptsyntax.DimStyleLeaderArrowSize (dimstyle, size=None)
+rhinoscript.dimension.DimStyleLeaderArrowSize (dimstyle, size=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+size
+可选参数。数字。新的引线箭头大小。如果省略，返回当前引线箭头大小。
+
+
+返回值
+
+
+
+
+数字
+如果大小没有指定，返回当前的引线箭头大小。
+
+
+数字
+如果指定了大小，返回先前的引线箭头大小。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+size = rs.DimStyleLeaderArrowSize(dimstyle)
+if size>1.0: rs.DimStyleLeaderArrowSize( dimstyle, 1.0 )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleExtension
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleOffset
+DimStyleTextAlignment
+DimStyleTextHeight

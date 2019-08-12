@@ -1,0 +1,64 @@
+
+PointClosestObject
+找出最靠近测试点的物件。
+语法
+rhinoscriptsyntax.PointClosestObject(point, object_ids)
+rhinoscript.pointvector.PointClosestObject(point, object_ids)
+参数
+
+
+
+
+point
+必须参数。   三个数字组成的列表或 Point3d 对象。用于测试的 3-D 点。
+
+
+object_ids
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。一个或多个点、点云、曲线、曲面、多重曲面或网格物件的 ID。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回一个元组，元组的两个值为计算得到的最近点。元素分别是：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Guid
+最近物件的 ID。
+
+
+1
+Point3d 点
+靠近最近物件的 3-D 点。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select target objects for closest point", 63)
+if objs:
+    point = rs.GetPoint("Test point")
+    if point:
+        results = rs.PointClosestObject(point, objs)
+        if results:
+              print "Object id:", results[0]
+              rs.AddPoint( results[1] )
+同见
+CurveClosestObject

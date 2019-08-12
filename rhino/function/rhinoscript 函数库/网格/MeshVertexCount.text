@@ -1,0 +1,35 @@
+
+MeshVertexCount
+返回一个网格物件的顶点数。
+语法
+rhinoscriptsyntax.MeshVertexCount (object_id)
+rhinoscript.mesh.MeshVertexCount (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回网格顶点的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh )
+print "Vertex count:", rs.MeshVertexCount(obj)
+同见
+IsMesh
+MeshContourPoints
+MeshFaceCount
+MeshFaces
+MeshVertices
+ 

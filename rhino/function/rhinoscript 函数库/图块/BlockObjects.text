@@ -1,0 +1,36 @@
+
+BlockObjects
+返回图块定义包含物件的ID标识。
+语法
+rhinoscriptsyntax.BlockObjects (block_name)
+rhinoscript.block.BlockObjects (block_name)
+参数
+
+
+
+
+block_name
+必须参数。字符串或 Guid。现有图块定义的名称。
+
+
+返回值
+
+
+
+
+列表
+图块定义所包含物件的 ID 构成的数组。
+
+
+示例
+import rhinoscriptsyntax as rs
+strBlock = rs.GetString("Block name to list identifiers")
+if rs.IsBlock(strBlock):
+    objects = rs.BlockObjects(strBlock)
+    if objects:
+        for item in objects: print item
+同见
+BlockNames
+BlockObjectCount
+IsBlock
+ 

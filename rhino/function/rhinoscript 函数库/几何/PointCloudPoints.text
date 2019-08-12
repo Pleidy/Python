@@ -1,0 +1,38 @@
+
+PointCloudPoints
+返回点云中的点。
+语法
+rhinoscriptsyntax.PointCloudPoints (object_id)
+rhinoscript.geometry.PointCloudPoints (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。点云物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select point cloud", rs.filter.pointcloud)
+points = rs.PointCloudPoints(id)
+if points: for point in points: print point
+同见
+AddPointCloud
+IsPointCloud
+PointCloudCount
+ 

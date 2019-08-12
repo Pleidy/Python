@@ -1,0 +1,51 @@
+
+DimStyleTextGap
+返回或修改一个尺寸标注型式的文字挑高。
+语法
+rhinoscriptsyntax.DimStyleTextGap (dimstyle, gap=None)
+rhinoscript.dimension.DimStyleTextGap (dimstyle, gap=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+gap
+可选参数。数字。新的文字挑高。如果省略，返回当前的文字挑高。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定文字挑高，返回当前的文字挑高。
+
+
+数字
+如果指定了文字挑高，返回先前的文字挑高。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+gap = rs.DimStyleTextGap(dimstyle)
+if gap>0.25: rs.DimStyleTextGap( dimstyle, 0.25 )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleExtension
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleOffset
+DimStyleTextAlignment
+DimStyleTextHeight

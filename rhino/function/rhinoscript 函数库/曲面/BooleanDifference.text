@@ -1,0 +1,46 @@
+
+BooleanDifference
+对输入的两组曲面和多重曲面进行布尔差集运算。获取更多信息，请参考 Rhino 帮助文件中有关 BooleanDifference 指令的内容。
+语法
+rhinoscriptsyntax.BooleanDifference (input0, input1, delete_input=True)
+rhinoscript.surface.BooleanDifference (input0, input1, delete_input=True)
+参数
+
+
+
+
+input0
+必须参数。列表。被减曲面或多重曲面的 ID 。
+
+
+input1
+必须参数。列表。要减去曲面或多重曲面的 ID 。
+
+
+delete_input
+可选参数。布尔值。删除所有的输入物件。默认情况下会删除所有的输入物件（Ture）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回包含新生成物件 ID 的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+filter = rs.filter.surface | rs.filter.polysurface
+input0 = rs.GetObjects("Select first set of surfaces or polysurfaces", filter)
+if input0:
+    input1 = rs.GetObjects("Select second set of surfaces or polysurfaces", filter)
+    if input1: rs.BooleanDifference(input0, input1)
+同见
+BooleanIntersection
+BooleanUnion

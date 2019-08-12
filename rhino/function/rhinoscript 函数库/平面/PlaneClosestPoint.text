@@ -1,0 +1,46 @@
+
+PlaneClosestPoint
+返回测试点在平面上的最近点。
+语法
+rhinoscriptsyntax.PlaneClosestPoint (plane, point, return_point=True)
+rhinoscript.plane.PlaneClosestPoint (plane, point, return_point=True)
+参数
+
+
+
+
+plane
+必须参数。平面。
+
+
+point
+必须参数。三个数字组成的列表或 Point3d 对象。测试 3-D 点。
+
+
+return_point
+可选参数。布尔值。如果省略或为 True，返回测试点在平面上的最近点。如果为 False，返回测试点在平面上的最近点的 UV 参数。
+
+
+返回值
+
+
+
+
+Point3d 点对象或列表
+如果 return_point 参数没有指定或为 True，返回 3-D 点。如果 return_point 参数为 False，返回 UV 参数构成的数组。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = rs.GetPoint("Point to test")
+if point:
+    plane = rs.ViewCPlane()
+    if plane:
+        print rs.PlaneClosestPoint(plane, point)
+同见
+DistanceToPlane
+EvaluatePlane

@@ -1,0 +1,48 @@
+
+PointCompare
+比较两个 3-D 点。
+语法
+rhinoscriptsyntax.PointCompare (point1, point2, tolerance=None)
+rhinoscript.pointvector.PointCompare (point1, point2, tolerance=None)
+参数
+
+
+
+
+point1
+必须参数。包含三个数字的列表或者 Point3d 对象。第一个要比较的 3-D 点。
+
+
+point2
+必须参数。包含三个数字的列表或者 Point3d 对象。第二个要比较的 3-D 点。
+
+
+tolerance
+可选参数。数字。对比的公差值，如果省略，将使用 Rhino 内部的零公差 (1.0e-12)。
+
+
+返回值
+
+
+
+
+Boolean
+True 或者 False
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = (1,1,1)
+point2 = (2,2,2)
+print rs.PointCompare(point1, point2)
+同见
+PointAdd
+PointDivide
+PointScale
+PointSubtract
+PointTransform
+ 

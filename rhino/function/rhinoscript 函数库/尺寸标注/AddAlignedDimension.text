@@ -1,0 +1,48 @@
+
+AddAlignedDimension
+在文档中添加一个对齐尺寸标注物件。对齐尺寸标注是两个点之间的直线尺寸。
+语法
+rhinoscriptsyntax.AddAlignedDimension (start_point, end_point, point_on_dimension_line, style=None)
+rhinoscript.dimension.AddAlignedDimension (start_point, end_point, point_on_dimension_line, style=None)
+参数
+
+
+
+
+start
+必须参数。尺寸标注的原点或第一个点。
+
+
+end
+必须参数。尺寸标注的偏移或第一个点。
+
+
+point_on_dimension_line
+必须参数。尺寸线的位置点。
+
+
+style
+可选参数。尺寸标注型式的名称。如果省略，将使用当前的尺寸标准型式。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+origin = 1, 1, 0
+offset = 11, 5, 0
+point = 1, 3, 0
+rs.AddAlignedDimension( origin, offset, point )
+同见
+IsAlignedDimension

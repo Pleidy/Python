@@ -1,0 +1,42 @@
+
+ExplodeHatch
+炸开一个填充图案物件到它的组成物件。将炸开生成的物件添加到当前文档。如果填充图案物件使用 solid 图案，将创建平面 Brep 物件。否则，将创建曲线物件。
+语法
+rhinoscriptsyntax.ExplodeHatch (hatch_id, delete=False)
+rhinoscript.hatch.ExplodeHatch (hatch_id, delete=False)
+参数
+
+
+
+
+hatch_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+delete
+可选参数。布尔值。删除填充图案物件。默认情况下不删除填充图案物件（False）。
+
+
+返回值
+
+
+
+
+列表
+新生成物件 Guid 构成的列表。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if rs.IsHatch(id): rs.ExplodeHatch(id, True)
+同见
+IsHatch
+HatchPattern
+HatchRotation
+HatchScale
+ 

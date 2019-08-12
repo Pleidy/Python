@@ -1,0 +1,80 @@
+
+GetBox
+暂停并等待用户输入一个方体。
+语法
+rhinoscriptsyntax.GetBox (mode=0, base_point=None, prompt1=None, prompt2=None, prompt3=None)
+rhinoscript.userinterface.GetBox (mode=0, base_point=None, prompt1=None, prompt2=None, prompt3=None)
+参数
+
+
+
+
+mode
+可选参数。数字。方体选取模式。如果未指定，所有模式都可用（0）。方体选取模式如下：
+
+
+
+
+值
+描述
+
+
+0
+所有模式。
+
+
+1
+角点。选取两个角点创建底面矩形。
+
+
+2
+三点。选取三个点创建底面矩形。
+
+
+3
+垂直。选取三个点创建垂直面矩形。
+
+
+4
+中心。通过选取中心点及一个角点来创建。
+
+
+
+
+base_point
+可选参数。三个数字组成的列表或 Point3d 对象。一个 3-D 基点。
+
+
+prompt1
+可选参数。字符串。第一条提示信息。
+
+
+prompt2
+可选参数。字符串。第二条提示信息。
+
+
+prompt3
+可选参数。字符串。第三条提示信息。只有使用“三点”和“垂直”模式时第三条提示信息才起作用。
+
+
+返回值
+
+
+
+
+列表
+由定义方体顶点的八个 3-D 点组成的列表。点是从方体底部开始按照逆时针顺序排列。请参考下方的图示。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+box = rs.GetBox()
+if box:
+    for i, pt in enumerate(box): rs.AddTextDot( i, pt )
+
+同见
+GetRectangle

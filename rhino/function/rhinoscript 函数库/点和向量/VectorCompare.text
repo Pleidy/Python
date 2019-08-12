@@ -1,0 +1,51 @@
+
+VectorCompare
+比较两个 3-D 向量。
+语法
+rhinoscriptsyntax.VectorCompare (vector1, vector2)
+rhinoscript.pointvector.VectorCompare (vector1, vector2)
+参数
+
+
+
+
+vector1
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。第一个要比较的 3-D 向量。
+
+
+vector2
+必须参数。三个数构成的列表、Point3d 对象或 Vector3d对象。第二个要比较的 3-D 向量。
+
+
+返回值
+
+
+
+
+-1
+向量 vector1 小于 vector2。
+
+
+0
+向量 vector1 等于 vector2。
+
+
+1
+向量 vector1 大于 vector2。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector1 = (1,0,0)
+vector2 = (0,1,0)
+rc = rs.VectorCompare(vector1 , vector2)
+print rc
+同见
+IsVectorTiny
+IsVectorZero
+VectorCreate
+ 

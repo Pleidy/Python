@@ -1,0 +1,45 @@
+
+SurfaceKnots
+返回曲面物件的节点或节点向量。
+语法
+rhinoscriptsyntax.SurfaceKnots (surface_id)
+rhinoscript.surface.SurfaceKnots (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回曲面的节点值。列表中两个子列表包含以下信息：
+元素 0 = U 方向的节点向量
+元素 1 = V 方向的节点向量
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinocsriptsyntax as rs
+obj = rs.GetObject("Select a surface")
+if rs.IsSurface(obj):
+    knots = rs.SurfaceKnots(obj)
+    if knots:
+        vector = knots[0]
+        print "Knot vector in U direction"
+        for item in vector: print "Surface knot value:", item
+        vector = knots[1]
+        print "Knot vector in V direction"
+        for item in vector: print "Surface knot value:", item
+同见
+IsSurface
+SurfaceKnotCount

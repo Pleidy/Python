@@ -1,0 +1,37 @@
+
+IsGroup
+判断一个群组是否存在。
+语法
+rhinocriptsyntax.IsGroup (group_name)
+rhinocript.group.IsGroup (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+group = rs.GetString("Group name to verify")
+if rs.IsGroup(group):
+    print "The group exists."
+else:
+    print "The group does not exist."
+同见
+AddGroup
+DeleteGroup
+GroupCount
+GroupNames
+RenameGroup

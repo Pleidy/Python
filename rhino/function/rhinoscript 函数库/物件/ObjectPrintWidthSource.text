@@ -1,0 +1,71 @@
+
+ObjectPrintWidthSource
+返回或修改一个物件的打印线宽来源。物件打印线宽来源于下列三个途径之一：
+
+来自图层。使用物件所在图层的打印线宽。
+来自物件。使用指定给物件自身的打印线宽。
+来自父物件。有父物件，比如物件在图块实例中，使用父物件的打印线宽。如果没有父物件，从图层获得打印线宽。
+
+语法
+rhinoscriptsyntax.ObjectPrintWidthSource (object_ids, source=None)
+参数
+
+
+
+
+object_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。物件的 ID 。
+
+
+source
+可选参数。数字。新的打印线宽来源。如果省略，返回当前的打印线宽来源。注意，如果 object_ids 是列表或元组， source 就是必须参数。
+
+
+
+
+值
+描述
+
+
+0
+来自图层。
+
+
+1
+来自物件。
+
+
+2
+<未使用>
+
+
+3
+来自物父件。
+
+
+
+
+返回值
+
+
+
+
+数字
+如果打印线宽来源没有指定，返回当前的打印线宽来源。
+
+
+数字
+如果指定了打印线宽来源，返回先前的打印线宽来源。
+
+
+数字
+如果 object_ids 是一个列表，返回此函数执行过程中修改过的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects to reset print width source")
+if objects:
+    for obj in objects: rs.ObjectPrintWidthSource(obj,0)
+同见
+ObjectPrintColor

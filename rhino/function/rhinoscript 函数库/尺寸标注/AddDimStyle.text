@@ -1,0 +1,38 @@
+
+AddDimStyle
+在文档中添加一个新的尺寸标注型式。添加时将以当前默认的尺寸标注型式属性来初始化新的尺寸标注型式。
+语法
+rhinoscriptsyntax.AddDimStyle (dimstyle_name=None)
+rhinoscript.dimension.AddDimStyle (dimstyle_name=None)
+参数
+
+
+
+
+dimstyle_name
+可选参数。字符串。新尺寸标注型式的名称。如果省略，Rhino 将自动生成名称。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回新尺寸标注型式的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "New dimension style:", rs.AddDimStyle()
+print "New dimension style:", rs.AddDimStyle("MyDimStyle")
+同见
+CurrentDimStyle
+DeleteDimStyle
+IsDimStyle
+RenameDimStyle
+ 

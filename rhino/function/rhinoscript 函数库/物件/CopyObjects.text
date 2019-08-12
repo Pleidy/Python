@@ -1,0 +1,40 @@
+
+CopyObjects
+从一个位置复制一个或多个物件到另一个位置，或原地复制。
+语法
+rhinoscriptsyntax.CopyObjects (object_ids, translation=None)
+rhinoscript.object.CopyObjects (object_ids, translation=None)
+参数
+
+
+
+
+object_ids
+必须参数。数组。要复制物件的 Guid 组成的数组。
+
+
+translation
+可选参数。三个数字构成的列表或者 Vector3d 对象。3-D 移动向量。
+
+
+返回值
+
+
+
+
+List
+复制得到物件的 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+objectIds = rs.GetObjects("Select objects to copy")
+if objectIds:
+    start = rs.GetPoint("Point to copy from")
+    if start:
+        end = rs.GetPoint("Point to copy to", start)
+        if end:
+            translation = end-start
+            rs.CopyObjects( objectIds, translation )
+同见
+CopyObject

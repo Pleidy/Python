@@ -1,0 +1,55 @@
+
+ObjectGripLocation
+返回或修改物件操作点的位置。
+语法
+rhinoscriptsyntax.ObjectGripLocation (object_id, index, point=None)
+rhinoscript.grips.ObjectGripLocation (object_id, index, point=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+index
+必须参数。数字。要查询或修改的操作点序号。
+
+
+point
+可选参数。三个数字组成的列表或 Point3d 对象。代表操作点新位置的 3-D 点。
+
+
+返回值
+
+
+
+
+列表
+如果 point 参数没有定义，返回index  参数所指定操作点的当前位置。
+
+
+列表
+如果定义了 point 参数，返回index  参数所指定操作点的先前位置。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve", rs.filter.curve)
+if obj:
+    rs.EnableObjectGrips(obj)
+    point = rs.ObjectGripLocation(obj, 0)
+    point[0] = point[0] + 1.0
+    point[1] = point[1] + 1.0
+    point[2] = point[2] + 1.0
+    rs.ObjectGripLocation(obj, 0, point)
+    rs.EnableObjectGrips(obj, False)
+同见
+EnableObjectGrips
+ObjectGripLocations
+ 

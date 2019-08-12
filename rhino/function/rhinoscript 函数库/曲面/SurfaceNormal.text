@@ -1,0 +1,44 @@
+
+SurfaceNormal
+返回曲面在参数位置的法线 3-D 向量。
+语法
+rhinoscriptsyntax.SurfaceNormal (surface_id, uv_parameter)
+rhinoscript.surface.SurfaceNormal (surface_id, uv_parameter)
+参数
+
+
+
+
+surface_is
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+uv_parameter
+必须参数。由两个UV参数值构成的列表。
+
+
+返回值
+
+
+
+
+Vector3d向量
+如果执行成功，返回 3-D 向量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if obj:
+    point = rs.GetPointOnSurface(obj)
+    if point:
+        param = rs.SurfaceClosestPoint(obj, point)
+        normal = rs.SurfaceNormal(obj, param)
+        rs.AddPoints( [point, point + normal] )
+同见
+SurfaceClosestPoint
+SurfaceDomain

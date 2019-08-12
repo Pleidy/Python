@@ -1,0 +1,47 @@
+
+CurveStartPoint
+返回曲线物件的起点。
+语法
+rhinoscriptsyntax.CurveStartPoint (curve_id, index=-1, point=None)
+rhinoscript.curve.CurveStartPoint (curve_id, index=-1, point=None)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 index 标示要计算的是多重曲线的哪一段。
+
+
+point
+可选参数。新的起点。
+
+
+返回值
+
+
+
+
+Point3d
+如果执行成功，返回作为曲线起点的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+object = rs.GetObject("Select a curve")
+if rs.IsCurve(object):
+    point = rs.CurveStartPoint(object)
+    rs.AddPoint(point)
+同见
+CurveEndPoint
+CurveMidPoint
+IsCurve
+ 

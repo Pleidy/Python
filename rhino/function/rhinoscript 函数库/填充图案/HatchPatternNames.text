@@ -1,0 +1,30 @@
+
+HatchPatternNames
+返回当前文档中所有图案的名称。
+语法
+rhinoscriptsyntax.HatchPatternNames()
+rhinoscript.hatch.HatchPatternNames()
+参数
+空值。
+返回值
+
+
+
+
+列表
+执行成功返回所有图案的名称列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+patterns = rs.HatchPatternNames()
+for pattern in patterns:
+    description = rs.HatchPatternDescription(pattern)
+    if description: print pattern, "-", description
+    else: print pattern
+同见
+HatchPatternCount

@@ -1,0 +1,51 @@
+
+MaterialColor
+返回或修改一个材质的漫射颜色。材质颜色使用 RGB 颜色格式。RGB 格式用红、绿、蓝三种颜色的比例定义要显示的颜色。
+语法
+rhinoscriptsyntax.MaterialColor (material_index, color=None)
+rhinoscript.material.MaterialColor (material_index, color=None)
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+color
+可选参数。数字。新的颜色值。如果省略，返回当前的材质颜色。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 color 参数，返回当前的材质颜色。
+
+
+数字
+如果指定了 color 参数，返回先前的材质颜色。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1:
+        rs.MaterialColor( index, (127, 255, 191) )
+同见
+MaterialBump
+MaterialName
+MaterialReflectiveColor
+MaterialShine
+MaterialTexture
+MaterialTransparency
+ 

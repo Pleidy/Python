@@ -1,0 +1,65 @@
+
+IsObjectInBox
+判断一个物件的边框方块是否在另一个边框方块之内。
+语法
+rhinoscriptsyntax.IsObjectInBox(object_id, box, test_mode=True)
+rhinoscript.object.IsObjectInBox(object_id, box, test_mode=True)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+box
+必须参数。点或边框方块构成的列表。用于测试的边框方块。边框方块是由八个顶点 3-D 点组成的列表。点需要从方体底部开始按照逆时针顺序排列。
+
+
+test_mode
+可选参数。布尔值。测试模式。
+
+
+
+
+值
+描述
+
+
+True (默认值)
+物件的边框方块必须完全在测试边框方块中才能认为是物件在边框方块内。也就是说要满足，test.min <= object.min 并且 object.max <= test.max。
+
+
+False
+物件的边框方块完全在测试边框方块中或与测试边框方块相交都可以认为物件在边框方块内。
+
+
+
+
+返回值
+
+
+
+
+True
+物件在方块里。
+
+
+False
+物件不在方块里。
+
+
+示例
+import rhinoscriptsyntax as rs
+box = rs.GetBox()
+if box:
+    rs.EnableRedraw(False)
+    object_list = rs.AllObjects()
+    for obj in object_list:
+        if rs.IsObjectInBox(obj, box, False):
+            rs.SelectObject( obj )
+    rs.EnableRedraw( True )
+同见
+BoundingBox
+GetBox

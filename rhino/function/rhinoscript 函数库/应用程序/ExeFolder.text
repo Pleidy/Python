@@ -1,0 +1,24 @@
+
+ExeFolder
+返回 Rhino 程序运行目录的完整路径。
+语法
+rhinoscriptsyntax.ExeFolder()
+rhinoscript.application.ExeFolder()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+执行成功返回 Rhino 程序执行目录。
+
+
+示例
+import rhinoscriptsyntax as rs
+folder = rs.ExeFolder()
+print folder
+同见
+InstallFolder
+RegistryKey

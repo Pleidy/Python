@@ -1,0 +1,44 @@
+
+LineClosestPoint
+找到并返回一个参考点与一个无限延长直线的最近点。
+语法
+rhinoscriptsyntax.LineClosestPoint (line, testpoint)
+rhinoscript.line.LineClosestPoint (line, testpoint)
+参数
+
+
+
+
+line
+必须参数。六个数字或两个 Point3d 点对象构成的列表。两个 3-D 点分别代表直线的起点和终点。。
+
+
+testpoint
+必须参数。三个数字组成的列表或 Point3d 对象。测试点。
+
+
+返回值
+
+
+
+
+Point3d 点
+测试点在直线上的最近点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+line = (0,0,0), (5,5,0)
+point = (15, 10, 0)
+result = rs.LineClosestPoint( line, point)
+if result: rs.AddPoint(result)
+同见
+LineIsFartherThan
+LineMaxDistanceTo
+LineMinDistanceTo
+LinePlane
+LineTransform

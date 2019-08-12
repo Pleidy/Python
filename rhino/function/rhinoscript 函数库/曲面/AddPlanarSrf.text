@@ -1,0 +1,37 @@
+
+AddPlanarSrf
+从平面曲线创建一个或者多个曲面。
+语法
+rhinoscriptsyntax.AddPlanarSrf (object_ids)
+rhinoscript.object.AddPlanarSrf (object_ids)
+参数
+
+
+
+
+object_ids
+必须参数。列表。曲线物件的 Guid 或字符串构成的列表。
+
+
+返回值
+
+
+
+
+列表
+由新生成物件 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select planar curves to build surface", rs.filter.curve)
+if objs: rs.AddPlanarSrf(objs)
+同见
+AddEdgeSrf
+AddSrfControlPtGrid
+AddSrfPt
+AddSrfPtGrid

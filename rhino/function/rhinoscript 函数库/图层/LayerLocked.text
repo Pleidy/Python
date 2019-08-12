@@ -1,0 +1,40 @@
+
+LayerLocked
+返回或修改一个图层的锁定状态。
+语法
+rhinoscriptsyntax.LayerLocked(layer, locked=None)
+rhinoscript.layer.LayerLocked(layer, locked=None)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+locked
+可选参数。布尔值。图层新的锁定状态。True = 锁定， False = 未锁定。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定锁定状态，返回当前的锁定状态。
+
+
+布尔值
+如果指定了锁定状态，返回先前的锁定状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    for layer in layers:
+        if rs.LayerLocked(layer): rs.LayerLocked(layer, False)
+同见
+LayerVisible

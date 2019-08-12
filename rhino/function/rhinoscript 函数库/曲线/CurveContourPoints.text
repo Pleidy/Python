@@ -1,0 +1,52 @@
+
+CurveContourPoints
+返回一个曲线物件的等高线划分点列表。
+语法
+rhinoscriptsyntax.CurveContourPoints (curve_id, start_point, end_point, interval=None)
+rhinoscript.curve.CurveContourPoints (curve_id, start_point, end_point, interval=None)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。曲线物件 的 ID 。
+
+
+start_point
+必须参数。包含三个数字的列表或者 Point3d 对象。划分基准线起点。
+
+
+end_point
+必须参数。包含三个数字的列表或者 Point3d 对象。划分基准线终点。
+
+
+interval
+可选参数。数字。等高线之间的间隔。如果省略，间隔值将设置为物件边框方框对角的距离除以50.
+
+
+返回值
+
+
+
+
+List.
+执行成功返回一组 3-D 点，每个点对应一个等高线位置。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve", rs.filter.curve)
+start_point = rs.GetPoint("Base point of center line")
+end_point = rs.GetPoint("Endpoint of center line", start_point)
+contour = rs.CurveContourPoints(obj, start_point, end_point)
+if contour: rs.AddPoints(contour)
+同见
+AddSrfContourCrvs
+MeshContourPoints
+SurfaceContourPoints
+ 

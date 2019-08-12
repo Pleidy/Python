@@ -1,0 +1,49 @@
+
+AddEdgeSrf
+通过 2, 3, 或 4 条曲线创建曲面。
+语法
+rhinoscriptsyntax.AddEdgeSrf (curve_ids)
+rhinoscript.surface.AddEdgeSrf (curve_ids)
+参数
+
+
+
+
+
+curve_ids
+
+
+必须参数。包含 2, 3, 或 4 条曲线物件 ID 的列表或元组。
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+执行成功，返回新物件的ID。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+curves = rs.GetObjects("Select 2, 3, or 4 curves", rs.filter.curve)
+if curves and len(curves)>1 ): rs.AddEdgeSrf(curves)
+同见
+AddPlanarSrf
+AddSrfControlPtGrid
+AddSrfPt
+AddSrfPtGrid

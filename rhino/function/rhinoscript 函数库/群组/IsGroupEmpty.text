@@ -1,0 +1,41 @@
+
+IsGroupEmpty
+判断一个群组是否为空或不包含任何物件。
+语法
+rhinoscriptsyntax.IsGroupEmpty (group_name)
+rhinoscript.group.IsGroupEmpty (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.GroupNames()
+if names:
+    for name in names:
+        if rs.IsGroupEmpty(name): rs.DeleteGroup(name)
+同见
+AddObjectsToGroup
+AddObjectToGroup
+RemoveObjectFromAllGroups
+RemoveObjectFromGroup
+RemoveObjectFromTopGroup
+RemoveObjectsFromGroup

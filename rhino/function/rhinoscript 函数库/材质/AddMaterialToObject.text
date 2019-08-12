@@ -1,0 +1,38 @@
+
+AddMaterialToObject
+为物件添加一个材质，并返回新材质的序号。注意，为一个物件添加材质，将修改物件的材质来源，从“来自图层”修改到“来自物件”。更多细节请参考 ObjectMaterialSource 。如果物件已经有材质，返回物件当前的材质序号。
+语法
+rhinoscriptsyntax.AddMaterialToObject (object_id)
+rhinoscript.material.AddMaterialToObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回物件的材质序号。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject()
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index==-1: index = rs.AddMaterialToObject(obj)
+同见
+IsMaterialDefault
+ObjectMaterialIndex
+ObjectMaterialSource

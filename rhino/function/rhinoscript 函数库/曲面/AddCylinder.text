@@ -1,0 +1,76 @@
+
+AddCylinder
+在文档中添加一个圆柱体多重曲面。
+语法
+rhinoscriptsyntax.AddCylinder (base, height, radius, cap=True)
+rhinoscript.surface.AddCylinder (base, height, radius, cap=True)
+参数
+
+
+
+
+
+base
+
+
+必须参数。点或平面。圆柱体的 3-D 基点或基平面。
+
+
+
+
+height
+
+
+必须参数。如果基点是点物件，height 同样为 3-D 点。height 点定义圆柱体的高度和方向。如果基点是平面，height 为圆柱体的高度值。
+
+
+
+
+radius
+
+
+必须参数。数字。圆柱体的半径。
+
+
+
+
+cap
+
+
+可选参数。布尔值。圆柱体端点加盖。如果省略，圆柱体将被加盖（True）。
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+执行成功，返回新物件的ID。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+radius = 5.0
+base = rs.GetPoint("Base of cylinder")
+if base:
+    height = rs.GetPoint("Height of cylinder", base)
+    if height: rs.AddCylinder( base, height, radius )
+同见
+AddBox
+AddCone
+AddSphere
+AddTorus

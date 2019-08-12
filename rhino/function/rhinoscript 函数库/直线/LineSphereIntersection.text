@@ -1,0 +1,47 @@
+
+LineSphereIntersection
+计算一条直线和一个球体的交点。   
+语法
+rhinoscriptsyntax.LineSphereIntersection (line, sphere_center, sphere_radius)
+rhinoscript.line.LineSphereIntersection (line, sphere_center, sphere_radius)
+参数
+
+
+
+
+line
+必须参数。直线。
+
+
+sphere_center
+必须参数。Point3d 点。球体中心点。
+
+
+sphere_radius
+必须参数。数字。球体的半径。
+
+
+返回值
+
+
+
+
+列表
+不管有一个还是两个交点，都返回列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+radius = 10
+line = (-10,0,0), (10,0,10)
+points = rs.LineSphereIntersection(line, (0,0,0), radius)
+if points:
+    for point in points: rs.AddPoint(point)
+同见
+LineCylinderIntersection
+LineLineIntersection
+LinePlaneIntersection

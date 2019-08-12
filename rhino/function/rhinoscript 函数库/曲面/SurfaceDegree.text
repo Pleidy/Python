@@ -1,0 +1,45 @@
+
+SurfaceDegree
+返回曲面物件在指定方向的阶数。
+语法
+rhinoscriptsyntax.SurfaceDegree (surface_id, direction=2)
+rhinoscript.surface.SurfaceDegree (surface_id, direction=2)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+direction
+可选参数。数字。方向，0 = U方向， 1 = V方向， 2 = 两个方向。如果省略，返回UV两个方向的阶数（2 = 两个方向）。
+
+
+返回值
+
+
+
+
+元组
+如果 direction 没有指定，或 direction 设置为 2，返回UV两个方向的阶数。
+
+
+数字
+如果指定了 direction 参数，返回 direction 指定方向的阶数。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurface(obj):
+    print "Degree in U direction:", rs.SurfaceDegree(obj, 0)
+    print "Degree in V direction:", rs.SurfaceDegree(obj, 1)
+同见
+IsSurface
+SurfaceDomain

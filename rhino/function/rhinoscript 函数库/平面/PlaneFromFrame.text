@@ -1,0 +1,50 @@
+
+PlaneFromFrame
+通过一个点和两个向量定义一个平面。
+语法
+rhinoscriptsyntax.PlaneFromFrame (origin, x_axis, y_axis)
+rhinoscript.plane.PlaneFromFrame (origin, x_axis, y_axis)
+参数
+
+
+
+
+origin
+必须参数。三个数字组成的列表或 Point3d 对象。代表平面原点的 3-D 点。
+
+
+x_axis
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。平面内定义 X 轴方向的非零 3-D 向量。
+
+
+y_axis
+必须参数。三个数构成的列表、Point3d 点或 Vector3d 向量。定义 Y 轴方向不平行于 x_axis 的3-D 向量。注意， y_axis 不需要与垂直于 x_axis。
+
+
+返回值
+
+
+
+
+Plane
+执行成功返回平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+origin = rs.GetPoint("CPlane origin")
+if origin:
+    xaxis = (1,0,0)
+    yaxis = (0,0,1)
+    plane = rs.PlaneFromFrame( origin, xaxis, yaxis )
+    rs.ViewCPlane(None, plane)
+同见
+MovePlane
+PlaneFromNormal
+PlaneFromPoints
+RotatePlane
+ 

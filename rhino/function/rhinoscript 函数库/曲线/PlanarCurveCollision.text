@@ -1,0 +1,57 @@
+
+PlanarCurveCollision
+确定两个共面的曲线是否相交。
+语法
+rhinoscriptsyntax.PlanarCurveCollision (curve_a, curve_b, plane=None, tolerance=None)
+rhinoscript.curve.PlanarCurveCollision (curve_a, curve_b, plane=None, tolerance=None)
+参数
+
+
+
+
+curve_a
+必须参数。字符串或 Guid。第一个平面曲线的 ID 。
+
+
+curve_b
+必须参数。字符串或 Guid。第而个平面曲线的 ID 。
+
+
+plane
+可选参数。平面。新的构造平面。如果省略，将使用当前启用的构造平面。
+
+
+tolerance
+可选参数。数字。公差。如果省略，将使用当前文档的绝对公差。
+
+
+返回值
+
+
+
+
+True
+共面曲线相交。
+
+
+False
+共面曲线不相交。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve1 = rs.GetObject("Select first curve")
+curve2 = rs.GetObject("Select second curve")
+if( rs.IsCurvePlanar(curve1) and rs.IsCurvePlanar(curve2) and rs.IsCurveInPlane(curve1) and rs.IsCurveInPlane(curve2) ):
+    if rs.PlanarCurveCollision(curve1, curve2):
+        print "The coplanar curves intersect."
+    else:
+        print "The coplanar curves do not intersect."
+同见
+CurveCurveIntersection
+PlanarClosedCurveContainment
+PointInPlanarClosedCurve

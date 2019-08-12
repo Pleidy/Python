@@ -1,0 +1,43 @@
+
+PlaneTransform
+变换一个平面。
+语法
+rhinoscriptsyntax.PlaneTransform (plane, xform)
+rhinoscript.plane.PlaneTransform (plane, xform)
+参数
+
+
+
+
+plane
+必须参数。要移动的平面。
+
+
+xform
+必须参数。列表或变换矩阵。一个有效的 4x4 的矩阵变换。
+
+
+返回值
+
+
+
+
+Plane
+执行成功，返回计算得到的平面。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.ViewCPlane()
+xform = rs.XformRotation(45.0, plane.Zaxis, plane.Origin)
+plane = rs.PlaneTransform(plane, xform)
+rs.ViewCPlane(None, plane)
+同见
+PlaneFromFrame
+PlaneFromNormal
+PlaneFromPoints
+ 

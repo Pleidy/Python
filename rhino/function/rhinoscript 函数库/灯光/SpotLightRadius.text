@@ -1,0 +1,41 @@
+
+SpotLightRadius
+返回或修改一个聚光灯的半径。
+语法
+rhinoscriptsyntax.SpotLightRadius (object_id, radius=None)
+rhinoscript.light.SpotLightRadius (object_id, radius=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+radius
+可选参数。数字。新半径值。如果省略，返回当前的半径。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 radius 参数，返回当前的半径值。
+
+
+数字
+如果指定了 radius 参数，返回先前的半径值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id: rs.SpotLightRadius(id, 5.0)
+同见
+AddSpotLight
+IsSpotLight
+SpotLightHardness
+SpotLightShadowIntensity

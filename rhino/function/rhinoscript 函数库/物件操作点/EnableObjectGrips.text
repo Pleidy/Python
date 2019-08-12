@@ -1,0 +1,50 @@
+
+EnableObjectGrips
+开启或者关闭一个物件的操作点。对于曲线与曲面，也称之为控制点。
+语法
+rhinoscriptsyntax.EnableObjectGrips (object_id, enable=True)
+rhinoscript.grips.EnableObjectGrips (object_id, enable=True)
+参数
+
+
+
+
+
+object_id
+
+
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+
+
+enable
+
+
+可选参数。布尔值。如果为 True (默认值)，将会打开指定物件的操作点。反之，将关闭。
+
+
+
+返回值
+
+
+
+
+
+布尔值
+
+
+True 或 False 表示计算完成或失败。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.GetObjects("Select objects")
+if objects:[rs.EnableObjectGrips(obj) for obj in objs]
+同见
+ObjectGripCount
+ObjectGripsOn
+ObjectGripsSelected
+SelectObjectGrips
+UnselectObjectGrips

@@ -1,0 +1,34 @@
+
+IsMeshManifold
+判断一个网格物件是否为流形网格。网格的每一个边最多仅由两个面公有就称之为 流形。如果网格至少有一个边被两个以上的面共有就称之为 非流形。
+语法
+rhinoscriptsyntax.IsMeshManifold (object_id)
+rhinoscript.mesh.IsMeshManifold (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a mesh", rs.filter.mesh)
+if rs.IsMeshClosed(obj):
+    print "The mesh is manifold."
+else:
+    print "The mesh is non-manifold."
+同见
+IsMesh
+IsMeshClosed

@@ -1,0 +1,37 @@
+
+LockGroup
+锁定一个群组中的物件锁定的物件可见，也可以被物件锁点捕捉。但是，不能被选取。
+语法
+rhinoscriptsyntax.LockGroup (group_name)
+rhinoscript.group.LockGroup (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+数字
+执行过程中锁定物件的数量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.GroupNames()
+if names:
+    for name in names: rs.LockGroup(name)
+同见
+HideGroup
+ShowGroup
+UnlockGroup

@@ -1,0 +1,70 @@
+
+DimStyleNumberFormat
+返回或修改一个尺寸标注型式的数字显示格式。
+语法
+rhinoscriptsyntax.DimStyleNumberFormat (dimstyle, format=None)
+rhinoscript.dimension.DimStyleNumberFormat (dimstyle, format=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+format
+可选参数。数字。新的数字显示格式。如果省略，返回当前的数字显示格式。格式如下：
+
+
+
+
+值
+描述
+
+
+0
+小数
+
+
+1
+分数
+
+
+2
+英尺和英寸
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定格式，返回当前的显示格式。
+
+
+数字
+如果指定了格式，返回先前的显示格式。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+format = rs.DimStyleNumberFormat(dimstyle)
+if format>0: rs.DimStyleNumberFormat( dimstyle, 0 )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleExtension
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleOffset
+DimStyleTextAlignment
+DimStyleTextHeight

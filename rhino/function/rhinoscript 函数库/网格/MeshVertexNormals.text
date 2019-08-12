@@ -1,0 +1,38 @@
+
+MeshVertexNormals
+返回一个网格物件上所有顶点的单位法线向量。  
+语法
+rhinoscriptsyntax.MeshVertexNormals (mesh_id)
+rhinoscript.mesh.MeshVertexNormals (mesh_id)
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+代表所有顶点单位向量的 3-D 向量列表。数组中元素的数量和 MeshVertexCount 函数的返回值是相等的。而且每个单位向量都和 MeshVertices函数返回的顶点一一对应。.
+
+
+None
+网格没有顶点向量、 函数没有执行成功或执行出错，都会返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+normals = rs.MeshVertexNormals(obj)
+if normals:
+    for normal in normals: print normal
+同见
+MeshHasVertexNormals
+MeshVertexCount
+MeshVertices

@@ -1,0 +1,43 @@
+
+HideToolbar
+隐藏一个已打开工具列收藏夹中的可见工具列。
+语法
+rhinoscriptsyntax.HideToolbar(name, toolbar)
+rhinoscript.toolbar.HideToolbar(name, toolbar)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+toolbar
+必须参数。字符串。要隐藏工具列的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+file = "C:\\SteveBaer\\AppData\\Roaming\\McNeel\\Rhinoceros\\5.0\\UI\\default.rui"
+name = rs.IsToolbarCollection(file)
+if names: rs.HideToolbar(name, "Layer")
+同见
+IsToolbar
+IsToolbarVisible
+ShowToolbar
+ToolbarCount
+ToolbarNames

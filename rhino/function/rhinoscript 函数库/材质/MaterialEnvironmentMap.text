@@ -1,0 +1,48 @@
+
+MaterialEnvironmentMap
+返回或修改一个材质的环境贴图。
+语法
+rhinoscriptsyntax.MaterialEnvironmentMap ( material_index, filename=None)
+rhinoscript.material.MaterialEnvironmentMap ( material_index, filename=None)
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+filename
+可选参数。字符串。作为环境贴图的位图文件。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 filename ，返回当前的环境贴图文件名。
+
+
+字符串
+如果指定了 filename ，返回先前的环境贴图文件名。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1:
+        rs.MaterialEnvironmentMap( index, "C:\\Users\\Steve\\Desktop\\emapimage.png" )
+同见
+MaterialBump
+MaterialTexture
+MaterialTransparencyMap
+ 

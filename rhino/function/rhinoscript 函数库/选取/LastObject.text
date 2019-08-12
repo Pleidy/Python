@@ -1,0 +1,41 @@
+
+LastObject
+返回此文档中最后一个物件的ID。文档中的最后一个物件是用户创建的第一个物件。
+语法
+rhinoscriptsyntax.LastObject (select=False, include_lights=False, include_grips=False)
+rhinoscript.selection.LastObject (select=False, include_lights=False, include_grips=False)
+参数
+
+
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+include_grips
+可选参数。布尔值。包含操作点物件。如果省略，不会返回操作点物件（False）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddLine((0,0,0), (5,5,0))
+rs.AddCircle((0,0,0), 5)
+print "Object identifier:", rs.LastObject()
+同见
+FirstObject
+NextObject
+ 

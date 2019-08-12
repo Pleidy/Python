@@ -1,0 +1,13 @@
+
+Exit
+关闭 Rhino 应用程序。
+语法
+rhinoscriptsyntax.Exit()
+rhinoscript.application.Exit()
+参数
+空值。
+返回值
+空值。
+示例
+import rhinoscriptsyntax as rs
+rs.Exit()

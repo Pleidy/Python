@@ -1,0 +1,44 @@
+
+PointCoordinates
+返回或修改一个点物件的 X, Y, Z 坐标值。
+语法
+rhinoscriptsyntax.PointCoordinates (object_id, point=None)
+rhinoscript.geometry.PointCoordinates (object_id, point=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。点物件的 ID 。
+
+
+point
+可选参数。三个数字构成的列表或一个 On3dPoint 点物件。新的 3-D 点位置。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果没有指定 point 参数，返回当前的 3-D 点位置。
+
+
+Point3d 点
+如果指定了 point 参数，返回先前的 3-D 点位置。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select point", rs.filter.point)
+point = rs.PointCoordinates(id)
+if point:print point
+同见
+AddPoint
+IsPoint

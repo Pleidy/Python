@@ -1,0 +1,47 @@
+
+CurveRadius
+返回曲线上点所在位置处的曲率半径。
+语法
+rhinoscriptsyntax.CurveRadius ( curve_id, test_point, segment_index=-1 )
+rhinoscript.curve.CurveRadius ( curve_id, test_point, segment_index=-1 )
+参数
+
+
+
+
+curve_id
+必须参数。字符串。物件的 ID 。
+
+
+test_point
+必须参数。包含三个数字的列表或者 Point3d 对象。要计算的点或采样点。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回曲线上点所在位置处的曲率半径。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    point = rs.GetPointOnCurve(obj, "Pick a test point")
+    if point:
+        radius = rs.CurveRadius(obj, point)
+        print "Radius of curvature:", radius
+同见
+IsCurve
+ 

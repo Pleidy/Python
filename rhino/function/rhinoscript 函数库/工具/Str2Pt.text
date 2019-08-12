@@ -1,0 +1,36 @@
+
+Str2Pt
+转换一个恰当格式的字符串到一个 3D 点坐标值。
+语法
+rhinoscriptsyntax.Str2Pt (point)
+rhinoscript.utility.Str2Pt (point)
+参数
+
+
+
+
+point
+必须参数。字符串。像这样用逗号隔开的字符串——"1,2,3"。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果执行成功，返回计算得到的 3-D 点。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point = rs.Str2Pt("1,2,3")
+if point: rs.AddPoint( point )
+同见
+Pt2Str
+Str2PtArray
+ 

@@ -1,0 +1,47 @@
+
+SetDocumentData
+在当前文档中添加或设置一个用户数据字符串。
+语法
+rhinoscriptsyntax.SetDocumentData (section, entry, value)
+rhinoscript.userdata.SetDocumentData (section, entry, value)
+参数
+
+
+
+
+section
+必须参数。字符串。小节名称。
+
+
+entry
+必须参数。字符串。记录名称。
+
+
+value
+必须参数。字符串。字符串值。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回先前的字符串值。
+
+
+None
+如果先前没有值，或没有执行成功，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.SetDocumentData( "MySection1", "MyEntry1", "MyValue1" )
+rs.SetDocumentData( "MySection1", "MyEntry2", "MyValue2" )
+rs.SetDocumentData( "MySection2", "MyEntry1", "MyValue1" )
+同见
+DeleteDocumentData
+DocumentDataCount
+GetDocumentData
+IsDocumentData
+ 

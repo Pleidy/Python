@@ -1,0 +1,39 @@
+
+SelectObjectGrip
+选取物件的一个操作点。如果物件操作点没有打开，将不会选取。
+语法
+rhinoscriptsyntax.SelectObjectGrip (object_id, index)
+rhinoscript.grip.SelectObjectGrip (object_id, index)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+index
+必须参数。数字。选取操作点的序号。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve", rs.filter.curve)
+if obj:
+    rs.EnableObjectGrips( obj )
+    count = rs.ObjectGripCount( obj )
+    for i in xrange(0,count,2): rs.SelectObjectGrip(obj,i)
+同见
+EnableObjectGrips
+ObjectGripCount
+SelectObjectGrips

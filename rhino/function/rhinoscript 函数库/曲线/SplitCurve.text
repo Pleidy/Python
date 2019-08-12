@@ -1,0 +1,45 @@
+
+SplitCurve
+按照指定的参数分割或分段一条曲线。参数必须在曲线定义域范围以内。
+语法
+rhinoscriptsyntax.SplitCurve ( curve_id, parameter, delete_input=True)
+rhinoscript.curve.SplitCurve ( curve_id, parameter, delete_input=True)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。数字或数字组成的元组。用一个或多个参数分割曲线，参数需要在 CurveDomain 函数返回值以内。
+
+
+delete_input
+可选参数。布尔值。删除输入曲线。默认情况下会删除输入曲线（Ture）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回包含两个新生成曲线物件 ID 的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve to split", rs.filter.curve)
+if rs.IsCurve(curve):
+    domain = rs.CurveDomain(curve)
+    parameter = domain[1] / 2.0
+    rs.SplitCurve( curve, parameter )
+同见
+TrimCurve

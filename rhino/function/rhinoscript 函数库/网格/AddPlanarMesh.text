@@ -1,0 +1,39 @@
+
+AddPlanarMesh
+从一个闭合的平面曲线创建一个平面网格。
+语法
+rhinoscriptsyntax.AddPlanarMesh ( object_id, delete_input=False )
+rhinoscript.mesh.AddPlanarMesh ( object_id, delete_input=False )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。闭合平面曲线物件 的 ID 。
+
+
+delete_input
+可选参数。布尔值。如果为 True，将删除输入曲线。如果没有指定或为 False（默认值），输入的曲线不会被删除。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select planar curves to build mesh", rs.filter.curve)
+if obj: rs.AddPlanarMesh(obj)
+同见
+IsCurveClosed
+IsCurvePlanar

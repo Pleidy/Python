@@ -1,0 +1,96 @@
+
+OsnapMode
+返回或设置物件锁点模式。物件锁点可以将鼠标锁定在物件上的某一点。
+语法
+rhinoscriptsyntax.OsnapMode( mode=None )
+rhinoscript.application.OsnapMode( mode=None )
+参数
+
+
+
+
+mode
+可选参数。数字。物件锁点模式设置值。可以加在一起实现多选。
+
+
+
+
+值
+描述
+
+
+0
+None
+
+
+1
+最近点
+
+
+2
+端点
+
+
+4
+中心点
+
+
+8
+节点
+
+
+16
+四分点
+
+
+32
+中点
+
+
+64
+交点
+
+
+128
+顶点
+
+
+256
+垂点
+
+
+512
+切点
+
+
+1024
+点
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定 mode 参数，返回当前物件锁点模式。
+
+
+数字
+如果指定了 mode 参数，返回先前的物件锁点模式。
+
+
+示例
+import rhinoscriptsyntax as rs
+rhOsnapModeEnd = 128
+mode = rs.OsnapMode()
+if not (mode & rhOSnapModeEnd):
+    mode = mode + rhOsnapModeEnd
+    rs.OsnapMode(mode)
+同见
+Osnap
+OsnapDialog
+ProjectOsnaps
+ 

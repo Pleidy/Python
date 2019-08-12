@@ -1,0 +1,38 @@
+
+IsLeader
+判断一个物件是否为引线物件。
+语法
+rhinoscriptsyntax.IsLeader (object_id)
+rhinoscript.dimension.IsLeader (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a leader")
+if rs.IsLeader(obj):
+    print "The object is a leader."
+else:
+    print "The object is not a leader."
+同见
+AddLeader
+LeaderText

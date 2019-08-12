@@ -1,0 +1,25 @@
+
+BlockCount
+返回此文档中图块定义的数量。
+语法
+rhinoscriptsyntax.BlockCount()
+rhinoscript.block.BlockCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+此文档中图块定义的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.BlockCount()
+print "There are", count, " blocks."
+同见
+BlockNames
+IsBlock
+ 

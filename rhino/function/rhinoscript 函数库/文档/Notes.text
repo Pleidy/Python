@@ -1,0 +1,32 @@
+
+Notes
+返回或设置文档的附注。附注由用户使用 Rhino 的 Notes 指令创建。
+语法
+rhinoscriptsyntax.Notes (newnotes=None)
+rhinoscript.document.Notes (newnotes=None)
+参数
+
+
+
+
+newnotes
+可选参数。字符串。要设置的附注。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 newnotes 参数，返回当前的附注。
+
+
+字符串
+如果指定了 newnotes 参数，返回先前的附注。
+
+
+示例
+import rhinoscriptsyntax as rs
+notes = rs.Notes()
+if notes: rs.MessageBox(notes)

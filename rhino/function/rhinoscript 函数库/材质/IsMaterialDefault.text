@@ -1,0 +1,45 @@
+
+IsMaterialDefault
+判断一个材质是否为默认材质。如果没有给物件和图层指定材质，那么它们使用的就是默认材质。
+语法
+rhinoscriptsyntax.IsMaterialDefault (material_index)
+rhinoscript.material.IsMaterialDefault (material_index)
+参数
+
+
+
+
+material_index
+必须参数。数字。材质的序号。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject()
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if rs.IsMaterialDefault(index):
+        print "Object is assigned default material."
+    else:
+        print "Object is not assigned default material."
+同见
+LayerMaterialIndex
+ObjectMaterialIndex
+ 

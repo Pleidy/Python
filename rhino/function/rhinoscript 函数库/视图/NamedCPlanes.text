@@ -1,0 +1,27 @@
+
+NamedCPlanes
+返回此文档中所有已命名工作平面的名称。
+语法
+rhinoscriptsyntax.NamedCPlanes ()
+rhinoscript.view.NamedCPlanes ()
+参数
+空值。
+返回值
+
+
+
+
+列表
+包含所有已命名工作平面名称的一维数组。
+
+
+示例
+import rhinoscriptsyntax as rs
+cplanes = rs.NamedCPlanes()
+if cplanes:
+    for cplane in cplanes: print cplane
+同见
+AddNamedCPlane
+DeleteNamedCPlane
+NamedCPlane
+RestoreNamedCPlane

@@ -1,0 +1,41 @@
+
+VectorDotProduct
+计算两个向量的点积。
+语法
+rhinoscriptsyntax.VectorDotProduct ( vector1, vector2 )
+rhinoscript.pointvector.VectorDotProduct ( vector1, vector2 )
+参数
+
+
+
+
+vector1
+必须参数。包含三个数字的列表或者 Vector3d 对象。The first 3-D vector.
+
+
+vector2
+必须参数。包含三个数字的列表或者 Vector3d 对象。第二个 3-D 向量。
+
+
+返回值
+
+
+
+
+Double
+执行成功，返回点积计算结果。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+vector1 = [1,0,0]
+vector2 = [0,1,0]
+dblDotProduct = rs.VectorDotProduct(vector1, vector2)
+print dblDotProduct
+同见
+VectorCrossProduct
+VectorUnitize

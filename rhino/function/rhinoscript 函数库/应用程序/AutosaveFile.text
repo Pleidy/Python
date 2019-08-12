@@ -1,0 +1,35 @@
+
+AutosaveFile
+返回或修改 Rhino 自动保存文件的文件名。
+语法
+rhinoscriptsyntax.AutosaveFile (filename=None)
+rhinoscript.application.AutosaveFile (filename=None)
+参数
+
+
+
+
+filename
+可选参数。字符串。新的自动保存文件名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定文件名称，返回当前的自动保存文件名。
+
+
+字符串
+如果指定了文件名称，返回先前的自动保存文件名。
+
+
+示例
+import rhinoscriptsyntax as rs
+file = rs.AutosaveFile()
+print "The current autosave file is", file
+同见
+AutosaveInterval
+EnableAutosave

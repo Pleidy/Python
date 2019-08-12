@@ -1,0 +1,34 @@
+
+ResetMaterial
+重置一个材质到 Rhino 的默认材质。
+语法
+rhinoscriptsyntax.ResetMaterial (material_index)
+rhinoscript.material.ResetMaterial (material_index)
+参数
+
+
+
+
+material_index
+必须参数。数字。源材质的序号。
+
+
+返回值
+
+
+
+
+布尔值
+执行成功返回 True，失败返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    index = rs.ObjectMaterialIndex(obj)
+    if index>-1: rs.ResetMaterial(index)
+同见
+LayerMaterialIndex
+ObjectMaterialIndex
+ 

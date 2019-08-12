@@ -1,0 +1,28 @@
+
+ToolbarCollectionNames
+返回所有已打开工具列收藏夹的名称。
+语法
+rhinoscriptsyntax.ToolbarCollectionNames()
+rhinoscript.toolbar.ToolbarCollectionNames()
+参数
+空值。
+返回值
+
+
+
+
+列表
+所有已打开工具列收藏夹的名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.ToolbarCollectionNames()
+if names:
+    for name in names: print name
+同见
+CloseToolbarCollection
+IsToolbarCollection
+OpenToolbarCollection
+ToolbarCollectionCount
+ToolbarCollectionPath

@@ -1,0 +1,76 @@
+
+BrepClosestPoint
+返回曲面或多重曲面上与测试点接近的点。可以同时在剪切和非剪切曲面上使用。
+语法
+rhinoscriptsyntax.BrepClosestPoint (object_id, point)
+rhinoscript.surface.BrepClosestPoint (object_id, point)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+point
+必须参数。三个数字构成的列表或者 Point3d 对象。要计算的点或采样点。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回包含最近点信息的列表。列表包含以下信息：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Point3d 点
+最近点参数位置的 3-D 点对象。
+
+
+1
+列表 (U, V)
+最近点的参数值。注意，元素类型如果是 brep_边  或 brep_顶点，V 为 0 。
+
+
+2
+列表 (类型, 序号)
+包含最近点的 brep 元素的类型和序号。类型有 brep_面， brep_边 或 brep_顶点。
+
+
+3
+Vector3d向量
+brep_面的法线或,到 brep_边的切线。  
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if obj:
+    point = rs.GetPoint("Pick a test point")
+    if point:
+        arrCP = rs.BrepClosestPoint(obj, point)
+        if arrCP:
+            rs.AddPoint(point)
+       rs.AddPoint( arrCP[0] )
+同见
+EvaluateSurface
+IsSurface
+SurfaceClosestPoint

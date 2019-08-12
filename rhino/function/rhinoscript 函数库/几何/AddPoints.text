@@ -1,0 +1,36 @@
+
+AddPoints
+在文档中添加一个或多个点物件。
+语法
+rhinoscriptsyntax.AddPoints (points)
+rhinoscript.geometry.AddPoints (points)
+参数
+
+
+
+
+points
+必须参数。列表或元组。一组 3-D 点。
+
+
+返回值
+
+
+
+
+Guid 列表
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True, True, "Select points")
+if points: rs.AddPoints(points)
+同见
+AddPoint
+AddPointCloud
+ 

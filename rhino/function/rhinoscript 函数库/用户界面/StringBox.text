@@ -1,0 +1,46 @@
+
+StringBox
+显示一个对话框，提示用户输入字符串。
+语法
+rhinoscriptsyntax.StringBox (message=None, default_value=None, title=None)
+rhinoscript.userinterface.StringBox (message=None, default_value=None, title=None)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+default_value
+可选参数。字符串。默认字符串。
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回字符串。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.StringBox("New layer name" )
+if layer: rs.AddLayer( layer )
+ 
+
+ 
+同见
+GetString
+ 

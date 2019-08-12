@@ -1,0 +1,27 @@
+
+SearchPathCount
+返回 Rhino 搜索路径的数量。获取更多信息请参考 Rhino 帮助文件中关于 “文件选项” 的部分。
+语法
+rhinoscriptsyntax.SearchPathCount()
+rhinoscript.application.SearchPathCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+Rhino 搜索路径的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.SearchPathCount()
+if count>0:
+    paths = rs.SearchPathList()
+    for path in paths:print path
+同见
+AddSearchPath
+DeleteSearchPath
+SearchPathList

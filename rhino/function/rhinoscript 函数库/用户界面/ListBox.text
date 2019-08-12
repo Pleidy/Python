@@ -1,0 +1,55 @@
+
+ListBox
+在一个列表对话框中显示一组条目。
+语法
+rhinoscriptsyntax.ListBox (items, message=None, title=None, default=None)
+rhinoscript.userinterface.ListBox (items, message=None, title=None, default=None)
+参数
+
+
+
+
+items
+必须参数。列表。条目列表。
+
+
+message
+可选参数。字符串。提示信息。
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+default
+可选参数。默认选取条目。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回被选择的条目。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    result = rs.ListBox(layers, "Layer to set current")
+    if result: rs.CurrentLayer( result )
+ 
+
+ 
+同见
+CheckListBox
+ComboListBox
+MultiListBox
+PropertyListBox
+ 

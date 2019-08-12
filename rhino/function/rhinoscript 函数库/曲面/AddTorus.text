@@ -1,0 +1,54 @@
+
+AddTorus
+在文档中添加一个圆环旋转面。
+语法
+rhinoscriptsyntax.AddTorus (base, major_radius, minor_radius, direction=None)
+rhinoscript.surface.AddTorus (base, major_radius, minor_radius, direction=None)
+参数
+
+
+
+
+base
+必须参数。圆环的 3-D 基点或基平面。
+
+
+major_radius
+必须参数。数字。圆环的主半径。主半径必须大于第二半径。
+
+
+minor_radius
+必须参数。数字。圆环的第二半径。第二半径必须大于 0 。
+
+
+direction
+可选参数。当 base 参数为点物件时，此参数为定义圆环方向的点。如果省略，圆环与世界坐标的 XY 平面平行。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+major_radius = 5.0
+minor_radius = major_radius - 2.0
+base = rs.GetPoint("Base of torus")
+if base:
+    direction = rs.GetPoint("Direction of torus", base)
+    if direction:
+        rs.AddTorus( base, major_radius, minor_radius, direction )
+同见
+AddBox
+AddCone
+AddCylinder
+AddSphere

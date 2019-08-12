@@ -1,0 +1,37 @@
+
+TiltView
+旋转摄影机朝上的向量从而使视图倾斜。获取更多信息请参考 Rhino 帮助文件中有关 TiltView 指令的部分。
+语法
+rhinoscriptsyntax.TiltView ( view=None, direction=0, angle=None )
+rhinoscript.view.TiltView ( view=None, direction=0, angle=None )
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+direction
+可选参数。数字，摄影机旋转方向 0 = 右， 1 = left 。
+
+
+angle
+可选参数。数字。旋转角度。如果省略，旋转角度由 Options 指令中视图面板下的“圆周分段数”指定。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.TiltView( angle=15 )
+同见
+RotateCamera

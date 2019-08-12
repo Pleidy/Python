@@ -1,0 +1,60 @@
+
+CurveAreaCentroid
+返回封闭平面曲线包围区域的面积中心。计算结果使用当前的绘图单位。
+语法
+rhinoscriptsyntax.CurveAreaCentroid ( object_id )
+rhinoscript.curve.CurveAreaCentroid ( object_id )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。闭合平面曲线物件的 ID 。
+
+
+返回值
+
+
+
+
+元组
+执行成功，返回面积中心信息。列表包含以下信息：
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Point3d 点
+中心点。
+
+
+1
+(X,Y,Z)
+面积中心的绝对(+/-)误差范围。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a curve", rs.filter.curve)
+if id:
+    props = rs.CurveAreaCentroid(id)
+    if props:
+        print "The curve area centroid is:", props[0]
+同见
+IsCurve
+IsCurveClosed
+IsCurvePlanar
+ 

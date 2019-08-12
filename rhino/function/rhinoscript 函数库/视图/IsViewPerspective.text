@@ -1,0 +1,34 @@
+
+IsViewPerspective
+判断指定视图是否为透视投影。
+语法
+rhinoscriptsyntax.IsViewPerspective (view)
+rhinoscript.view.IsViewPerspective (view)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+title = rs.CurrentView()
+result = rs.IsViewPerspective(title)
+if result:
+    print "The " + title + " view is set to perspective projection."
+else:
+    print "The " + title + " view is set to parallel projection."
+同见
+ViewProjection

@@ -1,0 +1,41 @@
+
+IsUserText
+判断一个物件是否包含用户文本。更多关于用户数据的信息，请参考 用户数据方法 。
+语法
+rhinoscriptsyntax.IsUserText( object_id )
+rhinoscript.userdata.IsUserText( object_id )
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+0 = 没有用户文本； 1 = 属性用户文本；2 = 几何体用户文本；3 = 同时具有属性和几何体用户文本。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")  
+if obj:
+    usertext_type = rs.IsUserText(obj)
+    if usertext_type==0: print "Object has no user text"
+    elif usertext_type==1: print "Object has attribute user text"
+    elif usertext_type==2: print "Object has geometry user text"
+    elif usertext_type==3: print "Object has attribute and geometry user text"
+    else: print "Object does not exist"
+同见
+GetUserText
+SetUserText

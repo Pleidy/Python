@@ -1,0 +1,40 @@
+
+IsToolbarCollection
+判断一个工具列收藏夹是否已打开。
+语法
+rhinoscriptsyntax.IsToolbarCollection(file)
+rhinoscript.toolbar.IsToolbarCollection(file)
+参数
+
+
+
+
+file
+必须参数。字符串。要判断的工具列收藏夹文件的完整路径。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回 Rhino 为工具列收藏夹分配的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+file = "C:\\SteveBaer\\AppData\\Roaming\\McNeel\\Rhinoceros\\5.0\\UI\\default.rui"
+name = rs.IsToolbarCollection(file)
+if name: print "The default toolbar collection is loaded."
+else: print "The default toolbar collection is not loaded."
+同见
+CloseToolbarCollection
+OpenToolbarCollection
+ToolbarCollectionCount
+ToolbarCollectionNames
+ToolbarCollectionPath

@@ -1,0 +1,70 @@
+
+GetObjectGrip
+提示用户选取一个物件操作点。
+语法
+rhinoscriptsyntax.GetObjectGrip (message=None, preselect=False, select=False)
+rhinoscript.grips.GetObjectGrip (message=None, preselect=False, select=False)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+preselect
+可选参数。布尔值。允许直接使用执行函数之前选取的物件操作点。如果省略，将不会使用之前选取的物件操作点（False）。
+
+
+select
+可选参数。布尔值。使选取的物件操作点处于选中状态。如果省略，选取的物件操作点不会处于选中状态（False）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回三个元素构成的列表。
+
+
+
+
+
+元素
+类型
+描述
+
+
+0
+Guid
+操作点所属物件的 ID 。
+
+
+1
+数字
+操作点序号。
+
+
+2
+Point3d 点
+代表操作点位置的 3-D 点。
+
+
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve", rs.filter.curve)
+if curve:
+    rs.EnableObjectGrips( curve )
+    grip = rs.GetObjectGrip("Select a curve grip")
+    if grip: print grip[2]
+同见
+GetObjectGrips

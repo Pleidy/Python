@@ -1,0 +1,35 @@
+
+ObjectGripsSelected
+判断一个物件的操作点是否打开且至少有一个被选取。
+语法
+rhinoscriptsyntax.ObjectGripsSelected (object_id)
+rhinoscript.grips.ObjectGripsSelected (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if rs.ObjectGripsSelected(obj):
+    rs.UnselectObjectGrips( obj )
+同见
+EnableObjectGrips
+ObjectGripCount
+ObjectGripsOn
+SelectObjectGrips
+UnselectObjectGrips

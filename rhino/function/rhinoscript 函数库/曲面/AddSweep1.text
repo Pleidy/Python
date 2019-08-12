@@ -1,0 +1,46 @@
+
+AddSweep1
+通过定义曲面形状的曲线以及一条定义曲面边缘的曲线创建一个曲面。关于此方法的更多信息，请参考 Rhino 帮助文件中与 Sweep1 指令有关的部分。
+语法
+rhinoscriptsyntax.AddSweep1 (rail, shapes, closed=False)
+rhinoscript.surface.AddSweep1 (rail, shapes, closed=False)
+参数
+
+
+
+
+rail
+必须参数。Guid 或字符串。轨道曲线的ID。
+
+
+shapes
+必须参数。列表。表示截面形状曲线的 Guid 或字符串构成的列表。
+
+
+closed
+可选参数。布尔值。如果为 Ture，连续第一条曲线和最后一条曲线，从而创建一个封闭的曲面。此选项只有在您选择了两个截面曲线之后才可用。默认值为 Flase。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回新曲面物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rail = rs.GetObject("Select rail curve", rs.filter.curve)
+if rail:
+    shapes = rs.GetObjects("Select cross-section curves", rs.filter.curve)
+    if shapes: rs.AddSweep1( rail, shapes )
+同见
+AddSweep2
+CurveDirectionsMatch
+ReverseCurve

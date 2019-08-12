@@ -1,0 +1,44 @@
+
+FlipSurface
+返回或修改一个曲面的法线方向。这个功能和 Rhino 的 Dir 指令相同。
+语法
+rhinoscriptsyntax.FlipSurface (surface_id, flip=None)
+rhinoscript.surface.FlipSurface (surface_id, flip=None)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。曲面物件 的 ID 。
+
+
+flip
+可选参数。布尔值。新的法线方向，翻转（True）或不翻转（False）。如果省略，返回当前的法线方向。
+
+
+返回值
+
+
+
+
+布尔值
+如果 flip 参数没有指定，返回当前的法线方向。
+
+
+布尔值
+如果指定了 flip 参数，返回先前的法线方向。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surf = rs.GetObject("Select object", rs.filter.surface)
+if surf:
+    flip = rs.FlipSurface(surf)
+    if flip: rs.FlipSurface(surf, False)
+同见
+IsSurface

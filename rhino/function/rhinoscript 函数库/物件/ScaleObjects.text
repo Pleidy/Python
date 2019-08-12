@@ -1,0 +1,45 @@
+
+ScaleObjects
+缩放一个或多个物件。此函数可以用于均匀缩放或非均匀缩放。缩放基于当前的构造平面。
+语法
+rhinoscriptsyntax.ScaleObjects (object_ids, origin, scale, copy=False)
+rhinoscript.object.ScaleObjects (object_ids, origin, scale, copy=False)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要缩放物件的 Guid 或字符串构成的列表。
+
+
+origin
+必须参数。Point3d 点。缩放原点。
+
+
+scale
+必须参数。列表。由 X、Y、Z 三个轴的缩放因子构成的列表。缩放基于当前的构造平面。
+
+
+copy
+可选参数。布尔值。复制物件。如果省略，执行过程中不复制物件（False）。
+
+
+返回值
+
+
+
+
+列表
+由缩放得到的物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to scale")
+if objs:
+    origin = rs.GetPoint("Origin point")
+    if origin:
+        rs.ScaleObjects( objs, origin, (2,2,2), True )
+同见
+ScaleObject

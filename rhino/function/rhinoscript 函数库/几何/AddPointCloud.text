@@ -1,0 +1,36 @@
+
+AddPointCloud
+在文档中添加一个点云。
+语法
+rhinoscriptsyntax.AddPointCloud (points)
+rhinoscript.geometry.AddPointCloud (points)
+参数
+
+
+
+
+points
+必须参数。列表或元组。一组 3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = (0,0,0), (1,1,1), (2,2,2), (3,3,3)
+rs.AddPointCloud(points)
+同见
+IsPointCloud
+PointCloudCount
+PointCloudPoints

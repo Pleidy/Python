@@ -1,0 +1,45 @@
+
+CurveWeights
+返回一个包含曲线控制点权重值的列表
+语法
+rhinoscriptsyntax.CurveWeights (curve_id, segment_index=-1)
+rhinoscript.curve.CurveWeights (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+List.
+执行成功，返回曲线的权重值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    weights = rs.CurveWeights(obj)
+    if weights:
+        for weight in weights:
+            print "Curve control point weight value:", weight
+同见
+CurveKnots
+CurvePoint
+IsCurve
+ 

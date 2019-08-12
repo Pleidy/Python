@@ -1,0 +1,49 @@
+
+HatchPattern
+返回或修改填充图案物件使用的图案。
+语法
+rhinoscriptsyntax.HatchPattern (hatch, hatch_pattern=None)
+rhinoscript.hatch.HatchPattern (hatch, hatch_pattern=None)
+参数
+
+
+
+
+hatch
+必须参数。字符串或 Guid。填充图案物件的 ID 。
+
+
+hatch_pattern
+可选参数。字符串。用于替换当前图案的图案名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定填充图案名称，返回当前的填充图案。
+
+
+字符串
+如果指定了填充图案名称，返回先前的填充图案。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.AllObjects()
+if objects is not None:
+    for obj in objects:
+        if rs.IsHatch(obj) and rs.HatchPattern(obj)=="Solid":
+            rs.SelectObject(obj)
+同见
+AddHatch
+AddHatches
+HatchRotation
+HatchScale
+IsHatch

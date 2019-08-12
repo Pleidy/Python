@@ -1,0 +1,81 @@
+
+LocaleID
+返回 Rhino 界面当前使用的语言。当前语言以地区代码或 LCID 形式返回。
+语法
+rhinoscriptsyntax.LocaleID()
+rhinoscript.application.LocaleID()
+参数
+空值。
+返回值
+
+
+
+
+数字
+Rhino 当前的地区代码或 LCID。Rhino 目前支持的部分语言如下：
+
+
+
+
+值
+描述
+
+
+1029
+捷克语
+
+
+1031
+德语 - 德国
+
+
+1033
+英语 - 美国
+
+
+1034
+西班牙语 - 西班牙
+
+
+1036
+法语 - 法国
+
+
+1040
+意大利语 - 意大利
+
+
+1041
+日语
+
+
+1042
+韩语
+
+
+1045
+波兰语
+
+
+
+
+示例
+import rhinoscriptsyntax as rs
+lcid = rs.LocaleID()
+if lcid==1029:
+    print "message in Czech"
+elif lcid==1031:
+    print "message in German"
+elif lcid==1033:
+    print "message in English"
+elif lcid==1034:
+    print "message in Spanish"
+elif lcid==1036:
+    print "message in Italian"
+elif lcid==1040:
+    print "message in Japanese"
+elif lcid==1042:
+    print "message in Korean"
+elif lcid==1045:
+    print "message in Polish"
+同见

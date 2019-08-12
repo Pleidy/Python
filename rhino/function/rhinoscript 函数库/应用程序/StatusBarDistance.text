@@ -1,0 +1,24 @@
+
+StatusBarDistance
+设置 Rhino 的状态栏窗格距离。
+语法
+rhinoscriptsyntax.StatusBarDistance(distance=0)
+rhinoscript.application.StatusBarDistance(distance=0)
+参数
+
+
+
+
+distance
+可选参数。数字。要显示的距离。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+rs.StatusBarDistance(3.14159)
+同见
+StatusBarMessage
+StatusBarNumber
+StatusBarPoint

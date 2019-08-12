@@ -1,0 +1,35 @@
+
+DocumentModified
+返回或设置文档的修改标记。修改标记标注是否已对当前文档做出了修改。
+注意，如果标记状态为 false，关闭 Rhino 的时候将不会提示“是否保存对当前文档的修改”。
+语法
+rhinoscriptsyntax.DocumentModified(modified=None)
+rhinoscript.document.DocumentModified(modified=None)
+参数
+
+
+
+
+modified
+可选参数。布尔值。修改状态，True 或 False。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定修改状态，返回当前的修改状态。
+
+
+布尔值
+如果指定了修改状态，返回先前的修改状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+modified = rs.IsDocumentModified()
+if not modified: rs.DocumentModified(True)
+同见
+IsDocumentModified

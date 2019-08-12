@@ -1,0 +1,39 @@
+
+AddCurve
+在文档中添加一个控制点曲线。
+语法
+rhinoscriptsyntax.AddCurve (points, degree=3 )
+rhinoscript.curve.AddCurve (points, degree=3 )
+参数
+
+
+
+
+points
+必须参数。一组 3-D 点。
+
+
+degree
+可选参数。数字。曲线的阶数。如果省略，将会创建一个三阶曲线。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints(True, message1="Pick curve point")
+if points: rs.AddCurve(points)
+同见
+AddInterpCurve
+IsCurve

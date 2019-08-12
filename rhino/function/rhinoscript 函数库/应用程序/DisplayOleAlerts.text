@@ -1,0 +1,38 @@
+
+DisplayOleAlerts
+启用或禁用 OLE 或 COM 组件未响应时显示“OLE 服务忙/未响应”对话框。此函数功能如下：
+
+开启或关闭访问 OLE 服务出现信息中断时显示的“服务忙”对话框。
+开启或关闭鼠标或键盘未响应时显示的“未响应”对话框。
+
+语法
+rhinoscriptsyntax.DisplayOleAlerts (enable)
+rhinoscript.application.DisplayOleAlerts (enable)
+参数
+
+
+
+
+enable
+必须参数。布尔值。启用或禁用 OLE 警告对话框的显示。
+
+
+返回值
+
+
+
+
+None
+执行成功或出错，都返回空值。
+
+
+示例
+import System
+import rhinoscriptsyntax as rs
+rs.DisplayOleAlerts( False )
+t = System.Type.GetTypeFromProgID("Excel.Application")
+objExcel = System.Activator.CreateObject(t)
+...
+同见
+Reinitializing RhinoScript
+Scripting Options

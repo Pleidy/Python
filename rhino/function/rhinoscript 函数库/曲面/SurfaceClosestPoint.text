@@ -1,0 +1,47 @@
+
+SurfaceClosestPoint
+返回曲面上离测试点最近点的U、V参数。
+语法
+rhinoscriptsyntax.SurfaceClosestPoint (surface_id, test_point)
+rhinoscript.surface.SurfaceClosestPoint (surface_id, test_point)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+test_point
+必须参数。三个数字组成的列表或 Point3d 对象。要计算的点或采样点。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回包含曲面上最近点U、V参数的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a surface", rs.filter.surface)
+if rs.IsSurface(obj):
+    point = rs.GetPointOnSurface(obj, "Pick a test point")
+    if point:
+        param = rs.SurfaceClosestPoint(obj, point)
+        if param:
+            print "Surface U parameter:", str(param[0])
+            print "Surface V parameter:", str(param[1])
+同见
+BrepClosestPoint
+EvaluateSurface
+IsSurface
+ 

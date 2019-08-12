@@ -1,0 +1,41 @@
+
+ViewSize
+返回指定视图宽度和高度的像素值。
+语法
+rhinoscriptsyntax.ViewSize (view=None)
+rhinoscript.view.ViewSize (view=None)
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+列表
+由代表宽度和高度的两个数组组成的一维数组。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+size = rs.ViewSize()
+if size:
+    print "Width:", size[0], " pixels."
+    print "Height:", size[1], " pixels."
+同见
+ViewCameraLens
+ViewCameraTarget
+ViewCPlane
+ViewDisplayModes
+ViewProjection
+ 

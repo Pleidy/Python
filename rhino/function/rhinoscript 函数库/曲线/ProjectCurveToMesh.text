@@ -1,0 +1,46 @@
+
+ProjectCurveToMesh
+投影一个或多个曲线到一个或多个网格上。
+语法
+rhinoscriptsyntax.ProjectCurveToMesh (curve_ids, mesh_ids, direction)
+rhinoscript.curve.ProjectCurveToMesh (curve_ids, mesh_ids, direction)
+参数
+
+
+
+
+curve_ids
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。要投影的一个或多个曲线。
+
+
+mesh_ids
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。目标网格物件的 ID 。
+
+
+direction
+必须参数。三个数字构成的列表或者 Vector3d 对象。要拉回点的方向（3-D 向量）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回投影产生新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+mesh = rs.GetObject("Select mesh to project onto", rs.filter.mesh)
+curve= rs.GetObject("Select curve to project", rs.filter.curve)
+#Project down...
+results = rs.ProjectCurveToMesh(curve, mesh, (0,0,-1))
+同见
+ProjectCurveToSurface
+ProjectPointToMesh
+ProjectPointToSurface

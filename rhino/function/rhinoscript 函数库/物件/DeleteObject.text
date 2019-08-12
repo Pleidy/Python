@@ -1,0 +1,30 @@
+
+DeleteObject
+从文档中删除一个单一物件。
+语法
+rhinoscriptsyntax.DeleteObject (object_id)
+rhinoscript.object.DeleteObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要删除物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object to delete")
+if id: rs.DeleteObject(id)
+同见
+DeleteObjects

@@ -1,0 +1,37 @@
+
+SelectedObjects
+返回所有当前选取物件的ID标识。
+语法
+rhinoscriptsyntax.SelectedObjects (include_lights=False, include_grips=False)
+rhinoscript.selection.SelectedObjects (include_lights=False, include_grips=False)
+参数
+
+
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+include_grips
+可选参数。布尔值。包含操作点物件。如果省略，不会返回操作点物件（False）。
+
+
+返回值
+
+
+
+
+列表
+由物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+objects = rs.SelectedObjects()
+for obj in objects: print "Object identifier:", obj
+同见
+InvertSelectedObjects
+UnselectAllObjects
+UnselectedObjects
+ 

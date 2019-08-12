@@ -1,0 +1,37 @@
+
+IsCommand
+判断一个指令是否存在。脚本执行过程中需要调用第三方插件的指令时，这个函数非常有用。
+语法
+rhinoscriptsyntax.IsCommand( command_name )
+rhinoscript.application.IsCommand( command_name )
+参数
+
+
+
+
+command_name
+必须参数。字符串。要判断的指令名称。
+
+
+返回值
+
+
+
+
+布尔值
+存在返回 True，不存在返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+cmdname = rs.GetString("Command name to test")
+if cmdname is not None:
+    iscmd = rs.IsCommand(cmdname)
+    if iscmd:
+        print "The", cmdname, "command exists."
+    else:
+        print "The", cmdname, "command does not exist."
+同见
+Command
+InCommand
+ 

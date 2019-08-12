@@ -1,0 +1,52 @@
+
+AddSubCrv
+通过已存在曲线的部分或者区间，生成一条新的曲线。这个函数很接近 Rhino 的 SubCrv 指令。
+语法
+rhinoscriptsyntax.AddSubCrv ( curve_id, param0, param1 )
+rhinoscript.curve.AddSubCrv ( curve_id, param0, param1 )
+参数
+
+
+
+
+curve_id
+必须参数。闭合平面曲线物件 的 ID 。
+
+
+param0
+必须参数。数字。原曲线上的第一个参数值。
+
+
+param1
+必须参数。数字。原曲线上的第二个参数值。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+getresult = rs.GetCurveObject()
+if getresult:
+    curve_id = retresult[0]
+    point0 = rs.GetPointOnCurve( curve_id )
+    if point0:
+        point1 = rs.GetPointOnCurve( curve_id )
+        if point1:
+            t0 = rs.CurveClosestPoint( curve_id, point0)
+            t1 = rs.CurveClosestPoint( curve_id, point1)
+            rs.AddSubCrv( curve_id, t0, t1 )
+同见
+CurveClosestPoint
+GetCurveObject
+GetPointOnCurve

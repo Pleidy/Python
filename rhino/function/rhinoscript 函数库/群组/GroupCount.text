@@ -1,0 +1,31 @@
+
+GroupCount
+返回此文档中的群组数量。
+语法
+rhinoscriptsyntax.GroupCount()
+rhinoscript.group.GroupCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+执行成功返回群组数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+numgroups = rs.GroupCount()
+print "Group count:", numgroups
+同见
+AddGroup
+DeleteGroup
+GroupNames
+IsGroup
+RenameGroup

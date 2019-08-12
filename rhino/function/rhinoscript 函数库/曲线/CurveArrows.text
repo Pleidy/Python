@@ -1,0 +1,66 @@
+
+CurveArrows
+启用或停用一个曲线物件的标记箭头。
+语法
+rhinoscriptsyntax.CurveArrows (curve_id, arrow_style=None)
+rhinoscript.curve.CurveArrows (curve_id, arrow_style=None)
+参数
+
+
+
+
+curve_id
+必须参数。Guid 或字符串。物件的 ID 。
+
+
+arrow_style
+可选参数。数字。标记箭头的显示样式。有以下类型：
+
+
+
+
+值
+描述
+
+
+0
+无标注箭头
+
+
+1
+在曲线起点显示一个标记箭头
+
+
+2
+在曲线终点显示一个标记箭头
+
+
+3
+在曲线起点和终点各显示一个标记箭头
+
+
+
+
+返回值
+
+
+
+
+Number
+如果没有指定 style 参数，将返回当前的标记箭头样式。
+
+
+Number
+如果指定了 style 参数，将返回先前的标记箭头样式。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve", rs.filter.curve)
+if rs.CurveArrows(obj)!=3: rs.CurveArrows(obj, 3)
+同见
+IsCurve

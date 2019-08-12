@@ -1,0 +1,38 @@
+
+FairCurve
+展平一个曲线物件。最好在 3 阶曲线上执行展平操作。使曲线曲率变化较大的部分变的较平滑，但曲线形状的改变会限制在公差内。有时此方法必须要移除一些有严重曲率问题的地方。
+语法
+rhinoscriptsyntax.FairCurve (curve_id, tolerance=1.0)
+rhinoscript.curve.FairCurve (curve_id, tolerance=1.0)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+tolerance
+可选参数。数字。顺滑公差。如果省略，将使用默认值 1.0。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curves = rs.GetObjects("Select curves to fair", rs.filter.curve)
+if curves:
+    [rs.FairCurve(curve) for curve in curves]
+ 

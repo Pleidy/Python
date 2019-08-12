@@ -1,0 +1,49 @@
+
+ProjectPointToMesh
+将一个或多个点拉到一个或多个网格。
+语法
+rhinoscriptsyntax.ProjectPointToMesh (points, mesh_ids, direction)
+rhinoscript.mesh.ProjectPointToMesh (points, mesh_ids, direction)
+参数
+
+
+
+
+points
+必须参数。要拉回的一个或多个 3-D 点。
+
+
+mesh_ids
+必须参数。目标网格物件的 ID 。
+
+
+direction
+必须参数。要拉回点的方向（3-D 向量）。
+
+
+返回值
+
+
+
+
+List.
+执行成功返回 3-D 点列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+mesh = rs.GetObject("Select mesh to project onto", rs.filter.mesh)
+objects = rs.GetObjects("Select points to project", rs.filter.point)
+points = [rs.PointCoordinates(obj) for obj in objects]
+# project down...
+results = rs.ProjectPointToMesh(points, mesh, (0,0,-1))
+rs.AddPoints( results )
+同见
+ProjectCurveToMesh
+ProjectCurveToSurface
+ProjectPointToSurface
+ 

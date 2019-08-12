@@ -1,0 +1,39 @@
+
+LightLocation
+返回或修改一个灯光物件的位置。
+语法
+rhinoscriptsyntax.LightLocation (object_id, location=None)
+rhinoscript.light.LightLocation (object_id, location=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+location
+可选参数。三个数字组成的列表或 Point3d 对象。新的起点或位置。如果省略，返回当前的位置点。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果没有指定位置点，返回当前的位置点。
+
+
+Point3d 点
+如果指定了位置点，返回先前的位置点。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id: rs.AddPoint( rs.LightLocation(id) )
+同见
+IsLight
+LightDirection

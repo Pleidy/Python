@@ -1,0 +1,35 @@
+
+DuplicateSurfaceBorder
+通过复制一个曲面或多重曲面的边框创建一条曲线。
+语法
+rhinoscriptsyntax.DuplicateSurfaceBorder (surface_id)
+rhinoscript.surface.DuplicateSurfaceBorder (surface_id)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。曲面或多重曲面物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+由新生成曲线物件的 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+surface = rs.GetObject("Select surface or polysurface", rs.filter.surface | rs.filter.polysurface)
+if surface: rs.DuplicateSurfaceBorder( surface )
+同见
+DuplicateEdgeCurves
+DuplicateMeshBorder

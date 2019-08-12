@@ -1,0 +1,37 @@
+
+MeshPolyline
+从一个闭合的多重直线创建一个多边形网格。将新创建的多边形网格添加到文档。
+语法
+rhinoscriptsyntax.MeshPolyline (polyline_id)
+rhinoscript.curve.MeshPolyline (polyline_id)
+参数
+
+
+
+
+polyline_id
+必须参数。字符串或 Guid。多重直线物件ID。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新生成多边形网格的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+polyline = rs.GetObject("Select a polyline", rs.filter.curve)
+if polyline:
+    if rs.IsPolyline(polyline) and rs.IsCurveClosed(polyline):
+        rs.MeshPolyline( polyline )
+同见
+IsCurveClosed
+IsPolyline

@@ -1,0 +1,47 @@
+
+BrowseForFolder
+显示一个文件夹浏览对话框，让用户选择一个文件夹。
+语法
+rhinoscript.userinterface.BrowseForFolder (folder=None, message=None, title=None)
+rhinoscriptsyntax.BrowseForFolder (folder=None, message=None, title=None)
+参数
+
+
+
+
+folder
+可选参数。字符串。默认文件夹。
+
+
+message
+可选参数。字符串。提示信息。
+
+
+title
+可选参数。字符串。对话框标题。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回被选择的文件夹。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+folder = rs.BrowseForFolder("C:\\Program Files\\" )
+if folder: print folder
+ 
+
+ 
+同见
+OpenFileName
+SaveFileName
+ 

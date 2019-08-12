@@ -1,0 +1,42 @@
+
+IsObjectSelectable
+判断一个物件是否可以被选择。锁定、隐藏或所在图层被隐藏的物件都不能被选择。
+语法
+rhinoscriptsyntax.IsObjectSelectable (object_id)
+rhinoscript.object.IsObjectSelectable (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件可以被选择。
+
+
+False
+物件不能被选择。
+
+
+示例
+import rhinoscriptsyntax as rs
+# Do something here...
+if rs.IsObjectSelectable(object):
+rs.SelectObject( object )
+同见
+IsObject
+IsObjectHidden
+IsObjectInGroup
+IsObjectLocked
+IsObjectNormal
+IsObjectReference
+IsObjectSelected
+IsObjectSolid

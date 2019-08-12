@@ -1,0 +1,24 @@
+
+RegistryKey
+返回 Rhino 在 Windows 注册表中的信息。
+语法
+rhinoscriptsyntax.RegistryKey()
+rhinoscript.application.RegistryKey()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+执行成功返回 Rhino 在 Windows 注册表中的信息。
+
+
+示例
+import rhinoscriptsyntax as rs
+key = rs.RegistryKey()
+print key
+同见
+ExeFolder
+InstallFolder

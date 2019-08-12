@@ -1,0 +1,44 @@
+
+ExtendSurface
+使用一个因数延长一个未修剪的曲面物件。
+语法
+rhinoscriptsyntax.ExtendSurface (surface_id, parameter, length, smooth=True)
+参数
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。代表曲面 UV 参数的两个数字构成的元组。将从 UV 参数接近的边缘开始延长曲面。
+
+
+length
+必须参数。数字。曲面延伸的距离。
+
+
+smooth
+可选参数。布尔值。如果为 True (默认值)，从边缘处平滑弯曲延伸。如果为 False，从边缘处平直延伸。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+pick = rs.GetObjectEx("Select surface to extend", rs.filter.surface)
+if pick:
+    parameter = rs.SurfaceClosestPoint(pick[0], pick[3])
+    rs.ExtendSurface(pick[0], parameter, 5.0)
+同见
+IsSurface

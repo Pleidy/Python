@@ -1,0 +1,32 @@
+
+GroupNames
+返回此文档中所有群组的名称。
+语法
+rhinoscriptsyntax.GroupNames()
+rhinoscript.group.GroupNames()
+参数
+空值。
+返回值
+
+
+
+
+列表
+群组名称构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+groups = rs.GroupNames()
+if groups:
+    for group in groups: print group
+同见
+AddGroup
+DeleteGroup
+GroupCount
+IsGroup
+RenameGroup

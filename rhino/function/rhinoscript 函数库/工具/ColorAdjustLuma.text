@@ -1,0 +1,48 @@
+
+ColorAdjustLuma
+改变一组RGB值的亮度。色调和饱和度不受影响。
+语法
+rhinoscriptsyntax.ColorAdjustLuma (rgb, luma, scale=False)
+rhinoscript.utility.ColorAdjustLuma (rgb, luma, scale=False)
+参数
+
+
+
+
+rgb
+必须参数。数字。原本的 RGB 颜色值。
+
+
+luma
+必须参数。数字。亮度以总范围值的百分之 0.1 为单位 。例如， luma = 50 相当于亮度为最大亮度值的百分之 5 。
+
+
+scale
+可选参数。布尔值。如果 scale 参数设置为 True，则 luma 参数代表在当前亮度值基础上增加或衰减多少。如果 scale 参数设置为 False，则 luma 参数代表绝对亮度值。默认值为 Flase。
+
+
+如果 scale 设置为 True，luma 参数的范围是 -1000 到 +1000。
+如果 scale 设置为 False，luma 参数的范围是 0 到 1000。亮度值的有效范围从 0 到最大值。如果设置为负值或超过最大值，将设置为 0 或最大值。
+返回值
+
+
+
+
+数字
+执行成功返回修改后的 RGB 颜色值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rgb = rs.ColorAdjustLuma((128, 128, 128), 50)
+print "Red = ", rs.ColorRedValue(rgb)
+print "Green = ", rs.ColorGreenValue(rgb)
+print "Blue = ", rs.ColorBlueValue(rgb)
+同见
+ColorHLSToRGB
+ColorRGBToHLS
+ 

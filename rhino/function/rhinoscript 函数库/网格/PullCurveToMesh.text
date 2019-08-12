@@ -1,0 +1,39 @@
+
+PullCurveToMesh
+拉回一个曲线物件到一个网格物件。此函数将输入曲线转换成一个近似的多重直线，然后求多重直线每个端点在网格上的投影点，再将这些投影点在网格表面连成多重直线。
+语法
+rhinoscriptsyntax.PullCurveToMesh (mesh_id, curve_id)
+rhinoscript.mesh.PullCurveToMesh (mesh_id, curve_id)
+参数
+
+
+
+
+mesh_id
+必须参数。字符串或 Guid。要拉回的网格物件ID。
+
+
+curve_id
+必须参数。字符串或 Guid。要拉回的曲线物件 ID 。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新曲线物件的 ID 。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+mesh = rs.GetObject("Select mesh that pulls", rs.filter.mesh)
+curve = rs.GetObject("Select curve to pull", rs.filter.curve)
+rs.PullCurveToMesh( mesh, curve )
+同见
+IsMesh

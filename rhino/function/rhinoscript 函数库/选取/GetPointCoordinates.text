@@ -1,0 +1,38 @@
+
+GetPointCoordinates
+提示用户选取一个或多个点物件。不同于 GetObjects函数，此函数不会返回点物件的 ID 列表，而是会返回所有选取点 3-D 坐标构成的列表。注意，返回的列表是没有按照任何规则排序的。
+语法
+rhinoscriptsyntax.GetPointCoordinates (message="selectpoints", preselect=False)
+rhinoscript.selection.GetPointCoordinates (message="selectpoints", preselect=False)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+preselect
+可选参数。布尔值。允许直接使用执行函数之前选取的物件。如果省略，将不会使用之前选取的物件（False）。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回代表所有选取点 3-D 坐标的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPointCoordinates()
+for point in points: print point
+同见
+GetObject
+GetObjects
+GetPoint
+GetPoints
+PointCoordinates

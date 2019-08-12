@@ -1,0 +1,39 @@
+
+MeshNakedEdgePoints
+确定一个多边形网格的裸露边缘点。此函数能够显示出哪些位置的多边形网格顶点没有完全被面包围。组合的网格，如通过 MeshBox 指令生成的网格，在网格组合的地方有裸露边缘点。
+语法
+rhinoscriptsyntax.MeshNakedEdgePoints (object_id)
+rhinoscript.mesh.MeshNakedEdgePoints (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串。网格物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+无论网格顶点是否裸露都返回布尔值列表数组中元素的数量和 MeshVertexCount 函数的返回值是相等的。而且列表中每个值都和 MeshVertices函数返回的顶点一一对应。.
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select mesh", rs.filter.mesh)
+vertices = rs.MeshVertices( obj )
+naked = rs.MeshNakedEdgePoints( obj )
+for i, vertex in enumerate(vertices):
+    if naked[i]: rs.AddPoint(vertex)
+同见
+IsMesh
+MeshVertexCount
+MeshVertices

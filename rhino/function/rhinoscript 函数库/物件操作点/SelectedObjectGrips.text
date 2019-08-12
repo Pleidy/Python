@@ -1,0 +1,42 @@
+
+SelectedObjectGrips
+返回一个物件被选取操作点的序号列表。
+语法
+rhinoscriptsyntax.SelectedObjectGrips (object_id)
+rhinoscript.grips.SelectedObjectGrips (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+被选取的操作点序号列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve", rs.filter.curve)
+if obj:
+    rs.EnableObjectGrips( obj )
+    count = rs.ObjectGripCount( obj )
+    for i in xrange(0,count,2):
+        rs.SelectObjectGrip( obj, i )
+    grips = rs.SelectedObjectGrips(obj)
+    if grips: print len(grips), "grips selected"
+同见
+EnableObjectGrips
+SelectObjectGrip
+SelectObjectGrips

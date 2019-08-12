@@ -1,0 +1,46 @@
+
+LightName
+返回或修改一个灯光物件的用户定义名称。
+语法
+rhinoscriptsyntax.LightName (object_id, name=None)
+rhinoscript.light.LightName (object_id, name=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。灯光物件的 ID 。
+
+
+name
+可选参数。字符串。灯光的新名称。如果省略，返回灯光当前的名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 name 参数，返回当前的灯光名称。
+
+
+字符串
+如果指定了 name 参数，返回先前的灯光名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a light", rs.filter.light)
+if id:
+    name = rs.GetString("New light name")
+    if name: rs.LightName(id, name)
+同见
+EnableLight
+IsLight
+IsLightEnabled
+LightColor
+LightCount
+LightObjects
+ 

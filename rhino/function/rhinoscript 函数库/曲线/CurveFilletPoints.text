@@ -1,0 +1,92 @@
+
+CurveFilletPoints
+找出按照指定半径在两个曲线之间切出的点。一对圆角点 (point0, point1) 是由指定半径的圆与两条曲线相切，与曲线 curve0 相切于点 point0 ，与曲线 curve1 相切于点 point1。
+此函数返回的圆角点会尽可能的接近基点 base_point_0, base_point_1。基点距离由测量两条曲线弧长的总和来确定。
+语法
+rhinoscriptsyntax.CurveFilletPoints (curve_id_0, curve_id_1, radius=1.0, base_point_0=None, base_point_1=None, return_points=True)
+rhinoscript.curve.CurveFilletPoints (curve_id_0, curve_id_1, radius=1.0, base_point_0=None, base_point_1=None, return_points=True)
+参数
+
+
+
+
+curve_id_0
+必须参数。字符串或 Guid。第一个曲线物件ID。
+
+
+curve_id_1
+必须参数。字符串或 Guid。第二个曲线物件ID。
+
+
+radius
+可选参数。数字。圆角半径。如果省略，半径将设置为 1.0。
+
+
+base_point_0
+可选参数。第一条曲线基点。如果省略，将使用曲线起点。
+
+
+base_point_1
+可选参数。第二条曲线基点。如果省略，将使用曲线起点。
+
+
+return_points
+可选参数。如果为 True（默认值），返回圆角点。为 False，返回创建曲线圆角的 ID。
+
+
+返回值
+
+
+
+
+List.
+如果 return_points 为 True，返回点和向量的列表。列表元素分别是：
+
+
+
+
+0
+第一条曲线上的切点 (point0)。
+
+
+1
+第二条曲线上的切点 (point1)。
+
+
+2
+圆角平面的原点（3-D点）。这个点同样是圆角的中心点
+
+
+3
+圆角平面的 X 轴 (3-D 向量)。
+
+
+4
+圆角平面的 Y 轴 (3-D 向量)。
+
+
+5
+圆角平面的 Z 轴 (3-D 向量)。
+
+
+
+
+Guid
+如果 return_points 为 False，返回圆角曲线的 ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve0 = rs.AddLine([0,0,0], [5,1,0])
+curve1 = rs.AddLine([0,0,0], [1,5,0])
+fillet = rs.CurveFilletPoints(curve0, curve1)
+if fillet:
+    rs.AddPoint( fillet[0] )
+    rs.AddPoint( fillet[1] )
+    rs.AddPoint( fillet[2] )
+同见
+AddFilletCurve

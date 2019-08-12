@@ -1,0 +1,39 @@
+
+PointCloudHasPointColors
+判断点云物件中是否还有点云。
+语法
+rhinoscriptsyntax.PointCloudHasPointColors(object_id)
+rhinoscript.geometry.PointCloudHasPointColors(object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a point cloud", rs.filter.pointcloud)
+if rs.PointCloudHasPointColors(obj):
+    print "The point cloud has point colors."
+else:
+    print "The point cloud has no point colors."
+同见
+PointCloudHasPointColors
+PointCloudHidePoints
+PointCloudPointColors

@@ -1,0 +1,50 @@
+
+DimStyleExtension
+返回或修改一个尺寸标注型式的延伸线延伸长度。
+语法
+rhinoscriptsyntax.DimStyleExtension (dimstyle, extension=None)
+rhinoscript.dimension.DimStyleExtension (dimstyle, extension=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+extension
+可选参数。数字。新的延伸线延伸长度。如果省略，返回当前的延伸线延伸长度。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定延伸长度，返回当前的延伸线延伸长度。
+
+
+数字
+如果指定了延伸长度，返回先前的延伸线延伸长度。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+extension = rs.DimStyleExtension(dimstyle)
+if extension>0.5: rs.DimStyleExtension( dimstyle, 0.5 )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleOffset
+DimStyleTextAlignment
+DimStyleTextHeight

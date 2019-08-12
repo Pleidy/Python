@@ -1,0 +1,40 @@
+
+ObjectMaterialIndex
+返回一个物件的材质序号。
+渲染材质储存在 Rhino 渲染材质面板中的。这个面板可以看作是一个数组。这个数组从 0 开始计数，按照材质在这个数组中的序号将材质指定给物件和图层。
+如果 ObjectMaterialSource 函数的返回值是 “材质来自物件”，那么这个函数的返回值是物件渲染材质的序号。如果材质的序号是 -1，说明没有指定材质给物件，物件使用的是 Rhino 的默认材质。
+语法
+rhinoscriptsyntax.ObjectMaterialIndex (object_id)
+rhinoscript.object.ObjectMaterialIndex (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回渲染材质的序号。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    source = rs.ObjectMaterialSource(obj)
+    if source==0:
+        print "The material source is by layer"
+    else:
+        print "The material source is by object"
+        index = rs.ObjectMaterialIndex(obj)
+        if index==-1: print "The material is default."
+        else:print "The material is custom."
+同见
+ObjectMaterialSource

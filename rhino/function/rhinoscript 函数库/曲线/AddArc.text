@@ -1,0 +1,48 @@
+
+AddArc
+在文档中添加一个圆弧曲线。
+语法
+rhinoscriptsyntax.AddArc ( plane, radius, angle_degrees)
+rhinoscript.curve.AddArc ( plane, radius, angle_degrees)
+参数
+
+
+
+
+plane
+在哪个平面上生成圆弧？平面的原点将作为圆弧的中心点。平面的 X 轴将作为圆弧的 0 度方向。
+
+
+radius
+圆弧半径。
+
+
+angle_degrees
+圆弧的角度或间隔，角度值。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.WorldXYPlane()
+plane = rs.RotatePlane(plane, 45.0, [0,0,1])
+rs.AddArc( plane, 5.0, 45.0 )
+同见
+AddArc3Pt
+ArcAngle
+ArcCenterPoint
+ArcMidPoint
+ArcRadius
+IsArc

@@ -1,0 +1,44 @@
+
+IsObjectSolid
+判断一个物件是否为闭合的实体物件。
+语法
+rhinoscriptsyntax.IsObjectSolid (object_id)
+rhinoscript.object.IsObjectSolid (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+True
+物件是实体。
+
+
+False
+物件不是实体。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select object")
+if rs.IsObjectSolid(id):
+    print "The object is solid."
+else:
+    print "The object is not solid."
+同见
+IsObject
+IsObjectHidden
+IsObjectInGroup
+IsObjectLocked
+IsObjectNormal
+IsObjectReference
+IsObjectSelectable
+IsObjectSelected

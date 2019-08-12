@@ -1,0 +1,30 @@
+
+SaveToolbarCollection
+在硬盘上保存一个已打开的工具列收藏夹。
+语法
+rhinoscriptsyntax.SaveToolbarCollection(name)
+rhinoscript.toolbar.SaveToolbarCollection(name)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = "Default"
+rs.SaveToolbarCollection(name)
+同见
+SaveToolbarCollectionAs

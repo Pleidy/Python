@@ -1,0 +1,33 @@
+
+DeleteAlias
+删除一个已有的 Rhino 指令别名。
+语法
+rhinoscriptsyntax.DeleteAlias( alias )
+rhinoscript.application.DeleteAlias( alias )
+参数
+
+
+
+
+alias
+必须参数。字符串。现有指令别名的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+print rs.DeleteAlias("Hello")
+同见
+AddAlias
+AliasCount
+AliasMacro
+AliasNames
+IsAlias

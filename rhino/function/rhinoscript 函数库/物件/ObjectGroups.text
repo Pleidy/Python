@@ -1,0 +1,36 @@
+
+ObjectGroups
+返回所有包含指定物件的群组的名称。
+语法
+rhinoscriptsyntax.ObjectGroups (object_id)
+rhinoscript.object.ObjectGroups (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回物件所在群组的名称列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object")
+if obj:
+    groups = rs.ObjectGroups(obj)
+    if groups:
+        for group in groups: print "Object group:", group
+    else:
+        print "No groups."
+同见
+ObjectsByGroup
+ObjectTopGroup

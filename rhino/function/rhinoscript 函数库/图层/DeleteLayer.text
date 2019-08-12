@@ -1,0 +1,34 @@
+
+DeleteLayer
+从文档中移除一个现有的图层。要移除的图层不能是当前图层。不同于 PurgeLayer 方法，用这个函数移除图层之前，必须保证图层不包含任何物件。如果指定图层的子图层也是空的，也将一起被移除。
+语法
+rhinoscriptsyntax.DeleteLayer ( layer )
+rhinoscript.layer.DeleteLayer ( layer )
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。空图层的名称或 ID。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+layer = rs.GetString("Layer to remove")
+if layer: rs.DeleteLayer(layer)
+同见
+AddLayer
+CurrentLayer
+PurgeLayer
+RenameLayer
+ 

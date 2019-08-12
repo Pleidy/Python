@@ -1,0 +1,31 @@
+
+DeleteSearchPath
+从 Rhino 搜索路径中移除一个现有的路径。搜索路径可以在 Rhino 的 选项 菜单文件面板中手动删除。获取更多信息请参考 Rhino 帮助文件中关于 “文件选项” 的部分。
+语法
+rhinoscriptsyntax.DeleteSearchPath( folder )
+rhinoscript.application.DeleteSearchPath( folder )
+参数
+
+
+
+
+folder
+必须参数。字符串。要移除的文件夹或路径。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.DeleteSearchPath("C:\\My RhinoScripts")
+同见
+AddSearchPath
+SearchPathCount
+SearchPathList

@@ -1,0 +1,52 @@
+
+AddArcPtTanPt
+通过起点、起点方向和终点在文档中添加一个圆弧曲线。
+语法
+rhinoscriptsyntax.AddArcPtTanPt (start, direction, end)
+rhinoscript.curve.AddArcPtTanPt (start, direction, end)
+参数
+
+
+
+
+start
+必须参数。圆弧起点。
+
+
+direction
+必须参数。圆弧在 起点位置的方向。
+
+
+end
+必须参数。圆弧终点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+pick = rs.GetCurveObject("Select curve to extend")
+point = rs.GetPoint("End of extension")
+domain = rs.CurveDomain(pick[0])
+if abs(pick[4]-domain[0]) < abs(pick[4]-domain[1]):
+    origin = rs.CurveStartPoint(pick[0])
+    tangent = rs.VectorReverse(rs.CurveTangent(pick[0], domain[0]))
+else:
+    origin = rs.CurveEndPoint(pick[0])
+    tangent = rs.CurveTangent(pick[0], domain[1])
+rs.AddArcPtTanPt(origin, tangent, point)
+同见
+AddArc
+AddArc3Pt
+IsArc

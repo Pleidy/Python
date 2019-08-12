@@ -1,0 +1,23 @@
+
+InstallFolder
+返回 Rhino 安装目录的完整路径。
+语法
+rhinoscriptsyntax.InstallFolder()
+rhinoscript.application.InstallFolder()
+参数
+空值。
+返回值
+
+
+
+
+字符串
+执行成功返回 Rhino 安装目录。
+
+
+示例
+import rhinoscriptsyntax as rs
+print rs.InstallFolder()
+同见
+ExeFolder
+RegistryKey

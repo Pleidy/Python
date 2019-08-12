@@ -1,0 +1,43 @@
+
+LineMinDistanceTo
+找到直线与特定的弦，一个点或另一条直线之间的最短距离。
+语法
+rhinoscriptsyntax.LineMinDistanceTo (line, point_or_line)
+rhinoscript.line.LineMinDistanceTo (line, point_or_line)
+参数
+
+
+
+
+line
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。
+
+
+point_or_line
+必须参数。Point3d 点对象或直线。测试点或直线。
+
+
+返回值
+
+
+
+
+数字
+设点 Q 为直线上的任意一点，点 P 为其他物件上的任意一点，他们之间的距离为 D，那么就有 D <= Rhino.Distance(Q, P)。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+line = (0,0,0), (10,10,0)
+print rs.LineMinDistanceTo(line, (10,5,0))
+同见
+LineClosestPoint
+LineIsFartherThan
+LineMaxDistanceTo
+LinePlane
+LineTransform
+ 

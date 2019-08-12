@@ -1,0 +1,42 @@
+
+AddObjectsToGroup
+添加一个或多个物件到现有的群组。
+语法
+rhinoscriptsyntax.AddObjectsToGroup (object_ids, group_name)
+rhinoscript.group.AddObjectsToGroup (object_ids, group_name)
+参数
+
+
+
+
+object_ids
+必须参数。列表。物件 ID 的列表。
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+数字
+被添加到群组的物件数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = "NewGroup"
+object_ids = rs.GetObjects("Select objects to add to group")
+if object_ids: rs.AddObjectsToGroup(object_ids, name)
+同见
+AddObjectToGroup
+IsGroupEmpty
+ObjectGroups
+ObjectsByGroup

@@ -1,0 +1,43 @@
+
+CurrentDimStyle
+返回或修改当前默认的尺寸标注型式。
+语法
+rhinoscriptsyntax.CurrentDimStyle (dimstyle_name=None)
+rhinoscript.dimension.CurrentDimStyle (dimstyle_name=None)
+参数
+
+
+
+
+dimstyle_name
+可选参数。字符串。要设置为默认的现有尺寸标注型式的名称。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定尺寸标注型式，返回当前的尺寸标注型式。
+
+
+字符串
+如果指定了尺寸标注型式，返回先前的尺寸标注型式。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddDimStyle("MyDimStyle")
+rs.CurrentDimStyle("MyDimStyle")
+同见
+AddDimStyle
+DeleteDimStyle
+IsDimStyle
+RenameDimStyle
+ 
+ 

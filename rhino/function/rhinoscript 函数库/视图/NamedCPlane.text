@@ -1,0 +1,44 @@
+
+NamedCPlane
+返回指定已命名工作平面的几何平面。
+语法
+rhinoscriptsyntax.NamedCPlane (name)
+rhinoscript.view.NamedCPlane (name)
+参数
+
+
+
+
+name
+必须参数。字符串。已命名工作平面的名称。
+
+
+返回值
+
+
+
+
+Plane
+工作平面的几何平面。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.NamedCPlanes()
+if names:
+    for name in names:
+        plane = rs.NamedCPlane(name)
+        print "CPlane name:"+ name
+        print "CPlane origin:"+ plane.Origin
+        print "CPlane x-axis:"+ plane.Xaxis
+        print "CPlane y-axis:"+ plane.Yaxis
+        print "CPlane z-axis:"+ plane.Zaxis
+同见
+AddNamedCPlane
+DeleteNamedCPlane
+NamedCPlanes
+RestoreNamedCPlane

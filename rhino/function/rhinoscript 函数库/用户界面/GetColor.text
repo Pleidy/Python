@@ -1,0 +1,33 @@
+
+GetColor
+显示一个 Rhino 颜色拾取对话框让用户选取一个 RGB 颜色。
+语法
+rhinoscriptsyntax.GetColor ( color=[0,0,0] )
+rhinoscript.usetinterface.GetColor ( color=[0,0,0] )
+参数
+
+
+
+
+color
+可选参数。三个值构成的列表。默认的 RGB 颜色值。如果省略，默认的颜色为黑色或 RGB(0,0,0)。
+
+
+返回值
+
+
+
+
+列表
+用户选取的 RGB 颜色值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+color = rs.LayerColor("Default")
+rgb = rs.GetColor(color)
+if rgb: rs.LayerColor("Default", rgb)

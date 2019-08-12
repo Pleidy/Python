@@ -1,0 +1,92 @@
+
+AddPipe
+围绕一条曲线创建一个单层圆管曲面。
+语法
+rhinoscriptsyntax.AddPipe (curve_id, parameters, radii, blend_type=0, cap=0, fit=False)
+rhinoscript.surface.AddPipe (curve_id, parameters, radii, blend_type=0, cap=0, fit=False)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。路径曲线物件 ID 。
+
+
+parameters
+必须参数。列表或数字。要改变半径位置的曲线参数列表。
+
+
+radii
+必须参数。列表或数字。半径列表，和 parameters 中的参数值要一一对应。
+
+
+blend_type
+可选参数。数字。混接形状类型：
+
+
+
+
+值
+描述
+
+
+0 (默认值)
+局部。圆管在每段中间都是相同的半径，在交接的地方迅速变化。
+
+
+1
+整体。从一个端点到另一个端点呈直线混合变化，从一个半径过渡到另一个半径。
+
+
+
+
+cap
+可选参数。数字。端点加盖样式：
+
+
+
+
+值
+描述
+
+
+0 (默认值)
+空值。
+
+
+1
+平面。用平面曲面加盖。
+
+
+2
+圆形。用半球曲面加盖。
+
+
+
+
+fit
+可选参数。布尔值。如果曲线是直线和圆弧构成的多重曲线，逼近曲线创建一个单一曲面；否则，依照多重曲线的线段创建多重曲面。默认情况下为不逼近（False）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回新物件的ID。如果 curve_id 不是直线段，parameters 包含 0，radii 包含一个值，并且 cap  也是 0 (空值) 或 1 (逼近)，则返回一个挤出物件。否则返回多重曲面。注意，有可能返回一个以上物件（例如尖锐角位置）。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select curve to create pipe around", rs.filter.curve, True)
+if curve:
+    domain = rs.CurveDomain(curve)
+    rs.AddPipe(curve, 0, 4)
+同见
+AddThickPipe

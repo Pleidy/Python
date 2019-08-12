@@ -1,0 +1,74 @@
+
+DimStyleTextAlignment
+返回或修改一个尺寸标注型式的文字对齐方式。
+语法
+rhinoscriptsyntax.DimStyleTextAlignment (dimstyle, alignment=None)
+rhinoscript.dimension.DimStyleTextAlignment (dimstyle, alignment=None)
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+alignment
+可选参数。数字。新的文字对齐方式。如果省略，返回当前的文字对齐方式。文字对齐方式如下：
+
+
+
+
+值
+描述
+
+
+0
+正常 (和 2 一样)
+
+
+1
+水平对齐到视图
+
+
+2
+尺寸线上方
+
+
+3
+尺寸线内
+
+
+
+
+返回值
+
+
+
+
+数字
+如果没有指定对齐方式，返回当前的文字对齐方式。
+
+
+数字
+如果指定了对齐方式，返回先前的文字对齐方式。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+alignment = rs.DimStyleTextAlignment(dimstyle)
+if alignment!=2: rs.DimStyleTextAlignment( dimstyle, 2 )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleExtension
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleOffset
+DimStyleTextHeight

@@ -1,0 +1,41 @@
+
+AllObjects
+返回此文档中所有物件的ID标识。
+语法
+rhinoscriptsyntax.AllObjects (select=False, include_lights=False, include_grips=False)
+rhinoscript.selection.AllObjects (select=False, include_lights=False, include_grips=False)
+参数
+
+
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+include_grips
+可选参数。布尔值。包含操作点物件。如果省略，不会返回操作点物件（False）。
+
+
+返回值
+
+
+
+
+列表
+由物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.AllObjects()
+for obj in objs: print "Object identifier:", obj
+同见
+HiddenObjects
+LockedObjects
+NormalObjects
+ReferenceObjects

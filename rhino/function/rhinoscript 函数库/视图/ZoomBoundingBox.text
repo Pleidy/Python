@@ -1,0 +1,36 @@
+
+ZoomBoundingBox
+将指定视图或当前活动视图缩放到一个指定的边框方块范围。
+语法
+rhinoscriptsyntax.ZoomBoundingBox ( bounding_box, view=None, all=False )
+rhinoscript.view.ZoomBoundingBox ( bounding_box, view=None, all=False )
+参数
+
+
+
+
+bounding_box
+必须参数。作为边框方块角点的 3-D 点数组。点需要从方体底部开始按照逆时针顺序排列。使用 BoundingBox 可以获得物件的边框方块。
+
+
+view
+可选参数。字符串。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+all
+可选参数。布尔值。缩放所有的视图。如果省略，只缩放指定视图（False）。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject()
+if obj:
+    bbox = rs.BoundingBox(obj)
+    rs.ZoomBoundingBox( bbox )
+同见
+ZoomExtents
+ZoomSelected
+ 
+ 

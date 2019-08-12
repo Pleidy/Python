@@ -1,0 +1,38 @@
+
+LineFitFromPoints
+返回通过一组点逼近生成的一条直线。
+语法
+rhinoscriptsyntax.LineFitFromPoints ( points )
+rhinoscript.curve.LineFitFromPoints ( points )
+参数
+
+
+
+
+points
+必须参数。列表。一组 3-D 点。列表中至少要有两个 3-D 点。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回一个包含逼近得到直线的起点和终点的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+points = rs.GetPoints()
+if points and len(points)>1:
+    line=rs.LineFitFromPoints(points)
+    if line: rs.AddLine(line.From, line.To)
+同见
+AddLine
+CurveEndPoint
+CurveStartPoint

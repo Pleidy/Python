@@ -1,0 +1,36 @@
+
+ShowObject
+显示一个已经隐藏的物件。隐藏物件，使其不可见、不可捕捉、不可选择。
+语法
+rhinoscriptsyntax.ShowObject (object_id)
+rhinoscript.object.ShowObject (object_id)
+参数
+
+
+
+
+object_id
+必须参数。Guid 的字符串。要显示物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select object to hide")
+if obj: rs.HideObject(obj)
+# Do something here...
+rs.ShowObject( obj )
+同见
+HideObject
+HideObjects
+IsObjectHidden
+ShowObjects
+ 

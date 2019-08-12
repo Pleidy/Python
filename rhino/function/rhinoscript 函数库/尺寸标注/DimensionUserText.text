@@ -1,0 +1,46 @@
+
+DimensionUserText
+返回或修改一个尺寸标注物件的用户文本字符串。用户文本是尺寸标注定义的时候显示的字符串。如果用户文本包括 "<>"， "<>"代表尺寸值，其显示格式是由尺寸标注型式设置决定的。注意，直线尺寸标注默认的用户文本字符串为 "<>"。
+语法
+rhinoscriptsyntax.DimensionUserText (object_id, usertext=None)
+rhinoscript.dimension.DimensionUserText (object_id, usertext=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+usertext
+可选参数。字符串。新的用户文本字符串。使用 "<>" 可以重置用户文本字符串。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 usertext 参数，返回当前的用户文本字符串。
+
+
+字符串
+如果指定了 usertext 参数，返回先前的用户文本字符串。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a dimension")
+if rs.IsDimension(obj):
+    usertext =  "<> " + chr(177) + str(rs.UnitAbsoluteTolerance())
+    rs.DimensionUserText( obj, usertext )
+同见
+DimensionText
+DimensionValue
+IsDimension

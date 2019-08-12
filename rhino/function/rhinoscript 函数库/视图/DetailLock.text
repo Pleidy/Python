@@ -1,0 +1,40 @@
+
+DetailLock
+返回或修改一个子视图的投影锁定。
+语法
+rhinoscriptsyntax.DetailLock (detail_id, lock=None)
+rhinoscript.view.DetailLock (detail_id, lock=None)
+参数
+
+
+
+
+detail_id
+必须参数。字符串或 Guid。现有子视图的 ID 。
+
+
+lock
+可选参数。布尔值。设置子视图的投影锁定。如果为空，只返回锁定状态而不修改锁定状态。
+
+
+返回值
+
+
+
+
+布尔值
+如果为空，返回子视图当前的锁定状态。
+如果为 True 或 False ，返回子视图先前的锁定状态。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+detail = rs.GetObject("select a detail", rs.filter.detail)
+if detail: rs.DetailLock(detail,True)
+同见
+IsDetail
+IsLayout

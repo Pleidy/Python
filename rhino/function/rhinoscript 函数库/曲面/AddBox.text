@@ -1,0 +1,49 @@
+
+AddBox
+在文档中添加一个方体多重曲面。
+语法
+rhinoscriptsyntax.AddBox (corners)
+rhinoscript.surface.AddBox (corners)
+参数
+
+
+
+
+
+corners
+
+
+必须参数。列表。由定义方体顶点的八个 3-D 点组成的列表。点需要从方体底部开始按照逆时针顺序排列。
+
+
+
+返回值
+
+
+
+
+
+Guid
+
+
+执行成功，返回新物件的ID。
+
+
+
+
+None
+
+
+如果执行不成功或出错，返回空值。
+
+
+
+示例
+import rhinoscriptsyntax as rs
+box = rs.GetBox()
+if box: rs.AddBox(box)
+同见
+AddCone
+AddCylinder
+AddSphere
+AddTorus

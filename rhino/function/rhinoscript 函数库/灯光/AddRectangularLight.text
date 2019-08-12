@@ -1,0 +1,38 @@
+
+AddRectangularLight
+在文档中添加一个矩形灯光。
+语法
+rhinoscriptsyntax.AddRectangularLight (origin, width_point, height_point)
+rhinoscript.light.AddRectangularLight (origin, width_point, height_point)
+参数
+
+
+
+
+origin
+必须参数。三个数字组成的列表或 Point3d 对象。作为灯光原点的 3-D 点。
+
+
+width_point
+必须参数。三个数字组成的列表或 Point3d 对象。决定灯光宽度和方向的 3-D 点。
+
+
+height_point
+必须参数。三个数字组成的列表或 Point3d 对象。决定灯光高度和方向的 3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回新物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+rect = rs.GetRectangle(2)
+if rect: rs.AddRectangularLight( rect[0], rect[1], rect[3] )
+同见
+IsRectangularLight

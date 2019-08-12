@@ -1,0 +1,42 @@
+
+CurveDirectionsMatch
+比较两个曲线物件的大体方向是否一致。比较曲线方向时，两个曲线必须同时为闭合曲线或开放曲线，不能够将开放曲线与闭合曲线做比较。同样，两条线要比较近似，就像两个能够被放样或扫描成曲面的曲线那样。
+语法
+rhinoscriptsyntax.CurveDirectionsMatch (curve_a, curve_b)
+rhinoscript.curve.CurveDirectionsMatch (curve_a, curve_b)
+参数
+
+
+
+
+curve_a
+必须参数。字符串或 Guid。要比较的第一个曲线的ID。
+
+
+curve_b
+必须参数。字符串或 Guid。要比较的第二个曲线的ID。
+
+
+返回值
+
+
+
+
+布尔值
+曲线方向一致返回 True，不一致返回 False。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve1 = rs.GetObject("Select first curve to compare", rs.filter.curve)
+curve2 = rs.GetObject("Select second curve to compare", rs.filter.curve)
+if rs.CurveDirectionsMatch(curve1, curve2):
+    print "Curves are in the same direction"
+else:
+    print "Curve are not in the same direction"
+同见
+ReverseCurve

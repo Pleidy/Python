@@ -1,0 +1,47 @@
+
+MeshBooleanSplit
+对两组输入的网格进行布尔分割运算。获取更多信息，请参考 Rhino 帮助文件中有关 MeshBooleanSplit 指令的内容。
+语法
+rhinoscriptsyntax.MeshBooleanSplit (input0, input1, delete_input=True)
+rhinoscript.mesh.MeshBooleanSplit (input0, input1, delete_input=True)
+参数
+
+
+
+
+input0
+必须参数。列表。网格的 ID 。
+
+
+input1
+必须参数。列表。网格的 ID 。
+
+
+delete_input
+可选参数。布尔值。删除所有的输入物件。默认情况下会删除所有的输入物件（Ture）。
+
+
+返回值
+
+
+
+
+列表
+执行成功，返回包含新生成物件 ID 的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+input0 = rs.GetObjects("Select first set of meshes", rs.filter.mesh)
+if input0:
+    input1 = rs.GetObjects("Select second set of meshes", rs.filter.mesh)
+    if input1: rs.MeshBooleanSplit(input0, input1)
+同见
+MeshBooleanDifference
+MeshBooleanIntersection
+MeshBooleanUnion
+ 

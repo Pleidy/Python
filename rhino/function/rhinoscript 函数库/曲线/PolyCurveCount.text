@@ -1,0 +1,40 @@
+
+PolyCurveCount
+返回组成多重曲线的曲线段数目。
+语法
+rhinoscriptsyntax.PolyCurveCount (curve_id, segment_index=-1)
+rhinoscript.curve.PolyCurveCount (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回组成多重曲线的曲线段数目。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a polycurve")
+if rs.IsPolyCurve(obj):
+    count = rs.PolyCurveCount(obj)
+    if count: print "The polycurve contains", count, " curves."
+同见
+IsPolyCurve

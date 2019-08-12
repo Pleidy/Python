@@ -1,0 +1,39 @@
+
+DeleteDimStyle
+从文档中移除一个现有的尺寸标注型式。不能移除由任何尺寸标注物件引用的尺寸标注型式。
+语法
+rhinoscriptsyntax.DeleteDimStyle (dimstyle_name)
+rhinoscript.dimension.DeleteDimStyle (dimstyle_name)
+参数
+
+
+
+
+dimstyle_name
+必须参数。字符串。非引用尺寸标注型式的名称。
+
+
+返回值
+
+
+
+
+字符串
+执行成功，返回已删除尺寸标注型式的名称。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.GetString("Dimension style to remove")
+if dimstyle: rs.DeleteDimStyle(dimstyle)
+同见
+AddDimStyle
+CurrentDimStyle
+IsDimStyle
+RenameDimStyle
+ 
+ 

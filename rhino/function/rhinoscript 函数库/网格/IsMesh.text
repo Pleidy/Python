@@ -1,0 +1,39 @@
+
+IsMesh
+判断一个物件是否为网格物件。
+语法
+rhinoscriptsyntax.IsMesh (object_id)
+rhinoscript.mesh.IsMesh (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a mesh")
+if rs.IsMesh(obj):
+    print "The object is a mesh."
+else:
+    print "The object is not a mesh."
+同见
+IsMeshClosed
+MeshContourPoints
+MeshFaceCount
+MeshFaces
+MeshVertexCount
+MeshVertices
+ 

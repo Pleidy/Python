@@ -1,0 +1,57 @@
+
+PointCloudPointColors
+返回或修改点云物件的颜色。
+语法
+rhinoscriptsyntax.PointCloudPointColors (object_id, colors=[])
+rhinoscript.geometry.PointCloudPointColors (object_id, colors=[])
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+colors
+可选参数。列表。RGB 颜色值构成的列表。注意，对于每一个点，都要有与之对应的颜色。
+如果是空列表，将忽略此参数，不会修改点云。
+如果参数是 None，将移除点云中所有已存在的颜色信息。
+
+
+返回值
+
+
+
+
+列表
+如果没有定义 colors 参数，返回当前点的颜色。
+
+
+列表
+如果指定了 colors 参数，返回先前的点的颜色。
+
+
+None
+如果 object_id 参数对应的点云中没有颜色，或没有执行成功，或执行出错都返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+import random
+ 
+def RandomColor():
+    red = random.randint(0,255)
+    green = random.randint(0,255)
+    blue = random.randint(0,255)
+    return rs.coercecolor((red,green,blue))
+ 
+obj = rs.GetObject("Select point cloud", rs.filter.pointcloud)
+if obj:
+    colors = [RandomColor() for i in range(rs.PointCloudCount(obj))]
+    rs.PointCloudColors(obj, colors)
+同见
+PointCloudHasHiddenPoints
+PointCloudHasPointColors
+PointCloudHidePoints
+ 

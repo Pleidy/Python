@@ -1,0 +1,46 @@
+
+GetReal
+暂停并等待用户输入一个数字。
+语法
+rhinoscriptsyntax.GetReal ( message=None, number=None, minimum=None, maximum=None )
+rhinoscript.userinterface.GetReal ( message=None, number=None, minimum=None, maximum=None )
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+number
+可选参数。数字。默认的数值。
+
+
+minimum
+可选参数。数字。允许的最小值。
+
+
+maximum
+可选参数。数字。允许的最大值。
+
+
+返回值
+
+
+
+
+数字
+用户输入的数值。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+radius = rs.GetReal("Radius of new circle", 3.14, 1.0)
+if radius: rs.AddCircle( (0,0,0), radius )
+同见
+RealBox

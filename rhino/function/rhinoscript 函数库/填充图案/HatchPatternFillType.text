@@ -1,0 +1,57 @@
+
+HatchPatternFillType
+返回图案的填充类型。图案的填充类型如下：
+
+
+
+
+值
+描述
+
+
+0
+Solid，使用物件颜色。
+
+
+1
+线型，由图案文件定义。
+
+
+2
+Gradient，又填充颜色定义。
+
+
+语法
+rhinoscriptsyntax.HatchPatternFillType (hatch_pattern)
+rhinoscript.hatch.HatchPatternFillType (hatch_pattern)
+参数
+
+
+
+
+hatch_pattern
+必须参数。字符串。现有图案的名称。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回填充类型。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+patterns = rs.HatchPatternNames()
+for pattern in patterns:
+    fill = rs.HatchPatternFillType(pattern)
+    print pattern, "-", fill
+同见
+HatchPatternCount
+HatchPatternNames

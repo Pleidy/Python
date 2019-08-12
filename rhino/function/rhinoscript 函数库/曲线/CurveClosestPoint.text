@@ -1,0 +1,48 @@
+
+CurveClosestPoint
+返回测试点在曲线上最近点的参数位置。
+语法
+rhinoscriptsyntax.CurveClosestPoint (curve_id, test_point, segment_index=-1)
+rhinoscript.curve.CurveClosestPoint (curve_id, test_point, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。Guid 的字符串。物件的 ID 。
+
+
+test_point
+必须参数。数组。要计算的点或采样点。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+Number
+执行成功返回最近点在曲线上的参数位置。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a curve")
+if id:
+    point = rs.GetPointOnCurve(id, "Pick a test point")
+    if point:
+        param = rs.CurveClosestPoint(id, point)
+        print "Curve parameter:", param
+同见
+EvaluateCurve
+IsCurve
+ 

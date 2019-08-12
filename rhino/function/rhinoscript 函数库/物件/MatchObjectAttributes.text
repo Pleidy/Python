@@ -1,0 +1,37 @@
+
+MatchObjectAttributes
+匹配或复制一个源物件的属性到一个或一组目标物件。如果源物件没有指定，目标物件的属性将被重置为 Rhino 的默认物件属性。
+语法
+rhinoscriptsyntax.MatchObjectAttributes(target_ids, source_id=None)
+rhinoscript.object.MatchObjectAttributes(target_ids, source_id=None)
+参数
+
+
+
+
+target_ids
+必须参数。字符串、Guid 或 Guid 组成的列表。目标物件的 ID 。
+
+
+source_id
+可选参数。字符串或 Guid。源物件的 ID 。如果源物件没有指定，目标物件的属性将被重置为 Rhino 的默认物件属性。
+
+
+返回值
+
+
+
+
+数字
+函数执行过程中被修改了属性的物件数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+targets = rs.GetObjects("Select objects")
+if targets:
+    source = rs.GetObject("Select object to match")
+    if source: rs.MatchObjectAttributes( targets, source )
+同见
+GetObject
+GetObjects

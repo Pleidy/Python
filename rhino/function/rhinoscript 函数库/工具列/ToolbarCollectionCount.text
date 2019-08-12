@@ -1,0 +1,27 @@
+
+ToolbarCollectionCount
+返回当前已打开工具列收藏夹的数量。
+语法
+rhinoscriptsyntax.ToolbarCollectionCount()
+rhinoscript.toolbar.ToolbarCollectionCount()
+参数
+空值。
+返回值
+
+
+
+
+数字
+当前已打开工具列收藏夹的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+count = rs.ToolbarCollectionCount()
+print "There are", count, " toolbar(s) collections loaded."
+同见
+CloseToolbarCollection
+IsToolbarCollection
+OpenToolbarCollection
+ToolbarCollectionNames
+ToolbarCollectionPath

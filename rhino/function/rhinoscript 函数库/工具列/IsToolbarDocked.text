@@ -1,0 +1,44 @@
+
+IsToolbarDocked
+判断当前打开的工具列收藏夹中的一个工具列组是否停靠在窗口上。
+语法
+rhinoscriptsyntax.IsToolbarDocked(name, toolbar_group)
+rhinoscript.toolbar.IsToolbarDocked(name, toolbar_group)
+参数
+
+
+
+
+name
+必须参数。字符串。当前打开工具列收藏夹的名称。
+
+
+toolbar_group
+必须参数。字符串。工具列收藏夹中要拿来判断的工具列组的名称。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rc = rs.IsToolbarDocked("Default", "Main1")
+if rc==True:
+    print "The Main1 toolbar is docked."
+elif rc==False:
+    print "The Main1 toolbar is not docked."
+else:
+    print "The Main1 toolbar is not visible."
+同见
+IsToolbar
+IsToolbarVisible

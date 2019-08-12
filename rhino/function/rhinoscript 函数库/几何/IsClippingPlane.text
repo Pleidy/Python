@@ -1,0 +1,33 @@
+
+IsClippingPlane
+判断一个物件是否为截平面。
+语法
+rhinoscriptsyntax.IsClippingPlane (object_id)
+rhinoscript.geometry.IsClippingPlane (object_id)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+如果执行成功，返回 True，如果执行不成功返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select a clipping plane")
+if rs.IsClippingPlane(id):
+    print "The object is a clipping plane."
+else:
+    print "The object is not a clipping plane."
+同见
+AddClippingPlane

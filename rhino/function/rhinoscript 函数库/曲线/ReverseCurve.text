@@ -1,0 +1,30 @@
+
+ReverseCurve
+反转曲线物件的方向。这个功能和 Rhino 的 Dir 指令相同。
+语法
+rhinoscriptsyntax.ReverseCurve (curve_id)
+rhinoscript.curve.ReverseCurve (curve_id)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve to reverse")
+if rs.IsCurve(curve): rs.ReverseCurve(curve)
+同见
+CurveDirectionsMatch

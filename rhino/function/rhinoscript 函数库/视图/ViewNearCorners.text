@@ -1,0 +1,35 @@
+
+ViewNearCorners
+返回靠近剪切平面的 3-D 视图角点。此函数可以用于在平行透视视图中定义“真实世界”的尺寸。
+语法
+rhinoscriptsyntax.ViewNearCorners ( view=None )
+rhinoscript.view.ViewNearCorners ( view=None )
+参数
+
+
+
+
+view
+可选参数。字符串或 Guid。视图的名称或 ID 。如果省略，将使用当前视图。
+
+
+返回值
+
+
+
+
+Point3d 列表
+执行成功返回作为矩形角点的 3-D 点数组。返回的点是按逆时针排序的。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+rect = rs.ViewNearCorners()
+if rect:
+    for i in range(4): rs.AddTextDot( i, rect[i] )
+同见
+CurrentView

@@ -1,0 +1,37 @@
+
+ShowGroup
+显示群组中先前被隐藏的物件。隐藏物件，使其不可见、不可捕捉、不可选取。
+语法
+rhinoscriptsyntax.ShowGroup (group_name)
+rhinoscript.group.ShowGroup (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+数字
+执行过程中显示物件的数量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+groups = rs.GroupNames()
+if groups:
+    for group in groups: rs.ShowGroup(group)
+同见
+HideGroup
+LockGroup
+UnlockGroup

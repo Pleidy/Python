@@ -1,0 +1,46 @@
+
+NextObject
+返回此文档中下一个物件的ID。
+语法
+rhinoscriptsyntax.NextObject (object_id, select=False, include_lights=False, include_grips=False)
+rhinoscript.selection.NextObject (object_id, select=False, include_lights=False, include_grips=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。要获取下一个物件的当前物件 ID 。
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+include_grips
+可选参数。布尔值。包含操作点物件。如果省略，不会返回操作点物件（False）。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回物件的ID。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.FirstObject()
+while obj:
+    print "Object identifier:", obj
+    obj = rs.NextObject(obj)
+同见
+FirstObject
+LastObject
+ 

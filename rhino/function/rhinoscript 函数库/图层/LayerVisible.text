@@ -1,0 +1,41 @@
+
+LayerVisible
+返回或修改一个图层的可见状态。
+语法
+rhinoscriptsyntax.LayerVisible(layer, visible=None)
+rhinoscript.layer.LayerVisible(layer, visible=None)
+参数
+
+
+
+
+layer
+必须参数。字符串。现有图层的名称。
+
+
+visible
+可选参数。布尔值。图层新的可见状态。True = 可见， False = 隐藏。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定图层可见状态，返回当前的可见状态。
+
+
+布尔值
+如果指定了图层可见状态，返回先前的可见状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+if layers:
+    for layer in layers:
+        if rs.LayerVisible(layer)==False:
+            rs.LayerVisible(layer,True)
+同见
+LayerLocked

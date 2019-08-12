@@ -1,0 +1,15 @@
+
+Redraw
+重绘所有视图。
+语法
+rhinoscriptsyntax.Redraw ()
+rhinoscript.document.Redraw ()
+参数
+空值。
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+rs.Redraw()
+同见
+EnableRedraw

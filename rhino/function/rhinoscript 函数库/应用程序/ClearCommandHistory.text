@@ -1,0 +1,15 @@
+
+ClearCommandHistory
+清空 Rhino 指令历史窗口。您可以使用 CommandHistory 指令查看指令历史。
+语法
+rhinoscriptsyntax.ClearCommandHistory()
+rhinoscript.application.ClearCommandHistory()
+参数
+空值。
+返回值
+空值。
+示例
+import rhinoscriptsyntax as rs
+rs.ClearCommandHistory()
+同见
+CommandHistory

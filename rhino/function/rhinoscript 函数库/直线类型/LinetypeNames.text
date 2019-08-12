@@ -1,0 +1,35 @@
+
+LinetypeNames
+返回此文档中所有线型的名称。
+语法
+rhinoscriptsyntax.LinetypeNames(sort=False)
+rhinoscript.linetype.LinetypeNames(sort=False)
+参数
+
+
+
+
+sort
+可选参数。布尔值。对线型名称列表排序。默认情况下返回未排序的列表（False）。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回线型名称列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+names = rs.LinetypeNames()
+if names:
+    for name in names: print name
+同见
+LinetypeCount

@@ -1,0 +1,47 @@
+
+InsertCurveKnot
+在曲线物件插入节点。
+语法
+rhinoscriptsyntax.InsertCurveKnot (curve_id, parameter, symmetrical=False)
+rhinoscript.curve.InsertCurveKnot (curve_id, parameter, symmetrical=False)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。曲线物件的 ID 。
+
+
+parameter
+必须参数。数字。曲线上的参数。
+
+
+symmetrical
+可选参数。布尔值。如果 symmetrical = True，曲线中心点的两侧都会添加节点。默认值为 Flase。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示计算完成或失败。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select curve for knot insertion", rs.filter.curve)
+if obj:
+    point = rs.GetPointOnCurve(obj, "Point on curve to add knot")
+    if point:
+        parameter = rs.CurveClosestPoint(obj, point)
+        rs.InsertCurveKnot( obj, parameter )
+同见
+CurveKnotCount
+CurveKnots

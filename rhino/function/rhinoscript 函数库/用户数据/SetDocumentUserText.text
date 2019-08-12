@@ -1,0 +1,35 @@
+
+SetDocumentUserText
+设置或移除文档中记录的用户文本。更多关于用户数据的信息，请参考 用户数据方法 。
+语法
+rhinoscriptsyntax.SetDocumentUserText (key, value=None)
+rhinoscript.userdata.SetDocumentUserText (key, value=None)
+参数
+
+
+
+
+key
+必须参数。字符串。要设置的键名。
+
+
+value
+可选参数。字符串。要设置的字符串值。如果省略，key 参数指定键对应的键/值将被删除。
+
+
+返回值
+
+
+
+
+布尔值
+True 或 False 表示执行完成或失败。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.SetDocumentUserText("Designer", "Steve Baer")
+rs.SetDocumentUserText("Notes", "Added some layer and updated some geometry")
+同见
+GetDocumentUserText
+IsDocumentUserText

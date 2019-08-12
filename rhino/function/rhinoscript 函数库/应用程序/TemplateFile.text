@@ -1,0 +1,35 @@
+
+TemplateFile
+返回或设置 Rhino 的默认模版文件。Rhino 的默认模版文件会在 Rhino 启动的时候加载。
+语法
+rhinoscriptsyntax.TemplateFile( filename=None )
+rhinoscript.application.TemplateFile( filename=None )
+参数
+
+
+
+
+filename
+可选参数。字符串。要设置为默认模版的模版文件名。注意，模版文件必须存在。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 filename 参数，返回当前默认模版的文件名。
+
+
+字符串
+如果指定了 filename 参数，返回先前默认模版的文件名。
+
+
+示例
+import rhinoscriptsyntax as rs
+folder = rs.TemplateFolder()
+filename = folder + "\\Millimeters.3dm"
+rs.TemplateFile(filename)
+同见
+TemplateFolder

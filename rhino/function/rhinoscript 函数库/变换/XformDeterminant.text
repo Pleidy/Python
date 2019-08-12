@@ -1,0 +1,34 @@
+
+XformDeterminant
+返回一个变化矩阵的行列式。如果变换矩阵的行列式为 0，矩阵为奇矩阵。奇矩阵没有 inverses 方法。
+语法
+rhinoscriptsyntax.XformDeterminant (xform)
+rhinoscript.transformation.XformDeterminant (xform)
+参数
+
+
+
+
+xform
+必须参数。列表或 Rhino.Geometry.Transform 对象。一个 4x4 的变换矩阵。
+
+
+返回值
+
+
+
+
+数字
+执行成功返回行列式。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+xform = rs.BlockInstanceXform(obj)
+if xform: print rs.XformDeterminant(xform)
+同见
+XformInverse

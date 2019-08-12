@@ -1,0 +1,179 @@
+
+GetObjectEx
+提示用户选取一个物件。
+语法
+rhinoscriptsyntax.GetObjectEx (message=None, filter=0, preselect=False, select=False, objects=None)
+rhinoscript.selection.GetObjectEx (message=None, filter=0, preselect=False, select=False, objects=None)
+参数
+
+
+
+
+message
+可选参数。字符串。提示信息。
+
+
+filter
+可选参数。数字。可以选取的物件类型（点，曲线，曲面，网格等）。类型代码可以相加代入此参数，以实现多种类型物件的选取。
+
+
+
+
+值
+描述
+
+
+0
+所有物件（默认值）
+
+
+1
+点
+
+
+2
+点云
+
+
+4
+曲线
+
+
+8
+曲面或单一曲面 Brep
+
+
+16
+多重曲面或多个面
+
+
+32
+网格
+
+
+256
+灯光
+
+
+512
+注释
+
+
+4096
+图块实例
+
+
+8192
+注释点物件
+
+
+16384
+操作点物件
+
+
+32768
+子视图
+
+
+65536
+填充图案
+
+
+131072
+变形控制
+
+
+134217728
+变形控制器
+
+
+268435456
+Phantom
+
+
+536870912
+截平面
+
+
+
+
+preselect
+可选参数。布尔值。允许直接使用执行函数之前选取的物件。如果省略，将不会使用之前选取的物件（False）。
+
+
+select
+可选参数。布尔值。函数执行结束以后选取的物件是否为选中状态。如果省略，函数执行之前选取的物件依旧为选中状态，之后选取的物件依旧为非选中状态。
+
+
+objects
+可选参数。列表。允许选取物件的 Guid 构成的列表。
+
+
+返回值
+
+
+
+
+元组
+执行成功返回选取信息元组。元组包含以下信息：
+
+
+
+
+元素
+描述
+
+
+0
+Guid。物件的 ID 。
+
+
+1
+布尔值。如果物件是执行函数之前就选取的，返回 True，反之则返回 False。
+
+
+2
+数字。选取方式：     
+0: 非鼠标选取 (全选等)。
+1: 鼠标点击选取。
+2: 鼠标从左至右选取。
+3: 鼠标从右至左选取。
+
+
+3
+Point3d 点。选取点。只有鼠标点击选取非预选的物件时这个值才有效。
+
+
+4
+字符串。选取物件视图的名称。
+
+
+
+
+None
+没有选取物件。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObjectEx("Select object", 0, True)
+if obj:
+    print "Object id = ", obj[0]
+    print "Object was preselected = ", obj[1]
+    if obj[2]==0:
+        print "Selection method = 0 (non-mouse)"
+    elif obj[2]==1:
+        print "Selection method = 1 (mouse)"
+        print "Pick point = ", obj[3]
+    elif obj[2]==2:
+        print "Selection method = 2 (window)"
+    elif obj[2]==3:
+        print "Selection method = 3 (crossing)"
+    print "Active view = ", obj[4]
+同见
+GetCurveObject
+GetObject
+GetObjects
+GetObjectsEx
+GetSurfaceObject
+ 

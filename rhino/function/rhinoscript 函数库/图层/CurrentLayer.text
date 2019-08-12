@@ -1,0 +1,37 @@
+
+CurrentLayer
+返回或修改当前图层。
+语法
+rhinoscriptsyntax.CurrentLayer (layer=None)
+rhinoscript.layer.CurrentLayer (layer=None)
+参数
+
+
+
+
+layer
+可选参数。字符串或 Guid。现有图层的名称或 Guid。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定图层名称，返回当前图层的名称。
+
+
+字符串
+如果指定了图层名称，返回先前图层的名称。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddLayer("MyLayer")
+rs.CurrentLayer("MyLayer")
+同见
+AddLayer
+DeleteLayer
+RenameLayer
+ 

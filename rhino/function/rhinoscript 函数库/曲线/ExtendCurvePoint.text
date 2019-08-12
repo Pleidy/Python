@@ -1,0 +1,61 @@
+
+ExtendCurvePoint
+通过顺滑的曲线延伸一个曲线到一个点。
+语法
+rhinoscriptsyntax.ExtendCurvePoint (curve_id, side, point)
+rhinoscript.curve.ExtendCurvePoint (curve_id, side, point)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+side
+必须参数。数字。延伸方向。
+
+
+
+
+值
+描述
+
+
+0
+从曲线起点开始延伸。
+
+
+1
+从曲线终点开始延伸。
+
+
+
+
+point
+必须参数。3-D 点。
+
+
+返回值
+
+
+
+
+Guid
+执行成功，返回延伸物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select curve to extend", rs.filter.curve)
+if curve:
+    point = rs.GetPoint("Point to extend to")
+    if point: rs.ExtendCurvePoint(curve, 1, point)
+同见
+ExtendCurve
+ExtendCurveLength

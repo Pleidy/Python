@@ -1,0 +1,23 @@
+
+Prompt
+修改 Rhino 指令窗口提示。
+语法
+rhinoscriptsyntax.Prompt( message=None )
+rhinoscript.application.Prompt( message=None )
+参数
+
+
+
+
+message
+可选参数。字符串，列表或元组。一条提示信息。列表和元组会合并成一个字符串。
+
+
+返回值
+None
+示例
+import rhinoscriptsyntax as rs
+rs.Prompt("Hello Rhino!")
+同见
+Command
+Print

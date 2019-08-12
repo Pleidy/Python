@@ -1,0 +1,37 @@
+
+CurveBooleanUnion
+计算两个封闭平面曲线的相加区域，将计算结果添加到文档。注意，曲线必须是共面的。
+语法
+rhinocsriptsyntax.CurveBooleanUnion (curve_ids)
+rhinocsript.curve.CurveBooleanUnion (curve_ids)
+参数
+
+
+
+
+curve_ids
+必须参数。List.组合两个或多个曲线物件的ID。
+
+
+返回值
+
+
+
+
+List.
+执行成功，返回新物件的ID。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve_ids = rs.GetObjects("Select curves to union", rs.filter.curve)
+if curve_ids and len(curve_ids)>1:
+    result = rs.CurveBooleanUnion(curve_ids)
+    if result: rs.DeleteObjects(result)
+同见
+CurveBooleanDifference
+CurveBooleanIntersection

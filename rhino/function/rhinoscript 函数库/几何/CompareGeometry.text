@@ -1,0 +1,42 @@
+
+CompareGeometry -  PYTHON 不支持
+Compares two objects to determine if they are geometrically identical.
+语法
+rhinoscriptsyntax.CompareGeometry (object1, object2)
+rhinoscript.geometry.CompareGeometry (object1, object2)
+参数
+
+
+
+
+object1
+Required.字符串或 Guid。The identifier of the first object to compare.
+
+
+object2
+Required.字符串或 Guid。The identifier of the second object to compare.
+
+
+返回值
+
+
+
+
+Boolean
+True if the objects are geometrically identical, otherwise False.
+
+
+None
+On error.
+
+
+示例
+import rhinoscriptsyntax as rs
+obj1 = rs.GetObject("Select first object to compare")
+if obj1:
+    obj2 = rs.GetObject("Select second object to compare")
+    if obj2:
+        compare = rs.CompareGeometry(obj1, obj2)
+        if compare: print "Objects are geometrically identical."
+        else: print "Objects are not geometrically identical."
+ 

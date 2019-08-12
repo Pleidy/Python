@@ -1,0 +1,50 @@
+
+DimStyleOffset
+返回或修改一个尺寸标注型式的延伸线偏移距离。
+语法
+rhinoscriptsyntax.DimStyleOffset (dimstyle, offset=None )
+rhinoscript.dimension.DimStyleOffset (dimstyle, offset=None )
+参数
+
+
+
+
+dimstyle
+必须参数。字符串。现有尺寸标注型式的名称。
+
+
+offset
+可选参数。数字。新的延伸线偏移距离。如果省略，返回当前的延伸线偏移距离。
+
+
+返回值
+
+
+
+
+数字
+如果没有指定偏移距离，返回当前的延伸线偏移距离。
+
+
+数字
+如果指定了偏移距离，返回先前的延伸线偏移距离。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+dimstyle = rs.CurrentDimStyle()
+offset = rs.DimStyleOffset(dimstyle)
+if offset>0.5: rs.DimStyleOffset( dimstyle, 0.5 )
+同见
+DimStyleAnglePrecision
+DimStyleArrowSize
+DimStyleExtension
+DimStyleFont
+DimStyleLinearPrecision
+DimStyleNumberFormat
+DimStyleTextAlignment
+DimStyleTextHeight

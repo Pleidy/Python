@@ -1,0 +1,42 @@
+
+DuplicateEdgeCurves
+复制一个曲面或多重曲面的边缘曲线。获取更多相关信息，请参考 Rhino 帮助文件中有关 DupEdge 指令的内容。
+语法
+rhinoscriptsyntax.DuplicateEdgeCurves (object_id, select=False)
+rhinoscript.surface.DuplicateEdgeCurves (object_id, select=False)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。曲面或多重曲面物件的 ID 。
+
+
+select
+可选参数。布尔值。执行完成后选择复制出的边缘曲线。默认情况下为不选择（False）。
+
+
+返回值
+
+
+
+
+列表
+返回由新生成曲线物件 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select surface or polysurface", rs.filter.surface | rs.filter.polysurface)
+if obj:
+    rs.DuplicateEdgeCurves( obj, True )
+    rs.DeleteObject( obj )
+同见
+IsPolysurface
+IsSurface
+ 

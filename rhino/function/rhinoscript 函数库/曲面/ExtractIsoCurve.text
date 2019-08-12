@@ -1,0 +1,44 @@
+
+ExtractIsoCurve
+从一个曲面提取 ISO 等参曲线。
+语法
+rhinoscriptsyntax.ExtractIsoCurve (surface_id, parameter, direction)
+rhinoscript.surface.ExtractIsoCurve (surface_id, parameter, direction)
+参数
+
+
+
+
+surface_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+parameter
+必须参数。元组。要计算的曲面UV参数组成的列表。
+
+
+direction
+必须参数。数字。方向，0 = U方向， 1 = V方向， 2 = 两个方向。
+
+
+返回值
+
+
+
+
+列表
+返回由新生成曲线物件 Guid 构成的列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select surface for isocurve extraction", rs.filter.surface)
+point = rs.GetPointOnSurface(obj, "Select location for extraction")
+parameter = rs.SurfaceClosestPoint(obj, point)
+rs.ExtractIsoCurve( obj, parameter, 2 )
+同见
+IsSurface

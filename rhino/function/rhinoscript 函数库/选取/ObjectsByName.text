@@ -1,0 +1,37 @@
+
+ObjectsByName
+通过用户定义名称返回物件的ID标识。
+语法
+rhinosriptsyntax.ObjectsByName (name, select=False, include_lights=False)
+rhinosript.selection.ObjectsByName (name, select=False, include_lights=False)
+参数
+
+
+
+
+name
+必须参数。字符串。物件的名称。
+
+
+select
+可选参数。布尔值。选取物件。如果省略，物件不会被选取（False）。
+
+
+include_lights
+可选参数。布尔值。包含灯光物件。如果省略，不会返回灯光物件（False）。
+
+
+返回值
+
+
+
+
+列表
+由物件 Guid 构成的列表。
+
+
+示例
+import rhinoscriptsyntax as rs
+name = rs.GetString("Name to select")
+if name: rs.ObjectsByName(name,True)
+同见

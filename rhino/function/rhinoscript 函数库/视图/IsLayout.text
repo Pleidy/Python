@@ -1,0 +1,42 @@
+
+IsLayout
+判断视图是否是一个图纸视图。
+语法
+rhinoscriptsyntax.IsLayout (layout)
+rhinoscript.view.IsLayout (layout)
+参数
+
+
+
+
+layout
+必须参数。字符串或 Guid。现有图纸视图的标题或 ID 。
+
+
+返回值
+
+
+
+
+True
+ layout 是一个图纸视图。
+
+
+False
+ layout 是一个标准模型视图。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+view = rs.CurrentView()
+if rs.IsLayout(view):
+    print "The current view is a page layout view."
+else:
+    print "The current view is standard, model view."
+同见
+IsLayout
+CurrentDetail

@@ -1,0 +1,47 @@
+
+TextDotPoint
+返回或修改一个注释点物件的位置或插入点。
+语法
+rhinoscriptsyntax.TextDotPoint (object_id, point=None)
+rhinoscript.geometry.TextDotPoint (object_id, point=None)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+point
+可选参数。列表。代表注释点物件新位置的 3-D 点。
+
+
+返回值
+
+
+
+
+Point3d 点
+如果没有指定新位置，返回代表当前位置的 3-D 点。
+
+
+Point3d 点
+如果指定了新位置，返回代表先前位置的 3-D 点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+id = rs.GetObject("Select text dot")
+if rs.IsTextDot(id):
+    point = rs.TestDotPoint(id)
+    rs.AddPoint( point )
+    rs.TextDotPoint(id, [0,0,0])
+同见
+AddTextDot
+IsTextDot
+TextDotText

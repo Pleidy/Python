@@ -1,0 +1,34 @@
+
+FindFile
+在 Rhino 搜索路径中查找文件。Rhino 将在以下位置查找文件：
+
+当前的文档目录。
+Rhino 选项设置下的文件面板中指定的目录。
+Rhino 的 System 文件夹。
+
+语法
+rhinoscriptsyntax.FindFile(filename)
+rhinoscript.application.FindFile(filename)
+参数
+
+
+
+
+filename
+必须参数。字符串。一个有效的文件名。
+
+
+返回值
+
+
+
+
+字符串
+执行成功返回指定文件所在的目录。
+
+
+示例
+import rhinoscriptsyntax as rs
+path = rs.FindFile("Rhino.exe")
+print path
+同见

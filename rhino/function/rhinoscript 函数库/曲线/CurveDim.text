@@ -1,0 +1,40 @@
+
+CurveDim
+返回曲线物件的维度。
+语法
+rhinoscriptsyntax.CurveDim (curve_id, segment_index=-1)
+rhinoscript.curve.CurveDim (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 segment_index 标示要计算的是多重曲线的哪一段。
+
+
+返回值
+
+
+
+
+数字
+执行成功，返回曲线的维度。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+curve = rs.GetObject("Select a curve")
+if rs.IsCurve(curve):
+    print "Curve dimension =", rs.CurveDim(curve)
+同见
+CurveDegree
+CurveDomain

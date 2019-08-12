@@ -1,0 +1,51 @@
+
+LineCylinderIntersection
+计算圆柱和直线的交点。（无盖无限延伸相交后拉回到表面【有待验证】）。   
+语法
+rhinoscriptsyntax.LineCylinderIntersection (line, cylinder_plane, cylinder_height, cylinder_radius)
+rhinoscript.line.LineCylinderIntersection (line, cylinder_plane, cylinder_height, cylinder_radius)
+参数
+
+
+
+
+line
+必须参数。六个数字或两个 Point3d 点构成的列表或直线。两个 3-D 点分别代表直线的起点和终点。。
+
+
+cylinder_plane
+必须参数。平面。圆柱的平面。
+
+
+cylinder_height
+必须参数。数字。圆柱的高度。
+
+
+cylinder_radius
+必须参数。数字。圆柱体的半径。
+
+
+返回值
+
+
+
+
+列表
+不管有一个还是两个交点，都返回列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+plane = rs.WorldXYPlane()
+line = (-10,0,0), (10,0,10)
+points = rs.LineCylinderIntersection(line, plane, cylinder_height=10, cylinder_radius=5)
+if points:
+    for point in points: rs.AddPoint(point)
+同见
+LineLineIntersection
+LinePlaneIntersection
+LineSphereIntersection

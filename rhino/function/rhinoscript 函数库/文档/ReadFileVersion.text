@@ -1,0 +1,28 @@
+
+ReadFileVersion
+返回当前文档的版本。使用这个函数可以判断最后保存文档时使用的 Rhino 版本。注意，此函数对引用文件或混合文件无效。
+语法
+rhinoscriptsyntax.ReadFileVersion()
+rhinoscript.document.ReadFileVersion()
+参数
+空值。
+返回值
+
+
+
+
+数字
+执行成功，返回文件版本。注意，返回小于 0 的值表示无法从磁盘读取当前文档。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+print "ReadFileVersion =", rs.ReadFileVersion()
+同见
+DocumentName
+DocumentPath
+ 

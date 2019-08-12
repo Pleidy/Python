@@ -1,0 +1,36 @@
+
+IsHatchPattern
+判断图案是否存在于当前的文档。
+语法
+rhinoscriptsyntax.IsHatchPattern(name)
+rhinoscript.hatch.IsHatchPattern(name)
+参数
+
+
+
+
+name
+必须参数。字符串。图案的名称。
+
+
+返回值
+
+
+
+
+True
+如果判断成功。
+
+
+False
+如果判断不成功。
+
+
+示例
+import rhinoscriptsyntax as rs
+hatch = rs.GetString("Hatch pattern name")
+if rs.IsHatchPattern(hatch): print "The hatch pattern exists."
+else: print "The hatch pattern does not exist."
+同见
+IsHatchPatternCurrent
+IsHatchPatternReference

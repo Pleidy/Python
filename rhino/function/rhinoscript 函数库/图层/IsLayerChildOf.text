@@ -1,0 +1,36 @@
+
+IsLayerChildOf
+判断一个图层是否是另一个图层的子图层。
+语法
+rhinoscriptsyntax.IsLayerChildOf (layer, test)
+rhinoscript.layer.IsLayerChildOf (layer, test)
+参数
+
+
+
+
+layer
+必须参数。字符串或 Guid。要测试图层的名称或 ID。
+
+
+test
+必须参数。字符串或 Guid。被测试图层的名称或 ID。
+
+
+返回值
+
+
+
+
+布尔值
+如果 test 是 layer 的子图层则返回 True。否则就返回 False。
+
+
+示例
+import rhinoscriptsyntax as rs
+rs.AddLayer("MyLayer1")
+rs.AddLayer("MyLayer2", parent="MyLayer1")
+rs.AddLayer("MyLayer3", parent="MyLayer2")
+rs.MessageBox( rs.IsLayerChildOf("MyLayer1", "MyLayer3") )
+同见
+IsLayerParentOf

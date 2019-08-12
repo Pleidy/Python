@@ -1,0 +1,52 @@
+
+GetMeshFaces
+提示用户选取一个或多个网格面。
+语法
+rhinoscriptsyntax.GetMeshFaces (object_id, message="", min_count=1, max_count=0)
+rhinoscript.userinterface.GetMeshFaces (object_id, message="", min_count=1, max_count=0)
+参数
+
+
+
+
+object_id
+必须参数。字符串或 Guid。网格物件的 ID 。
+
+
+message
+可选参数。字符串。提示信息。
+
+
+min_count
+可选参数。数字。选取网格的最小数量。默认值为 1 。
+
+
+intMaxCount
+可选参数。数字。选取网格的最大数量。如果 max_count 参数值为 0，用户必须按回车键完成选取。如果 max_count 参数值为 -1，选取数量达到 min_count 参数值时完成选取。如果 min_count > 0，选取数量达到 max_count 参数值时完成选取。默认值为 0 。
+
+
+返回值
+
+
+
+
+列表
+执行成功返回网格面列表。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+mesh = rs.GetObject("Select mesh", rs.filter.mesh)
+if mesh:
+    indices = rs.GetMeshFaces(mesh)
+    if indices:
+        for index in indices: print index
+同见
+GetMeshVertices
+MeshFaces
+MeshFaceVertices
+MeshVertices

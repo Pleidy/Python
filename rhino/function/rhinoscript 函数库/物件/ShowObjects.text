@@ -1,0 +1,36 @@
+
+ShowObjects
+显示一个或多个隐藏物件。隐藏物件，使其不可见、不可捕捉、不可选择。
+语法
+rhinoscriptsyntax.ShowObjects (object_ids)
+rhinoscript.object.ShowObjects (object_ids)
+参数
+
+
+
+
+object_ids
+必须参数。列表。要隐藏物件的 Guid 或字符串构成的列表。
+
+
+返回值
+
+
+
+
+数字
+返回成功显示物件的数量。
+
+
+示例
+import rhinoscriptsyntax as rs
+objs = rs.GetObjects("Select objects to hide")
+if objs: rs.HideObjects(objs)
+#Do something here...
+rs.ShowObjects( objs )
+同见
+HideObject
+HideObjects
+IsObjectHidden
+ShowObject
+ 

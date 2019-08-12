@@ -1,0 +1,44 @@
+
+ParentLayer
+返回或修改一个图层的父图层。
+语法
+rhinoscript.layer.ParentLayer (layer, parent=None)
+rhinoscriptsyntax.ParentLayer (layer, parent=None)
+参数
+
+
+
+
+layer
+必须参数。字符串。图层的名称。
+
+
+parent
+可选参数。字符串。新设定父图层的名称。要取消父图层设置，可以给这个参数传递一个空字符串""。
+
+
+返回值
+
+
+
+
+字符串
+如果没有指定 parent 参数，返回当前父图层的名称。
+
+
+字符串
+如果指定了 parent 参数，返回先前父图层的名称。
+
+
+None
+没有父图层返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+layers = rs.LayerNames()
+for layer in layers:
+    parent = rs.ParentLayer(layer)
+    print "Layer:", layer, ", Parent:", parent
+同见
+LayerChildren

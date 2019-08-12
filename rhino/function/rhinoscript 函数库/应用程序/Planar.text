@@ -1,0 +1,36 @@
+
+Planar
+打开或关闭  Rhino 的平面模式。
+语法
+rhinoscriptsyntax.Planar( enable=None )
+rhinoscript.application.Planar( enable=None )
+参数
+
+
+
+
+enable
+可选参数。布尔值。打开（True）或关闭（False）。
+
+
+返回值
+
+
+
+
+布尔值
+如果没有指定 enable 参数，返回当前的平面模式状态。
+
+
+布尔值
+如果指定了 enable 参数，返回先前的平面模式状态。
+
+
+示例
+import rhinoscriptsyntax as rs
+if not rs.Planar(): rs.Planar(True)
+同见
+Ortho
+Osnap
+Snap
+ 

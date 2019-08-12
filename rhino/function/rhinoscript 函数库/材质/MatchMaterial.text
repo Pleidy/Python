@@ -1,0 +1,43 @@
+
+MatchMaterial
+复制一个材质到一个或多个物件。
+语法
+rhinoscriptsyntax.MatchMaterial (source, destination)
+rhinoscript.material.MatchMaterial (source, destination)
+参数
+
+
+
+
+source
+必须参数。数字。源材质的序号。-或- 字符串、Guid。源物件的 ID 。源物件必须有材质设置。
+
+
+destination
+必须参数。字符串、Guid 或由字符串、Guid 构成的列表。目标物件的 ID 。物件的材质来源将会由“来自图层”修改为“来自物件”。
+
+
+返回值
+
+
+
+
+数字
+函数执行过程中修改物件的数量。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select source object")
+if obj and rs.ObjectMaterialIndex(obj)>-1:
+    objects = rs.GetObjects("Select destination objects")
+    if objects: rs.MatchMaterial( obj, objects )
+同见
+CopyMaterial
+LayerMaterialIndex
+ObjectMaterialIndex
+ 

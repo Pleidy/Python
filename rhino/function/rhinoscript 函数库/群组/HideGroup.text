@@ -1,0 +1,37 @@
+
+HideGroup
+隐藏一个群组中的物件隐藏物件，使其不可见、不可捕捉、不可选取。
+语法
+rhinoscriptsyntax.HideGroup (group_name)
+rhinoscript.group.HideGroup (group_name)
+参数
+
+
+
+
+group_name
+必须参数。字符串。现有群组的名称。
+
+
+返回值
+
+
+
+
+数字
+执行过程中隐藏物件的数量。
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+groups = rs.GroupNames()
+if groups:
+    for group in groups: rs.HideGroup(group)
+同见
+LockGroup
+ShowGroup
+UnlockGroup

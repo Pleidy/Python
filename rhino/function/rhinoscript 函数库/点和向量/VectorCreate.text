@@ -1,0 +1,43 @@
+
+VectorCreate
+从两个 3-D 点创建一个向量。
+语法
+rhinoscriptsyntax.VectorCreate (to_point, from_point)
+rhinoscript.pointvector.VectorCreate (to_point, from_point)
+参数
+
+
+
+
+to_point
+必须参数。包含三个数字的列表或者 Point3d 对象。作为终点的 3-D 点。
+
+
+from_point
+必须参数。包含三个数字的列表或者 Point3d 对象。作为起点的 3-D 点。
+
+
+返回值
+
+
+
+
+Vector3d
+如果执行成功，返回计算得到的 3-D 向量。(to_point - from_point)
+
+
+None
+出错返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+point1 = rs.GetPoint("First point")
+point2 = rs.GetPoint("Next point")
+vector = rs.VectorCreate(point2, point1)
+print vector
+同见
+IsVectorTiny
+IsVectorZero
+VectorCompare
+VectorUnitize

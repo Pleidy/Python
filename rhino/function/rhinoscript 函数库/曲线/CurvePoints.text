@@ -1,0 +1,42 @@
+
+CurvePoints
+返回曲线物件的控制点或控制顶点。如果曲线是有理的 NURBS 曲线，返回欧几里得控制顶点。
+语法
+rhinoscriptsyntax.CurvePoints (curve_id, segment_index=-1)
+rhinoscript.curve.CurvePoints (curve_id, segment_index=-1)
+参数
+
+
+
+
+curve_id
+必须参数。字符串或 Guid。物件的 ID 。
+
+
+segment_index
+可选参数。数字。如果 curve_id 标示出一个多重曲线物件，那么 intIndex 标示要计算的是多重曲线的哪几段。
+
+
+返回值
+
+
+
+
+List.
+执行成功，返回曲线的控制点。
+
+
+None
+如果执行不成功或出错，返回空值。
+
+
+示例
+import rhinoscriptsyntax as rs
+obj = rs.GetObject("Select a curve")
+if rs.IsCurve(obj):
+    points = rs.CurvePoints(obj)
+    if points:[rs.AddPoint(pt) for pt in points]
+同见
+CurvePointCount
+IsCurve
+ 
